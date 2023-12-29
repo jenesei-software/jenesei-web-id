@@ -20,13 +20,33 @@ export const LayoutAuthorizationMainContainer = styled.div`
   width: 50%;
   box-sizing: border-box;
   background: var(--black-100, #000);
+  color: ${(props) => props.theme.colors.black["100"]};
+
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
+    width: 100%;
+    height: 170px;
+    padding: 10px 100px;
+    justify-content: center;
+  }
+
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
+    padding: 10px 50px;
+  }
 `;
 
 export const LayoutAuthorizationLogoWrapper = styled.div`
   flex: 0 0 auto;
   position: relative;
 `;
-
+export const LayoutAuthorizationAuthorizationBackgroundWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 0;
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
+    display: none;
+  }
+`;
 export const LayoutAuthorizationTextWrapper = styled.div`
   align-items: flex-start;
   display: inline-flex;
@@ -37,6 +57,9 @@ export const LayoutAuthorizationTextWrapper = styled.div`
   position: relative;
 
   & span {
-    color: var(--default-white, #000);
+    color: ${(props) => props.theme.colors.default.white};
+  }
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
+    display: none;
   }
 `;

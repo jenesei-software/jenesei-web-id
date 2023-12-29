@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { LogoWithTitle } from ".";
 
-export const StyledLogoWithTitle = styled(LogoWithTitle)`
+export const LogoWithTitleWrapper = styled.div`
   align-items: center;
-  display: inline-flex;
+  display: flex;
   gap: 14px;
   justify-content: center;
   position: relative;

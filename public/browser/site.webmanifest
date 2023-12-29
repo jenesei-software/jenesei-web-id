@@ -1,0 +1,12 @@
+{
+  "name": "Jenesei ID",
+  "short_name": "Jen ID",
+  "icons": [],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "Jen Task is Nice",
+  "lang": "eng",
+  "orientation": "portrait"
+}
