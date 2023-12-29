@@ -47,16 +47,16 @@ export const theme = {
       Ea4335: "#ea4335ff",
     },
   },
-  buttonVolume: {
+  volumetricButton: {
+    wrapper:
+      "linear-gradient(180deg, #E9E9E9 0%, #E9E9E9 0.01%, #FFF 100%)",
     default: {
-      backgroundFill:
-        "linear-gradient(90deg, 0% rgba(233, 233, 233, 1), 0.009999999747378752% rgba(233, 233, 233, 1), 100% rgba(255, 255, 255, 1))",
-      stroke: "linear-gradient(90deg, 0% rgba(255, 255, 255, 1), 100% rgba(236, 236, 236, 1))",
-      fill: "linear-gradient(90deg, 0% rgba(244, 244, 244, 1), 100% rgba(254, 254, 254, 1))",
+      fill: "linear-gradient(180deg, #F4F4F4 0%, #FEFEFE 100%)",
+      stroke: "2px solid #FFF",
     },
     active: {
-      fill: "linear-gradient(90deg, 0% rgba(234, 234, 234, 1), 100% rgba(244, 244, 244, 1))",
-      stroke: "linear-gradient(90deg, 0% rgba(250, 250, 250, 1), 100% rgba(219, 219, 219, 1))",
+      fill: "linear-gradient(180deg, #EAEAEA 0%, #F4F4F4 100%)",
+      stroke: "#FAFAFA",
     },
   },
   gradients: {
@@ -66,10 +66,12 @@ export const theme = {
       "radial-gradient(50% 50% at 50% 50%, 0% rgba(0, 122, 255, 1), 49.374961853027344% rgba(49, 46, 203, 1), 100% rgba(231, 23, 172, 1))",
   },
   effects: {
+    header: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
     input: {
       default: "0px 0px 4px 0px rgba(0, 0, 0, 0.25) inset",
     },
-    buttonVolume: {
+    volumetricButton: {
+      wrapper: "0px 0px 4px 0px rgba(0, 0, 0, 0.05) inset",
       active: "0px 0px 0.800000011920929px 0.6000000238418579px rgba(0, 0, 0, 0.25)",
       default: "0px 0px 2px 1px rgba(0, 0, 0, 0.1)",
     },
