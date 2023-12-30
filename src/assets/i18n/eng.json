@@ -5,5 +5,30 @@
       "title-min": "Safety is our advantage"
     },
     "loading": "Загрузка..."
+  },
+  "header": {
+    "back": "Back",
+    "help": "Help"
+  },
+  "sidebar": {
+    "title": "Account"
+  },
+  "pages": {
+    "PersonalInfo": {
+      "title": "Personal info",
+      "description": "Update your profile, contact details and preferences to personalize your experience."
+    },
+    "LoginAndSecurity": {
+      "title": "Login & security",
+      "description": "Ensure the safety of your account with password management."
+    },
+    "Payments": {
+      "title": "Payments",
+      "description": "Access your transaction history, billing information, and invoices."
+    },
+    "LanguageAndLocalization": {
+      "title": "Language & localization",
+      "description": "Choose your preferred language and adjust your location settings."
+    }
   }
 }
