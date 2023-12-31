@@ -1,23 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { MenuListProps, MenuListWrapper } from ".";
-import { FC, useCallback } from "react";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { FC } from "react";
+import { useLocation } from "react-router-dom";
 import { IUserRout, UserRouts } from "@core/router";
 import { MenuItem } from "@components/menu-item";
+import { useGoToLink } from "@hooks/index";
 
 export const MenuList: FC<MenuListProps> = () => {
   const { t } = useTranslation("pages");
-  const navigate = useNavigate();
+  const goToLink = useGoToLink();
   const location = useLocation();
-  const [searchParams] = useSearchParams();
-  const goToLink = useCallback(
-    (pathname: string) =>
-      navigate({
-        pathname: pathname,
-        search: searchParams.toString(),
-      }),
-    [navigate]
-  );
 
   return (
     <MenuListWrapper>
@@ -28,7 +20,7 @@ export const MenuList: FC<MenuListProps> = () => {
           icon={route.icon}
           title={t(route.title)}
           description={t(route.description)}
-          checked={route.to.startsWith(location.pathname)}
+          checked={route.to == location.pathname}
         />
       ))}
     </MenuListWrapper>

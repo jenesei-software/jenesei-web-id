@@ -9,6 +9,7 @@ export const MenuSideBarWrapper = styled.div`
   align-items: flex-start;
   flex-shrink: 0;
   width: 520px;
+  min-height: max(calc(100dvh - 60px), 488px);
 
   @media (max-width: ${(props) => props.theme.size.mobile}) {
     display: none;
@@ -57,7 +58,7 @@ export const MenuSideLogoContainer = styled.div`
   }
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     display: flex;
-    width: 96px;
+    width: 100%;
     height: 84px;
     justify-content: center;
     align-items: center;

@@ -7,16 +7,23 @@ import { MenuList } from "@components/menu-list";
 import { useMemo, useReducer } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import React from "react";
+import { useGoToLink } from "@hooks/index";
 
 export const Header: React.FC = () => {
   const { t } = useTranslation("header");
   const [isShow, toggleIsShow] = useReducer((checked) => !checked, false);
+  const goToLink = useGoToLink();
 
   /* Memoized  */
   const memoizedHeaderWrapperDesktopContainerBack = useMemo(
     () => (
       <HeaderDesktopContainer>
-        <ButtonVolumetricLong checked={false} title={t("back")} icon={IconCurved.ArrowLeft} />
+        <ButtonVolumetricLong
+          checked={false}
+          onClick={() => goToLink("/authorization/services")}
+          title={t("back")}
+          icon={IconCurved.ArrowLeft}
+        />
       </HeaderDesktopContainer>
     ),
     [t]
@@ -24,7 +31,7 @@ export const Header: React.FC = () => {
   const memoizedHeaderWrapperMobileContainerBack = useMemo(
     () => (
       <HeaderMobileContainer>
-        <ButtonVolumetricShort checked={false} icon={IconCurved.ArrowLeft} />
+        <ButtonVolumetricShort checked={false} onClick={() => goToLink("/authorization/services")} icon={IconCurved.ArrowLeft} />
       </HeaderMobileContainer>
     ),
     []

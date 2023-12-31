@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
-export const LayoutAuthorizationWrapper = styled.div`
+export const LayoutAuthorizationContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   max-width: 100%;
   width: 100%;
   height: 100dvh;
   overflow: hidden;
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
+    flex-direction: column;
+  }
 `;
 
 export const LayoutAuthorizationMainContainer = styled.div`
@@ -34,9 +37,37 @@ export const LayoutAuthorizationMainContainer = styled.div`
   }
 `;
 
-export const LayoutAuthorizationLogoWrapper = styled.div`
+export const LayoutAuthorizationOutletContainer = styled.div`
+  display: flex;
+  width: 50%;
+  height: 100%;
+  padding: 100px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
+    justify-content: flex-start;
+    width: 100%;
+    min-height: calc(100% - 170px);
+    padding: 50px;
+  }
+
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
+    padding: 20px;
+  }
+`;
+
+export const LayoutAuthorizationLogoContainer = styled.div`
   flex: 0 0 auto;
   position: relative;
+
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
+    height: 170px;
+    display: flex;
+    align-items: center;
+  }
 `;
 export const LayoutAuthorizationAuthorizationBackgroundWrapper = styled.div`
   position: absolute;
@@ -47,7 +78,7 @@ export const LayoutAuthorizationAuthorizationBackgroundWrapper = styled.div`
     display: none;
   }
 `;
-export const LayoutAuthorizationTextWrapper = styled.div`
+export const LayoutAuthorizationTextContainer = styled.div`
   align-items: flex-start;
   display: inline-flex;
   flex: 0 0 auto;

@@ -10,6 +10,29 @@
     "back": "Back",
     "help": "Help"
   },
+  "services": {
+    "pages": {
+      "title-big": "Hello, ",
+      "title-min": "We've been waiting for you.",
+      "logout":"Log out"
+    },
+    "BusinessRoulette": {
+      "name": "Business Roulette",
+      "link": "https://businessroulette.ru"
+    },
+    "JeneseiMessenger": {
+      "name": "Jenesei Messenger",
+      "link": "https://messenger.jenesei.ru"
+    },
+    "JeneseiTask": {
+      "name": "Jenesei Task",
+      "link": "https://task.jenesei.ru"
+    },
+    "JeneseiID": {
+      "name": "Jenesei ID",
+      "link": "https://id.jenesei.ru"
+    }
+  },
   "sidebar": {
     "title": "Account"
   },

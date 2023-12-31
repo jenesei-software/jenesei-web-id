@@ -10,6 +10,29 @@
     "back": "Назад",
     "help": "Поддержка"
   },
+  "services": {
+    "pages": {
+      "title-big": "Привет, ",
+      "title-min": "Мы ждали тебя.",
+      "logout":"Выйти"
+    },
+    "BusinessRoulette": {
+      "name": "Business Roulette",
+      "link": "https://businessroulette.ru"
+    },
+    "JeneseiMessenger": {
+      "name": "Jenesei Messenger",
+      "link": "https://messenger.jenesei.ru"
+    },
+    "JeneseiTask": {
+      "name": "Jenesei Task",
+      "link": "https://task.jenesei.ru"
+    },
+    "JeneseiID": {
+      "name": "Jenesei ID",
+      "link": "https://id.jenesei.ru"
+    }
+  },
   "sidebar": {
     "title": "Аккаунт"
   },

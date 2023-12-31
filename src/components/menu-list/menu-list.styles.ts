@@ -6,10 +6,10 @@ export const MenuListWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  @media (max-width: ${(props) => props.theme.size.desktop}) {
-    border-top: 2px solid ${(props) => props.theme.colors.black["5"]};
-  }
+  border-top: 2px solid ${(props) => props.theme.colors.black["5"]};
+
   @media (max-width: ${(props) => props.theme.size.mobile}) {
+    border-top: 0;
     position: absolute;
     top: 100%;
     left: 0;

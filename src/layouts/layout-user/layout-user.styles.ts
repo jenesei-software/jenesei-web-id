@@ -14,6 +14,7 @@ export const LayoutUserContainer = styled.div`
   align-items: flex-start;
   align-self: stretch;
   height: 100%;
+  overflow: auto;
 `;
 
 export const LayoutOutletContainer = styled.div`
@@ -23,6 +24,7 @@ export const LayoutOutletContainer = styled.div`
   flex: 1 0 0;
   align-self: stretch;
   border-left: 2px solid ${(props) => props.theme.colors.black["5"]};
+  min-height: calc(100dvh - 60px);
   @media (max-width: ${(props) => props.theme.size.mobile}) {
     border-left: 0px;
   }

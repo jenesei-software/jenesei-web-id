@@ -1,34 +1,37 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import { StyledInterB36, StyledInterR24 } from "@styles/fonts/inter";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import { AuthorizationBackground } from '@assets/icons/authorization-background';
+import { LogoWithTitle } from '@assets/icons/logo-with-title';
+import { Outlet } from 'react-router-dom';
+import { StyledInterB36, StyledInterR24 } from '@styles/fonts/inter';
+import { useTranslation } from 'react-i18next';
 import {
   LayoutAuthorizationAuthorizationBackgroundWrapper,
-  LayoutAuthorizationLogoWrapper,
+  LayoutAuthorizationLogoContainer,
   LayoutAuthorizationMainContainer,
-  LayoutAuthorizationTextWrapper,
-  LayoutAuthorizationWrapper,
+  LayoutAuthorizationOutletContainer,
+  LayoutAuthorizationTextContainer,
+  LayoutAuthorizationContainer,
 } from ".";
-import { LogoWithTitle } from "@assets/icons/logo-with-title";
-import { AuthorizationBackground } from "@assets/icons/authorization-background";
 
 export const LayoutAuthorization: React.FC = () => {
   const { t } = useTranslation("authorization");
   return (
-    <LayoutAuthorizationWrapper>
+    <LayoutAuthorizationContainer>
       <LayoutAuthorizationMainContainer>
-        <LayoutAuthorizationLogoWrapper>
+        <LayoutAuthorizationLogoContainer>
           <LogoWithTitle />
-        </LayoutAuthorizationLogoWrapper>
+        </LayoutAuthorizationLogoContainer>
         <LayoutAuthorizationAuthorizationBackgroundWrapper>
           <AuthorizationBackground />
         </LayoutAuthorizationAuthorizationBackgroundWrapper>
-        <LayoutAuthorizationTextWrapper>
+        <LayoutAuthorizationTextContainer>
           <StyledInterB36>{t("main.title-big")}</StyledInterB36>
           <StyledInterR24>{t("main.title-min")}</StyledInterR24>
-        </LayoutAuthorizationTextWrapper>
+        </LayoutAuthorizationTextContainer>
       </LayoutAuthorizationMainContainer>
-      <Outlet />
-    </LayoutAuthorizationWrapper>
+      <LayoutAuthorizationOutletContainer>
+        <Outlet />
+      </LayoutAuthorizationOutletContainer>
+    </LayoutAuthorizationContainer>
   );
 };
