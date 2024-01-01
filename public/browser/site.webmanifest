@@ -1,12 +1,23 @@
 {
-  "name": "Jenesei ID",
-  "short_name": "Jen. ID",
-  "icons": [],
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "start_url": "/",
-  "display": "standalone",
-  "description": "Jen Task is Nice",
-  "lang": "eng",
-  "orientation": "portrait"
+    "name": "Jenesei ID",
+    "short_name": "Jen. ID",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#4195d2",
+    "background_color": "#f2f2f6",
+    "start_url": "/",
+    "display": "standalone",
+    "description": "Jen. ID is Nice",
+    "lang": "eng",
+    "orientation": "portrait"
 }
