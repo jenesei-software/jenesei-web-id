@@ -1,30 +1,14 @@
-# React + TypeScript + Vite
+# Jenesei ID - authorization service
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![wakatime](https://wakatime.com/badge/user/7f9aaba0-b5dd-4e0d-9f70-cd2b6ba680d1/project/018cb0c8-9aa9-4f16-ae33-d4c1cb2629d5.svg)](https://wakatime.com/badge/user/7f9aaba0-b5dd-4e0d-9f70-cd2b6ba680d1/project/018cb0c8-9aa9-4f16-ae33-d4c1cb2629d5)
 
-Currently, two official plugins are available:
+# ⌨️ Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. install dependencies with:  
+`npm i`
 
-## Expanding the ESLint configuration
+1. run in development mode (watch changes in the files and refresh your browser automatically):  
+`npm run start`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. would like to publish the project as a website? Then make a distribution build by generating static files:  
+`npm run build`
