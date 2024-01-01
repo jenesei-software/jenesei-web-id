@@ -8,9 +8,9 @@ export const ServicesWrapper = styled.div`
   align-self: stretch;
   justify-content: space-between;
   height: 100%;
+  gap: 20px;
 
   @media (max-width: ${(props) => props.theme.size.tablet}) {
-    gap: 20px;
     align-self: stretch;
     height: auto;
     justify-content: space-between;
@@ -24,6 +24,7 @@ export const ServicesTitleContainer = styled.div`
   align-items: flex-start;
   gap: 10px;
   align-self: stretch;
+
   @media (max-width: ${(props) => props.theme.size.tablet}) {
   }
 `;
@@ -34,8 +35,8 @@ export const ServicesListContainer = styled.div`
   gap: 20px;
   align-self: stretch;
   flex-wrap: wrap;
+
   @media (max-width: ${(props) => props.theme.size.mobile}) {
-    justify-content: center;
   }
 `;
 export const ServicesListItemContainer = styled(Link)`
@@ -48,6 +49,7 @@ export const ServicesListItemContainer = styled(Link)`
   align-items: flex-start;
   cursor: pointer;
   border-radius: 6px;
+
   background: ${(props) => props.theme.colors.default.white};
   box-shadow: ${(props) => props.theme.buttons.volumetric.effects.default};
 

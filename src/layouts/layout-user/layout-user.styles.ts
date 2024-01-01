@@ -23,8 +23,10 @@ export const LayoutOutletContainer = styled.div`
   align-items: flex-start;
   flex: 1 0 0;
   align-self: stretch;
+  min-height: max(calc(100dvh - 60px), 488px);
   border-left: 2px solid ${(props) => props.theme.colors.black["5"]};
-  min-height: calc(100dvh - 60px);
+
+
   @media (max-width: ${(props) => props.theme.size.mobile}) {
     border-left: 0px;
   }

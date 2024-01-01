@@ -7,6 +7,7 @@ export const LayoutAuthorizationContainer = styled.div`
   width: 100%;
   height: 100dvh;
   overflow: hidden;
+
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     flex-direction: column;
   }
@@ -34,6 +35,7 @@ export const LayoutAuthorizationMainContainer = styled.div`
 
   @media (max-width: ${(props) => props.theme.size.mobile}) {
     padding: 10px 50px;
+    align-items: center
   }
 `;
 
@@ -47,6 +49,7 @@ export const LayoutAuthorizationOutletContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   overflow: auto;
+
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     justify-content: flex-start;
     width: 100%;
@@ -59,7 +62,7 @@ export const LayoutAuthorizationOutletContainer = styled.div`
   }
 `;
 
-export const LayoutAuthorizationLogoContainer = styled.div`
+export const LogoWithTitleContainer = styled.div`
   flex: 0 0 auto;
   position: relative;
 
@@ -69,11 +72,12 @@ export const LayoutAuthorizationLogoContainer = styled.div`
     align-items: center;
   }
 `;
-export const LayoutAuthorizationAuthorizationBackgroundWrapper = styled.div`
+export const AuthorizationBackgroundContainer = styled.div`
   position: absolute;
   right: 0;
   height: 100%;
   top: 0;
+
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     display: none;
   }
@@ -90,6 +94,7 @@ export const LayoutAuthorizationTextContainer = styled.div`
   & span {
     color: ${(props) => props.theme.colors.default.white};
   }
+  
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     display: none;
   }

@@ -1,12 +1,12 @@
-import React from 'react';
-import { AuthorizationBackground } from '@assets/icons/authorization-background';
-import { LogoWithTitle } from '@assets/icons/logo-with-title';
-import { Outlet } from 'react-router-dom';
-import { StyledInterB36, StyledInterR24 } from '@styles/fonts/inter';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { AuthorizationBackground } from "@assets/authorization-background";
+import { LogoWithTitle } from "@assets/icons/logo-with-title";
+import { Outlet } from "react-router-dom";
+import { StyledInterB36, StyledInterR24 } from "@styles/fonts/inter";
+import { useTranslation } from "react-i18next";
 import {
-  LayoutAuthorizationAuthorizationBackgroundWrapper,
-  LayoutAuthorizationLogoContainer,
+  AuthorizationBackgroundContainer,
+  LogoWithTitleContainer,
   LayoutAuthorizationMainContainer,
   LayoutAuthorizationOutletContainer,
   LayoutAuthorizationTextContainer,
@@ -18,12 +18,12 @@ export const LayoutAuthorization: React.FC = () => {
   return (
     <LayoutAuthorizationContainer>
       <LayoutAuthorizationMainContainer>
-        <LayoutAuthorizationLogoContainer>
+        <LogoWithTitleContainer>
           <LogoWithTitle />
-        </LayoutAuthorizationLogoContainer>
-        <LayoutAuthorizationAuthorizationBackgroundWrapper>
+        </LogoWithTitleContainer>
+        <AuthorizationBackgroundContainer>
           <AuthorizationBackground />
-        </LayoutAuthorizationAuthorizationBackgroundWrapper>
+        </AuthorizationBackgroundContainer>
         <LayoutAuthorizationTextContainer>
           <StyledInterB36>{t("main.title-big")}</StyledInterB36>
           <StyledInterR24>{t("main.title-min")}</StyledInterR24>
