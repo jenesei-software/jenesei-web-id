@@ -17,20 +17,16 @@
       "logout":"Выйти"
     },
     "BusinessRoulette": {
-      "name": "Business Roulette",
-      "link": "https://businessroulette.ru"
+      "name": "Business Roulette"
     },
     "JeneseiMessenger": {
-      "name": "Jenesei Messenger",
-      "link": "https://messenger.jenesei.ru"
+      "name": "Jenesei Messenger"
     },
     "JeneseiTask": {
-      "name": "Jenesei Task",
-      "link": "https://task.jenesei.ru"
+      "name": "Jenesei Task"
     },
     "JeneseiID": {
-      "name": "Jenesei ID",
-      "link": "https://id.jenesei.ru"
+      "name": "Jenesei ID"
     }
   },
   "sidebar": {
