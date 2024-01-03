@@ -20,7 +20,7 @@ export const MenuList: FC<MenuListProps> = () => {
           icon={route.icon}
           title={t(route.title)}
           description={t(route.description)}
-          checked={route.to == location.pathname}
+          checked={route.to == location?.pathname}
         />
       ))}
     </MenuListWrapper>

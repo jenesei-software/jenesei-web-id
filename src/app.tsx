@@ -5,19 +5,28 @@ import { Provider } from "react-redux";
 import { store } from "@core/store";
 import { theme } from "@styles/theme";
 import { ThemeProvider } from "styled-components";
-import { LanguageProvider } from "./providers/language-provider";
 import { LayoutApp } from "@layouts/layout-app";
+import { LoadingProvider } from "@providers/loading-provider";
+import { LanguageProvider } from "@providers/language-provider";
+import { AxiosProvider } from "@providers/axios-provider";
+import { AuthProvider } from "@providers/auth-provider";
 
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <BrowserRouter>
-            <LanguageProvider>
-              <LayoutApp />
-            </LanguageProvider>
-          </BrowserRouter>
+          <AxiosProvider>
+            <LoadingProvider>
+              <AuthProvider>
+                <BrowserRouter>
+                  <LanguageProvider>
+                    <LayoutApp />
+                  </LanguageProvider>
+                </BrowserRouter>
+              </AuthProvider>
+            </LoadingProvider>
+          </AxiosProvider>
         </ThemeProvider>
       </Provider>
     </I18nextProvider>

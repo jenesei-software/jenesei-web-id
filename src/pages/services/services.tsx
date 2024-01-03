@@ -27,7 +27,7 @@ export const Services: FC<ServicesProps> = () => {
             <LogoServicesJeneseiTask />
             <StyledInterSB14>{t("JeneseiTask.name")}</StyledInterSB14>
           </ServicesListItemContainer>
-          <ServicesListItemContainer to={"https://id.jenesei.ru/user"}>
+          <ServicesListItemContainer to={`/user`}>
             <LogoServicesJeneseiID />
             <StyledInterSB14>{t("JeneseiID.name")}</StyledInterSB14>
           </ServicesListItemContainer>

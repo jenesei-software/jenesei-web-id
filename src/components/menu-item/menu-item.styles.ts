@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MenuItemProps } from ".";
 
-export const MenuItemWrapper = styled.div<Pick<MenuItemProps, "checked">>`
+export const MenuItemWrapper = styled.button<Pick<MenuItemProps, "checked">>`
   display: flex;
   width: 100%;
   height: 84px;
@@ -13,8 +13,12 @@ export const MenuItemWrapper = styled.div<Pick<MenuItemProps, "checked">>`
   cursor: pointer;
   user-select: none;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: none;
   border-left: ${(props) => (props.checked ? `4px solid ${props.theme.colors.black["80"]}` : "4px solid transparent")};
-  background: ${(props) => (props.checked ? props.theme.colors.black["5"] : "")};
+  background: ${(props) => (props.checked ? props.theme.colors.black["5"] : "transparent")};
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     display: flex;
     height: 84px;
@@ -36,6 +40,7 @@ export const MenuItemInfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
+  text-align: start;
   flex: 1 0 0;
   & :first-child {
     overflow: hidden;

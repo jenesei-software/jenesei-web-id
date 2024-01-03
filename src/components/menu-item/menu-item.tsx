@@ -4,6 +4,7 @@ import { FC, useMemo } from "react";
 import { theme } from "@styles/theme";
 import { ButtonPlaystationShort } from "@components/button-playstation/short";
 import React from "react";
+import { Ripple } from "react-ripple-click";
 
 export const MenuItem: FC<MenuItemProps> = React.memo(
   (props) => {
@@ -19,6 +20,7 @@ export const MenuItem: FC<MenuItemProps> = React.memo(
 
     return (
       <MenuItemWrapper checked={props.checked} onClick={props.onClick}>
+        <Ripple />
         <MenuItemLogoContainer>
           <ButtonPlaystationShort icon={props.icon} checked={props.checked} />
         </MenuItemLogoContainer>
@@ -27,6 +29,10 @@ export const MenuItem: FC<MenuItemProps> = React.memo(
     );
   },
   (prevProps, nextProps) => {
-    return prevProps.checked === nextProps.checked && prevProps.title === nextProps.title;
+    return (
+      prevProps.checked === nextProps.checked &&
+      prevProps.title === nextProps.title &&
+      prevProps.description === nextProps.description
+    );
   }
 );
