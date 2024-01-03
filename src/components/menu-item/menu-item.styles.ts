@@ -19,6 +19,8 @@ export const MenuItemWrapper = styled.button<Pick<MenuItemProps, "checked">>`
   border: none;
   border-left: ${(props) => (props.checked ? `4px solid ${props.theme.colors.black["80"]}` : "4px solid transparent")};
   background: ${(props) => (props.checked ? props.theme.colors.black["5"] : "transparent")};
+  color: ${(props) => props.theme.colors.black["100"]};
+
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     display: flex;
     height: 84px;

@@ -1,7 +1,8 @@
 :root {
+  -webkit-tap-highlight-color: transparent;
 }
 
-body{
+body {
   padding: 0;
   margin: 0;
 }

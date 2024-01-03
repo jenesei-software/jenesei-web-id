@@ -5,9 +5,11 @@ import { theme } from "@styles/theme";
 import { ButtonPlaystationShort } from "@components/button-playstation/short";
 import React from "react";
 import { Ripple } from "react-ripple-click";
+import { useVibration } from "@hooks/index";
 
 export const MenuItem: FC<MenuItemProps> = React.memo(
   (props) => {
+    const vibrate = useVibration();
     const memoizedMenuItemInfo = useMemo(
       () => (
         <MenuItemInfoContainer>
@@ -19,7 +21,13 @@ export const MenuItem: FC<MenuItemProps> = React.memo(
     );
 
     return (
-      <MenuItemWrapper checked={props.checked} onClick={props.onClick}>
+      <MenuItemWrapper
+        checked={props.checked}
+        onClick={() => {
+          vibrate(1);
+          props.onClick();
+        }}
+      >
         <Ripple />
         <MenuItemLogoContainer>
           <ButtonPlaystationShort icon={props.icon} checked={props.checked} />
