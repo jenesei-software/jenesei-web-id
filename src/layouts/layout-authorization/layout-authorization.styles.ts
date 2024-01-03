@@ -23,7 +23,7 @@ export const LayoutAuthorizationMainContainer = styled.div`
   position: relative;
   width: 50%;
   box-sizing: border-box;
-  background: var(--black-100, #000);
+  background: ${(props) => props.theme.colors.black["100"]};
   color: ${(props) => props.theme.colors.black["100"]};
 
   @media (max-width: ${(props) => props.theme.size.tablet}) {

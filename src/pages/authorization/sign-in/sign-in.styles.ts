@@ -13,7 +13,16 @@ export const StyledStyledInterR16 = styled(StyledInterR16)`
   cursor: pointer;
 `;
 
-export const SignInInfoContainer = styled.div``;
-export const SignInInfoFormContainer = styled.div``;
+export const SignInInfoContainer = styled.div`
+  width: 100%;
+`;
+export const SignInInfoFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  align-self: stretch;
+  width: 100%;
+`;
 export const SignInInfoButtonContainer = styled.div``;
 export const SignInInfoContinueContainer = styled.div``;

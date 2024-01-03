@@ -12,10 +12,17 @@ import {
 import { FC } from "react";
 import { StyledInterB32, StyledInterR16 } from "@styles/fonts/inter";
 import { ServicesWrapper } from "@pages/services";
+import { useInputString } from "@hooks/inputs/use-input-string";
 
 export const SignIn: FC<SignInProps> = () => {
   const { t } = useTranslation("sign-in");
-
+  const { value: valueEmailOrLogin, InputString: InputEmailOrLogin } = useInputString({
+    placeholder: "Email or Login",
+  });
+  const { value: valuePassword, InputString: InputPassword } = useInputString({
+    placeholder: "Password",
+  });
+  console.log(valueEmailOrLogin, valuePassword);
   return (
     <ServicesWrapper>
       <SignInTitlesContainer>
@@ -26,7 +33,11 @@ export const SignIn: FC<SignInProps> = () => {
         </SignInTitlesTwoContainer>
       </SignInTitlesContainer>
       <SignInInfoContainer>
-        <SignInInfoFormContainer></SignInInfoFormContainer>
+        <SignInInfoFormContainer>
+          {InputEmailOrLogin}
+          {InputPassword}
+          <StyledStyledInterR16>{t("forgot-password")}</StyledStyledInterR16>
+        </SignInInfoFormContainer>
         <SignInInfoButtonContainer></SignInInfoButtonContainer>
         <SignInInfoContinueContainer></SignInInfoContinueContainer>
       </SignInInfoContainer>

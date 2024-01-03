@@ -8,6 +8,7 @@ export const ServicesWrapper = styled.div`
   align-self: stretch;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
   gap: 20px;
 
   @media (max-width: ${(props) => props.theme.size.tablet}) {

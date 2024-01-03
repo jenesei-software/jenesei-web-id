@@ -4,7 +4,7 @@ import { FC } from "react";
 import { useLocation } from "react-router-dom";
 import { IUserRout, UserRouts } from "@core/router";
 import { MenuItem } from "@components/menu-item";
-import { useGoToLink } from "@hooks/index";
+import { useGoToLink } from "@hooks/use-go-to-link";
 
 export const MenuList: FC<MenuListProps> = () => {
   const { t } = useTranslation("pages");

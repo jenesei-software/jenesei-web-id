@@ -5,7 +5,7 @@ import { theme } from "@styles/theme";
 import { ButtonPlaystationShort } from "@components/button-playstation/short";
 import React from "react";
 import { Ripple } from "react-ripple-click";
-import { useVibration } from "@hooks/index";
+import { useVibration } from "@hooks/use-vibration";
 
 export const MenuItem: FC<MenuItemProps> = React.memo(
   (props) => {

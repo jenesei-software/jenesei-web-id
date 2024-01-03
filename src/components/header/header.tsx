@@ -1,13 +1,18 @@
-import { ButtonVolumetricShort } from "@components/button-volumetric/short";
-import { HeaderWrapper, HeaderDesktopContainer, HeaderMobileContainer, HeaderMenuListContainer } from ".";
-import { IconCurved } from "@assets/icons/icon-curved/icon-curved";
-import { ButtonVolumetricLong } from "@components/button-volumetric/long";
-import { useTranslation } from "react-i18next";
-import { MenuList } from "@components/menu-list";
-import { useMemo, useReducer } from "react";
-import OutsideClickHandler from "react-outside-click-handler";
-import React from "react";
-import { useGoToLink } from "@hooks/index";
+import OutsideClickHandler from 'react-outside-click-handler';
+import React from 'react';
+import { ButtonVolumetricLong } from '@components/button-volumetric/long';
+import { ButtonVolumetricShort } from '@components/button-volumetric/short';
+import {
+  HeaderDesktopContainer,
+  HeaderMenuListContainer,
+  HeaderMobileContainer,
+  HeaderWrapper
+  } from '.';
+import { IconCurved } from '@assets/icons/icon-curved/icon-curved';
+import { MenuList } from '@components/menu-list';
+import { useGoToLink } from '@hooks/use-go-to-link';
+import { useMemo, useReducer } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Header: React.FC = () => {
   const { t } = useTranslation("header");
