@@ -10,6 +10,7 @@ import { LoadingProvider } from "@providers/loading-provider";
 import { LanguageProvider } from "@providers/language-provider";
 import { AxiosProvider } from "@providers/axios-provider";
 import { AuthProvider } from "@providers/auth-provider";
+import { ProfileProvider } from "@providers/profile-provider";
 
 function App() {
   return (
@@ -18,13 +19,15 @@ function App() {
         <ThemeProvider theme={theme}>
           <AxiosProvider>
             <LoadingProvider>
-              <AuthProvider>
-                <BrowserRouter>
-                  <LanguageProvider>
-                    <LayoutApp />
-                  </LanguageProvider>
-                </BrowserRouter>
-              </AuthProvider>
+              <ProfileProvider>
+                <AuthProvider>
+                  <BrowserRouter>
+                    <LanguageProvider>
+                      <LayoutApp />
+                    </LanguageProvider>
+                  </BrowserRouter>
+                </AuthProvider>
+              </ProfileProvider>
             </LoadingProvider>
           </AxiosProvider>
         </ThemeProvider>

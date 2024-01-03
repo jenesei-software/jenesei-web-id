@@ -1,23 +1,39 @@
 {
   "authorization": {
+    "loading": "Загрузка...",
     "main": {
       "title-big": "Универсальный аккаунт",
       "title-min": "Безопасность – наше преимущество"
-    },
-    "loading": "Загрузка..."
+    }
   },
   "header": {
     "back": "Назад",
     "help": "Поддержка"
   },
-  "services": {
-    "pages": {
-      "title-big": "Привет, ",
-      "title-min": "Мы ждали тебя.",
-      "logout":"Выйти"
+  "pages": {
+    "LanguageAndLocalization": {
+      "description": "Выберите предпочитаемый вами язык и измените настройки своего местоположения.",
+      "title": "Язык и локализация"
     },
+    "LoginAndSecurity": {
+      "description": "Обеспечьте безопасность своей учетной записи с помощью управления паролями.",
+      "title": "Логин и безопасность"
+    },
+    "Payments": {
+      "description": "Получите доступ к истории ваших транзакций, платежной информации и счетам-фактурам.",
+      "title": "Платежи"
+    },
+    "PersonalInfo": {
+      "description": "Обновите свой профиль, контактные данные и предпочтения, чтобы персонализировать свой опыт.",
+      "title": "Личная информация"
+    }
+  },
+  "services": {
     "BusinessRoulette": {
       "name": "Business Roulette"
+    },
+    "JeneseiID": {
+      "name": "Jenesei ID"
     },
     "JeneseiMessenger": {
       "name": "Jenesei Messenger"
@@ -25,29 +41,28 @@
     "JeneseiTask": {
       "name": "Jenesei Task"
     },
-    "JeneseiID": {
-      "name": "Jenesei ID"
+    "pages": {
+      "logout": "Выйти",
+      "title-big": "Привет, ",
+      "title-min": "Мы ждали тебя."
     }
   },
   "sidebar": {
     "title": "Аккаунт"
   },
-  "pages": {
-    "PersonalInfo": {
-      "title": "Личная информация",
-      "description": "Обновите свой профиль, контактные данные и предпочтения, чтобы персонализировать свой опыт."
+  "sign-in": {
+    "buttons": {
+      "continue-with-apple": "Продолжить с Apple",
+      "continue-with-google": "Продолжить с Google",
+      "login": "Авторизоваться"
     },
-    "LoginAndSecurity": {
-      "title": "Логин и безопасность",
-      "description": "Обеспечьте безопасность своей учетной записи с помощью управления паролями."
+    "forgot-password": "Забыли пароль",
+    "inputs": {
+      "Password": "Пароль",
+      "email-or-login": "Email или Логин"
     },
-    "Payments": {
-      "title": "Платежи",
-      "description": "Получите доступ к истории ваших транзакций, платежной информации и счетам-фактурам."
-    },
-    "LanguageAndLocalization": {
-      "title": "Язык и локализация",
-      "description": "Выберите предпочитаемый вами язык и измените настройки своего местоположения."
-    }
+    "title-big": "Добро пожаловать",
+    "title-min": "У вас нет учетной записи? ",
+    "title-min-2": "Зарегистрироваться"
   }
 }

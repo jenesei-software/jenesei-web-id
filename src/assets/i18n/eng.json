@@ -1,23 +1,39 @@
 {
   "authorization": {
+    "loading": "Загрузка...",
     "main": {
       "title-big": "Universal account",
       "title-min": "Safety is our advantage"
-    },
-    "loading": "Загрузка..."
+    }
   },
   "header": {
     "back": "Back",
     "help": "Help"
   },
-  "services": {
-    "pages": {
-      "title-big": "Hello, ",
-      "title-min": "We've been waiting for you.",
-      "logout":"Log out"
+  "pages": {
+    "LanguageAndLocalization": {
+      "description": "Choose your preferred language and adjust your location settings.",
+      "title": "Language & localization"
     },
+    "LoginAndSecurity": {
+      "description": "Ensure the safety of your account with password management.",
+      "title": "Login & security"
+    },
+    "Payments": {
+      "description": "Access your transaction history, billing information, and invoices.",
+      "title": "Payments"
+    },
+    "PersonalInfo": {
+      "description": "Update your profile, contact details and preferences to personalize your experience.",
+      "title": "Personal info"
+    }
+  },
+  "services": {
     "BusinessRoulette": {
       "name": "Business Roulette"
+    },
+    "JeneseiID": {
+      "name": "Jenesei ID"
     },
     "JeneseiMessenger": {
       "name": "Jenesei Messenger"
@@ -25,29 +41,28 @@
     "JeneseiTask": {
       "name": "Jenesei Task"
     },
-    "JeneseiID": {
-      "name": "Jenesei ID"
+    "pages": {
+      "logout": "Log out",
+      "title-big": "Hello, ",
+      "title-min": "We've been waiting for you."
     }
   },
   "sidebar": {
     "title": "Account"
   },
-  "pages": {
-    "PersonalInfo": {
-      "title": "Personal info",
-      "description": "Update your profile, contact details and preferences to personalize your experience."
+  "sign-in": {
+    "buttons": {
+      "continue-with-apple": "Continue with Apple",
+      "continue-with-google": "Continue with Google",
+      "login": "Login"
     },
-    "LoginAndSecurity": {
-      "title": "Login & security",
-      "description": "Ensure the safety of your account with password management."
+    "forgot-password": "Forgot Password",
+    "inputs": {
+      "Password": "Password",
+      "email-or-login": "Email or Login"
     },
-    "Payments": {
-      "title": "Payments",
-      "description": "Access your transaction history, billing information, and invoices."
-    },
-    "LanguageAndLocalization": {
-      "title": "Language & localization",
-      "description": "Choose your preferred language and adjust your location settings."
-    }
+    "title-big": "Welcome Back",
+    "title-min": "Don’t have an account? ",
+    "title-min-2": "Sign Up"
   }
 }
