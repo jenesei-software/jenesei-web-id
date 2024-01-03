@@ -1,4 +1,3 @@
-import { AppRoutes } from "@core/router";
 import { BrowserRouter } from "react-router-dom";
 import { i18n } from "@assets/i18n";
 import { I18nextProvider } from "react-i18next";
@@ -7,6 +6,7 @@ import { store } from "@core/store";
 import { theme } from "@styles/theme";
 import { ThemeProvider } from "styled-components";
 import { LanguageProvider } from "./providers/language-provider";
+import { LayoutApp } from "@layouts/layout-app";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <BrowserRouter>
             <LanguageProvider>
-              <AppRoutes />
+              <LayoutApp />
             </LanguageProvider>
           </BrowserRouter>
         </ThemeProvider>

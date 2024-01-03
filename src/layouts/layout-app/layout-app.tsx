@@ -1,8 +1,15 @@
-import { FC } from "react";
-import { LayoutAppProps } from ".";
+import React from 'react';
+import { AppRoutes, AppRoutesAuthorization } from '@core/router';
+import { InnerContainer, MainContainer } from '.';
 
-export const LayoutApp: FC<LayoutAppProps> = (props: LayoutAppProps) => {
-  const isLoading = false;
-
-  return isLoading ? <>Loading...</> : <>{props.children}</>;
+/**
+ * The wrapper of the entire application
+ */
+export const LayoutApp: React.FC = () => {
+  const isAuth = true;
+  return (
+    <MainContainer>
+      <InnerContainer>{isAuth ? <AppRoutes /> : <AppRoutesAuthorization />}</InnerContainer>
+    </MainContainer>
+  );
 };
