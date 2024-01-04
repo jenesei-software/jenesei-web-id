@@ -1,4 +1,33 @@
 import styled from "styled-components";
+import { UseInputStringProps } from ".";
+
+export const StyledInputWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+export const StyledInputIcon = styled.div<Pick<UseInputStringProps, "icon">>`
+  position: absolute;
+  right: 0px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+
+  cursor: ${(props) => props.icon?.onCLick && "pointer"};
+
+  & svg {
+    width: 19px;
+    height: 19px;
+    & path {
+      fill: ${(props) => props.theme.colors.black["80"]};
+    }
+  }
+`;
 
 export const StyledInputString = styled.input`
   display: flex;
@@ -27,7 +56,7 @@ export const StyledInputString = styled.input`
   background: ${(props) => props.theme.colors.default.white};
   color: ${(props) => props.theme.colors.black["80"]};
   box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
-  
+
   &::placeholder {
     color: ${(props) => props.theme.colors.black["40"]};
     font-weight: 700;

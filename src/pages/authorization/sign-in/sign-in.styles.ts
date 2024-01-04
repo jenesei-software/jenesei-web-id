@@ -11,6 +11,7 @@ export const SignInTitlesTwoContainer = styled.div``;
 export const StyledStyledInterR16 = styled(StyledInterR16)`
   color: ${(props) => props.theme.colors.product["100"]};
   cursor: pointer;
+  margin: 0px 4px 0px 4px;
 `;
 
 export const SignInInfoContainer = styled.div`

@@ -62,8 +62,29 @@
       "email-or-login": "Email или Логин"
     },
     "title-big": "Добро пожаловать",
-    "title-min": "У вас нет учетной записи? ",
+    "title-min": "У вас нет учетной записи?",
     "title-min-2": "Зарегистрироваться"
   },
-  "or": { "default": "Или" }
+  "sign-up": {
+    "buttons": {
+      "continue-with-apple": "Продолжить с Apple",
+      "continue-with-google": "Продолжить с Google",
+      "create-account": "Зарегистрироваться"
+    },
+    "inputs": {
+      "password": "Пароль",
+      "repeat-password": "Повторите пароль",
+      "email": "Электронная почта",
+      "login": "Логин",
+      "date-of-birth": "Дата рождения"
+    },
+    "title-big": "Создать аккаунт",
+    "title-min": "У вас уже есть аккаунт? ",
+    "title-min-2": "Авторизоваться",
+    "agree-1": "Я согласен с Jenesei",
+    "agree-2": "и "
+  },
+  "or": { "default": "Or" },
+  "terms-of-service": { "default": "Пользовательское соглашение" },
+  "privacy-policy": { "default": "Политика конфиденциальности" }
 }

@@ -62,8 +62,29 @@
       "email-or-login": "Email or Login"
     },
     "title-big": "Welcome Back",
-    "title-min": "Don’t have an account? ",
+    "title-min": "Don’t have an account?",
     "title-min-2": "Sign Up"
   },
-  "or": { "default": "Or" }
+  "sign-up": {
+    "buttons": {
+      "continue-with-apple": "Continue with Apple",
+      "continue-with-google": "Continue with Google",
+      "create-account": "Create Account"
+    },
+    "inputs": {
+      "password": "Password",
+      "repeat-password": "Repeat password",
+      "email": "Email",
+      "login": "Login",
+      "date-of-birth": "Date of Birth"
+    },
+    "title-big": "Create account",
+    "title-min": "Already have an account?",
+    "title-min-2": "Login",
+    "agree-1": "I agree to Jenesei",
+    "agree-2": "and"
+  },
+  "or": { "default": "Or" },
+  "terms-of-service": { "default": "Terms of service" },
+  "privacy-policy": { "default": "Privacy policy" }
 }

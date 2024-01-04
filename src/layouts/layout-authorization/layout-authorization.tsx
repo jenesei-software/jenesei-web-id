@@ -18,6 +18,7 @@ import {
  */
 export const LayoutAuthorization: React.FC = () => {
   const { t } = useTranslation("authorization");
+
   return (
     <LayoutAuthorizationContainer>
       <LayoutAuthorizationMainContainer>

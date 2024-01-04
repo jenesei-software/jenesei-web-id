@@ -9,9 +9,12 @@ export const SignInForm: FC<SignInProps> = () => {
   const { t } = useTranslation("sign-in");
   const { value: valueEmailOrLogin, InputString: InputEmailOrLogin } = useInputString({
     placeholder: t("inputs.email-or-login"),
+    noSpaces: true,
   });
   const { value: valuePassword, InputString: InputPassword } = useInputString({
     placeholder: t("inputs.password"),
+    type: "password",
+    noSpaces: true,
   });
   return (
     <SignInInfoFormContainer>

@@ -6,7 +6,7 @@ export const LogoWithTitleWrapper = styled.div`
   gap: 14px;
   justify-content: center;
   position: relative;
-
+  cursor: pointer;
   & .icon {
     height: 50px;
     position: relative;
