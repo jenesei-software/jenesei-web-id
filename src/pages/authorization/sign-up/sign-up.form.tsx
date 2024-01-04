@@ -1,5 +1,11 @@
-import { ButtonBig } from "@components/button-big";
-import { FC, useEffect, useReducer } from "react";
+import { ButtonBig } from '@components/button-big';
+import { FC, useEffect, useReducer } from 'react';
+import { IconCurved } from '@assets/icons/icon-curved/icon-curved';
+import { StyledInterR16 } from '@styles/fonts/inter';
+import { useGoToLink } from '@hooks/use-go-to-link';
+import { useInputString } from '@hooks/inputs/use-input-string';
+import { useSwitch } from '@components/use-switch';
+import { useTranslation } from 'react-i18next';
 import {
   SignUpInfoFormContainer,
   SignUpInfoFormSwitchAgreementContainer,
@@ -7,13 +13,6 @@ import {
   SignUpProps,
   StyledStyledInterR16,
 } from ".";
-import { useInputString } from "@hooks/inputs/use-input-string";
-import { useTranslation } from "react-i18next";
-import { IconCurved } from "@assets/icons/icon-curved/icon-curved";
-import { useSwitch } from "@components/use-switch";
-import { StyledInterR16 } from "@styles/fonts/inter";
-import { theme } from "@styles/theme";
-import { useGoToLink } from "@hooks/use-go-to-link";
 
 export const SignUpForm: FC<SignUpProps> = () => {
   const { t } = useTranslation(["sign-up", "terms-of-service", "privacy-policy"]);
@@ -46,7 +45,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
       },
     },
   });
-
+  console.log(value, valueEmail, valueLogin, valuePassword, valueRepeatPassword);
   useEffect(() => {
     if (!isHide) {
       const timeoutId = setTimeout(() => {
