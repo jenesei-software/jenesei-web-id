@@ -6,10 +6,10 @@ export const ServicesWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
   width: 100%;
-  gap: 20px;
+  gap: 100px;
 
   @media (max-width: ${(props) => props.theme.size.tablet}) {
     align-self: stretch;

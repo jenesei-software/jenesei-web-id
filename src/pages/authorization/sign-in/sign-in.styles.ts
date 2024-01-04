@@ -15,6 +15,10 @@ export const StyledStyledInterR16 = styled(StyledInterR16)`
 
 export const SignInInfoContainer = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
 `;
 export const SignInInfoFormContainer = styled.div`
   display: flex;
@@ -24,5 +28,10 @@ export const SignInInfoFormContainer = styled.div`
   align-self: stretch;
   width: 100%;
 `;
-export const SignInInfoButtonContainer = styled.div``;
-export const SignInInfoContinueContainer = styled.div``;
+export const SignInInfoContinueContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+`;

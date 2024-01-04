@@ -10,7 +10,7 @@ import {
 import { FC } from "react";
 import { StyledInterB32, StyledInterR16, StyledInterSB14 } from "@styles/fonts/inter";
 import { ButtonBorder } from "@components/button-border";
-import { LogoServicesJeneseiID, LogoServicesJeneseiTask } from "@assets/icons/logo-services";
+import { LogoServices } from "@assets/icons/logo-services";
 
 export const Services: FC<ServicesProps> = () => {
   const { t } = useTranslation("services");
@@ -24,17 +24,17 @@ export const Services: FC<ServicesProps> = () => {
       <ServicesListContainer>
         <ServicesListContainer>
           <ServicesListItemContainer target="_blank" rel="noopener noreferrer" to={"https://task.jenesei.ru"}>
-            <LogoServicesJeneseiTask />
+            <LogoServices.JeneseiTask.Default />
             <StyledInterSB14>{t("JeneseiTask.name")}</StyledInterSB14>
           </ServicesListItemContainer>
           <ServicesListItemContainer to={`/user`}>
-            <LogoServicesJeneseiID />
+            <LogoServices.JeneseiID.Default />
             <StyledInterSB14>{t("JeneseiID.name")}</StyledInterSB14>
           </ServicesListItemContainer>
         </ServicesListContainer>
       </ServicesListContainer>
       <ServicesButtonsContainer>
-        <ButtonBorder styles="border" title={t("pages.logout")} />
+        <ButtonBorder type="border" title={t("pages.logout")} />
       </ServicesButtonsContainer>
     </ServicesWrapper>
   );

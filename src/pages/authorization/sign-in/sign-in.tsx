@@ -1,9 +1,8 @@
 import { useTranslation } from "react-i18next";
 import {
-  SignInInfoButtonContainer,
+  SignInForm,
   SignInInfoContainer,
   SignInInfoContinueContainer,
-  SignInInfoFormContainer,
   SignInProps,
   SignInTitlesContainer,
   SignInTitlesTwoContainer,
@@ -12,34 +11,31 @@ import {
 import { FC } from "react";
 import { StyledInterB32, StyledInterR16 } from "@styles/fonts/inter";
 import { ServicesWrapper } from "@pages/services";
-import { useInputString } from "@hooks/inputs/use-input-string";
+import { ButtonBig } from "@components/button-big";
+import { LineOR } from "@components/line-or";
+import { LogoServices } from "@assets/icons/logo-services";
+import { StyledLink } from "@components/styled";
 
 export const SignIn: FC<SignInProps> = () => {
   const { t } = useTranslation("sign-in");
-  const { value: valueEmailOrLogin, InputString: InputEmailOrLogin } = useInputString({
-    placeholder: "Email or Login",
-  });
-  const { value: valuePassword, InputString: InputPassword } = useInputString({
-    placeholder: "Password",
-  });
-  console.log(valueEmailOrLogin, valuePassword);
   return (
     <ServicesWrapper>
       <SignInTitlesContainer>
         <StyledInterB32>{t("title-big")}</StyledInterB32>
         <SignInTitlesTwoContainer>
           <StyledInterR16>{t("title-min")}</StyledInterR16>
-          <StyledStyledInterR16>{t("title-min-2")}</StyledStyledInterR16>
+          <StyledLink to="/authorization/sign-up">
+            <StyledStyledInterR16>{t("title-min-2")}</StyledStyledInterR16>
+          </StyledLink>
         </SignInTitlesTwoContainer>
       </SignInTitlesContainer>
       <SignInInfoContainer>
-        <SignInInfoFormContainer>
-          {InputEmailOrLogin}
-          {InputPassword}
-          <StyledStyledInterR16>{t("forgot-password")}</StyledStyledInterR16>
-        </SignInInfoFormContainer>
-        <SignInInfoButtonContainer></SignInInfoButtonContainer>
-        <SignInInfoContinueContainer></SignInInfoContinueContainer>
+        <SignInForm />
+        <SignInInfoContinueContainer>
+          <LineOR />
+          <ButtonBig title={t("buttons.continue-with-apple")} icon={LogoServices.Google.Input} type={"border"} />
+          <ButtonBig title={t("buttons.continue-with-google")} icon={LogoServices.Apple.Input} type={"border"} />
+        </SignInInfoContinueContainer>
       </SignInInfoContainer>
     </ServicesWrapper>
   );

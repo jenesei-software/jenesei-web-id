@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { StyledInputString, UseInputStringProps } from ".";
 
 export const useInputString = (
@@ -16,15 +16,18 @@ export const useInputString = (
     newValue !== undefined && setValue(newValue);
   };
 
-  const InputString = (
-    <StyledInputString
-      placeholder={props.placeholder}
-      onChange={changeValue}
-      maxLength={40}
-      value={value}
-      type={props.type}
-      required={props.required}
-    ></StyledInputString>
+  const InputString = useMemo(
+    () => (
+      <StyledInputString
+        placeholder={props.placeholder}
+        onChange={changeValue}
+        maxLength={40}
+        value={value}
+        type={props.type}
+        required={props.required}
+      />
+    ),
+    [value, props.placeholder, props.type, props.required]
   );
 
   return { value, InputString };

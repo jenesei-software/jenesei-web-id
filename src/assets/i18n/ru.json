@@ -58,11 +58,12 @@
     },
     "forgot-password": "Забыли пароль",
     "inputs": {
-      "Password": "Пароль",
+      "password": "Пароль",
       "email-or-login": "Email или Логин"
     },
     "title-big": "Добро пожаловать",
     "title-min": "У вас нет учетной записи? ",
     "title-min-2": "Зарегистрироваться"
-  }
+  },
+  "or": { "default": "Или" }
 }

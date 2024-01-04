@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export interface ButtonBorderWrapperProps {
-  styles: "black" | "grey" | "white" | "border";
+  type: "black" | "grey" | "white" | "border";
 }
 
 export const ButtonBorderWrapper = styled.div<ButtonBorderWrapperProps>`
@@ -16,30 +16,30 @@ export const ButtonBorderWrapper = styled.div<ButtonBorderWrapperProps>`
   
   border: 1px solid
     ${(props) =>
-      props.styles == "black"
+      props.type == "black"
         ? "transparent"
-        : props.styles == "grey"
+        : props.type == "grey"
         ? "transparent"
-        : props.styles == "white"
+        : props.type == "white"
         ? "transparent"
         : props.theme.colors.black["10"]};
 
   background: ${(props) =>
-    props.styles == "black"
+    props.type == "black"
       ? props.theme.colors.black["100"]
-      : props.styles == "grey"
+      : props.type == "grey"
       ? props.theme.colors.black["10"]
-      : props.styles == "white"
+      : props.type == "white"
       ? props.theme.colors.black["10"]
       : props.theme.colors.default.white};
 
   & span {
     color: ${(props) =>
-      props.styles == "black"
+      props.type == "black"
         ? props.theme.colors.default.white
-        : props.styles == "grey"
+        : props.type == "grey"
         ? props.theme.colors.black["60"]
-        : props.styles == "white"
+        : props.type == "white"
         ? props.theme.colors.default.white
         : props.theme.colors.black["60"]};
   }

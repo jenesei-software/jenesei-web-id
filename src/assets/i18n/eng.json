@@ -58,11 +58,12 @@
     },
     "forgot-password": "Forgot Password",
     "inputs": {
-      "Password": "Password",
+      "password": "Password",
       "email-or-login": "Email or Login"
     },
     "title-big": "Welcome Back",
     "title-min": "Don’t have an account? ",
     "title-min-2": "Sign Up"
-  }
+  },
+  "or": { "default": "Or" }
 }

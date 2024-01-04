@@ -10,7 +10,7 @@ export const StyledInputString = styled.input`
   resize: none;
   overflow: hidden;
   outline: none;
-  height: 44px
+  height: 44px;
   min-height: 44px;
   max-height: 44px;
   font-family: Inter;
@@ -22,16 +22,20 @@ export const StyledInputString = styled.input`
   width: 100%;
   border-radius: 6px;
   border: none;
+
   outline: 1px solid ${(props) => props.theme.colors.black["60"]};
   background: ${(props) => props.theme.colors.default.white};
   color: ${(props) => props.theme.colors.black["80"]};
   box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+  
   &::placeholder {
     color: ${(props) => props.theme.colors.black["40"]};
+    font-weight: 700;
     opacity: 1;
   }
 
   &::-ms-input-placeholder {
+    font-weight: 700;
     color: ${(props) => props.theme.colors.black["40"]};
   }
   &:focus,
