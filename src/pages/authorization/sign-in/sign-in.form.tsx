@@ -16,6 +16,7 @@ export const SignInForm: FC<SignInProps> = () => {
     type: "password",
     noSpaces: true,
   });
+  console.log(valueEmailOrLogin, valuePassword);
   return (
     <SignInInfoFormContainer>
       {InputEmailOrLogin}
