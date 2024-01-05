@@ -7,8 +7,11 @@
 1. install dependencies with:  
 `npm i`
 
-1. run in development mode (watch changes in the files and refresh your browser automatically):  
+2. run in development mode (watch changes in the files and refresh your browser automatically):  
 `npm run start`
 
 1. would like to publish the project as a website? Then make a distribution build by generating static files:  
 `npm run build`
+
+1. Bundle Visualizer:
+`npx vite-bundle-visualizer`

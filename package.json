@@ -27,7 +27,8 @@
     "react-switch": "^7.0.0",
     "react-textarea-autosize": "^8.5.3",
     "redux": "^5.0.1",
-    "styled-components": "^6.1.6"
+    "styled-components": "^6.1.6",
+    "vite-bundle-visualizer": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
