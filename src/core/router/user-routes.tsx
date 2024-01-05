@@ -1,6 +1,6 @@
 import { IconCurved } from "@assets/icons/icon-curved/icon-curved";
 
-export interface IUserRout {
+export interface IUserRoute {
   icon: () => JSX.Element;
   title: string;
   description: string;
@@ -9,10 +9,8 @@ export interface IUserRout {
   key: string;
   element: JSX.Element;
 }
-export interface IUserRoutsForRouter extends Pick<IUserRout, "path" | "element" | "key"> {}
-export interface IUserRoutsForMenu extends Pick<IUserRout, "icon" | "title" | "description"> {}
 
-export const UserRouts: IUserRout[] = [
+export const UserRouts: IUserRoute[] = [
   {
     icon: IconCurved.Profile,
     title: "PersonalInfo.title",

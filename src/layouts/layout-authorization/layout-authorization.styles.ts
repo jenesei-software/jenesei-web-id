@@ -1,6 +1,7 @@
+import { theme } from "@styles/theme";
 import styled from "styled-components";
 
-export const LayoutAuthorizationContainer = styled.div`
+export const LayoutAuthorizationWrapper = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 100%;
@@ -8,7 +9,7 @@ export const LayoutAuthorizationContainer = styled.div`
   height: 100dvh;
   overflow: hidden;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     flex-direction: column;
   }
 `;
@@ -23,19 +24,19 @@ export const LayoutAuthorizationMainContainer = styled.div`
   position: relative;
   width: 50%;
   box-sizing: border-box;
-  background: ${(props) => props.theme.colors.black["100"]};
-  color: ${(props) => props.theme.colors.black["100"]};
+  background: ${theme.colors.black["100"]};
+  color: ${theme.colors.black["100"]};
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     width: 100%;
     height: 170px;
     padding: 10px 100px;
     justify-content: center;
   }
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${theme.size.mobile}) {
     padding: 10px 50px;
-    align-items: center
+    align-items: center;
   }
 `;
 
@@ -50,14 +51,14 @@ export const LayoutAuthorizationOutletContainer = styled.div`
   align-items: flex-start;
   overflow: auto;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     justify-content: flex-start;
     width: 100%;
     min-height: calc(100% - 170px);
     padding: 50px;
   }
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${theme.size.mobile}) {
     padding: 20px;
   }
 `;
@@ -66,7 +67,7 @@ export const LogoWithTitleContainer = styled.div`
   flex: 0 0 auto;
   position: relative;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     height: 170px;
     display: flex;
     align-items: center;
@@ -78,7 +79,7 @@ export const AuthorizationBackgroundContainer = styled.div`
   height: 100%;
   top: 0;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     display: none;
   }
 `;
@@ -92,10 +93,10 @@ export const LayoutAuthorizationTextContainer = styled.div`
   position: relative;
 
   & span {
-    color: ${(props) => props.theme.colors.default.white};
+    color: ${theme.colors.default.white};
   }
-  
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+
+  @media (max-width: ${theme.size.tablet}) {
     display: none;
   }
 `;

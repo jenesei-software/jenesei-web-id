@@ -19,13 +19,14 @@ export const useDatePicker = (
     labelField: "value",
     valueField: "value",
     initialValue: [{ value: getYear(value) }],
-    type:"volumetric"
+    type: "volumetric",
   });
+  console.log(getLast100Years(), [{ value: getYear(value) }]);
   const { InputSelect: InputMonth } = useSelect({
     options: state.translated.months || [],
     labelField: "label",
     valueField: "value",
-    type:"volumetric",
+    type: "volumetric",
     initialValue: [
       {
         value: getMonth(value),
@@ -39,7 +40,7 @@ export const useDatePicker = (
   };
 
   function getYear(date: Date | null) {
-    return String((date || new Date()).getFullYear());
+    return (date || new Date()).getFullYear();
   }
 
   function getMonth(date: Date | null) {
@@ -49,6 +50,8 @@ export const useDatePicker = (
     () => (
       <UseDatePickerWrapper>
         <StyledDatePicker
+          customInput={<input readOnly />}
+          onFocus={(e) => (e.target.readOnly = true)}
           renderCustomHeader={({
             date,
             changeYear,

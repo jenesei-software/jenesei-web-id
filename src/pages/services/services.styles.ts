@@ -1,3 +1,4 @@
+import { theme } from "@styles/theme";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -11,7 +12,7 @@ export const ServicesWrapper = styled.div`
   width: 100%;
   gap: 100px;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     align-self: stretch;
     height: auto;
     justify-content: space-between;
@@ -26,7 +27,7 @@ export const ServicesTitleContainer = styled.div`
   gap: 10px;
   align-self: stretch;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
   }
 `;
 export const ServicesListContainer = styled.div`
@@ -37,7 +38,7 @@ export const ServicesListContainer = styled.div`
   align-self: stretch;
   flex-wrap: wrap;
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${theme.size.mobile}) {
   }
 `;
 export const ServicesListItemContainer = styled(Link)`
@@ -51,14 +52,14 @@ export const ServicesListItemContainer = styled(Link)`
   cursor: pointer;
   border-radius: 6px;
 
-  background: ${(props) => props.theme.colors.default.white};
-  box-shadow: ${(props) => props.theme.buttons.volumetric.effects.default};
+  background: ${theme.colors.default.white};
+  box-shadow: ${theme.buttons.volumetric.effects.default};
 
   & span {
     width: min-content;
   }
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${theme.size.mobile}) {
     height: 142px;
     & .icon {
       width: 84px;
@@ -67,6 +68,6 @@ export const ServicesListItemContainer = styled(Link)`
   }
 `;
 export const ServicesButtonsContainer = styled.div`
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
   }
 `;

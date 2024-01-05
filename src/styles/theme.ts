@@ -33,19 +33,19 @@ export const theme = {
       },
     },
     gray: {
-      F2f2f7: "#f2f2f7ff",
-      E5e5ea: "#e5e5eaff",
-      C7c7cc: "#c7c7ccff",
-      D1d1d6: "#d1d1d6ff",
+      f2f2f7: "#f2f2f7ff",
+      e5e5ea: "#e5e5eaff",
+      c7c7cc: "#c7c7ccff",
+      d1d1d6: "#d1d1d6ff",
       484848: "#484848ff",
       737373: "#737373ff",
       d3d3d3: "#d3d3d3",
     },
     google: {
-      Fbbc04: "#fbbc04ff",
+      "fbbc04": "#fbbc04ff",
       "34a853": "#34a853ff",
       "4285f4": "#4285f4ff",
-      Ea4335: "#ea4335ff",
+      "ea4335": "#ea4335ff",
     },
   },
   buttons: {
@@ -91,9 +91,9 @@ export const theme = {
     },
   },
   gradients: {
-    calendarLinearRight:
+    "calendar-linear-right":
       "linear-gradient(90deg, 0% rgba(65, 149, 210, 0.1), 50% rgba(65, 149, 210, 0.1), 50.01000165939331% rgba(255, 255, 255, 1))",
-    gradientAuthorization:
+    "gradient-authorization":
       "radial-gradient(50% 50% at 50% 50%, 0% rgba(0, 122, 255, 1), 49.374961853027344% rgba(49, 46, 203, 1), 100% rgba(231, 23, 172, 1))",
   },
 };

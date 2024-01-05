@@ -1,23 +1,27 @@
-import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
-import { useTranslation } from "react-i18next";
-import { useSearchParams } from "react-router-dom";
-import { LanguageContextProps, LanguageProviderProps } from ".";
-import { availableLanguages } from "@assets/i18n";
-import { I_LANG_VALUES, SEARCH_PARAMS, SEARCH_PARAMS_LANG } from "@core/search-params";
-import { getMonthsTranslation } from "@functions/get-months-translation";
+import { availableLanguages } from '@assets/i18n';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer
+  } from 'react';
+import { getMonthsTranslation } from '@functions/get-months-translation';
+import { I_LANG_VALUES, SEARCH_PARAMS, SEARCH_PARAMS_LANG } from '@core/search-params';
+import {
+  LanguageAction,
+  LanguageContextProps,
+  LanguageProviderProps,
+  LanguageProviderState
+  } from '.';
+import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const LanguageContext = createContext<LanguageContextProps | null>(null);
 
 /**
  * Инициализация данных для работы встроенного useReducer
  */
-export interface LanguageProviderState {
-  dateFnsLocale: Locale;
-  translated: { months: { value: number; label: string }[] };
-}
-
-type LanguageAction = { type: "SET_DATEFNS_LOCALE"; payload: Locale };
-
 const languageReducer = (state: LanguageProviderState, action: LanguageAction): LanguageProviderState => {
   switch (action.type) {
     case "SET_DATEFNS_LOCALE":

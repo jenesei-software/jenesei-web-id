@@ -28,6 +28,24 @@ const ButtonBigWrapperDefault = css`
     color: ${theme.colors.black["100"]};
   }
 `;
+
+const ButtonBigWrapperIsIconColorTrue = css`
+  & svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    & path {
+      fill: ${theme.colors.black["60"]};
+    }
+  }
+`;
+const ButtonBigWrapperIsIconColorFalse = css`
+  & svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+  }
+`;
 export const ButtonBigWrapper = styled.button<Pick<ButtonBigProps, "type" | "isIconColor">>`
   cursor: pointer;
   display: flex;
@@ -45,14 +63,14 @@ export const ButtonBigWrapper = styled.button<Pick<ButtonBigProps, "type" | "isI
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  & svg {
-    width: 19px;
-    height: 19px;
-    flex-shrink: 0;
-    & path {
-      fill: ${(props) => props.isIconColor && theme.colors.black["60"]};
-    }
-  }
+  
+  ${(props) =>
+    props.isIconColor === true
+      ? ButtonBigWrapperIsIconColorTrue
+      : props.isIconColor === false
+      ? ButtonBigWrapperIsIconColorFalse
+      : ""};
+
   ${(props) =>
     props.type === "product"
       ? ButtonBigWrapperProduct

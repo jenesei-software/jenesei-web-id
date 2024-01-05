@@ -1,127 +1,153 @@
-import styled from "styled-components";
+import { theme } from "@styles/theme";
+import styled, { css } from "styled-components";
 
 export interface StyledInterProps {
   color?: string;
 }
 
-export const StyledInterSB14 = styled.span<StyledInterProps>`
+const FontInter = css`
   font-family: Inter;
+  font-style: normal;
+  line-height: normal;
+  color: ${theme.colors.black["80"]};
+`;
+
+export const FontInterSB14 = css`
+  ${FontInter};
   font-size: 14px;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
-
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+`;
+export const StyledInterSB14 = styled.span<StyledInterProps>`
+  ${FontInterSB14};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
 `;
 
-export const StyledInterSB16 = styled.span<StyledInterProps>`
-  font-family: Inter;
+const FontInterSB16 = css`
+  ${FontInter};
   font-size: 16px;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
-
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+`;
+export const StyledInterSB16 = styled.span<StyledInterProps>`
+  ${FontInterSB16};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
 `;
 
-export const StyledInterSB18 = styled.span<StyledInterProps>`
-  font-family: Inter;
+const FontInterSB18 = css`
+  ${FontInter};
   font-size: 18px;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
-
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+`;
+export const StyledInterSB18 = styled.span<StyledInterProps>`
+  ${FontInterSB18};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
 `;
 
-export const StyledInterSB20 = styled.span<StyledInterProps>`
-  font-family: Inter;
+const FontInterSB20 = css`
+  ${FontInter};
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
-
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+`;
+export const StyledInterSB20 = styled.span<StyledInterProps>`
+  ${FontInterSB20};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
 `;
 
-export const StyledInterM12 = styled.span<StyledInterProps>`
-  font-family: Inter;
+export const FontInterM12 = css`
+  ${FontInter};
   font-size: 12px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
+`;
+export const StyledInterM12 = styled.span<StyledInterProps>`
+  ${FontInterM12};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+export const FontInterM14 = css`
+  ${FontInter};
+  font-size: 14px;
+  font-weight: 500;
 `;
 export const StyledInterM14 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  ${FontInterM14};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+export const FontInterB14 = css`
+  ${FontInter};
+  font-size: 14px;
+  font-weight: 700;
+`;
+export const StyledInterB14 = styled.span<StyledInterProps>`
+  ${FontInterB14};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
+
+const FontInterB16 = css`
+  ${FontInter};
+  font-size: 16px;
+  font-weight: 700;
 `;
 export const StyledInterB16 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  ${FontInterB16};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+const FontInterB20 = css`
+  ${FontInter};
+  font-size: 20px;
+  font-weight: 700;
 `;
 export const StyledInterB20 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  ${FontInterB20};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+const FontInterB32 = css`
+  ${FontInter};
+  font-size: 32px;
+  font-weight: 700;
 `;
 export const StyledInterB32 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  ${FontInterB32};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+const FontInterB36 = css`
+  ${FontInter};
+  font-size: 36px;
+  font-weight: 700;
 `;
 export const StyledInterB36 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  ${FontInterB36};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+const FontInterR14 = css`
+  ${FontInter};
+  font-size: 14px;
+  font-weight: 400;
 `;
 export const StyledInterR14 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  ${FontInterR14};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+export const FontInterR16 = css`
+  ${FontInter};
+  font-size: 16px;
+  font-weight: 400;
 `;
 export const StyledInterR16 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  ${FontInterR16};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
+`;
 
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+const FontInterR24 = css`
+  ${FontInter};
+  font-size: 24px;
+  font-weight: 400;
 `;
 export const StyledInterR24 = styled.span<StyledInterProps>`
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  
-  color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
+  ${FontInterR24};
+  color: ${(props) => (props.color ? props.color : theme.colors.black["80"])};
 `;

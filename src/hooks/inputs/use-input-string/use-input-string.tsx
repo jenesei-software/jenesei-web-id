@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { StyledInputIcon, StyledInputString, StyledInputWrapper, UseInputStringProps } from ".";
+import { UseInputIcon, UseInputString, UseInputWrapper, UseInputStringProps } from ".";
 
 export const useInputString = (
   props: UseInputStringProps = {
@@ -24,8 +24,8 @@ export const useInputString = (
 
   const InputString = useMemo(
     () => (
-      <StyledInputWrapper>
-        <StyledInputString
+      <UseInputWrapper>
+        <UseInputString
           placeholder={props.placeholder}
           onChange={changeValue}
           maxLength={40}
@@ -33,10 +33,10 @@ export const useInputString = (
           type={props.type}
           required={props.required}
         />
-        <StyledInputIcon $icon={props.icon} onClick={props.icon?.onCLick}>
+        <UseInputIcon $icon={props.icon} onClick={props.icon?.onCLick}>
           {props.icon && props.icon.value()}
-        </StyledInputIcon>
-      </StyledInputWrapper>
+        </UseInputIcon>
+      </UseInputWrapper>
     ),
     [value, props.placeholder, props.type, props.required]
   );

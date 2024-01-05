@@ -1,3 +1,4 @@
+import { theme } from "@styles/theme";
 import styled from "styled-components";
 
 export const MenuSideBarWrapper = styled.div`
@@ -11,10 +12,10 @@ export const MenuSideBarWrapper = styled.div`
   width: 520px;
   min-height: max(calc(100dvh - 60px), 488px);
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${theme.size.mobile}) {
     display: none;
   }
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     width: auto;
   }
 `;
@@ -26,12 +27,11 @@ export const MenuSideBarTitle = styled.div`
   display: flex;
   height: 68px;
   padding: 0px 20px;
-
   align-items: center;
   flex-shrink: 0;
   align-self: stretch;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -49,14 +49,16 @@ export const MenuSideLogoContainer = styled.div`
   position: absolute;
   bottom: 0;
   box-sizing: border-box;
-  background: ${(props) => props.theme.colors.black["100"]};
+  background: ${theme.colors.black["100"]};
+
   & > :first-child {
     display: flex;
   }
   & > :last-child {
     display: none;
   }
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+
+  @media (max-width: ${theme.size.tablet}) {
     display: flex;
     width: 100%;
     height: 84px;

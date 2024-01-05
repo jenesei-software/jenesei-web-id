@@ -14,21 +14,21 @@ const ButtonBorderWrapperGrey = css`
   border: 1px solid transparent;
   background: ${theme.colors.black["10"]};
   & span {
-    color: ${(props) => props.theme.colors.black["60"]};
+    color: ${theme.colors.black["60"]};
   }
 `;
 const ButtonBorderWrapperWhite = css`
   border: 1px solid white;
   background: ${theme.colors.black["10"]};
   & span {
-    color: ${(props) => props.theme.colors.black["60"]};
+    color: ${theme.colors.black["60"]};
   }
 `;
 const ButtonBorderWrapperBorder = css`
   border: 1px solid ${theme.colors.black["10"]};
   background: ${theme.colors.default.white};
   & span {
-    color: ${(props) => props.theme.colors.black["60"]};
+    color: ${theme.colors.black["60"]};
   }
 `;
 export const ButtonBorderWrapper = styled.div<Pick<ButtonBorderProps, "type">>`

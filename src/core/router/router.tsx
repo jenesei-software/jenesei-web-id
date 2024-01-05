@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IUserRoutsForRouter, UserRouts } from '.';
+import { IUserRoute, UserRouts } from '.';
 import { LayoutAuthorization } from '@layouts/layout-authorization';
 import { LayoutUser } from '@layouts/layout-user';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -10,7 +10,7 @@ export const AppRoutes: FC = () => {
     <Routes>
       {/* Base */}
       <Route path="user" element={<LayoutUser />}>
-        {UserRouts.map((route: IUserRoutsForRouter) => (
+        {UserRouts.map((route: Pick<IUserRoute, "path" | "element" | "key">) => (
           <Route {...route} />
         ))}
       </Route>

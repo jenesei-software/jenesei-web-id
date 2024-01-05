@@ -1,19 +1,20 @@
-import styled from "styled-components";
+import { FontInterR16 } from "@styles/fonts/inter";
+import { theme } from "@styles/theme";
+import styled, { css } from "styled-components";
+import { UseInputIconProps } from ".";
 
-export const StyledInputWrapper = styled.div`
+export const UseInputWrapper = styled.div`
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
 `;
 
-interface IStyledInputIcon{
-  $icon?: {
-    value: () => JSX.Element;
-    onCLick: () => void;
-  };
-}
-export const StyledInputIcon = styled.div<IStyledInputIcon>`
+const UseInputIconOnCLickTrue = css`
+  cursor: pointer;
+`;
+
+export const UseInputIcon = styled.div<UseInputIconProps>`
   position: absolute;
   right: 0px;
   flex-shrink: 0;
@@ -23,59 +24,54 @@ export const StyledInputIcon = styled.div<IStyledInputIcon>`
   padding: 10px;
   box-sizing: border-box;
 
-  cursor: ${(props) => props.$icon?.onCLick && "pointer"};
+  ${(props) => props.$icon?.onCLick && UseInputIconOnCLickTrue}
 
   & svg {
     width: 19px;
     height: 19px;
     & path {
-      fill: ${(props) => props.theme.colors.black["80"]};
+      fill: ${theme.colors.black["80"]};
     }
   }
 `;
 
-export const StyledInputString = styled.input`
+export const UseInputString = styled.input`
+  ${FontInterR16};
   display: flex;
   padding: 16px 20px;
   align-items: center;
   gap: 10px;
   align-self: stretch;
-
   resize: none;
   overflow: hidden;
   outline: none;
   height: 44px;
   min-height: 44px;
   max-height: 44px;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 12px;
   box-sizing: border-box;
   width: 100%;
   border-radius: 6px;
   border: none;
-
-  outline: 1px solid ${(props) => props.theme.colors.black["60"]};
-  background: ${(props) => props.theme.colors.default.white};
-  color: ${(props) => props.theme.colors.black["80"]};
-  box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+  outline: 1px solid ${theme.colors.black["60"]};
+  background: ${theme.colors.default.white};
+  color: ${theme.colors.black["80"]};
+  box-shadow: ${theme.inputs.default.effects.boxShadow};
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.black["40"]};
+    color: ${theme.colors.black["40"]};
     font-weight: 700;
     opacity: 1;
   }
 
   &::-ms-input-placeholder {
     font-weight: 700;
-    color: ${(props) => props.theme.colors.black["40"]};
+    color: ${theme.colors.black["40"]};
   }
   &:focus,
   &:active,
   &:focus-visible {
-    outline: 1px solid ${(props) => props.theme.colors.black["100"]};
+    outline: 1px solid ${theme.colors.black["100"]};
   }
   &*,
   &*::before,

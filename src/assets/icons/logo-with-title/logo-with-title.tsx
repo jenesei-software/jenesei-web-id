@@ -1,7 +1,7 @@
 import { useGoToLink } from "@hooks/use-go-to-link";
 import { LogoWithTitleWrapper } from ".";
 
-export const LogoWithTitle = (): JSX.Element => {
+export const LogoWithTitle: React.FC = () => {
   const goToLink = useGoToLink();
 
   return (

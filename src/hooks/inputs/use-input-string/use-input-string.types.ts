@@ -11,3 +11,7 @@ export interface UseInputStringProps {
     onCLick: () => void;
   };
 }
+
+export interface UseInputIconProps {
+  $icon?: UseInputStringProps['icon'];
+}

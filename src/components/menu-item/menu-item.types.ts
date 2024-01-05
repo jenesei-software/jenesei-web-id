@@ -1,6 +1,6 @@
-import { IUserRoutsForMenu } from "@core/router";
+import { IUserRoute } from "@core/router";
 
-export interface MenuItemProps extends IUserRoutsForMenu {
+export interface MenuItemProps extends Pick<IUserRoute, "icon" | "title" | "description"> {
   checked: boolean;
   onClick: () => void;
 }

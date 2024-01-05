@@ -1,5 +1,15 @@
-import styled from "styled-components";
-import { MenuItemProps } from ".";
+import styled, { css } from 'styled-components';
+import { MenuItemProps } from '.';
+import { theme } from '@styles/theme';
+
+const MenuItemWrapperCheckedTrue = css`
+  border-left: 4px solid ${theme.colors.black["80"]};
+  background: ${theme.colors.black["5"]};
+`;
+const MenuItemWrapperCheckedFalse = css`
+  border-left: 4px solid transparent;
+  background: transparent;
+`;
 
 export const MenuItemWrapper = styled.button<Pick<MenuItemProps, "checked">>`
   display: flex;
@@ -17,16 +27,17 @@ export const MenuItemWrapper = styled.button<Pick<MenuItemProps, "checked">>`
   overflow: hidden;
   isolation: isolate;
   border: none;
-  border-left: ${(props) => (props.checked ? `4px solid ${props.theme.colors.black["80"]}` : "4px solid transparent")};
-  background: ${(props) => (props.checked ? props.theme.colors.black["5"] : "transparent")};
-  color: ${(props) => props.theme.colors.black["100"]};
+  color: ${theme.colors.black["100"]};
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     display: flex;
     height: 84px;
     padding: 16px 26px;
     align-items: flex-start;
   }
+
+  ${(props) =>
+    props.checked === true ? MenuItemWrapperCheckedTrue : props.checked === false ? MenuItemWrapperCheckedFalse : ""};
 `;
 export const MenuItemLogoContainer = styled.div`
   display: flex;
@@ -66,10 +77,10 @@ export const MenuItemInfoContainer = styled.div`
     line-clamp: 2;
     box-orient: vertical;
   }
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${theme.size.tablet}) {
     display: none;
   }
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${theme.size.mobile}) {
     display: flex;
   }
 `;

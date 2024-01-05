@@ -1,16 +1,16 @@
-import React from 'react';
-import { AuthorizationBackground } from '@assets/authorization-background';
-import { LogoWithTitle } from '@assets/icons/logo-with-title';
-import { Outlet } from 'react-router-dom';
-import { StyledInterB36, StyledInterR24 } from '@styles/fonts/inter';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { AuthorizationBackground } from "@assets/authorization-background";
+import { LogoWithTitle } from "@assets/icons/logo-with-title";
+import { Outlet } from "react-router-dom";
+import { StyledInterB36, StyledInterR24 } from "@styles/fonts/inter";
+import { useTranslation } from "react-i18next";
 import {
   AuthorizationBackgroundContainer,
   LogoWithTitleContainer,
   LayoutAuthorizationMainContainer,
   LayoutAuthorizationOutletContainer,
   LayoutAuthorizationTextContainer,
-  LayoutAuthorizationContainer,
+  LayoutAuthorizationWrapper,
 } from ".";
 
 /**
@@ -20,7 +20,7 @@ export const LayoutAuthorization: React.FC = () => {
   const { t } = useTranslation("authorization");
 
   return (
-    <LayoutAuthorizationContainer>
+    <LayoutAuthorizationWrapper>
       <LayoutAuthorizationMainContainer>
         <LogoWithTitleContainer>
           <LogoWithTitle />
@@ -36,6 +36,6 @@ export const LayoutAuthorization: React.FC = () => {
       <LayoutAuthorizationOutletContainer>
         <Outlet />
       </LayoutAuthorizationOutletContainer>
-    </LayoutAuthorizationContainer>
+    </LayoutAuthorizationWrapper>
   );
 };
