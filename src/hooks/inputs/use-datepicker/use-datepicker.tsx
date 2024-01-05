@@ -21,7 +21,6 @@ export const useDatePicker = (
     initialValue: [{ value: getYear(value) }],
     type: "volumetric",
   });
-  console.log(getLast100Years(), [{ value: getYear(value) }]);
   const { InputSelect: InputMonth } = useSelect({
     options: state.translated.months || [],
     labelField: "label",
