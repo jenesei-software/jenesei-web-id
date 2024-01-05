@@ -33,7 +33,7 @@ export const useInputString = (
           type={props.type}
           required={props.required}
         />
-        <StyledInputIcon icon={props.icon} onClick={props.icon?.onCLick}>
+        <StyledInputIcon $icon={props.icon} onClick={props.icon?.onCLick}>
           {props.icon && props.icon.value()}
         </StyledInputIcon>
       </StyledInputWrapper>

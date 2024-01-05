@@ -20,7 +20,7 @@ export const theme = {
     },
     default: {
       br: "#0975a6ff",
-      white: "#ffffffff",
+      white: "#ffffff",
     },
     color: {
       green: {
@@ -39,6 +39,7 @@ export const theme = {
       D1d1d6: "#d1d1d6ff",
       484848: "#484848ff",
       737373: "#737373ff",
+      d3d3d3: "#d3d3d3",
     },
     google: {
       Fbbc04: "#fbbc04ff",

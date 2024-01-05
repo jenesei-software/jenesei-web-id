@@ -1,11 +1,37 @@
-import { createContext, useCallback, useContext, useEffect } from "react";
+import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { LanguageContextProps, LanguageProviderProps } from ".";
 import { availableLanguages } from "@assets/i18n";
-import { SEARCH_PARAMS } from "@core/search-params";
+import { I_LANG_VALUES, SEARCH_PARAMS, SEARCH_PARAMS_LANG } from "@core/search-params";
+import { getMonthsTranslation } from "@functions/get-months-translation";
 
 const LanguageContext = createContext<LanguageContextProps | null>(null);
+
+/**
+ * Инициализация данных для работы встроенного useReducer
+ */
+export interface LanguageProviderState {
+  dateFnsLocale: Locale;
+  translated: { months: { value: number; label: string }[] };
+}
+
+type LanguageAction = { type: "SET_DATEFNS_LOCALE"; payload: Locale };
+
+const languageReducer = (state: LanguageProviderState, action: LanguageAction): LanguageProviderState => {
+  switch (action.type) {
+    case "SET_DATEFNS_LOCALE":
+      return {
+        ...state,
+        dateFnsLocale: action.payload,
+        translated: {
+          months: getMonthsTranslation(action.payload),
+        },
+      };
+    default:
+      return state;
+  }
+};
 
 /**
  * Хук работы с языками
@@ -24,13 +50,21 @@ export const useLanguage = () => {
 export const LanguageProvider: React.FC<LanguageProviderProps> = (props) => {
   const { i18n } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [state, dispatch] = useReducer(languageReducer, {
+    dateFnsLocale: SEARCH_PARAMS_LANG.value.en["date-fns"],
+    translated: {
+      months: getMonthsTranslation(SEARCH_PARAMS_LANG.value.en["date-fns"]),
+    },
+  });
 
   useEffect(() => {
-    const langParam = searchParams.get(SEARCH_PARAMS.language);
-    if (langParam) {
-      i18n.changeLanguage(langParam).catch((error) => {
+    const langParam: string | null = searchParams.get(SEARCH_PARAMS.lang.title);
+    if (langParam && Object.keys(SEARCH_PARAMS.lang.value).includes(langParam)) {
+      const selectedLanguage = SEARCH_PARAMS.lang.value[langParam as keyof I_LANG_VALUES];
+      i18n.changeLanguage(selectedLanguage.value).catch((error) => {
         console.error("Failed to change language:", error);
       });
+      dispatch({ type: "SET_DATEFNS_LOCALE", payload: selectedLanguage["date-fns"] });
     }
   }, [searchParams, i18n]);
 
@@ -38,11 +72,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = (props) => {
     (params: availableLanguages) => {
       setSearchParams((prevParams) => ({
         ...prevParams,
-        [SEARCH_PARAMS.language]: params,
+        [SEARCH_PARAMS.lang.title]: params,
       }));
     },
     [setSearchParams]
   );
 
-  return <LanguageContext.Provider value={{ changeLanguage }}>{props.children}</LanguageContext.Provider>;
+  return <LanguageContext.Provider value={{ changeLanguage, state }}>{props.children}</LanguageContext.Provider>;
 };

@@ -19,6 +19,7 @@ export const ButtonVolumetricShortWrapper = styled.div`
 
 export interface IButtonVolumetricShortContainer {
   checked: boolean;
+  disabled?: boolean;
 }
 export const ButtonVolumetricShortContainer = styled.div<IButtonVolumetricShortContainer>`
   display: flex;
@@ -27,15 +28,18 @@ export const ButtonVolumetricShortContainer = styled.div<IButtonVolumetricShortC
   flex: 1 0 0;
   align-self: stretch;
   border-radius: 40px;
-  transition: all 0.4s;
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
   border: ${(props) =>
     props.checked ? props.theme.buttons.volumetric.active.stroke : props.theme.buttons.volumetric.default.stroke};
   background: ${(props) =>
     props.checked ? props.theme.buttons.volumetric.active.fill : props.theme.buttons.volumetric.default.fill};
   box-shadow: ${(props) =>
     props.checked ? props.theme.buttons.volumetric.effects.active : props.theme.buttons.volumetric.effects.default};
-  &:hover {
+
+  &:active {
     box-shadow: ${(props) => props.theme.buttons.volumetric.effects.active};
+    border: ${(props) => props.theme.buttons.volumetric.active.stroke};
+    background: ${(props) => props.theme.buttons.volumetric.active.fill};
   }
   & svg {
     width: 20px;

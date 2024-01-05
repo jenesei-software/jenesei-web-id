@@ -6,7 +6,7 @@ export const ButtonVolumetricShort: FC<IButtonVolumetricShort> = React.memo(
   (props) => {
     return (
       <ButtonVolumetricShortWrapper>
-        <ButtonVolumetricShortContainer onClick={props.onClick} checked={props.checked}>
+        <ButtonVolumetricShortContainer disabled={props.disabled} onClick={props.onClick} checked={props.checked}>
           {props.icon()}
         </ButtonVolumetricShortContainer>
       </ButtonVolumetricShortWrapper>

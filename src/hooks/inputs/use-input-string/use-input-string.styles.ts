@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { UseInputStringProps } from ".";
 
 export const StyledInputWrapper = styled.div`
   width: 100%;
@@ -8,7 +7,13 @@ export const StyledInputWrapper = styled.div`
   align-items: center;
 `;
 
-export const StyledInputIcon = styled.div<Pick<UseInputStringProps, "icon">>`
+interface IStyledInputIcon{
+  $icon?: {
+    value: () => JSX.Element;
+    onCLick: () => void;
+  };
+}
+export const StyledInputIcon = styled.div<IStyledInputIcon>`
   position: absolute;
   right: 0px;
   flex-shrink: 0;
@@ -18,7 +23,7 @@ export const StyledInputIcon = styled.div<Pick<UseInputStringProps, "icon">>`
   padding: 10px;
   box-sizing: border-box;
 
-  cursor: ${(props) => props.icon?.onCLick && "pointer"};
+  cursor: ${(props) => props.$icon?.onCLick && "pointer"};
 
   & svg {
     width: 19px;

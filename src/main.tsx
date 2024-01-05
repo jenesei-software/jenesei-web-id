@@ -5,6 +5,7 @@ import App from './app.tsx'
 import '@styles/index.css'
 import '@styles/variables.css'
 import 'react-ripple-click/dist/index.css'
+import "react-datepicker/dist/react-datepicker.css";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
