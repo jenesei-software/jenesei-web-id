@@ -15,3 +15,5 @@
 
 1. Bundle Visualizer:
 `npx vite-bundle-visualizer`
+`npx vite-bundle-visualizer -t sunburst`
+`npx vite-bundle-visualizer -t network`
