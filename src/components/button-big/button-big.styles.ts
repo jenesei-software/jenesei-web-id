@@ -1,10 +1,36 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export interface ButtonBigWrapperProps {
   type: "product" | "border";
-  isIcon?: boolean;
+  isIconColor?: boolean;
 }
 
+const ButtonBigWrapperProduct = css`
+  color: ${(props) => props.theme.colors.product["100"]};
+  border: 1px solid transparent;
+  background: ${(props) => props.theme.colors.product["100"]};
+  & span {
+    color: ${(props) => props.theme.colors.default.white};
+  }
+`;
+
+const ButtonBigWrapperBorder = css`
+  color: ${(props) => props.theme.colors.default.white};
+  border: 1px solid ${(props) => props.theme.colors.black["80"]};
+  background: ${(props) => props.theme.colors.default.white};
+  & span {
+    color: ${(props) => props.theme.colors.black["100"]};
+  }
+`;
+
+const ButtonBigWrapperDefault = css`
+  color: ${(props) => props.theme.colors.default.white};
+  border: 1px solid transparent;
+  background: ${(props) => props.theme.colors.default.white};
+  & span {
+    color: ${(props) => props.theme.colors.black["100"]};
+  }
+`;
 export const ButtonBigWrapper = styled.button<ButtonBigWrapperProps>`
   cursor: pointer;
   display: flex;
@@ -19,44 +45,21 @@ export const ButtonBigWrapper = styled.button<ButtonBigWrapperProps>`
   border-radius: 6px;
   border: none;
   outline: none;
-  border: 1px solid
-    ${(props) =>
-      props.type == "product"
-        ? "transparent"
-        : props.type == "border"
-        ? props.theme.colors.black["80"]
-        : "transparent"};
-
-  background: ${(props) =>
-    props.type == "product"
-      ? props.theme.colors.product["100"]
-      : props.type == "border"
-      ? props.theme.colors.default.white
-      : props.theme.colors.default.white};
-
-  & span {
-    color: ${(props) =>
-      props.type == "product"
-        ? props.theme.colors.default.white
-        : props.type == "border"
-        ? props.theme.colors.black["100"]
-        : props.theme.colors.black["100"]};
-  }
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   & svg {
     width: 19px;
     height: 19px;
     flex-shrink: 0;
     & path {
-      fill: ${(props) => props.isIcon && props.theme.colors.black["60"]};
+      fill: ${(props) => props.isIconColor && props.theme.colors.black["60"]};
     }
   }
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  color: ${(props) =>
-    props.type == "product"
-      ? props.theme.colors.product["100"]
-      : props.type == "border"
-      ? props.theme.colors.default.white
-      : props.theme.colors.default.white};
+  ${(props) =>
+    props.type === "product"
+      ? ButtonBigWrapperProduct
+      : props.type === "border"
+      ? ButtonBigWrapperBorder
+      : ButtonBigWrapperDefault};
 `;

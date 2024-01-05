@@ -1,21 +1,22 @@
-import styled from "styled-components";
 import DatePicker from "react-datepicker";
+import styled from "styled-components";
 
 export const UseDatePickerWrapper = styled.div`
   width: 100%;
   & .react-datepicker-wrapper {
     width: 100%;
   }
-  & .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::after,
-  .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::after {
-    left: -30px;
-    border-bottom-color: ${(props) => props.theme.colors.default.white};
-    box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
-  }
-  & .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {
-    left: -30px;
-    border-bottom-color: ${(props) => props.theme.colors.gray["d3d3d3"]};
-    box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+  & .react-datepicker__triangle {
+    &::after {
+      left: -30px;
+      border-bottom-color: ${(props) => props.theme.colors.default.white};
+      box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+    }
+    &::before {
+      left: -30px;
+      border-bottom-color: ${(props) => props.theme.colors.gray["d3d3d3"]};
+      box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+    }
   }
   & .react-datepicker__day-names,
   & .react-datepicker__week {
@@ -67,19 +68,12 @@ export const UseDatePickerWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     color: #000000cc;
-
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
 
     color: ${(props) => (props.color ? props.color : props.theme.colors.black["80"])};
   }
@@ -101,7 +95,6 @@ export const StyledDatePicker = styled(DatePicker)`
   align-items: center;
   gap: 10px;
   align-self: stretch;
-
   resize: none;
   overflow: hidden;
   outline: none;
@@ -117,7 +110,6 @@ export const StyledDatePicker = styled(DatePicker)`
   width: 100%;
   border-radius: 6px;
   border: none;
-
   outline: 1px solid ${(props) => props.theme.colors.black["60"]};
   background: ${(props) => props.theme.colors.default.white};
   color: ${(props) => props.theme.colors.black["80"]};

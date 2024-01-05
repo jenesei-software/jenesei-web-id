@@ -7,7 +7,7 @@ import { StyledInterSB16 } from '@styles/fonts/inter';
 export const ButtonBig: FC<IButtonBig> = React.memo(
   (props) => {
     return (
-      <ButtonBigWrapper isIcon={props.isIcon} type={props.type}>
+      <ButtonBigWrapper isIconColor={props.isIconColor} type={props.type}>
         <Ripple />
         {props.icon && props.icon()}
         <StyledInterSB16>{props.title}</StyledInterSB16>
