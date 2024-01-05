@@ -1,18 +1,13 @@
-import OutsideClickHandler from 'react-outside-click-handler';
-import React from 'react';
-import { ButtonVolumetricLong } from '@components/button-volumetric/long';
-import { ButtonVolumetricShort } from '@components/button-volumetric/short';
-import {
-  HeaderDesktopContainer,
-  HeaderMenuListContainer,
-  HeaderMobileContainer,
-  HeaderWrapper
-  } from '.';
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved';
-import { MenuList } from '@components/menu-list';
-import { useGoToLink } from '@hooks/use-go-to-link';
-import { useMemo, useReducer } from 'react';
-import { useTranslation } from 'react-i18next';
+import OutsideClickHandler from "react-outside-click-handler";
+import React from "react";
+import { ButtonVolumetricLong } from "@components/button-volumetric/long";
+import { ButtonVolumetricShort } from "@components/button-volumetric/short";
+import { HeaderDesktopContainer, HeaderMenuListContainer, HeaderMobileContainer, HeaderWrapper } from ".";
+import { IconCurved } from "@assets/icons/icon-curved/icon-curved";
+import { MenuList } from "@components/menu-list";
+import { useGoToLink } from "@hooks/use-go-to-link";
+import { useMemo, useReducer } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Header: React.FC = () => {
   const { t } = useTranslation("header");
@@ -36,7 +31,7 @@ export const Header: React.FC = () => {
   const memoizedHeaderWrapperMobileContainerBack = useMemo(
     () => (
       <HeaderMobileContainer>
-        <ButtonVolumetricShort checked={false} onClick={() => goToLink("/authorization/services")} icon={IconCurved.ArrowLeft} />
+        <ButtonVolumetricShort onClick={() => goToLink("/authorization/services")} icon={IconCurved.ArrowLeft} />
       </HeaderMobileContainer>
     ),
     []
@@ -44,7 +39,7 @@ export const Header: React.FC = () => {
   const memoizedHeaderWrapperDesktopContainerHelp = useMemo(
     () => (
       <HeaderDesktopContainer>
-        <ButtonVolumetricLong checked={false} title={t("help")} icon={IconCurved.Call} />
+        <ButtonVolumetricLong title={t("help")} icon={IconCurved.Call} />
       </HeaderDesktopContainer>
     ),
     [t]
@@ -55,12 +50,12 @@ export const Header: React.FC = () => {
         {memoizedHeaderWrapperDesktopContainerBack}
         {memoizedHeaderWrapperMobileContainerBack}
 
-        <ButtonVolumetricShort checked={false} icon={IconCurved.Search} />
+        <ButtonVolumetricShort icon={IconCurved.Search} />
 
         {memoizedHeaderWrapperDesktopContainerHelp}
 
         <HeaderMobileContainer>
-          <ButtonVolumetricShort checked={false} icon={IconCurved.Call} />
+          <ButtonVolumetricShort icon={IconCurved.Call} />
           <ButtonVolumetricShort onClick={() => toggleIsShow()} checked={isShow} icon={IconCurved.Category} />
         </HeaderMobileContainer>
         {isShow && (

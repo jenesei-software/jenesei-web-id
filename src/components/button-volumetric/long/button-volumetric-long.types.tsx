@@ -1,7 +1,3 @@
-import { IButtonVolumetricShortContainer } from "../short";
+import { ButtonVolumetricShortProps } from "../short";
 
-export interface IButtonVolumetricLong extends IButtonVolumetricShortContainer {
-  icon?: () => JSX.Element;
-  title: string;
-  onClick?: () => void;
-}
+export interface ButtonVolumetricLongProps extends ButtonVolumetricShortProps {}

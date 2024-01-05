@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  IButtonVolumetricShortContainer,
-  ButtonVolumetricShortContainer,
-  ButtonVolumetricShortWrapper,
-} from "../short";
+import { ButtonVolumetricShortContainer, ButtonVolumetricShortWrapper } from "../short";
 
 export const ButtonVolumetricLongWrapper = styled(ButtonVolumetricShortWrapper)`
   display: flex;
@@ -14,10 +10,9 @@ export const ButtonVolumetricLongWrapper = styled(ButtonVolumetricShortWrapper)`
   width: max-content;
 `;
 
-export const ButtonVolumetricLongContainer = styled(ButtonVolumetricShortContainer)<IButtonVolumetricShortContainer>`
+export const ButtonVolumetricLongContainer = styled(ButtonVolumetricShortContainer)`
   display: flex;
   padding: 0px 10px;
-
   justify-content: center;
   align-items: center;
   gap: 6px;

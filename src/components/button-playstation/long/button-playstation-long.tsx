@@ -1,10 +1,10 @@
-import { FC, useReducer } from "react";
-import { IButtonPlaystationLong, ButtonPlaystationLongWrapper } from ".";
-import { StyledInterSB14 } from "@styles/fonts/inter";
-import { theme } from "@styles/theme";
-import React from "react";
+import React from 'react';
+import { ButtonPlaystationLongProps, ButtonPlaystationLongWrapper } from '.';
+import { FC, useReducer } from 'react';
+import { StyledInterSB14 } from '@styles/fonts/inter';
+import { theme } from '@styles/theme';
 
-export const ButtonPlaystationLong: FC<IButtonPlaystationLong> = React.memo(
+export const ButtonPlaystationLong: FC<ButtonPlaystationLongProps> = React.memo(
   (props) => {
     const [checked, toggle] = useReducer((checked) => !checked, props.checked);
     return (

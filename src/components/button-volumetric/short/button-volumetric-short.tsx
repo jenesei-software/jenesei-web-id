@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { IButtonVolumetricShort, ButtonVolumetricShortContainer, ButtonVolumetricShortWrapper } from ".";
+import { ButtonVolumetricShortProps, ButtonVolumetricShortContainer, ButtonVolumetricShortWrapper } from ".";
 import React from "react";
 
-export const ButtonVolumetricShort: FC<IButtonVolumetricShort> = React.memo(
+export const ButtonVolumetricShort: FC<ButtonVolumetricShortProps> = React.memo(
   (props) => {
     return (
       <ButtonVolumetricShortWrapper>

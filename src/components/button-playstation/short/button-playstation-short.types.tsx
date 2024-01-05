@@ -1,5 +1,5 @@
-import { IButtonPlaystationShortContainer } from ".";
-
-export interface IButtonPlaystationShort extends IButtonPlaystationShortContainer {
+export interface ButtonPlaystationShortProps {
   icon: () => JSX.Element;
+  checked: boolean;
+  title?: string;
 }

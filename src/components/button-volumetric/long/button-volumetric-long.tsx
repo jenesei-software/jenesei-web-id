@@ -1,10 +1,10 @@
-import { FC } from "react";
-import { IButtonVolumetricLong, ButtonVolumetricLongContainer, ButtonVolumetricLongWrapper } from ".";
-import { StyledInterSB14 } from "@styles/fonts/inter";
-import { theme } from "@styles/theme";
-import React from "react";
+import React from 'react';
+import { ButtonVolumetricLongContainer, ButtonVolumetricLongProps, ButtonVolumetricLongWrapper } from '.';
+import { FC } from 'react';
+import { StyledInterSB14 } from '@styles/fonts/inter';
+import { theme } from '@styles/theme';
 
-export const ButtonVolumetricLong: FC<IButtonVolumetricLong> = React.memo(
+export const ButtonVolumetricLong: FC<ButtonVolumetricLongProps> = React.memo(
   (props) => {
     return (
       <ButtonVolumetricLongWrapper>

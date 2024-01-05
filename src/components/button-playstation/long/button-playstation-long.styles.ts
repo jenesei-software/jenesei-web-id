@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { IButtonPlaystationShortContainer, ButtonPlaystationShortWrapper } from "../short";
+import styled from 'styled-components';
+import { ButtonPlaystationShortWrapper } from '../short';
 
-export const ButtonPlaystationLongWrapper = styled(ButtonPlaystationShortWrapper)<IButtonPlaystationShortContainer>`
+export const ButtonPlaystationLongWrapper = styled(ButtonPlaystationShortWrapper)`
   width: max-content;
   display: inline-flex;
   height: 44px;
