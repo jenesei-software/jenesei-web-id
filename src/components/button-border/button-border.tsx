@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { IButtonBorder, ButtonBorderWrapper } from ".";
+import { ButtonBorderProps, ButtonBorderWrapper } from ".";
 import React from "react";
 import { StyledInterSB16 } from "@styles/fonts/inter";
 
-export const ButtonBorder: FC<IButtonBorder> = React.memo(
+export const ButtonBorder: FC<ButtonBorderProps> = React.memo(
   (props) => {
     return (
-      <ButtonBorderWrapper type={props.type}>
+      <ButtonBorderWrapper {...props}>
         <StyledInterSB16>{props.title}</StyledInterSB16>
       </ButtonBorderWrapper>
     );

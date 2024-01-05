@@ -1,37 +1,34 @@
+import { theme } from "@styles/theme";
 import styled, { css } from "styled-components";
-
-export interface ButtonBigWrapperProps {
-  type: "product" | "border";
-  isIconColor?: boolean;
-}
+import { ButtonBigProps } from ".";
 
 const ButtonBigWrapperProduct = css`
-  color: ${(props) => props.theme.colors.product["100"]};
+  color: ${theme.colors.product["100"]};
   border: 1px solid transparent;
-  background: ${(props) => props.theme.colors.product["100"]};
+  background: ${theme.colors.product["100"]};
   & span {
-    color: ${(props) => props.theme.colors.default.white};
+    color: ${theme.colors.default.white};
   }
 `;
 
 const ButtonBigWrapperBorder = css`
-  color: ${(props) => props.theme.colors.default.white};
-  border: 1px solid ${(props) => props.theme.colors.black["80"]};
-  background: ${(props) => props.theme.colors.default.white};
+  color: ${theme.colors.default.white};
+  border: 1px solid ${theme.colors.black["80"]};
+  background: ${theme.colors.default.white};
   & span {
-    color: ${(props) => props.theme.colors.black["100"]};
+    color: ${theme.colors.black["100"]};
   }
 `;
 
 const ButtonBigWrapperDefault = css`
-  color: ${(props) => props.theme.colors.default.white};
+  color: ${theme.colors.default.white};
   border: 1px solid transparent;
-  background: ${(props) => props.theme.colors.default.white};
+  background: ${theme.colors.default.white};
   & span {
-    color: ${(props) => props.theme.colors.black["100"]};
+    color: ${theme.colors.black["100"]};
   }
 `;
-export const ButtonBigWrapper = styled.button<ButtonBigWrapperProps>`
+export const ButtonBigWrapper = styled.button<Pick<ButtonBigProps, "type" | "isIconColor">>`
   cursor: pointer;
   display: flex;
   width: 100%;
@@ -53,7 +50,7 @@ export const ButtonBigWrapper = styled.button<ButtonBigWrapperProps>`
     height: 19px;
     flex-shrink: 0;
     & path {
-      fill: ${(props) => props.isIconColor && props.theme.colors.black["60"]};
+      fill: ${(props) => props.isIconColor && theme.colors.black["60"]};
     }
   }
   ${(props) =>

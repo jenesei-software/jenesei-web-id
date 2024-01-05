@@ -1,6 +1,5 @@
-import { ButtonBorderWrapperProps } from ".";
-
-export interface IButtonBorder extends ButtonBorderWrapperProps {
+export interface ButtonBorderProps {
   onClick?: () => void;
   title: string;
+  type: "black" | "grey" | "white" | "border";
 }
