@@ -8,6 +8,7 @@ import {
 } from '.'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorder } from '@components/button-border'
+import { useProfile } from '@providers/profile-provider'
 import {
   StyledInterB32,
   StyledInterR16,
@@ -18,6 +19,7 @@ import { useTranslation } from 'react-i18next'
 
 export const Services: FC<ServicesProps> = () => {
   const { t } = useTranslation('services')
+  const { setProfile } = useProfile()
 
   return (
     <ServicesWrapper>
@@ -44,7 +46,11 @@ export const Services: FC<ServicesProps> = () => {
         </ServicesListContainer>
       </ServicesListContainer>
       <ServicesButtonsContainer>
-        <ButtonBorder type="border" title={t('pages.logout')} />
+        <ButtonBorder
+          type="border"
+          title={t('pages.logout')}
+          onClick={() => setProfile({ id: '' })}
+        />
       </ServicesButtonsContainer>
     </ServicesWrapper>
   )

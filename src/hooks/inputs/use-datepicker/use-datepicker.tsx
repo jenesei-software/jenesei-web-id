@@ -5,7 +5,7 @@ import {
   UseDatePickerWrapper,
 } from '.'
 import { useSelect } from '../use-select'
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonVolumetricShort } from '@components/button-volumetric/short'
 import { getLast100Years } from '@functions/get-last-100-years'
 import { useLanguage } from '@providers/language-provider'

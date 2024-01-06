@@ -5,7 +5,7 @@ import {
   SignUpProps,
   StyledStyledInterR16,
 } from '.'
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
 import { useDatePicker } from '@hooks/inputs/use-datepicker'
 import { useInputString } from '@hooks/inputs/use-input-string'

@@ -6,7 +6,7 @@ import { FC } from 'react'
 export const ButtonBorder: FC<ButtonBorderProps> = React.memo(
   (props) => {
     return (
-      <ButtonBorderWrapper type={props.type}>
+      <ButtonBorderWrapper onClick={props.onClick} type={props.type}>
         <StyledInterSB16>{props.title}</StyledInterSB16>
       </ButtonBorderWrapper>
     )

@@ -1,5 +1,5 @@
 import { SignUpInfoFormContainer, SignUpProps } from '../sign-up'
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
 import { useInputString } from '@hooks/inputs/use-input-string'
 import { useGoToLink } from '@hooks/use-go-to-link'

@@ -2,12 +2,15 @@ import { SignInInfoFormContainer, SignInProps, StyledStyledInterR16 } from '.'
 import { ButtonBig } from '@components/button-big'
 import { useInputString } from '@hooks/inputs/use-input-string'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { useProfile } from '@providers/profile-provider'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const SignInForm: FC<SignInProps> = () => {
   const { t } = useTranslation('sign-in')
   const goToLink = useGoToLink()
+  const { setProfile } = useProfile()
+
   const { value: valueEmailOrLogin, InputString: InputEmailOrLogin } =
     useInputString({
       placeholder: t('inputs.email-or-login'),
@@ -28,7 +31,11 @@ export const SignInForm: FC<SignInProps> = () => {
       >
         {t('forgot-password')}
       </StyledStyledInterR16>
-      <ButtonBig title={t('buttons.login')} type={'product'} />
+      <ButtonBig
+        onClick={() => setProfile({ id: '1' })}
+        title={t('buttons.login')}
+        type={'product'}
+      />
     </SignInInfoFormContainer>
   )
 }

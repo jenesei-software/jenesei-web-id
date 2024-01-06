@@ -19,7 +19,6 @@ import { useTranslation } from 'react-i18next'
 export const SignIn: FC<SignInProps> = () => {
   const { t } = useTranslation('sign-in')
   const goToLink = useGoToLink()
-
   return (
     <ServicesWrapper>
       <SignInTitlesContainer>

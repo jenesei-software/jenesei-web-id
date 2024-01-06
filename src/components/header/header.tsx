@@ -4,7 +4,7 @@ import {
   HeaderMobileContainer,
   HeaderWrapper,
 } from '.'
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonVolumetricLong } from '@components/button-volumetric/long'
 import { ButtonVolumetricShort } from '@components/button-volumetric/short'
 import { MenuList } from '@components/menu-list'

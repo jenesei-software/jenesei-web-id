@@ -1,4 +1,4 @@
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { IconCurved } from '@assets/icons/icon-curved'
 
 export interface IUserRoute {
   icon: () => JSX.Element

@@ -55,4 +55,5 @@ export interface ProfileContextProps {
   getProfile: () => Promise<void>
   setProfile: React.Dispatch<Partial<IProfile>>
   profile: IProfile | null
+  id: IProfile['id']
 }

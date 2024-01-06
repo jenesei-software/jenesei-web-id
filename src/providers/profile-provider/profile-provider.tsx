@@ -50,6 +50,7 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = (props) => {
   return (
     <ProfileContext.Provider
       value={{
+        id: profile.id,
         getProfile,
         setProfile,
         profile,
