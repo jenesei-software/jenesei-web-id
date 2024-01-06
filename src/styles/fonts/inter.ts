@@ -72,6 +72,16 @@ export const StyledInterM14 = styled.span<StyledInterProps>`
   color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
 `
 
+export const FontInterM16 = css`
+  ${FontInter};
+  font-size: 16px;
+  font-weight: 500;
+`
+export const StyledInterM16 = styled.span<StyledInterProps>`
+  ${FontInterM14};
+  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+`
+
 export const FontInterB14 = css`
   ${FontInter};
   font-size: 14px;

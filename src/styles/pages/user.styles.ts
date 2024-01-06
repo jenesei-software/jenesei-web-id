@@ -10,3 +10,12 @@ export const UserWrapper = styled.div`
   gap: 26px;
   align-self: stretch;
 `
+export const UserLine = styled.div`
+  display: flex;
+  height: 2px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  background: ${theme.colors.black[5]};
+`

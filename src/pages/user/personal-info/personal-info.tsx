@@ -1,11 +1,13 @@
 import { PersonalInfoProps } from '.'
-import { UserWrapper } from '@styles/pages'
+import { UserTitle } from '@components/user-title'
+import { UserLine, UserWrapper } from '@styles/pages'
 import { FC } from 'react'
-import { useTranslation } from 'react-i18next'
 
 export const PersonalInfo: FC<PersonalInfoProps> = () => {
-  const { t } = useTranslation('personal-info')
-  return <UserWrapper>
-
-  </UserWrapper>
+  return (
+    <UserWrapper>
+      <UserTitle />
+      <UserLine />
+    </UserWrapper>
+  )
 }
