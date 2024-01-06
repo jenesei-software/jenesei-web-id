@@ -13,14 +13,14 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const MenuSideBar: React.FC = () => {
-  const { t } = useTranslation('sidebar')
+  const { t } = useTranslation('pages')
 
   return (
     <MenuSideBarWrapper>
       <MenuSideBarWrapperContainer>
         <MenuSideBarTitle>
           <StyledInterSB18 color={theme.colors.black[100]}>
-            {t('title')}
+            {t('user.title')}
           </StyledInterSB18>
         </MenuSideBarTitle>
         <MenuList />

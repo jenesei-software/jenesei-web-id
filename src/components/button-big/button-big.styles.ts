@@ -46,8 +46,27 @@ const ButtonBigWrapperIsIconColorFalse = css`
     flex-shrink: 0;
   }
 `
+
+const ButtonBigWrapperLoadingTrue = css`
+  & span {
+    display: none;
+  }
+`
+const ButtonBigWrapperDisabledTrue = css`
+  background: ${theme.colors.default.white};
+  color: ${theme.colors.gray.e5e5ea};
+  border: 1px solid ${theme.colors.gray.e5e5ea};
+  & span {
+    color: ${theme.colors.gray.e5e5ea};
+  }
+  & svg {
+    & path {
+      fill: ${theme.colors.gray.e5e5ea};
+    }
+  }
+`
 export const ButtonBigWrapper = styled.button<
-  Pick<ButtonBigProps, 'type' | 'isIconColor'>
+  Pick<ButtonBigProps, 'type' | 'isIconColor' | 'disabled' | 'loading'>
 >`
   cursor: pointer;
   display: flex;
@@ -79,4 +98,7 @@ export const ButtonBigWrapper = styled.button<
       : props.type === 'border'
         ? ButtonBigWrapperBorder
         : ButtonBigWrapperDefault};
+
+  ${(props) => (props.disabled === true ? ButtonBigWrapperDisabledTrue : '')};
+  ${(props) => (props.loading === true ? ButtonBigWrapperLoadingTrue : '')};
 `

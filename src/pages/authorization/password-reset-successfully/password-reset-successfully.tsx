@@ -5,7 +5,7 @@ import {
 import { IconValidate } from '@assets/icons/icon-validate'
 import { ButtonBig } from '@components/button-big'
 import { useGoToLink } from '@hooks/use-go-to-link'
-import { ServicesWrapper } from '@pages/services'
+import { AuthorizationWrapper } from '@styles/pages'
 import { StyledInterSB16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import { FC } from 'react'
@@ -18,7 +18,7 @@ export const PasswordResetSuccessfully: FC<
   const goToLink = useGoToLink()
 
   return (
-    <ServicesWrapper>
+    <AuthorizationWrapper>
       <PasswordResetSuccessfullyTitlesContainer>
         {IconValidate.Big.TrueColor()}
         <StyledInterSB16 color={theme.colors.black['100']}>
@@ -30,6 +30,6 @@ export const PasswordResetSuccessfully: FC<
           type={'product'}
         />
       </PasswordResetSuccessfullyTitlesContainer>
-    </ServicesWrapper>
+    </AuthorizationWrapper>
   )
 }

@@ -4,7 +4,6 @@ import {
   ServicesListItemContainer,
   ServicesProps,
   ServicesTitleContainer,
-  ServicesWrapper,
 } from '.'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorder } from '@components/button-border'
@@ -14,6 +13,7 @@ import {
   StyledInterR16,
   StyledInterSB14,
 } from '@styles/fonts/inter'
+import { AuthorizationWrapper } from '@styles/pages'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -22,7 +22,7 @@ export const Services: FC<ServicesProps> = () => {
   const { setProfile } = useProfile()
 
   return (
-    <ServicesWrapper>
+    <AuthorizationWrapper>
       <ServicesTitleContainer>
         <StyledInterB32>
           {t('pages.title-big') + 'Stassie Strone'}
@@ -52,6 +52,6 @@ export const Services: FC<ServicesProps> = () => {
           onClick={() => setProfile({ id: '' })}
         />
       </ServicesButtonsContainer>
-    </ServicesWrapper>
+    </AuthorizationWrapper>
   )
 }

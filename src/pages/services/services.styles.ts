@@ -2,23 +2,6 @@ import { theme } from '@styles/theme'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const ServicesWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  gap: 100px;
-
-  @media (max-width: ${theme.size.tablet}) {
-    align-self: stretch;
-    height: auto;
-    justify-content: space-between;
-  }
-`
-
 export const ServicesTitleContainer = styled.div`
   display: flex;
   flex-direction: column;

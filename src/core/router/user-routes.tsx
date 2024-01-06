@@ -1,4 +1,8 @@
 import { IconCurved } from '@assets/icons/icon-curved'
+import { LanguageAndLocalization } from '@pages/user/language-and-localization'
+import { LoginAndSecurity } from '@pages/user/login-and-security'
+import { Payments } from '@pages/user/payments'
+import { PersonalInfo } from '@pages/user/personal-info'
 
 export interface IUserRoute {
   icon: () => JSX.Element
@@ -13,38 +17,38 @@ export interface IUserRoute {
 export const UserRouts: IUserRoute[] = [
   {
     icon: IconCurved.Profile,
-    title: 'PersonalInfo.title',
-    description: 'PersonalInfo.description',
+    title: 'personal-info.title',
+    description: 'personal-info.description',
     to: '/user/personal-info',
     path: 'personal-info',
     key: 'personal-info',
-    element: <div>personal-info</div>,
+    element: <PersonalInfo />,
   },
   {
     icon: IconCurved.Password,
-    title: 'LoginAndSecurity.title',
-    description: 'LoginAndSecurity.description',
+    title: 'login-and-security.title',
+    description: 'login-and-security.description',
     to: '/user/login-and-security',
     path: 'login-and-security',
     key: 'login-and-security',
-    element: <div>login-and-security</div>,
+    element: <LoginAndSecurity />,
   },
   {
     icon: IconCurved.Wallet,
-    title: 'Payments.title',
-    description: 'Payments.description',
+    title: 'payments.title',
+    description: 'payments.description',
     to: '/user/payments',
     path: 'payments',
     key: 'payments',
-    element: <div>payments</div>,
+    element: <Payments />,
   },
   {
     icon: IconCurved.Voice2,
-    title: 'LanguageAndLocalization.title',
-    description: 'LanguageAndLocalization.description',
+    title: 'language-and-localization.title',
+    description: 'language-and-localization.description',
     to: '/user/language-and-localization',
     path: 'language-and-localization',
     key: 'language-and-localization',
-    element: <div>language-and-localization</div>,
+    element: <LanguageAndLocalization />,
   },
 ]

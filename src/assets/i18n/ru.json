@@ -23,19 +23,22 @@
     "default": "Or"
   },
   "pages": {
-    "LanguageAndLocalization": {
+    "user": {
+      "title": "Аккаунт"
+    },
+    "language-and-localization": {
       "description": "Выберите предпочитаемый вами язык и измените настройки своего местоположения.",
       "title": "Язык и локализация"
     },
-    "LoginAndSecurity": {
+    "login-and-security": {
       "description": "Обеспечьте безопасность своей учетной записи с помощью управления паролями.",
       "title": "Логин и безопасность"
     },
-    "Payments": {
+    "payments": {
       "description": "Получите доступ к истории ваших транзакций, платежной информации и счетам-фактурам.",
       "title": "Платежи"
     },
-    "PersonalInfo": {
+    "personal-info": {
       "description": "Обновите свой профиль, контактные данные и предпочтения, чтобы персонализировать свой опыт.",
       "title": "Личная информация"
     }
@@ -90,9 +93,6 @@
       "title-big": "Привет, ",
       "title-min": "Мы ждали тебя."
     }
-  },
-  "sidebar": {
-    "title": "Аккаунт"
   },
   "sign-in": {
     "buttons": {

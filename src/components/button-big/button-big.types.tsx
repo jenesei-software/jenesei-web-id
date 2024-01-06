@@ -4,4 +4,6 @@ export interface ButtonBigProps {
   icon?: () => JSX.Element
   isIconColor?: boolean
   type: 'product' | 'border'
+  disabled?: boolean
+  loading?: boolean
 }

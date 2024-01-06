@@ -11,7 +11,7 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBig } from '@components/button-big'
 import { LineOR } from '@components/line-or'
 import { useGoToLink } from '@hooks/use-go-to-link'
-import { ServicesWrapper } from '@pages/services'
+import { AuthorizationWrapper } from '@styles/pages'
 import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -21,7 +21,7 @@ export const SignUp: FC<SignUpProps> = () => {
   const goToLink = useGoToLink()
 
   return (
-    <ServicesWrapper>
+    <AuthorizationWrapper>
       <SignUpTitlesContainer>
         <StyledInterB32>{t('title-big')}</StyledInterB32>
         <SignUpTitlesTwoContainer>
@@ -49,6 +49,6 @@ export const SignUp: FC<SignUpProps> = () => {
           />
         </SignUpInfoContinueContainer>
       </SignUpInfoContainer>
-    </ServicesWrapper>
+    </AuthorizationWrapper>
   )
 }

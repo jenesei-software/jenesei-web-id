@@ -5,7 +5,7 @@ import { Services } from '@pages/services'
 import { FC } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
-export const AppRoutes: FC = () => {
+export const AppRoutesUser: FC = () => {
   return (
     <Routes>
       {/* Base */}
@@ -23,8 +23,8 @@ export const AppRoutes: FC = () => {
       </Route>
 
       {/* Rest */}
-      <Route index element={<Navigate to="/user" />} />
-      <Route path="*" element={<Navigate to="/user" />} />
+      <Route index element={<Navigate to="/user/personal-info" />} />
+      <Route path="*" element={<Navigate to="/user/personal-info" />} />
     </Routes>
   )
 }

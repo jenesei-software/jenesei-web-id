@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components'
 const ButtonBorderWrapperBlack = css`
   border: 1px solid transparent;
   background: ${theme.colors.black['100']};
+  color: ${theme.colors.default.white};
   & span {
     color: ${theme.colors.default.white};
   }
@@ -13,6 +14,7 @@ const ButtonBorderWrapperBlack = css`
 const ButtonBorderWrapperGrey = css`
   border: 1px solid transparent;
   background: ${theme.colors.black['10']};
+  color: ${theme.colors.black['60']};
   & span {
     color: ${theme.colors.black['60']};
   }
@@ -20,6 +22,7 @@ const ButtonBorderWrapperGrey = css`
 const ButtonBorderWrapperWhite = css`
   border: 1px solid white;
   background: ${theme.colors.black['10']};
+  color: ${theme.colors.black['60']};
   & span {
     color: ${theme.colors.black['60']};
   }
@@ -27,11 +30,19 @@ const ButtonBorderWrapperWhite = css`
 const ButtonBorderWrapperBorder = css`
   border: 1px solid ${theme.colors.black['10']};
   background: ${theme.colors.default.white};
+  color: ${theme.colors.black['60']};
   & span {
     color: ${theme.colors.black['60']};
   }
 `
-export const ButtonBorderWrapper = styled.div<Pick<ButtonBorderProps, 'type'>>`
+export const ButtonBorderWrapper = styled.button<
+  Pick<ButtonBorderProps, 'type'>
+>`
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   display: inline-flex;
   padding: 8px 14px;
   justify-content: center;

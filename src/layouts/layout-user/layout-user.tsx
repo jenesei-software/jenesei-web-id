@@ -5,6 +5,7 @@ import {
 } from '.'
 import { Header } from '@components/header'
 import { MenuSideBar } from '@components/menu-sidebar'
+import { PathnameAsLinks } from '@components/pathname-as-links'
 import { Outlet } from 'react-router-dom'
 
 /**
@@ -17,6 +18,7 @@ export const LayoutUser: React.FC = () => {
       <LayoutUserContainer>
         <MenuSideBar />
         <LayoutOutletContainer>
+          <PathnameAsLinks />
           <Outlet />
         </LayoutOutletContainer>
       </LayoutUserContainer>

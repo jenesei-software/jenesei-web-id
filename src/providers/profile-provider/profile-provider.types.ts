@@ -34,7 +34,7 @@ export interface IAuthTelegramProfile {
 }
 
 export const initialProfile: IProfile = {
-  id: '',
+  id: '3',
   email: '',
   first_name: '',
   last_name: '',

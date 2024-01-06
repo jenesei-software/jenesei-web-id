@@ -23,19 +23,22 @@
     "default": "Or"
   },
   "pages": {
-    "LanguageAndLocalization": {
+    "user": {
+      "title": "Account"
+    },
+    "language-and-localization": {
       "description": "Choose your preferred language and adjust your location settings.",
       "title": "Language & localization"
     },
-    "LoginAndSecurity": {
+    "login-and-security": {
       "description": "Ensure the safety of your account with password management.",
       "title": "Login & security"
     },
-    "Payments": {
+    "payments": {
       "description": "Access your transaction history, billing information, and invoices.",
-      "title": "Payments"
+      "title": "payments"
     },
-    "PersonalInfo": {
+    "personal-info": {
       "description": "Update your profile, contact details and preferences to personalize your experience.",
       "title": "Personal info"
     }
@@ -90,9 +93,6 @@
       "title-big": "Hello, ",
       "title-min": "We've been waiting for you."
     }
-  },
-  "sidebar": {
-    "title": "Account"
   },
   "sign-in": {
     "buttons": {

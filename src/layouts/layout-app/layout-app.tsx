@@ -1,5 +1,5 @@
 import { LayoutAppWrapper } from '.'
-import { AppRoutes, AppRoutesAuthorization } from '@core/router'
+import { AppRoutesUser, AppRoutesAuthorization } from '@core/router'
 import { useProfile } from '@providers/profile-provider'
 import React from 'react'
 
@@ -11,7 +11,7 @@ export const LayoutApp: React.FC = () => {
 
   return (
     <LayoutAppWrapper>
-      {id ? <AppRoutes /> : <AppRoutesAuthorization />}
+      {id ? <AppRoutesUser /> : <AppRoutesAuthorization />}
     </LayoutAppWrapper>
   )
 }
