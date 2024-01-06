@@ -1,13 +1,12 @@
-import { EmailCheck } from '@pages/authorization/email-check'
-import { EmailVerify } from '@pages/authorization/email-verify'
-import { FC } from 'react'
 import { LayoutAuthorization } from '@layouts/layout-authorization'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { EmailCheck } from '@pages/authorization/email-check'
 import { PasswordForgot } from '@pages/authorization/password-forgot'
 import { PasswordReset } from '@pages/authorization/password-reset'
 import { PasswordResetSuccessfully } from '@pages/authorization/password-reset-successfully'
 import { SignIn } from '@pages/authorization/sign-in'
 import { SignUp } from '@pages/authorization/sign-up'
+import { FC } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 export const AppRoutesAuthorization: FC = () => {
   return (
@@ -15,7 +14,6 @@ export const AppRoutesAuthorization: FC = () => {
       {/* Base */}
       <Route path="authorization" element={<LayoutAuthorization />}>
         <Route path="email-check" element={<EmailCheck />} />
-        <Route path="email-verify" element={<EmailVerify />} />
         <Route path="password-forgot" element={<PasswordForgot />} />
         <Route path="password-reset" element={<PasswordReset />} />
         <Route

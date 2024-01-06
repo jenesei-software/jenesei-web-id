@@ -1,6 +1,6 @@
-import { useMemo, useReducer } from 'react'
 import { StyledSwitch, UseSwitchProps } from '.'
 import { theme } from '@styles/theme'
+import { useMemo, useReducer } from 'react'
 
 export const useSwitch = (props: UseSwitchProps) => {
   const [value, toggle] = useReducer((checked) => !checked, props.value)

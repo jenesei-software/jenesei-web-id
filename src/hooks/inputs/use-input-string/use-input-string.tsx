@@ -1,10 +1,10 @@
-import { useState, useMemo } from 'react'
 import {
   UseInputIcon,
   UseInputString,
   UseInputWrapper,
   UseInputStringProps,
 } from '.'
+import { useState, useMemo } from 'react'
 
 export const useInputString = (
   props: UseInputStringProps = {

@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
 import { UseSelectProps } from '.'
-import { theme } from '@styles/theme'
 import { FontInterR16 } from '@styles/fonts/inter'
+import { theme } from '@styles/theme'
+import styled, { css } from 'styled-components'
 
 const UseSelectWrapperTypeVolumetric = css`
   transition: all 0.4s;

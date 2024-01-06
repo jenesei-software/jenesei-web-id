@@ -1,9 +1,3 @@
-import React from 'react'
-import { AuthorizationBackground } from '@assets/authorization-background'
-import { LogoWithTitle } from '@assets/icons/logo-with-title'
-import { Outlet } from 'react-router-dom'
-import { StyledInterB36, StyledInterR24 } from '@styles/fonts/inter'
-import { useTranslation } from 'react-i18next'
 import {
   AuthorizationBackgroundContainer,
   LogoWithTitleContainer,
@@ -12,6 +6,12 @@ import {
   LayoutAuthorizationTextContainer,
   LayoutAuthorizationWrapper,
 } from '.'
+import { AuthorizationBackground } from '@assets/authorization-background'
+import { LogoWithTitle } from '@assets/icons/logo-with-title'
+import { StyledInterB36, StyledInterR24 } from '@styles/fonts/inter'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { Outlet } from 'react-router-dom'
 
 /**
  * The wrapper for unauthorized users

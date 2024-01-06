@@ -1,6 +1,6 @@
+import { ButtonBorderProps } from '.'
 import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
-import { ButtonBorderProps } from '.'
 
 const ButtonBorderWrapperBlack = css`
   border: 1px solid transparent;

@@ -6,9 +6,21 @@
       "title-min": "Safety is our advantage"
     }
   },
+  "email-check": {
+    "buttons": {
+      "back-to-login": "Back to Login",
+      "resend-email": "Resend Email"
+    },
+    "title-big": "Check your Email",
+    "title-min": "We have sent an email with password reset information to",
+    "title-min-2": "Didn’t receive the email? Check spam or promotion folder"
+  },
   "header": {
     "back": "Back",
     "help": "Help"
+  },
+  "or": {
+    "default": "Or"
   },
   "pages": {
     "LanguageAndLocalization": {
@@ -27,6 +39,38 @@
       "description": "Update your profile, contact details and preferences to personalize your experience.",
       "title": "Personal info"
     }
+  },
+  "password-forgot": {
+    "buttons": {
+      "back-to-login": "Back to Login",
+      "send": "Send"
+    },
+    "inputs": {
+      "email": "Email"
+    },
+    "title-big": "Forgot Password",
+    "title-min": "Enter the email you used to create your account so we can send you instructions on how to reset your password."
+  },
+  "password-reset": {
+    "buttons": {
+      "back-to-login": "Back to Login",
+      "reset-password": "Reset Password"
+    },
+    "inputs": {
+      "confirm-your-new-password": "Confirm your new password",
+      "your-new-password": "Your new password"
+    },
+    "title-big": "Reset Password",
+    "title-min": "Choose a new password for your account"
+  },
+  "password-reset-successfully": {
+    "buttons": {
+      "login": "Login"
+    },
+    "title-big": "Password reset successfully"
+  },
+  "privacy-policy": {
+    "default": "Privacy policy"
   },
   "services": {
     "BusinessRoulette": {
@@ -58,44 +102,33 @@
     },
     "forgot-password": "Forgot Password",
     "inputs": {
-      "password": "Password",
-      "email-or-login": "Email or Login"
+      "email-or-login": "Email or Login",
+      "password": "Password"
     },
     "title-big": "Welcome Back",
     "title-min": "Don’t have an account?",
     "title-min-2": "Sign Up"
   },
-  "password-forgot": {
-    "title-big": "Check your Email",
-    "title-min": "We have sent an email with password reset information to",
-    "buttons": {
-      "send": "Send",
-      "back-to-login": "Back to Login"
-    },
-    "inputs": {
-      "email": "Email"
-    }
-  },
   "sign-up": {
+    "agree-1": "I agree to Jenesei",
+    "agree-2": "and",
     "buttons": {
       "continue-with-apple": "Continue with Apple",
       "continue-with-google": "Continue with Google",
       "create-account": "Create Account"
     },
     "inputs": {
-      "password": "Password",
-      "repeat-password": "Repeat password",
+      "date-of-birth": "Date of Birth",
       "email": "Email",
       "login": "Login",
-      "date-of-birth": "Date of Birth"
+      "password": "Password",
+      "repeat-password": "Repeat password"
     },
     "title-big": "Create account",
     "title-min": "Already have an account?",
-    "title-min-2": "Login",
-    "agree-1": "I agree to Jenesei",
-    "agree-2": "and"
+    "title-min-2": "Login"
   },
-  "or": { "default": "Or" },
-  "terms-of-service": { "default": "Terms of service" },
-  "privacy-policy": { "default": "Privacy policy" }
+  "terms-of-service": {
+    "default": "Terms of service"
+  }
 }

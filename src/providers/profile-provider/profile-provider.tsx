@@ -1,12 +1,12 @@
-import { useAxios } from '@providers/axios-provider'
-import { useLoading } from '@providers/loading-provider'
-import { createContext, useCallback, useContext, useReducer } from 'react'
 import {
   IProfile,
   ProfileContextProps,
   ProfileProviderProps,
   initialProfile,
 } from '.'
+import { useAxios } from '@providers/axios-provider'
+import { useLoading } from '@providers/loading-provider'
+import { createContext, useCallback, useContext, useReducer } from 'react'
 
 const ProfileContext = createContext<ProfileContextProps | null>(null)
 

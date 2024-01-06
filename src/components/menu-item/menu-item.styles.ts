@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
 import { MenuItemProps } from '.'
 import { theme } from '@styles/theme'
+import styled, { css } from 'styled-components'
 
 const MenuItemWrapperCheckedTrue = css`
   border-left: 4px solid ${theme.colors.black['80']};

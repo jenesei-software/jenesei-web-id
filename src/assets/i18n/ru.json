@@ -6,9 +6,21 @@
       "title-min": "Безопасность – наше преимущество"
     }
   },
+  "email-check": {
+    "buttons": {
+      "back-to-login": "Вернуться к Авторизации",
+      "resend-email": "Повторно отправить электронное письмо"
+    },
+    "title-big": "Проверьте свою электронную почту",
+    "title-min": "Мы отправили электронное письмо с информацией о сбросе пароля по адресу",
+    "title-min-2": "Не получили электронное письмо? Проверьте папку спам или рекламные акции"
+  },
   "header": {
     "back": "Назад",
     "help": "Поддержка"
+  },
+  "or": {
+    "default": "Or"
   },
   "pages": {
     "LanguageAndLocalization": {
@@ -27,6 +39,38 @@
       "description": "Обновите свой профиль, контактные данные и предпочтения, чтобы персонализировать свой опыт.",
       "title": "Личная информация"
     }
+  },
+  "password-forgot": {
+    "buttons": {
+      "back-to-login": "Вернуться к Авторизации",
+      "send": "Отправить"
+    },
+    "inputs": {
+      "email": "Электронная почта"
+    },
+    "title-big": "Забыли пароль",
+    "title-min": "Введите адрес электронной почты, который вы использовали для создания своей учетной записи, чтобы мы могли отправить вам инструкции о том, как сбросить ваш пароль."
+  },
+  "password-reset": {
+    "buttons": {
+      "back-to-login": "Вернуться к Авторизации",
+      "reset-password": "Сброс пароля"
+    },
+    "inputs": {
+      "confirm-your-new-password": "Подтвердите свой новый пароль",
+      "your-new-password": "Ваш новый пароль"
+    },
+    "title-big": "Сброс пароля",
+    "title-min": "Создайте новый пароль для своей учетной записи"
+  },
+  "password-reset-successfully": {
+    "buttons": {
+      "login": "Авторизоваться"
+    },
+    "title-big": "Успешный сброс пароля"
+  },
+  "privacy-policy": {
+    "default": "Политика конфиденциальности"
   },
   "services": {
     "BusinessRoulette": {
@@ -58,44 +102,33 @@
     },
     "forgot-password": "Забыли пароль",
     "inputs": {
-      "password": "Пароль",
-      "email-or-login": "Email или Логин"
+      "email-or-login": "Email или Логин",
+      "password": "Пароль"
     },
     "title-big": "Добро пожаловать",
     "title-min": "У вас нет учетной записи?",
     "title-min-2": "Зарегистрироваться"
   },
   "sign-up": {
+    "agree-1": "Я согласен с Jenesei",
+    "agree-2": "и",
     "buttons": {
       "continue-with-apple": "Продолжить с Apple",
       "continue-with-google": "Продолжить с Google",
       "create-account": "Зарегистрироваться"
     },
     "inputs": {
-      "password": "Пароль",
-      "repeat-password": "Повторите пароль",
+      "date-of-birth": "Дата рождения",
       "email": "Электронная почта",
       "login": "Логин",
-      "date-of-birth": "Дата рождения"
+      "password": "Пароль",
+      "repeat-password": "Повторите пароль"
     },
     "title-big": "Создать аккаунт",
     "title-min": "У вас уже есть аккаунт? ",
-    "title-min-2": "Авторизоваться",
-    "agree-1": "Я согласен с Jenesei",
-    "agree-2": "и"
+    "title-min-2": "Авторизоваться"
   },
-  "password-forgot": {
-    "title-big": "Проверьте свою электронную почту",
-    "title-min": "Мы отправили электронное письмо с информацией о сбросе пароля по адресу",
-    "buttons": {
-      "send": "Отправить",
-      "back-to-login": "Вернуться к Авторизации"
-    },
-    "inputs": {
-      "email": "Электронная почта"
-    }
-  },
-  "or": { "default": "Or" },
-  "terms-of-service": { "default": "Пользовательское соглашение" },
-  "privacy-policy": { "default": "Политика конфиденциальности" }
+  "terms-of-service": {
+    "default": "Пользовательское соглашение"
+  }
 }

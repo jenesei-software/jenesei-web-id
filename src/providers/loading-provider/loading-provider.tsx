@@ -1,4 +1,3 @@
-import { createContext, useContext, useReducer } from 'react'
 import {
   LoadingProviderProps,
   LoadingContextProps,
@@ -6,6 +5,7 @@ import {
   ILoading,
   initialLoading,
 } from '.'
+import { createContext, useContext, useReducer } from 'react'
 import ReactLoading from 'react-loading'
 
 const LoadingContext = createContext<LoadingContextProps | null>(null)

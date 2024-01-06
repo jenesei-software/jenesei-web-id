@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
 import { ButtonPlaystationShortProps } from '.'
 import { theme } from '@styles/theme'
+import styled, { css } from 'styled-components'
 
 const ButtonPlaystationShortWrapperCheckedTrue = css`
   background: ${theme.buttons.playstation.active.fill};

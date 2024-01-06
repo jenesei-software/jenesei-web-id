@@ -1,9 +1,9 @@
-import { Header } from '@components/header'
 import {
   LayoutOutletContainer,
   LayoutUserContainer,
   LayoutUserWrapper,
 } from '.'
+import { Header } from '@components/header'
 import { MenuSideBar } from '@components/menu-sidebar'
 import { Outlet } from 'react-router-dom'
 

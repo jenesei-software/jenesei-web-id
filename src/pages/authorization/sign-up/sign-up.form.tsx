@@ -1,11 +1,3 @@
-import { ButtonBig } from '@components/button-big'
-import { FC, useEffect, useReducer } from 'react'
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
-import { StyledInterR16 } from '@styles/fonts/inter'
-import { useGoToLink } from '@hooks/use-go-to-link'
-import { useInputString } from '@hooks/inputs/use-input-string'
-import { useSwitch } from '@hooks/inputs/use-switch'
-import { useTranslation } from 'react-i18next'
 import {
   SignUpInfoFormContainer,
   SignUpInfoFormSwitchAgreementContainer,
@@ -13,7 +5,15 @@ import {
   SignUpProps,
   StyledStyledInterR16,
 } from '.'
+import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { ButtonBig } from '@components/button-big'
 import { useDatePicker } from '@hooks/inputs/use-datepicker'
+import { useInputString } from '@hooks/inputs/use-input-string'
+import { useSwitch } from '@hooks/inputs/use-switch'
+import { useGoToLink } from '@hooks/use-go-to-link'
+import { StyledInterR16 } from '@styles/fonts/inter'
+import { FC, useEffect, useReducer } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const SignUpForm: FC<SignUpProps> = () => {
   const { t } = useTranslation([

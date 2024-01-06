@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import {
   SignInForm,
   SignInInfoContainer,
@@ -8,13 +7,14 @@ import {
   SignInTitlesTwoContainer,
   StyledStyledInterR16,
 } from '.'
-import { FC } from 'react'
-import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
-import { ServicesWrapper } from '@pages/services'
+import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBig } from '@components/button-big'
 import { LineOR } from '@components/line-or'
-import { LogoServices } from '@assets/icons/logo-services'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { ServicesWrapper } from '@pages/services'
+import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const SignIn: FC<SignInProps> = () => {
   const { t } = useTranslation('sign-in')

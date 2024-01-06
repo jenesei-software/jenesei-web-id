@@ -1,6 +1,6 @@
-import i18n from 'i18next'
-import ru from './ru.json'
 import eng from './eng.json'
+import ru from './ru.json'
+import i18n from 'i18next'
 
 i18n.init({
   interpolation: { escapeValue: false },

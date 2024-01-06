@@ -1,6 +1,6 @@
+import { ButtonBigProps } from '.'
 import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
-import { ButtonBigProps } from '.'
 
 const ButtonBigWrapperProduct = css`
   color: ${theme.colors.product['100']};

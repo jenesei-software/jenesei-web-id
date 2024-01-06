@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react'
 import { UseSelectProps, UseSelectWrapper } from '.'
+import { useState, useMemo } from 'react'
 import Select from 'react-dropdown-select'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

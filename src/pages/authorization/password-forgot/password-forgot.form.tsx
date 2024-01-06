@@ -1,9 +1,9 @@
-import { ButtonBig } from '@components/button-big'
-import { FC } from 'react'
-import { useGoToLink } from '@hooks/use-go-to-link'
-import { useInputString } from '@hooks/inputs/use-input-string'
-import { useTranslation } from 'react-i18next'
 import { SignUpInfoFormContainer, SignUpProps } from '../sign-up'
+import { ButtonBig } from '@components/button-big'
+import { useInputString } from '@hooks/inputs/use-input-string'
+import { useGoToLink } from '@hooks/use-go-to-link'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const PasswordForgotForm: FC<SignUpProps> = () => {
   const { t } = useTranslation('password-forgot')

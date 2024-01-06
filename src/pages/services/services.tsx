@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import {
   ServicesButtonsContainer,
   ServicesListContainer,
@@ -7,14 +6,15 @@ import {
   ServicesTitleContainer,
   ServicesWrapper,
 } from '.'
-import { FC } from 'react'
+import { LogoServices } from '@assets/icons/logo-services'
+import { ButtonBorder } from '@components/button-border'
 import {
   StyledInterB32,
   StyledInterR16,
   StyledInterSB14,
 } from '@styles/fonts/inter'
-import { ButtonBorder } from '@components/button-border'
-import { LogoServices } from '@assets/icons/logo-services'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const Services: FC<ServicesProps> = () => {
   const { t } = useTranslation('services')

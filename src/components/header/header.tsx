@@ -1,7 +1,3 @@
-import OutsideClickHandler from 'react-outside-click-handler'
-import React from 'react'
-import { ButtonVolumetricLong } from '@components/button-volumetric/long'
-import { ButtonVolumetricShort } from '@components/button-volumetric/short'
 import {
   HeaderDesktopContainer,
   HeaderMenuListContainer,
@@ -9,10 +5,14 @@ import {
   HeaderWrapper,
 } from '.'
 import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { ButtonVolumetricLong } from '@components/button-volumetric/long'
+import { ButtonVolumetricShort } from '@components/button-volumetric/short'
 import { MenuList } from '@components/menu-list'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import React from 'react'
 import { useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
+import OutsideClickHandler from 'react-outside-click-handler'
 
 export const Header: React.FC = () => {
   const { t } = useTranslation('header')

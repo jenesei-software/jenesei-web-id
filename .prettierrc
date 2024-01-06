@@ -1,4 +1,7 @@
 {
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ],
   "printWidth": 80,
   "semi": false,
   "singleQuote": true,

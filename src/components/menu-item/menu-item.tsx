@@ -1,16 +1,16 @@
-import React from 'react'
-import { ButtonPlaystationShort } from '@components/button-playstation/short'
-import { FC, useMemo } from 'react'
 import {
   MenuItemInfoContainer,
   MenuItemLogoContainer,
   MenuItemProps,
   MenuItemWrapper,
 } from '.'
-import { Ripple } from 'react-ripple-click'
+import { ButtonPlaystationShort } from '@components/button-playstation/short'
+import { useVibration } from '@hooks/use-vibration'
 import { StyledInterM12, StyledInterSB14 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
-import { useVibration } from '@hooks/use-vibration'
+import React from 'react'
+import { FC, useMemo } from 'react'
+import { Ripple } from 'react-ripple-click'
 
 export const MenuItem: FC<MenuItemProps> = React.memo(
   (props) => {

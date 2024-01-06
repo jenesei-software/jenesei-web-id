@@ -1,5 +1,6 @@
-import ru from 'date-fns/locale/ru'
 import en from 'date-fns/locale/en-US'
+import ru from 'date-fns/locale/ru'
+
 interface I_SEARCH_PARAMS_ITEM<T> {
   title: string
   value: T

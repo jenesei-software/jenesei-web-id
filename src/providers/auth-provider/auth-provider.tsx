@@ -1,7 +1,6 @@
-import { createContext, useCallback, useContext } from 'react'
 import { AuthContextProps, AuthProviderProps } from '.'
-import { useLoading } from '@providers/loading-provider'
 import { useAxios } from '@providers/axios-provider'
+import { useLoading } from '@providers/loading-provider'
 import {
   IAuthTelegramProfile,
   ISignInProfile,
@@ -9,6 +8,7 @@ import {
   initialProfile,
   useProfile,
 } from '@providers/profile-provider'
+import { createContext, useCallback, useContext } from 'react'
 
 const AuthContext = createContext<AuthContextProps | null>(null)
 

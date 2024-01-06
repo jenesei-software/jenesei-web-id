@@ -1,5 +1,5 @@
-import { api } from '@api/base/api'
 import { LoginRequest, LoginResponse } from './api.types'
+import { api } from '@api/base/api'
 
 export const authApi = api.injectEndpoints({
   endpoints: (build) => ({

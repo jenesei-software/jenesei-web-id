@@ -1,6 +1,6 @@
-import React from 'react'
-import { AppRoutes, AppRoutesAuthorization } from '@core/router'
 import { LayoutAppWrapper } from '.'
+import { AppRoutes, AppRoutesAuthorization } from '@core/router'
+import React from 'react'
 
 /**
  * The wrapper of the entire application

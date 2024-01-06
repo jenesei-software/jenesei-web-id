@@ -1,8 +1,8 @@
-import React from 'react'
 import { ButtonPlaystationLongProps, ButtonPlaystationLongWrapper } from '.'
-import { FC, useReducer } from 'react'
 import { StyledInterSB14 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
+import React from 'react'
+import { FC, useReducer } from 'react'
 
 export const ButtonPlaystationLong: FC<ButtonPlaystationLongProps> = React.memo(
   (props) => {

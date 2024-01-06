@@ -1,15 +1,15 @@
-import { useState, useMemo } from 'react'
 import {
   StyledDatePicker,
   StyledDatePickerHeader,
   UseDatePickerProps,
   UseDatePickerWrapper,
 } from '.'
-import { useLanguage } from '@providers/language-provider'
-import { getLast100Years } from '@functions/get-last-100-years'
-import { ButtonVolumetricShort } from '@components/button-volumetric/short'
-import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
 import { useSelect } from '../use-select'
+import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { ButtonVolumetricShort } from '@components/button-volumetric/short'
+import { getLast100Years } from '@functions/get-last-100-years'
+import { useLanguage } from '@providers/language-provider'
+import { useState, useMemo } from 'react'
 
 export const useDatePicker = (
   props: UseDatePickerProps = {

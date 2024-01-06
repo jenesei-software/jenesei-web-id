@@ -1,9 +1,9 @@
-import { FC } from 'react'
 import { IUserRoute, UserRouts } from '.'
 import { LayoutAuthorization } from '@layouts/layout-authorization'
 import { LayoutUser } from '@layouts/layout-user'
-import { Navigate, Route, Routes } from 'react-router-dom'
 import { Services } from '@pages/services'
+import { FC } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 export const AppRoutes: FC = () => {
   return (

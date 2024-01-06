@@ -1,5 +1,5 @@
-import React from 'react'
 import { ButtonPlaystationShortProps, ButtonPlaystationShortWrapper } from '.'
+import React from 'react'
 import { FC } from 'react'
 
 export const ButtonPlaystationShort: FC<ButtonPlaystationShortProps> =

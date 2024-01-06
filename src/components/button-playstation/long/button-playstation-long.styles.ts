@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { ButtonPlaystationShortWrapper } from '../short'
+import styled from 'styled-components'
 
 export const ButtonPlaystationLongWrapper = styled(
   ButtonPlaystationShortWrapper

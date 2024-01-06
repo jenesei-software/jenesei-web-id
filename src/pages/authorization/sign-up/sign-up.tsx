@@ -1,12 +1,3 @@
-import { ButtonBig } from '@components/button-big'
-import { FC } from 'react'
-import { LineOR } from '@components/line-or'
-import { LogoServices } from '@assets/icons/logo-services'
-import { ServicesWrapper } from '@pages/services'
-import { SignUpForm } from './sign-up.form'
-import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
-import { useGoToLink } from '@hooks/use-go-to-link'
-import { useTranslation } from 'react-i18next'
 import {
   SignUpInfoContainer,
   SignUpInfoContinueContainer,
@@ -15,6 +6,15 @@ import {
   SignUpTitlesTwoContainer,
   StyledStyledInterR16,
 } from '.'
+import { SignUpForm } from './sign-up.form'
+import { LogoServices } from '@assets/icons/logo-services'
+import { ButtonBig } from '@components/button-big'
+import { LineOR } from '@components/line-or'
+import { useGoToLink } from '@hooks/use-go-to-link'
+import { ServicesWrapper } from '@pages/services'
+import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const SignUp: FC<SignUpProps> = () => {
   const { t } = useTranslation('sign-up')

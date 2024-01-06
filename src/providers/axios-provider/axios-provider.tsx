@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { AxiosContextProps, AxiosProviderProps } from '.'
+import axios from 'axios'
 import { createContext, useContext } from 'react'
 
 const AxiosContext = createContext<AxiosContextProps | null>(null)

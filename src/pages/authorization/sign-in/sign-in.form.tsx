@@ -1,9 +1,9 @@
-import { ButtonBig } from '@components/button-big'
-import { FC } from 'react'
 import { SignInInfoFormContainer, SignInProps, StyledStyledInterR16 } from '.'
+import { ButtonBig } from '@components/button-big'
 import { useInputString } from '@hooks/inputs/use-input-string'
-import { useTranslation } from 'react-i18next'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const SignInForm: FC<SignInProps> = () => {
   const { t } = useTranslation('sign-in')

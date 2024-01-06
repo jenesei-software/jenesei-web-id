@@ -1,7 +1,7 @@
+import { UseInputIconProps } from '.'
 import { FontInterR16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
-import { UseInputIconProps } from '.'
 
 export const UseInputWrapper = styled.div`
   width: 100%;
