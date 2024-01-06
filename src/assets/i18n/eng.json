@@ -36,7 +36,7 @@
     },
     "payments": {
       "description": "Access your transaction history, billing information, and invoices.",
-      "title": "payments"
+      "title": "Payments"
     },
     "personal-info": {
       "description": "Update your profile, contact details and preferences to personalize your experience.",
