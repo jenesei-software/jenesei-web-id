@@ -1,4 +1,4 @@
-import { ButtonPlaystationShortProps } from "../short";
+import { ButtonPlaystationShortProps } from '../short'
 
-export interface ButtonPlaystationLongProps extends ButtonPlaystationShortProps {
-}
+export interface ButtonPlaystationLongProps
+  extends ButtonPlaystationShortProps {}

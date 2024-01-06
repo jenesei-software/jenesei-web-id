@@ -1,26 +1,29 @@
-import { useState, useMemo } from "react";
-import { UseSelectProps, UseSelectWrapper } from ".";
-import Select from "react-dropdown-select";
+import { useState, useMemo } from 'react'
+import { UseSelectProps, UseSelectWrapper } from '.'
+import Select from 'react-dropdown-select'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useSelect = <T extends Record<string, any>>(
   props: UseSelectProps<T> = {
-    placeholder: "",
+    placeholder: '',
     required: false,
     multi: false,
     searchable: false,
-    labelField: "",
-    valueField: "",
+    labelField: '',
+    valueField: '',
     options: [],
     initialValue: [],
-    type: "volumetric",
+    type: 'volumetric',
     onChange: () => {},
   }
 ) => {
-  const [values, setValue] = useState<T[] | null>(props.initialValue);
+  const [values, setValue] = useState<T[] | null>(props.initialValue)
 
   const InputSelect = useMemo(() => {
-    const SelectComponent = (params: { changeValue: (values: T[]) => void; initialValue?: T[] | null }) => (
+    const SelectComponent = (params: {
+      changeValue: (values: T[]) => void
+      initialValue?: T[] | null
+    }) => (
       <UseSelectWrapper type={props.type}>
         <Select<T>
           multi={props.multi}
@@ -31,14 +34,14 @@ export const useSelect = <T extends Record<string, any>>(
           dropdownPosition="bottom"
           searchable={props.searchable || false}
           onChange={(values: T[]) => {
-            setValue(values);
-            params.changeValue(values);
+            setValue(values)
+            params.changeValue(values)
           }}
         />
       </UseSelectWrapper>
-    );
+    )
 
-    return SelectComponent;
-  }, [props, values, props.initialValue]);
-  return { values, InputSelect };
-};
+    return SelectComponent
+  }, [props, values, props.initialValue])
+  return { values, InputSelect }
+}

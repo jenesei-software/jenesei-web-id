@@ -1,6 +1,6 @@
-import { theme } from "@styles/theme";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { theme } from '@styles/theme'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const ServicesWrapper = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ export const ServicesWrapper = styled.div`
     height: auto;
     justify-content: space-between;
   }
-`;
+`
 
 export const ServicesTitleContainer = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ export const ServicesTitleContainer = styled.div`
 
   @media (max-width: ${theme.size.tablet}) {
   }
-`;
+`
 export const ServicesListContainer = styled.div`
   display: flex;
   align-items: flex-start;
@@ -40,7 +40,7 @@ export const ServicesListContainer = styled.div`
 
   @media (max-width: ${theme.size.mobile}) {
   }
-`;
+`
 export const ServicesListItemContainer = styled(Link)`
   text-decoration: none;
   display: flex;
@@ -66,8 +66,8 @@ export const ServicesListItemContainer = styled(Link)`
       height: 84px;
     }
   }
-`;
+`
 export const ServicesButtonsContainer = styled.div`
   @media (max-width: ${theme.size.tablet}) {
   }
-`;
+`

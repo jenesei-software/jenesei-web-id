@@ -1,14 +1,14 @@
-import { authApi } from "../auth";
+import { authApi } from '../auth'
 
 export interface LoginRequest {
-  token: string;
+  token: string
 }
 
 export interface LoginResponse {
-  refreshToken: string;
-  token: string;
-  refreshDurationMs: number;
-  tokenDurationMs: number;
+  refreshToken: string
+  token: string
+  refreshDurationMs: number
+  tokenDurationMs: number
 }
 
-export type AuthEndpoints = typeof authApi.endpoints;
+export type AuthEndpoints = typeof authApi.endpoints

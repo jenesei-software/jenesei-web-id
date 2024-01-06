@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ReactLoadingContainer = styled.div`
   display: flex;
@@ -12,4 +12,4 @@ export const ReactLoadingContainer = styled.div`
   z-index: 10;
   justify-content: center;
   background-color: black;
-`;
+`

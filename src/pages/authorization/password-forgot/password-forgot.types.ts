@@ -1,2 +1,1 @@
-export interface PasswordForgotProps {
-}
+export interface PasswordForgotProps {}

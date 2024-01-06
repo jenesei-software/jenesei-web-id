@@ -1,18 +1,23 @@
-import { theme } from "@styles/theme";
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const PasswordForgotWrapper = styled.div`
+export const PasswordForgotTitlesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-self: stretch;
-  justify-content: space-between;
-  height: 100%;
+  gap: 10px;
+`
+export const PasswordForgotInfoContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+`
+export const PasswordForgotInfoFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 20px;
-
-  @media (max-width: ${theme.size.tablet}) {
-    align-self: stretch;
-    height: auto;
-    justify-content: space-between;
-  }
-`;
+  align-self: stretch;
+  width: 100%;
+`

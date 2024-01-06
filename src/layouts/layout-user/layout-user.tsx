@@ -1,7 +1,11 @@
-import { Header } from '@components/header';
-import { LayoutOutletContainer, LayoutUserContainer, LayoutUserWrapper } from '.';
-import { MenuSideBar } from '@components/menu-sidebar';
-import { Outlet } from 'react-router-dom';
+import { Header } from '@components/header'
+import {
+  LayoutOutletContainer,
+  LayoutUserContainer,
+  LayoutUserWrapper,
+} from '.'
+import { MenuSideBar } from '@components/menu-sidebar'
+import { Outlet } from 'react-router-dom'
 
 /**
  * The wrapper for authorized users
@@ -17,5 +21,5 @@ export const LayoutUser: React.FC = () => {
         </LayoutOutletContainer>
       </LayoutUserContainer>
     </LayoutUserWrapper>
-  );
-};
+  )
+}

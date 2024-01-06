@@ -1,49 +1,57 @@
-import { useState, useMemo } from "react";
-import { StyledDatePicker, StyledDatePickerHeader, UseDatePickerProps, UseDatePickerWrapper } from ".";
-import { useLanguage } from "@providers/language-provider";
-import { getLast100Years } from "@functions/get-last-100-years";
-import { ButtonVolumetricShort } from "@components/button-volumetric/short";
-import { IconCurved } from "@assets/icons/icon-curved/icon-curved";
-import { useSelect } from "../use-select";
+import { useState, useMemo } from 'react'
+import {
+  StyledDatePicker,
+  StyledDatePickerHeader,
+  UseDatePickerProps,
+  UseDatePickerWrapper,
+} from '.'
+import { useLanguage } from '@providers/language-provider'
+import { getLast100Years } from '@functions/get-last-100-years'
+import { ButtonVolumetricShort } from '@components/button-volumetric/short'
+import { IconCurved } from '@assets/icons/icon-curved/icon-curved'
+import { useSelect } from '../use-select'
 
 export const useDatePicker = (
   props: UseDatePickerProps = {
     initialValue: null,
-    placeholder: "",
+    placeholder: '',
   }
 ) => {
-  const { state } = useLanguage();
-  const [value, setValue] = useState<Date | null>(props.initialValue || null);
+  const { state } = useLanguage()
+  const [value, setValue] = useState<Date | null>(props.initialValue || null)
   const { InputSelect: InputYear } = useSelect({
     options: getLast100Years(),
-    labelField: "value",
-    valueField: "value",
+    labelField: 'value',
+    valueField: 'value',
     initialValue: [{ value: getYear(value) }],
-    type: "volumetric",
-  });
+    type: 'volumetric',
+  })
   const { InputSelect: InputMonth } = useSelect({
     options: state.translated.months || [],
-    labelField: "label",
-    valueField: "value",
-    type: "volumetric",
+    labelField: 'label',
+    valueField: 'value',
+    type: 'volumetric',
     initialValue: [
       {
         value: getMonth(value),
-        label: state.translated.months.find((month) => month.value === getMonth(value))?.label || "",
+        label:
+          state.translated.months.find(
+            (month) => month.value === getMonth(value)
+          )?.label || '',
       },
     ],
-  });
+  })
 
   const changeValue = (e: Date | [Date | null, Date | null] | null) => {
-    if (e instanceof Date || e === null) setValue(e);
-  };
+    if (e instanceof Date || e === null) setValue(e)
+  }
 
   function getYear(date: Date | null) {
-    return (date || new Date()).getFullYear();
+    return (date || new Date()).getFullYear()
   }
 
   function getMonth(date: Date | null) {
-    return (date || new Date()).getMonth();
+    return (date || new Date()).getMonth()
   }
   const InputUseDatePicker = useMemo(
     () => (
@@ -70,18 +78,21 @@ export const useDatePicker = (
               <InputYear
                 initialValue={[{ value: getYear(date) }]}
                 changeValue={(values) => {
-                  changeYear(values[0].value);
+                  changeYear(values[0].value)
                 }}
               />
               <InputMonth
                 initialValue={[
                   {
                     value: getMonth(date),
-                    label: state.translated.months.find((month) => month.value === getMonth(date))?.label || "",
+                    label:
+                      state.translated.months.find(
+                        (month) => month.value === getMonth(date)
+                      )?.label || '',
                   },
                 ]}
                 changeValue={(values) => {
-                  changeMonth(values[0].value);
+                  changeMonth(values[0].value)
                 }}
               />
               <ButtonVolumetricShort
@@ -102,7 +113,7 @@ export const useDatePicker = (
       </UseDatePickerWrapper>
     ),
     [value, state]
-  );
+  )
 
-  return { value, InputUseDatePicker };
-};
+  return { value, InputUseDatePicker }
+}

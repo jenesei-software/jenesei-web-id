@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme";
-import styled from "styled-components";
+import { theme } from '@styles/theme'
+import styled from 'styled-components'
 
 export const EmailVerifyWrapper = styled.div`
   display: flex;
@@ -15,4 +15,4 @@ export const EmailVerifyWrapper = styled.div`
     height: auto;
     justify-content: space-between;
   }
-`;
+`

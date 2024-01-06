@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const LogoServicesWrapper = styled.div`
   align-items: center;
@@ -11,4 +11,4 @@ export const LogoServicesWrapper = styled.div`
     height: 122px;
     flex-shrink: 0;
   }
-`;
+`

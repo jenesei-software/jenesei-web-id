@@ -1,1 +1,1 @@
-export * from "./use-go-to-link"
+export * from './use-go-to-link'

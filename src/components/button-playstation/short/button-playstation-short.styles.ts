@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
-import { ButtonPlaystationShortProps } from ".";
-import { theme } from "@styles/theme";
+import styled, { css } from 'styled-components'
+import { ButtonPlaystationShortProps } from '.'
+import { theme } from '@styles/theme'
 
 const ButtonPlaystationShortWrapperCheckedTrue = css`
   background: ${theme.buttons.playstation.active.fill};
@@ -12,7 +12,7 @@ const ButtonPlaystationShortWrapperCheckedTrue = css`
       fill: ${theme.colors.default.white};
     }
   }
-`;
+`
 
 const ButtonPlaystationShortWrapperCheckedFalse = css`
   background: ${theme.buttons.playstation.default.fill};
@@ -21,12 +21,14 @@ const ButtonPlaystationShortWrapperCheckedFalse = css`
     min-width: 20px;
     height: 20px;
     & path {
-      fill: ${theme.colors.black["80"]};
+      fill: ${theme.colors.black['80']};
     }
   }
-`;
+`
 
-export const ButtonPlaystationShortWrapper = styled.div<Pick<ButtonPlaystationShortProps, "checked">>`
+export const ButtonPlaystationShortWrapper = styled.div<
+  Pick<ButtonPlaystationShortProps, 'checked'>
+>`
   display: flex;
   width: 44px;
   height: 44px;
@@ -41,6 +43,6 @@ export const ButtonPlaystationShortWrapper = styled.div<Pick<ButtonPlaystationSh
     props.checked === true
       ? ButtonPlaystationShortWrapperCheckedTrue
       : props.checked === false
-      ? ButtonPlaystationShortWrapperCheckedFalse
-      : ""};
-`;
+        ? ButtonPlaystationShortWrapperCheckedFalse
+        : ''};
+`

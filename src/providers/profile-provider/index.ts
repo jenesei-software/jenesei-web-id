@@ -1,2 +1,2 @@
-export * from "./profile-provider";
-export * from "./profile-provider.types";
+export * from './profile-provider'
+export * from './profile-provider.types'

@@ -1,15 +1,24 @@
-import { FontInterB14, FontInterM12, FontInterM14, FontInterR16 } from "@styles/fonts/inter";
-import { theme } from "@styles/theme";
-import DatePicker from "react-datepicker";
-import styled from "styled-components";
+import {
+  FontInterB14,
+  FontInterM12,
+  FontInterM14,
+  FontInterR16,
+} from '@styles/fonts/inter'
+import { theme } from '@styles/theme'
+import DatePicker from 'react-datepicker'
+import styled from 'styled-components'
 
 export const UseDatePickerWrapper = styled.div`
   width: 100%;
   & .react-datepicker-wrapper {
     width: 100%;
   }
-  & .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle,
-  & .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle {
+  &
+    .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle,
+  &
+    .react-datepicker-popper[data-placement^='top']
+    .react-datepicker__triangle {
     &::after {
       left: -30px;
       border-bottom-color: ${theme.colors.default.white};
@@ -20,7 +29,7 @@ export const UseDatePickerWrapper = styled.div`
     }
     &::before {
       left: -30px;
-      border-bottom-color: ${theme.colors.gray["d3d3d3"]};
+      border-bottom-color: ${theme.colors.gray['d3d3d3']};
       box-shadow: ${theme.inputs.default.effects.boxShadow};
       bottom: 0px;
       display: none;
@@ -35,9 +44,9 @@ export const UseDatePickerWrapper = styled.div`
     ${FontInterM14};
     border-radius: 24px;
     background: ${theme.colors.default.white};
-    border: 1px solid ${theme.colors.gray["d3d3d3"]};
+    border: 1px solid ${theme.colors.gray['d3d3d3']};
     box-shadow: ${theme.inputs.default.effects.boxShadow};
-    color: ${theme.colors.gray["737373"]};
+    color: ${theme.colors.gray['737373']};
   }
   & .react-datepicker__header {
     user-select: none;
@@ -56,21 +65,21 @@ export const UseDatePickerWrapper = styled.div`
     background: transparent;
     &:hover {
       border-radius: 100px;
-      background: ${theme.colors.product["20"]};
+      background: ${theme.colors.product['20']};
     }
   }
   & .react-datepicker__day--selected {
     ${FontInterB14};
     border-radius: 100px;
     color: ${theme.colors.default.white};
-    background: ${theme.colors.product["100"]};
+    background: ${theme.colors.product['100']};
     &:hover {
-      color: ${theme.colors.black["80"]};
+      color: ${theme.colors.black['80']};
     }
   }
   & .react-datepicker__day--today {
     border-radius: 100px;
-    background: ${theme.colors.product["20"]};
+    background: ${theme.colors.product['20']};
   }
   & .react-datepicker__day-name {
     ${FontInterM12};
@@ -80,9 +89,9 @@ export const UseDatePickerWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ${theme.colors.black["80"]};
+    color: ${theme.colors.black['80']};
   }
-`;
+`
 
 export const StyledDatePickerHeader = styled.div`
   display: flex;
@@ -92,7 +101,7 @@ export const StyledDatePickerHeader = styled.div`
   user-select: none;
   min-width: 300px;
   gap: 8px;
-`;
+`
 
 export const StyledDatePicker = styled(DatePicker)`
   ${FontInterR16};
@@ -112,29 +121,29 @@ export const StyledDatePicker = styled(DatePicker)`
   width: 100%;
   border-radius: 6px;
   border: none;
-  outline: 1px solid ${theme.colors.black["60"]};
+  outline: 1px solid ${theme.colors.black['60']};
   background: ${theme.colors.default.white};
-  color: ${theme.colors.black["80"]};
+  color: ${theme.colors.black['80']};
   box-shadow: ${theme.inputs.default.effects.boxShadow};
 
   &::placeholder {
-    color: ${theme.colors.black["40"]};
+    color: ${theme.colors.black['40']};
     font-weight: 700;
     opacity: 1;
   }
 
   &::-ms-input-placeholder {
     font-weight: 700;
-    color: ${theme.colors.black["40"]};
+    color: ${theme.colors.black['40']};
   }
   &:focus,
   &:active,
   &:focus-visible {
-    outline: 1px solid ${theme.colors.black["100"]};
+    outline: 1px solid ${theme.colors.black['100']};
   }
   &*,
   &*::before,
   &*::after {
     box-sizing: border-box;
   }
-`;
+`

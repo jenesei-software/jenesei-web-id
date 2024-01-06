@@ -65,6 +65,17 @@
     "title-min": "Don’t have an account?",
     "title-min-2": "Sign Up"
   },
+  "password-forgot": {
+    "title-big": "Check your Email",
+    "title-min": "We have sent an email with password reset information to",
+    "buttons": {
+      "send": "Send",
+      "back-to-login": "Back to Login"
+    },
+    "inputs": {
+      "email": "Email"
+    }
+  },
   "sign-up": {
     "buttons": {
       "continue-with-apple": "Continue with Apple",

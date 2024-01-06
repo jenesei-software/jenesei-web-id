@@ -1,16 +1,16 @@
-import { BrowserRouter } from "react-router-dom";
-import { i18n } from "@assets/i18n";
-import { I18nextProvider } from "react-i18next";
-import { Provider } from "react-redux";
-import { store } from "@core/store";
-import { theme } from "@styles/theme";
-import { ThemeProvider } from "styled-components";
-import { LayoutApp } from "@layouts/layout-app";
-import { LoadingProvider } from "@providers/loading-provider";
-import { LanguageProvider } from "@providers/language-provider";
-import { AxiosProvider } from "@providers/axios-provider";
-import { AuthProvider } from "@providers/auth-provider";
-import { ProfileProvider } from "@providers/profile-provider";
+import { BrowserRouter } from 'react-router-dom'
+import { i18n } from '@assets/i18n'
+import { I18nextProvider } from 'react-i18next'
+import { Provider } from 'react-redux'
+import { store } from '@core/store'
+import { theme } from '@styles/theme'
+import { ThemeProvider } from 'styled-components'
+import { LayoutApp } from '@layouts/layout-app'
+import { LoadingProvider } from '@providers/loading-provider'
+import { LanguageProvider } from '@providers/language-provider'
+import { AxiosProvider } from '@providers/axios-provider'
+import { AuthProvider } from '@providers/auth-provider'
+import { ProfileProvider } from '@providers/profile-provider'
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
         </ThemeProvider>
       </Provider>
     </I18nextProvider>
-  );
+  )
 }
 
-export default App;
+export default App

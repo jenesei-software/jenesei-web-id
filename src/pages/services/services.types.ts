@@ -1,2 +1,1 @@
-export interface ServicesProps {
-}
+export interface ServicesProps {}

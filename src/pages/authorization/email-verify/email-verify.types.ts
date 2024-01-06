@@ -1,2 +1,1 @@
-export interface EmailVerifyProps {
-}
+export interface EmailVerifyProps {}

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const LayoutAppWrapper = styled.div`
   display: flex;
@@ -8,4 +8,4 @@ export const LayoutAppWrapper = styled.div`
   max-width: 100dvw;
   min-height: 100dvh;
   overflow: hidden;
-`;
+`

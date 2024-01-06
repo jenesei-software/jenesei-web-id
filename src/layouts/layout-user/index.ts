@@ -1,2 +1,2 @@
-export * from "./layout-user";
-export * from "./layout-user.styles";
+export * from './layout-user'
+export * from './layout-user.styles'

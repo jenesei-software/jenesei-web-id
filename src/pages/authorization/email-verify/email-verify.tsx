@@ -1,6 +1,6 @@
-import { EmailVerifyProps, EmailVerifyWrapper } from ".";
-import { FC } from "react";
+import { EmailVerifyProps, EmailVerifyWrapper } from '.'
+import { FC } from 'react'
 
 export const EmailVerify: FC<EmailVerifyProps> = () => {
-  return <EmailVerifyWrapper></EmailVerifyWrapper>;
-};
+  return <EmailVerifyWrapper></EmailVerifyWrapper>
+}

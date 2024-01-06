@@ -1,7 +1,13 @@
 export const IconCurved = {
   Search: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -15,11 +21,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   Call: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M6.0317 1.75812L6.99129 3.44046C7.10706 3.50096 7.22689 3.57819 7.35076 3.67532L6.0317 1.75812Z"
           fill="black"
@@ -43,11 +55,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   ArrowLeft: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -62,13 +80,22 @@ export const IconCurved = {
           d="M5.44644 12.75H4.5C4.09409 12.75 3.76349 12.4275 3.7504 12.0248C3.75865 12.9669 4.2655 13.8489 4.86484 14.5824C5.48367 15.3397 6.29029 16.0465 7.06875 16.6438C7.85166 17.2445 8.63081 17.7531 9.21205 18.1106C9.50338 18.2898 9.74671 18.4321 9.91814 18.5301C10.0039 18.5791 10.0718 18.6171 10.1188 18.6432L10.1733 18.6732L10.1882 18.6813L10.1924 18.6836L10.1944 18.6847C10.5591 18.8812 11.014 18.745 11.2105 18.3804L10.906 17.3642L10.9036 17.3629L10.8925 17.3569L10.8459 17.3312C10.8043 17.3082 10.7422 17.2734 10.6625 17.2279C10.5031 17.1367 10.2738 17.0027 9.99793 16.833C9.44479 16.4928 8.71144 16.0135 7.98185 15.4537C7.24782 14.8905 6.54194 14.2642 6.02638 13.6333C5.76605 13.3147 5.57424 13.0192 5.44644 12.75Z"
           fill="black"
         />
-        <path d="M10.906 17.3642L11.2105 18.3804C11.407 18.0158 11.2705 17.5608 10.906 17.3642Z" fill="black" />
+        <path
+          d="M10.906 17.3642L11.2105 18.3804C11.407 18.0158 11.2705 17.5608 10.906 17.3642Z"
+          fill="black"
+        />
       </svg>
-    );
+    )
   },
   ArrowLeft2: function () {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -76,11 +103,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   ArrowRight2: function () {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -88,11 +121,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   Category: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -118,11 +157,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   Profile: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -136,11 +181,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   Password: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -148,11 +199,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   Wallet: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -176,11 +233,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   Voice2: function () {
     return (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -234,11 +297,17 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
   Hide: function () {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="19"
+        height="20"
+        viewBox="0 0 19 20"
+        fill="none"
+      >
         <path
           d="M12.5421 10.5509C12.6005 10.2282 12.3863 9.91927 12.0637 9.86083C11.741 9.80239 11.432 10.0166 11.3736 10.3393C11.2324 11.1188 10.6222 11.7304 9.84226 11.8735C9.51972 11.9327 9.30622 12.2421 9.36538 12.5646C9.42455 12.8872 9.73398 13.1007 10.0565 13.0415C11.3223 12.8093 12.3128 11.817 12.5421 10.5509Z"
           fill="black"
@@ -257,11 +326,17 @@ export const IconCurved = {
           fillOpacity="0.8"
         />
       </svg>
-    );
+    )
   },
   Show: function () {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -275,6 +350,6 @@ export const IconCurved = {
           fill="black"
         />
       </svg>
-    );
+    )
   },
-};
+}

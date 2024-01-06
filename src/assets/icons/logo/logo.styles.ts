@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const LogoWrapper = styled.div`
   align-items: center;
@@ -18,4 +18,4 @@ export const LogoWrapper = styled.div`
     position: relative;
     width: 207.17px;
   }
-`;
+`

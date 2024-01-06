@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const StyledLink = styled(Link)`
   width: 100%;
   user-select: none;
   text-decoration: none;
-`;
+`

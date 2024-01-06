@@ -1,2 +1,2 @@
-export * from "./logo-services";
-export * from "./logo-services.styles";
+export * from './logo-services'
+export * from './logo-services.styles'

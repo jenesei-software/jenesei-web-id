@@ -1,2 +1,2 @@
-export * from "./layout-authorization";
-export * from "./layout-authorization.styles";
+export * from './layout-authorization'
+export * from './layout-authorization.styles'

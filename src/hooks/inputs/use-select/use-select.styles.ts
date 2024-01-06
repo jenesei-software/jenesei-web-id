@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import { UseSelectProps } from ".";
-import { theme } from "@styles/theme";
-import { FontInterR16 } from "@styles/fonts/inter";
+import styled, { css } from 'styled-components'
+import { UseSelectProps } from '.'
+import { theme } from '@styles/theme'
+import { FontInterR16 } from '@styles/fonts/inter'
 
 const UseSelectWrapperTypeVolumetric = css`
   transition: all 0.4s;
@@ -22,12 +22,11 @@ const UseSelectWrapperTypeVolumetric = css`
       background: ${theme.buttons.volumetric.active.fill};
       box-shadow: ${theme.buttons.volumetric.effects.active};
     }
-
   }
-`;
+`
 const UseSelectWrapperTypeDefault = css`
   & .react-dropdown-select {
-    border: 2px solid ${theme.colors.black["60"]};
+    border: 2px solid ${theme.colors.black['60']};
     background: ${theme.colors.default.white};
     box-shadow: ${theme.inputs.default.effects.boxShadow};
 
@@ -36,15 +35,18 @@ const UseSelectWrapperTypeDefault = css`
     &:hover,
     &:active,
     &:focus-visible {
-      border: 1px solid ${theme.colors.black["100"]};
+      border: 1px solid ${theme.colors.black['100']};
       background: ${theme.colors.default.white};
       box-shadow: ${theme.buttons.volumetric.effects.active};
     }
   }
-`;
+`
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, "type">>`
-  ${(props) => (props.type == "volumetric" ? UseSelectWrapperTypeVolumetric : UseSelectWrapperTypeDefault)}
+export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
+  ${(props) =>
+    props.type == 'volumetric'
+      ? UseSelectWrapperTypeVolumetric
+      : UseSelectWrapperTypeDefault}
   height: 100%;
   padding: 3px;
   border-radius: 8px;
@@ -72,13 +74,13 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, "type">>`
     box-sizing: border-box;
     white-space: nowrap;
     flex: 1;
-    color: ${theme.colors.gray["484848"]};
+    color: ${theme.colors.gray['484848']};
 
     &:active,
     &:hover {
       border-radius: 6px;
 
-      background: ${theme.colors.product["20"]} !important;
+      background: ${theme.colors.product['20']} !important;
     }
   }
   & .react-dropdown-select-dropdown {
@@ -95,10 +97,10 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, "type">>`
     font-weight: 700;
     border-radius: 6px;
 
-    color: ${theme.colors.black["100"]} !important;
-    border-bottom: 1px solid ${theme.colors.product["100"]} !important;
-    border: 1px solid ${theme.colors.product["100"]};
-    background: ${theme.colors.product["20"]} !important;
+    color: ${theme.colors.black['100']} !important;
+    border-bottom: 1px solid ${theme.colors.product['100']} !important;
+    border: 1px solid ${theme.colors.product['100']};
+    background: ${theme.colors.product['20']} !important;
   }
   & .react-dropdown-select-dropdown-handle {
     margin: 0;
@@ -107,21 +109,21 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, "type">>`
     justify-content: center;
     transform-origin: center;
 
-    color: ${theme.colors.black["80"]};
+    color: ${theme.colors.black['80']};
     & path {
-      fill: ${theme.colors.black["60"]} !important;
+      fill: ${theme.colors.black['60']} !important;
     }
     &:hover path,
     &:focus path {
-      fill: ${theme.colors.black["80"]} !important;
-      stroke: ${theme.colors.black["80"]} !important;
+      fill: ${theme.colors.black['80']} !important;
+      stroke: ${theme.colors.black['80']} !important;
     }
   }
   & .react-dropdown-select-input {
     display:none;
   } 
   & .react-dropdown-select-no-data {
-    color: ${theme.colors.product["100"]} !important;
+    color: ${theme.colors.product['100']} !important;
   }
   & .react-dropdown-select-content{
     align-items: center;
@@ -146,19 +148,19 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, "type">>`
       min-width: 20px;
       height: 20px;
       & path {
-        fill: ${theme.colors.black["60"]};
+        fill: ${theme.colors.black['60']};
       }
     }
     &::placeholder {
       font-weight: 700;
       opacity: 1;
 
-      color: ${theme.colors.black["40"]};
+      color: ${theme.colors.black['40']};
     }
 
     &::-ms-input-placeholder {
       font-weight: 700;
-      color: ${theme.colors.black["40"]};
+      color: ${theme.colors.black['40']};
     }
     &*,
     &*::before,
@@ -166,4 +168,4 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, "type">>`
       box-sizing: border-box;
     }
   }
-`;
+`

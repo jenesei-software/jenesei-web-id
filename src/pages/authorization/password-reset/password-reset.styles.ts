@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme";
-import styled from "styled-components";
+import { theme } from '@styles/theme'
+import styled from 'styled-components'
 
 export const PasswordResetWrapper = styled.div`
   display: flex;
@@ -15,4 +15,4 @@ export const PasswordResetWrapper = styled.div`
     height: auto;
     justify-content: space-between;
   }
-`;
+`

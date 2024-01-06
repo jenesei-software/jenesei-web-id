@@ -1,5 +1,5 @@
-import { config } from "@core/config";
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { config } from '@core/config'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const baseQuery = fetchBaseQuery({
   baseUrl: config.apiHost,
@@ -9,14 +9,14 @@ const baseQuery = fetchBaseQuery({
     // if (token && !headers.has('authorization')) {
     //   headers.set('authorization', `Bearer ${token}`)
     // }
-    return headers;
+    return headers
   },
-});
+})
 
 export const api = createApi({
   baseQuery: async (args, queryApi, extraOptions) => {
     // const { dispatch, getState } = queryApi
-    const result = await baseQuery(args, queryApi, extraOptions);
+    const result = await baseQuery(args, queryApi, extraOptions)
 
     // const statusCode = ((result?.error as any)?.originalStatus as number) || 0
 
@@ -36,8 +36,8 @@ export const api = createApi({
     //     dispatch(setCredentials({}))
     //   }
     // }
-    return result;
+    return result
   },
-  tagTypes: ["Profile"],
+  tagTypes: ['Profile'],
   endpoints: () => ({}),
-});
+})

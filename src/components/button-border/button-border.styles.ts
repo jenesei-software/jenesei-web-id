@@ -1,37 +1,37 @@
-import { theme } from "@styles/theme";
-import styled, { css } from "styled-components";
-import { ButtonBorderProps } from ".";
+import { theme } from '@styles/theme'
+import styled, { css } from 'styled-components'
+import { ButtonBorderProps } from '.'
 
 const ButtonBorderWrapperBlack = css`
   border: 1px solid transparent;
-  background: ${theme.colors.black["100"]};
+  background: ${theme.colors.black['100']};
   & span {
     color: ${theme.colors.default.white};
   }
-`;
+`
 
 const ButtonBorderWrapperGrey = css`
   border: 1px solid transparent;
-  background: ${theme.colors.black["10"]};
+  background: ${theme.colors.black['10']};
   & span {
-    color: ${theme.colors.black["60"]};
+    color: ${theme.colors.black['60']};
   }
-`;
+`
 const ButtonBorderWrapperWhite = css`
   border: 1px solid white;
-  background: ${theme.colors.black["10"]};
+  background: ${theme.colors.black['10']};
   & span {
-    color: ${theme.colors.black["60"]};
+    color: ${theme.colors.black['60']};
   }
-`;
+`
 const ButtonBorderWrapperBorder = css`
-  border: 1px solid ${theme.colors.black["10"]};
+  border: 1px solid ${theme.colors.black['10']};
   background: ${theme.colors.default.white};
   & span {
-    color: ${theme.colors.black["60"]};
+    color: ${theme.colors.black['60']};
   }
-`;
-export const ButtonBorderWrapper = styled.div<Pick<ButtonBorderProps, "type">>`
+`
+export const ButtonBorderWrapper = styled.div<Pick<ButtonBorderProps, 'type'>>`
   display: inline-flex;
   padding: 8px 14px;
   justify-content: center;
@@ -42,13 +42,13 @@ export const ButtonBorderWrapper = styled.div<Pick<ButtonBorderProps, "type">>`
   cursor: pointer;
 
   ${(props) =>
-    props.type === "black"
+    props.type === 'black'
       ? ButtonBorderWrapperBlack
-      : props.type === "grey"
-      ? ButtonBorderWrapperGrey
-      : props.type === "white"
-      ? ButtonBorderWrapperWhite
-      : props.type === "border"
-      ? ButtonBorderWrapperBorder
-      : ""};
-`;
+      : props.type === 'grey'
+        ? ButtonBorderWrapperGrey
+        : props.type === 'white'
+          ? ButtonBorderWrapperWhite
+          : props.type === 'border'
+            ? ButtonBorderWrapperBorder
+            : ''};
+`

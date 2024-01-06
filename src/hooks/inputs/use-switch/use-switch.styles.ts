@@ -1,4 +1,4 @@
-import styled from "styled-components";
-import Switch from "react-switch";
+import styled from 'styled-components'
+import Switch from 'react-switch'
 
-export const StyledSwitch = styled(Switch)``;
+export const StyledSwitch = styled(Switch)``

@@ -1,4 +1,4 @@
 export interface UseSwitchProps {
-  value: boolean;
-  onChange?: () => void;
+  value: boolean
+  onChange?: () => void
 }

@@ -1,17 +1,17 @@
-import { HTMLInputTypeAttribute } from "react";
+import { HTMLInputTypeAttribute } from 'react'
 
 export interface UseInputStringProps {
-  initialValue?: string;
-  placeholder?: string;
-  required?: boolean;
-  noSpaces?: boolean;
-  type?: HTMLInputTypeAttribute;
+  initialValue?: string
+  placeholder?: string
+  required?: boolean
+  noSpaces?: boolean
+  type?: HTMLInputTypeAttribute
   icon?: {
-    value: () => JSX.Element;
-    onCLick: () => void;
-  };
+    value: () => JSX.Element
+    onCLick: () => void
+  }
 }
 
 export interface UseInputIconProps {
-  $icon?: UseInputStringProps['icon'];
+  $icon?: UseInputStringProps['icon']
 }

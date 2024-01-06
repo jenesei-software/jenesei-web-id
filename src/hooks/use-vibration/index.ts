@@ -1,1 +1,1 @@
-export * from "./use-vibration"
+export * from './use-vibration'

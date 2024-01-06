@@ -1,18 +1,18 @@
-import { FontInterR16 } from "@styles/fonts/inter";
-import { theme } from "@styles/theme";
-import styled, { css } from "styled-components";
-import { UseInputIconProps } from ".";
+import { FontInterR16 } from '@styles/fonts/inter'
+import { theme } from '@styles/theme'
+import styled, { css } from 'styled-components'
+import { UseInputIconProps } from '.'
 
 export const UseInputWrapper = styled.div`
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
-`;
+`
 
 const UseInputIconOnCLickTrue = css`
   cursor: pointer;
-`;
+`
 
 export const UseInputIcon = styled.div<UseInputIconProps>`
   position: absolute;
@@ -30,10 +30,10 @@ export const UseInputIcon = styled.div<UseInputIconProps>`
     width: 19px;
     height: 19px;
     & path {
-      fill: ${theme.colors.black["80"]};
+      fill: ${theme.colors.black['80']};
     }
   }
-`;
+`
 
 export const UseInputString = styled.input`
   ${FontInterR16};
@@ -53,29 +53,29 @@ export const UseInputString = styled.input`
   width: 100%;
   border-radius: 6px;
   border: none;
-  outline: 1px solid ${theme.colors.black["60"]};
+  outline: 1px solid ${theme.colors.black['60']};
   background: ${theme.colors.default.white};
-  color: ${theme.colors.black["80"]};
+  color: ${theme.colors.black['80']};
   box-shadow: ${theme.inputs.default.effects.boxShadow};
 
   &::placeholder {
-    color: ${theme.colors.black["40"]};
+    color: ${theme.colors.black['40']};
     font-weight: 700;
     opacity: 1;
   }
 
   &::-ms-input-placeholder {
     font-weight: 700;
-    color: ${theme.colors.black["40"]};
+    color: ${theme.colors.black['40']};
   }
   &:focus,
   &:active,
   &:focus-visible {
-    outline: 1px solid ${theme.colors.black["100"]};
+    outline: 1px solid ${theme.colors.black['100']};
   }
   &*,
   &*::before,
   &*::after {
     box-sizing: border-box;
   }
-`;
+`

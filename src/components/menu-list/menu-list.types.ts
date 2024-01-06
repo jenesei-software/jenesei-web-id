@@ -1,2 +1,1 @@
-export interface MenuListProps {
-}
+export interface MenuListProps {}

@@ -1,2 +1,1 @@
-export interface PasswordResetProps {
-}
+export interface PasswordResetProps {}

@@ -1,5 +1,5 @@
 export interface Config {
-  coreURL: string;
-  appHost: string;
-  apiHost: string;
+  coreURL: string
+  appHost: string
+  apiHost: string
 }

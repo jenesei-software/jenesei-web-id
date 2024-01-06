@@ -1,7 +1,9 @@
-import styled from 'styled-components';
-import { ButtonPlaystationShortWrapper } from '../short';
+import styled from 'styled-components'
+import { ButtonPlaystationShortWrapper } from '../short'
 
-export const ButtonPlaystationLongWrapper = styled(ButtonPlaystationShortWrapper)`
+export const ButtonPlaystationLongWrapper = styled(
+  ButtonPlaystationShortWrapper
+)`
   width: max-content;
   display: inline-flex;
   height: 44px;
@@ -10,4 +12,4 @@ export const ButtonPlaystationLongWrapper = styled(ButtonPlaystationShortWrapper
   align-items: center;
   gap: 4px;
   flex-shrink: 0;
-`;
+`

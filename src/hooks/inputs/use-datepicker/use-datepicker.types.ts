@@ -1,4 +1,4 @@
 export interface UseDatePickerProps {
-  initialValue?: Date | null;
-  placeholder?: string;
+  initialValue?: Date | null
+  placeholder?: string
 }

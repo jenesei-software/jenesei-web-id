@@ -1,2 +1,2 @@
-export * from "./line-or";
-export * from "./line-or.styles";
+export * from './line-or'
+export * from './line-or.styles'

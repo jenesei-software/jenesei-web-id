@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme";
-import styled from "styled-components";
+import { theme } from '@styles/theme'
+import styled from 'styled-components'
 
 export const LayoutAuthorizationWrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ export const LayoutAuthorizationWrapper = styled.div`
   @media (max-width: ${theme.size.tablet}) {
     flex-direction: column;
   }
-`;
+`
 
 export const LayoutAuthorizationMainContainer = styled.div`
   align-items: flex-start;
@@ -24,8 +24,8 @@ export const LayoutAuthorizationMainContainer = styled.div`
   position: relative;
   width: 50%;
   box-sizing: border-box;
-  background: ${theme.colors.black["100"]};
-  color: ${theme.colors.black["100"]};
+  background: ${theme.colors.black['100']};
+  color: ${theme.colors.black['100']};
 
   @media (max-width: ${theme.size.tablet}) {
     width: 100%;
@@ -38,7 +38,7 @@ export const LayoutAuthorizationMainContainer = styled.div`
     padding: 10px 50px;
     align-items: center;
   }
-`;
+`
 
 export const LayoutAuthorizationOutletContainer = styled.div`
   display: flex;
@@ -61,7 +61,7 @@ export const LayoutAuthorizationOutletContainer = styled.div`
   @media (max-width: ${theme.size.mobile}) {
     padding: 20px;
   }
-`;
+`
 
 export const LogoWithTitleContainer = styled.div`
   flex: 0 0 auto;
@@ -72,7 +72,7 @@ export const LogoWithTitleContainer = styled.div`
     display: flex;
     align-items: center;
   }
-`;
+`
 export const AuthorizationBackgroundContainer = styled.div`
   position: absolute;
   right: 0;
@@ -82,7 +82,7 @@ export const AuthorizationBackgroundContainer = styled.div`
   @media (max-width: ${theme.size.tablet}) {
     display: none;
   }
-`;
+`
 export const LayoutAuthorizationTextContainer = styled.div`
   align-items: flex-start;
   display: inline-flex;
@@ -99,4 +99,4 @@ export const LayoutAuthorizationTextContainer = styled.div`
   @media (max-width: ${theme.size.tablet}) {
     display: none;
   }
-`;
+`

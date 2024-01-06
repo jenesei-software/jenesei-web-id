@@ -1,2 +1,1 @@
-export interface SignUpProps {
-}
+export interface SignUpProps {}

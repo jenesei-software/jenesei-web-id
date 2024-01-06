@@ -1,33 +1,33 @@
-import { theme } from "@styles/theme";
-import styled, { css } from "styled-components";
-import { ButtonBigProps } from ".";
+import { theme } from '@styles/theme'
+import styled, { css } from 'styled-components'
+import { ButtonBigProps } from '.'
 
 const ButtonBigWrapperProduct = css`
-  color: ${theme.colors.product["100"]};
+  color: ${theme.colors.product['100']};
   border: 1px solid transparent;
-  background: ${theme.colors.product["100"]};
+  background: ${theme.colors.product['100']};
   & span {
     color: ${theme.colors.default.white};
   }
-`;
+`
 
 const ButtonBigWrapperBorder = css`
   color: ${theme.colors.default.white};
-  border: 1px solid ${theme.colors.black["80"]};
+  border: 1px solid ${theme.colors.black['80']};
   background: ${theme.colors.default.white};
   & span {
-    color: ${theme.colors.black["100"]};
+    color: ${theme.colors.black['100']};
   }
-`;
+`
 
 const ButtonBigWrapperDefault = css`
   color: ${theme.colors.default.white};
   border: 1px solid transparent;
   background: ${theme.colors.default.white};
   & span {
-    color: ${theme.colors.black["100"]};
+    color: ${theme.colors.black['100']};
   }
-`;
+`
 
 const ButtonBigWrapperIsIconColorTrue = css`
   & svg {
@@ -35,18 +35,20 @@ const ButtonBigWrapperIsIconColorTrue = css`
     height: 19px;
     flex-shrink: 0;
     & path {
-      fill: ${theme.colors.black["60"]};
+      fill: ${theme.colors.black['60']};
     }
   }
-`;
+`
 const ButtonBigWrapperIsIconColorFalse = css`
   & svg {
     width: 19px;
     height: 19px;
     flex-shrink: 0;
   }
-`;
-export const ButtonBigWrapper = styled.button<Pick<ButtonBigProps, "type" | "isIconColor">>`
+`
+export const ButtonBigWrapper = styled.button<
+  Pick<ButtonBigProps, 'type' | 'isIconColor'>
+>`
   cursor: pointer;
   display: flex;
   width: 100%;
@@ -63,18 +65,18 @@ export const ButtonBigWrapper = styled.button<Pick<ButtonBigProps, "type" | "isI
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  
+
   ${(props) =>
     props.isIconColor === true
       ? ButtonBigWrapperIsIconColorTrue
       : props.isIconColor === false
-      ? ButtonBigWrapperIsIconColorFalse
-      : ""};
+        ? ButtonBigWrapperIsIconColorFalse
+        : ''};
 
   ${(props) =>
-    props.type === "product"
+    props.type === 'product'
       ? ButtonBigWrapperProduct
-      : props.type === "border"
-      ? ButtonBigWrapperBorder
-      : ButtonBigWrapperDefault};
-`;
+      : props.type === 'border'
+        ? ButtonBigWrapperBorder
+        : ButtonBigWrapperDefault};
+`

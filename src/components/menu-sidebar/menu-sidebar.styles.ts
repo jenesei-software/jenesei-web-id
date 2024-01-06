@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme";
-import styled from "styled-components";
+import { theme } from '@styles/theme'
+import styled from 'styled-components'
 
 export const MenuSideBarWrapper = styled.div`
   position: relative;
@@ -18,11 +18,11 @@ export const MenuSideBarWrapper = styled.div`
   @media (max-width: ${theme.size.tablet}) {
     width: auto;
   }
-`;
+`
 export const MenuSideBarWrapperContainer = styled.div`
   align-items: center;
   gap: 12px;
-`;
+`
 export const MenuSideBarTitle = styled.div`
   display: flex;
   height: 68px;
@@ -38,7 +38,7 @@ export const MenuSideBarTitle = styled.div`
     align-self: stretch;
     padding: 0;
   }
-`;
+`
 export const MenuSideLogoContainer = styled.div`
   display: flex;
   width: 100%;
@@ -49,7 +49,7 @@ export const MenuSideLogoContainer = styled.div`
   position: absolute;
   bottom: 0;
   box-sizing: border-box;
-  background: ${theme.colors.black["100"]};
+  background: ${theme.colors.black['100']};
 
   & > :first-child {
     display: flex;
@@ -73,4 +73,4 @@ export const MenuSideLogoContainer = styled.div`
       display: flex;
     }
   }
-`;
+`

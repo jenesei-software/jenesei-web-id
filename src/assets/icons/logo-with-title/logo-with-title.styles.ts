@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const LogoWithTitleWrapper = styled.div`
   align-items: center;
@@ -7,7 +7,7 @@ export const LogoWithTitleWrapper = styled.div`
   justify-content: center;
   position: relative;
   cursor: pointer;
-  
+
   & .icon {
     height: 50px;
     position: relative;
@@ -19,4 +19,4 @@ export const LogoWithTitleWrapper = styled.div`
     position: relative;
     width: 207.17px;
   }
-`;
+`

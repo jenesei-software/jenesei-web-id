@@ -1,12 +1,19 @@
-import { useGoToLink } from "@hooks/use-go-to-link";
-import { LogoWithTitleWrapper } from ".";
+import { useGoToLink } from '@hooks/use-go-to-link'
+import { LogoWithTitleWrapper } from '.'
 
 export const LogoWithTitle: React.FC = () => {
-  const goToLink = useGoToLink();
+  const goToLink = useGoToLink()
 
   return (
-    <LogoWithTitleWrapper onClick={() => goToLink("/")}>
-      <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+    <LogoWithTitleWrapper onClick={() => goToLink('/')}>
+      <svg
+        className="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+        fill="none"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -61,5 +68,5 @@ export const LogoWithTitle: React.FC = () => {
         />
       </svg>
     </LogoWithTitleWrapper>
-  );
-};
+  )
+}
