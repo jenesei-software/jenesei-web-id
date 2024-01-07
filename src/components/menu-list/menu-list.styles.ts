@@ -8,7 +8,7 @@ export const MenuListWrapper = styled.div`
   align-items: flex-start;
   width: 100%;
   border-top: 2px solid ${theme.colors.black['5']};
-
+  z-index: 2;
   @media (max-width: ${theme.size.mobile}) {
     border-top: 0;
     position: absolute;

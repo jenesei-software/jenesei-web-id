@@ -81,6 +81,13 @@ export const StyledInterM16 = styled.span<StyledInterProps>`
   ${FontInterM14};
   color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
 `
+export const StyledInterM16Mobile = styled.span<StyledInterProps>`
+  ${FontInterM14};
+  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  @media (max-width: ${theme.size.mobile}) {
+    font-size: 12px;
+  }
+`
 
 export const FontInterB14 = css`
   ${FontInter};
@@ -131,6 +138,13 @@ export const StyledInterB36 = styled.span<StyledInterProps>`
   ${FontInterB36};
   color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
 `
+export const StyledInterB36Mobile = styled.span<StyledInterProps>`
+  ${FontInterB36};
+  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  @media (max-width: ${theme.size.mobile}) {
+    font-size: 20px;
+  }
+`
 
 const FontInterR14 = css`
   ${FontInter};
@@ -144,7 +158,7 @@ export const StyledInterR14 = styled.span<StyledInterProps>`
 
 export const FontInterR16 = css`
   ${FontInter};
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 400;
 `
 export const StyledInterR16 = styled.span<StyledInterProps>`

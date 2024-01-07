@@ -43,6 +43,23 @@
       "title": "Личная информация"
     }
   },
+  "personal-info": {
+    "picture": {
+      "title-big": "Изображение профиля",
+      "title-min": "PNG, JPEG до 15 МБ",
+      "buttons": {
+        "upload": "Загрузить"
+      }
+    },
+    "name": {
+      "title-1": "Имя",
+      "title-2": "Фамилия",
+      "inputs": {
+        "first-name": "Введите свое имя",
+        "last-name": "Введите свою фамилию"
+      }
+    }
+  },
   "password-forgot": {
     "buttons": {
       "back-to-login": "Вернуться к Авторизации",

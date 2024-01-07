@@ -59,7 +59,7 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
   justify-content: center;
 
   & .react-dropdown-select-input {
-    font-size: 16px !important;
+    ${FontInterR16}
   }
   & .react-dropdown-select-item {
     ${FontInterR16};

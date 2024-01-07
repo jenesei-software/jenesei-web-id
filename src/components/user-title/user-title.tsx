@@ -1,8 +1,5 @@
-import {
-  UserTitleStyledInterB36,
-  UserTitleStyledInterM16,
-  UserTitleWrapper,
-} from '.'
+import { UserTitleWrapper } from '.'
+import { StyledInterB36Mobile, StyledInterM16Mobile } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import React from 'react'
 import { useMemo } from 'react'
@@ -20,12 +17,12 @@ export const UserTitle: React.FC = () => {
 
   return (
     <UserTitleWrapper>
-      <UserTitleStyledInterB36 color={theme.colors.black[80]}>
+      <StyledInterB36Mobile color={theme.colors.black[80]}>
         {t(words[words.length - 1] + '.title')}
-      </UserTitleStyledInterB36>
-      <UserTitleStyledInterM16 color={theme.colors.black[50]}>
+      </StyledInterB36Mobile>
+      <StyledInterM16Mobile color={theme.colors.black[50]}>
         {t(words[words.length - 1] + '.description')}
-      </UserTitleStyledInterM16>
+      </StyledInterM16Mobile>
     </UserTitleWrapper>
   )
 }
