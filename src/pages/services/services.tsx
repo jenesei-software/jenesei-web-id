@@ -6,7 +6,7 @@ import {
   ServicesTitleContainer,
 } from '.'
 import { LogoServices } from '@assets/icons/logo-services'
-import { ButtonBorder } from '@components/button-border'
+import { ButtonBorderLong } from '@components/button-border/long'
 import { useProfile } from '@providers/profile-provider'
 import {
   StyledInterB32,
@@ -39,14 +39,14 @@ export const Services: FC<ServicesProps> = () => {
             <LogoServices.JeneseiTask.Default />
             <StyledInterSB14>{t('JeneseiTask.name')}</StyledInterSB14>
           </ServicesListItemContainer>
-          <ServicesListItemContainer to={`/user`}>
+          <ServicesListItemContainer to={`/user/persona-info`}>
             <LogoServices.JeneseiID.Default />
             <StyledInterSB14>{t('JeneseiID.name')}</StyledInterSB14>
           </ServicesListItemContainer>
         </ServicesListContainer>
       </ServicesListContainer>
       <ServicesButtonsContainer>
-        <ButtonBorder
+        <ButtonBorderLong
           type="border"
           title={t('pages.logout')}
           onClick={() => setProfile({ id: '' })}

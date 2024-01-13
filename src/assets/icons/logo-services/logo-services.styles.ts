@@ -12,3 +12,10 @@ export const LogoServicesWrapper = styled.div`
     flex-shrink: 0;
   }
 `
+
+export const LogoServicesWrapperMin = styled(LogoServicesWrapper)`
+  & .icon {
+    width: 42px;
+    height: 42px;
+  }
+`

@@ -1,5 +1,5 @@
 export interface ButtonPlaystationShortProps {
-  icon: () => JSX.Element
-  checked: boolean
+  icon?: () => JSX.Element
+  checked?: boolean
   title?: string
 }

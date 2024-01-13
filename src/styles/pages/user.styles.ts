@@ -30,10 +30,17 @@ export const FrameOnlyBottom = styled.div`
   height: 100%;
   align-items: flex-end;
 `
+interface IFrameColumn {
+  mediaMaxWidth?: string
+}
 
-export const FrameColumn = styled.div`
+export const FrameColumn = styled.div<IFrameColumn>`
   display: flex;
   flex-direction: column;
+
+  @media (${(props) => `max-width: ${props.mediaMaxWidth}`}) {
+    display: none;
+  }
 `
 
 export const FrameRow = styled.div`
@@ -42,11 +49,29 @@ export const FrameRow = styled.div`
 `
 
 export const FrameColumnGap = styled(FrameColumn)`
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
+`
+
+export const FrameColumnGap300 = styled(FrameColumnGap)`
+  width: 300px;
+`
+
+export const FrameColumnGap250 = styled(FrameColumnGap)`
+  width: 250px;
+`
+
+export const FrameColumnGap180 = styled(FrameColumnGap)`
+  width: 180px;
+`
+
+export const FrameColumnGap78 = styled(FrameColumnGap)`
+  width: 78px;
+`
+
+export const FrameColumnGap78Center = styled(FrameColumnGap78)`
+  align-items: center;
 `
 
 export const FrameRowGap = styled(FrameColumn)`
@@ -55,6 +80,12 @@ export const FrameRowGap = styled(FrameColumn)`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
+  @media (max-width: ${theme.size.mobile}) {
+    justify-content: space-between;
+  }
+`
+
+export const FrameRowGapMediaColumn = styled(FrameRowGap)`
   @media (max-width: ${theme.size.mobile}) {
     flex-direction: column;
   }
@@ -65,4 +96,14 @@ export const FrameSpaceBetween = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   align-self: stretch;
+`
+
+export const FrameRowWrapGap = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 `

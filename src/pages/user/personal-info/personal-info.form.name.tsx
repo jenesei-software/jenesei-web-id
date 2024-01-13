@@ -1,6 +1,6 @@
 import { useInputString } from '@hooks/inputs/use-input-string'
 import { StyledInterB16 } from '@styles/fonts/inter'
-import { FrameColumnGap, FrameRowGap, UserLine } from '@styles/pages'
+import { FrameColumnGap, FrameRowGapMediaColumn, UserLine } from '@styles/pages'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -17,7 +17,7 @@ export const PersonalInfoFormName: React.FC = () => {
   return (
     <React.Fragment>
       <UserLine />
-      <FrameRowGap>
+      <FrameRowGapMediaColumn>
         <FrameColumnGap>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
           {InputFirstName}
@@ -26,7 +26,7 @@ export const PersonalInfoFormName: React.FC = () => {
           <StyledInterB16>{t('title-2')}</StyledInterB16>
           {InputLastName}
         </FrameColumnGap>
-      </FrameRowGap>
+      </FrameRowGapMediaColumn>
     </React.Fragment>
   )
 }

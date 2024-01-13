@@ -12,6 +12,7 @@ export const useInputString = (
     placeholder: '',
     required: false,
     noSpaces: false,
+    readOnly: false,
     type: 'text',
   }
 ) => {
@@ -37,13 +38,14 @@ export const useInputString = (
           value={value}
           type={props.type}
           required={props.required}
+          readOnly={props.readOnly}
         />
         <UseInputIcon $icon={props.icon} onClick={props.icon?.onCLick}>
           {props.icon && props.icon.value()}
         </UseInputIcon>
       </UseInputWrapper>
     ),
-    [value, props.placeholder, props.type, props.required]
+    [value, props.placeholder, props.type, props.required, props.readOnly]
   )
 
   return { value, InputString }

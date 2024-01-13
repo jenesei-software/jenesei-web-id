@@ -29,7 +29,7 @@ export const MenuItemWrapper = styled.button<Pick<MenuItemProps, 'checked'>>`
   border: none;
   color: ${theme.colors.black['100']};
 
-  @media (max-width: ${theme.size.tablet}) {
+  @media (max-width: ${theme.size.menu}) {
     display: flex;
     height: 84px;
     padding: 16px 26px;
@@ -81,7 +81,7 @@ export const MenuItemInfoContainer = styled.div`
     line-clamp: 2;
     box-orient: vertical;
   }
-  @media (max-width: ${theme.size.tablet}) {
+  @media (max-width: ${theme.size.menu}) {
     display: none;
   }
   @media (max-width: ${theme.size.mobile}) {

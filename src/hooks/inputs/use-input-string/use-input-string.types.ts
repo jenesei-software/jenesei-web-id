@@ -5,6 +5,7 @@ export interface UseInputStringProps {
   placeholder?: string
   required?: boolean
   noSpaces?: boolean
+  readOnly?: boolean
   type?: HTMLInputTypeAttribute
   icon?: {
     value: () => JSX.Element

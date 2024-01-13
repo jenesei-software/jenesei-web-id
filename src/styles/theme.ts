@@ -1,7 +1,8 @@
 export const theme = {
   size: {
-    mobile: '600px',
+    mobile: '850px',
     tablet: '1024px',
+    menu: '1450px',
     desktop: '2560px',
   },
   colors: {

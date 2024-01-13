@@ -1,8 +1,8 @@
-import { ButtonBorderProps } from '.'
+import { ButtonBorderLongProps } from '.'
 import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
 
-const ButtonBorderWrapperBlack = css`
+const ButtonBorderLongWrapperBlack = css`
   border: 1px solid transparent;
   background: ${theme.colors.black['100']};
   color: ${theme.colors.default.white};
@@ -11,7 +11,7 @@ const ButtonBorderWrapperBlack = css`
   }
 `
 
-const ButtonBorderWrapperGrey = css`
+const ButtonBorderLongWrapperGrey = css`
   border: 1px solid transparent;
   background: ${theme.colors.black['10']};
   color: ${theme.colors.black['60']};
@@ -19,7 +19,7 @@ const ButtonBorderWrapperGrey = css`
     color: ${theme.colors.black['60']};
   }
 `
-const ButtonBorderWrapperWhite = css`
+const ButtonBorderLongWrapperWhite = css`
   border: 1px solid white;
   background: ${theme.colors.black['10']};
   color: ${theme.colors.black['60']};
@@ -27,7 +27,7 @@ const ButtonBorderWrapperWhite = css`
     color: ${theme.colors.black['60']};
   }
 `
-const ButtonBorderWrapperBorder = css`
+const ButtonBorderLongWrapperBorder = css`
   border: 1px solid ${theme.colors.black['10']};
   background: ${theme.colors.default.white};
   color: ${theme.colors.black['60']};
@@ -35,8 +35,8 @@ const ButtonBorderWrapperBorder = css`
     color: ${theme.colors.black['60']};
   }
 `
-export const ButtonBorderWrapper = styled.button<
-  Pick<ButtonBorderProps, 'type'>
+export const ButtonBorderLongWrapper = styled.button<
+  Pick<ButtonBorderLongProps, 'type'>
 >`
   border: none;
   outline: none;
@@ -51,15 +51,23 @@ export const ButtonBorderWrapper = styled.button<
   border-radius: 100px;
   user-select: none;
   cursor: pointer;
-
+  height: 44px;
+  & svg {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    & path {
+      fill: ${theme.colors.black['60']};
+    }
+  }
   ${(props) =>
     props.type === 'black'
-      ? ButtonBorderWrapperBlack
+      ? ButtonBorderLongWrapperBlack
       : props.type === 'grey'
-        ? ButtonBorderWrapperGrey
+        ? ButtonBorderLongWrapperGrey
         : props.type === 'white'
-          ? ButtonBorderWrapperWhite
+          ? ButtonBorderLongWrapperWhite
           : props.type === 'border'
-            ? ButtonBorderWrapperBorder
+            ? ButtonBorderLongWrapperBorder
             : ''};
 `

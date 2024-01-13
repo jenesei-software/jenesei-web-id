@@ -20,7 +20,7 @@ export const PasswordResetSuccessfully: FC<
   return (
     <AuthorizationWrapper>
       <PasswordResetSuccessfullyTitlesContainer>
-        {IconValidate.Big.TrueColor()}
+        <IconValidate.Big.True />
         <StyledInterSB16 color={theme.colors.black['100']}>
           {t('title-big')}
         </StyledInterSB16>

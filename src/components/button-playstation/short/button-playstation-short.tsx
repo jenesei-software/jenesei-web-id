@@ -7,7 +7,7 @@ export const ButtonPlaystationShort: FC<ButtonPlaystationShortProps> =
     (props) => {
       return (
         <ButtonPlaystationShortWrapper checked={props.checked}>
-          {props.icon()}
+          {props.icon && props.icon()}
         </ButtonPlaystationShortWrapper>
       )
     },

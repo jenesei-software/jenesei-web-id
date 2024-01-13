@@ -15,7 +15,7 @@ export const MenuSideBarWrapper = styled.div`
   @media (max-width: ${theme.size.mobile}) {
     display: none;
   }
-  @media (max-width: ${theme.size.tablet}) {
+  @media (max-width: ${theme.size.menu}) {
     width: auto;
   }
 `
@@ -31,7 +31,7 @@ export const MenuSideBarTitle = styled.div`
   flex-shrink: 0;
   align-self: stretch;
 
-  @media (max-width: ${theme.size.tablet}) {
+  @media (max-width: ${theme.size.menu}) {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -58,7 +58,7 @@ export const MenuSideLogoContainer = styled.div`
     display: none;
   }
 
-  @media (max-width: ${theme.size.tablet}) {
+  @media (max-width: ${theme.size.menu}) {
     display: flex;
     width: 100%;
     height: 84px;
