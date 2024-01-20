@@ -7,6 +7,7 @@ export interface LanguageProviderProps {
 export interface LanguageContextProps {
   changeLanguage: (params: availableLanguages) => void
   state: LanguageProviderState
+  lang: string | null
 }
 
 export interface LanguageProviderState {

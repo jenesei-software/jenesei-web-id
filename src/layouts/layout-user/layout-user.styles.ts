@@ -26,7 +26,7 @@ export const LayoutOutletContainer = styled.div`
   align-self: stretch;
   min-height: max(calc(100dvh - 60px), 488px);
   border-left: 2px solid ${theme.colors.black['5']};
-
+  overflow: overlay;
   @media (max-width: ${theme.size.mobile}) {
     border-left: 0px;
   }

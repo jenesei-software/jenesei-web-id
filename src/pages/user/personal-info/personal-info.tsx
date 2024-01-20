@@ -1,5 +1,7 @@
 import { PersonalInfoProps } from '.'
-import { PersonalInfoFormEmailList } from './personal-info.form.email-list'
+import { PersonalInfoFormListAddress } from './personal-info.form.list-address'
+import { PersonalInfoFormListEmail } from './personal-info.form.list-email'
+import { PersonalInfoFormListPhone } from './personal-info.form.list-phone'
 import { PersonalInfoFormName } from './personal-info.form.name'
 import { PersonalInfoFormPicture } from './personal-info.form.picture'
 import { UserTitle } from '@components/user-title'
@@ -12,7 +14,9 @@ export const PersonalInfo: FC<PersonalInfoProps> = () => {
       <UserTitle />
       <PersonalInfoFormPicture />
       <PersonalInfoFormName />
-      <PersonalInfoFormEmailList />
+      <PersonalInfoFormListEmail />
+      <PersonalInfoFormListPhone />
+      <PersonalInfoFormListAddress />
     </UserWrapper>
   )
 }

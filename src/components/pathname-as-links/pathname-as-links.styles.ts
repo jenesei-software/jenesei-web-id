@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const PathnameAsLinksWrapper = styled.div`
   height: 68px;
+  min-height: 68px;
   padding: 0px 20px;
   box-sizing: border-box;
   display: flex;
@@ -20,5 +21,6 @@ export const PathnameAsLinksWrapper = styled.div`
   }
   @media (max-width: ${theme.size.mobile}) {
     height: 40px;
+    min-height: 40px;
   }
 `

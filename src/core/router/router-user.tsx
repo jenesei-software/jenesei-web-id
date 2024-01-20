@@ -19,12 +19,13 @@ export const AppRoutesUser: FC = () => {
 
       {/* Additional */}
       <Route path="authorization" element={<LayoutAuthorization />}>
+        <Route index element={<Navigate to="/authorization/services" />} />
         <Route path="services" element={<Services />} />
       </Route>
 
       {/* Rest */}
-      <Route index element={<Navigate to="/user/personal-info" />} />
-      <Route path="*" element={<Navigate to="/user/personal-info" />} />
+      <Route index element={<Navigate to="/authorization/services" />} />
+      <Route path="*" element={<Navigate to="/authorization/services" />} />
     </Routes>
   )
 }

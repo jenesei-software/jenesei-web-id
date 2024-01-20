@@ -57,7 +57,9 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
   align-items: center;
   user-select: none;
   justify-content: center;
-
+  & > div {
+    width: 100%;
+  }
   & .react-dropdown-select-input {
     ${FontInterR16}
   }
@@ -120,12 +122,12 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
     }
   }
   & .react-dropdown-select-input {
-    display:none;
-  } 
+    display: none;
+  }
   & .react-dropdown-select-no-data {
     color: ${theme.colors.product['100']} !important;
   }
-  & .react-dropdown-select-content{
+  & .react-dropdown-select-content {
     align-items: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -136,12 +138,12 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
   }
   & .react-dropdown-select {
     ${FontInterR16};
+    width: 100%;
     display: flex;
-    align-items: center
+    align-items: center;
     align-self: stretch;
     outline: none;
     box-sizing: border-box;
-    width: 100px;
     border-radius: 6px;
     & svg {
       width: 20px;

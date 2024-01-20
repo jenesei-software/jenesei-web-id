@@ -43,6 +43,53 @@
       "title": "Personal info"
     }
   },
+  "payments": {
+    "list-card": {
+      "title-1": "Linked cards List",
+      "buttons": {
+        "add": "Add another card"
+      }
+    },
+    "list-subscriptions": {
+      "title-1": "Subscriptions List",
+      "buttons": {
+        "add": "Add another subscriptions"
+      }
+    },
+    "transaction": {
+      "title-1": "View transaction history"
+    }
+  },
+  "language-and-localization": {
+    "language": {
+      "title-1": "Language"
+    }
+  },
+  "login-and-security": {
+    "login": {
+      "title-1": "Login",
+      "inputs": {
+        "login": "Enter your login"
+      }
+    },
+    "password": {
+      "title-1": "Password",
+      "inputs": {
+        "login": "Enter your password"
+      }
+    },
+    "list-subLogin": {
+      "title-1": "subLogin List",
+      "title-2": "Used",
+      "title-3": "Status",
+      "buttons": {
+        "add": "Add another subLogin"
+      },
+      "inputs": {
+        "subLogin": "Enter your subLogin"
+      }
+    }
+  },
   "personal-info": {
     "picture": {
       "title-big": "Profile picture",
@@ -59,13 +106,40 @@
         "last-name": "Enter your last name"
       }
     },
-    "email-list": {
+    "list-email": {
       "title-1": "Email List",
       "title-2": "Type",
       "title-3": "Used",
       "title-4": "Status",
+      "buttons": {
+        "add": "Add another email"
+      },
       "inputs": {
         "email": "Enter your email"
+      }
+    },
+    "list-address": {
+      "title-1": "Address List",
+      "title-2": "Type",
+      "title-3": "Used",
+      "title-4": "Status",
+      "buttons": {
+        "add": "Add another address"
+      },
+      "inputs": {
+        "address": "Enter your address"
+      }
+    },
+    "list-phone": {
+      "title-1": "Phone List",
+      "title-2": "Type",
+      "title-3": "Used",
+      "title-4": "Status",
+      "buttons": {
+        "add": "Add phone numbers"
+      },
+      "inputs": {
+        "phone": "Enter your number"
       }
     }
   },

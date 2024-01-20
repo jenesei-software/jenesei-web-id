@@ -89,6 +89,12 @@ export const StyledInterM16Mobile = styled.span<StyledInterProps>`
   }
 `
 
+export const FontInterM20 = css`
+  ${FontInter};
+  font-size: 20px;
+  font-weight: 500;
+`
+
 export const FontInterB14 = css`
   ${FontInter};
   font-size: 14px;
@@ -99,7 +105,7 @@ export const StyledInterB14 = styled.span<StyledInterProps>`
   color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
 `
 
-const FontInterB16 = css`
+export const FontInterB16 = css`
   ${FontInter};
   font-size: 16px;
   font-weight: 700;
@@ -109,7 +115,7 @@ export const StyledInterB16 = styled.span<StyledInterProps>`
   color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
 `
 
-const FontInterB20 = css`
+export const FontInterB20 = css`
   ${FontInter};
   font-size: 20px;
   font-weight: 700;

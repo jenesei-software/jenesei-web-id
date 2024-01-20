@@ -14,7 +14,7 @@ export const useSelect = <T extends Record<string, any>>(
     options: [],
     initialValue: [],
     type: 'volumetric',
-    onChange: () => {},
+    onChange: () => { },
   }
 ) => {
   const [values, setValue] = useState<T[] | null>(props.initialValue)
@@ -42,6 +42,6 @@ export const useSelect = <T extends Record<string, any>>(
     )
 
     return SelectComponent
-  }, [props, values, props.initialValue])
+  }, [props, values])
   return { values, InputSelect }
 }

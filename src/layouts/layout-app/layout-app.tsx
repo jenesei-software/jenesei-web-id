@@ -11,7 +11,7 @@ export const LayoutApp: React.FC = () => {
 
   return (
     <LayoutAppWrapper>
-      {id ? <AppRoutesUser /> : <AppRoutesAuthorization />}
+      {id !== '' ? <AppRoutesUser /> : <AppRoutesAuthorization />}
     </LayoutAppWrapper>
   )
 }
