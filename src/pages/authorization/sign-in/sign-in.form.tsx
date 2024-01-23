@@ -1,38 +1,61 @@
-import { SignInInfoFormContainer, SignInProps, StyledStyledInterR16 } from '.'
+import {
+  SignInHookForm,
+  SignInInfoFormContainer,
+  StyledStyledInterR16,
+} from '.'
 import { ButtonBig } from '@components/button-big'
-import { useInputString } from '@hooks/inputs/use-input-string'
+import { Input } from '@components/input'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { useProfile } from '@providers/profile-provider'
 import { FC } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
-export const SignInForm: FC<SignInProps> = () => {
-  const { t } = useTranslation('sign-in')
+export const SignInForm: FC = () => {
   const goToLink = useGoToLink()
+  const { t } = useTranslation('sign-in')
   const { setProfile } = useProfile()
+  const {
+    register,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm<SignInHookForm>()
 
-  const { value: valueEmailOrLogin, InputString: InputEmailOrLogin } =
-    useInputString({
-      placeholder: t('inputs.email-or-login'),
-      noSpaces: true,
-    })
-  const { value: valuePassword, InputString: InputPassword } = useInputString({
-    placeholder: t('inputs.password'),
-    type: 'password',
-    noSpaces: true,
-  })
-  console.log(valueEmailOrLogin, valuePassword)
+  const onSubmit: SubmitHandler<SignInHookForm> = (data) => {
+    setProfile({ id: '1' })
+    console.log(data)
+  }
   return (
-    <SignInInfoFormContainer>
-      {InputEmailOrLogin}
-      {InputPassword}
+    <SignInInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
+      <Input
+        placeholder={t('inputs.email-or-login')}
+        register={{
+          ...register('emailOrLogin', {
+            required: true,
+            minLength: 2,
+            maxLength: 50,
+          }),
+        }}
+      />
+      <Input
+        placeholder={t('inputs.password')}
+        type="password"
+        register={{
+          ...register('password', {
+            required: true,
+            minLength: 8,
+            maxLength: 30,
+          }),
+        }}
+      />
       <StyledStyledInterR16
         onClick={() => goToLink('/authorization/password-forgot')}
       >
         {t('forgot-password')}
       </StyledStyledInterR16>
       <ButtonBig
-        onClick={() => setProfile({ id: '1' })}
+        disabled={!isValid}
+        onClick={handleSubmit(onSubmit)}
         title={t('buttons.login')}
         type={'product'}
       />

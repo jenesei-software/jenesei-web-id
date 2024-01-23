@@ -8,7 +8,7 @@ import { theme } from '@styles/theme'
 import DatePicker from 'react-datepicker'
 import styled from 'styled-components'
 
-export const UseDatePickerWrapper = styled.div`
+export const DatePickerWrapper = styled.div`
   width: 100%;
   & .react-datepicker-wrapper {
     width: 100%;
@@ -34,6 +34,9 @@ export const UseDatePickerWrapper = styled.div`
       bottom: 0px;
       display: none;
     }
+  }
+  & .react-datepicker__day--disabled{
+    opacity: 0.4;
   }
   & .react-datepicker__day-names,
   & .react-datepicker__week {

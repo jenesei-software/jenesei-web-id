@@ -1,20 +1,20 @@
-import { UseInputIconProps } from '.'
 import { FontInterR16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
+import { StyledInputIconProps } from '.'
 
-export const UseInputWrapper = styled.div`
+export const InputWrapper = styled.div`
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
 `
 
-const UseInputIconOnCLickTrue = css`
+const StyledInputIconOnCLickTrue = css`
   cursor: pointer;
 `
 
-export const UseInputIcon = styled.div<UseInputIconProps>`
+export const StyledInputIcon = styled.div<StyledInputIconProps>`
   position: absolute;
   right: 0px;
   flex-shrink: 0;
@@ -24,7 +24,7 @@ export const UseInputIcon = styled.div<UseInputIconProps>`
   padding: 10px;
   box-sizing: border-box;
 
-  ${(props) => props.$icon?.onCLick && UseInputIconOnCLickTrue}
+  ${(props) => props.$icon?.onCLick && StyledInputIconOnCLickTrue}
 
   & svg {
     width: 19px;
@@ -35,7 +35,7 @@ export const UseInputIcon = styled.div<UseInputIconProps>`
   }
 `
 
-export const UseInputString = styled.input`
+export const StyledInput = styled.input`
   ${FontInterR16};
   display: flex;
   padding: 16px 20px;

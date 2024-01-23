@@ -4,7 +4,7 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { useInputString } from '@hooks/inputs/use-input-string'
+import { Input } from '@components/input'
 import { StyledInterB16 } from '@styles/fonts/inter'
 import {
   FrameColumnGap180,
@@ -21,25 +21,17 @@ import { useTranslation } from 'react-i18next'
 
 export const PersonalInfoFormListEmail: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'list-email' })
-  const { InputString: InputFirstEmail } = useInputString({
-    placeholder: t('inputs.email'),
-    noSpaces: true,
-    readOnly: true,
-    initialValue: 'cyrilstrone@gmail.com',
-  })
-  const { InputString: InputSecondEmail } = useInputString({
-    placeholder: t('inputs.email'),
-    noSpaces: true,
-    readOnly: true,
-    initialValue: 'kidvos@gmail.com',
-  })
   return (
     <React.Fragment>
       <UserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
-          {InputFirstEmail}
+          <Input
+            placeholder={t('inputs.email')}
+            readOnly
+            value={'cyrilstrone@gmail.com'}
+          />
         </FrameColumnGap300>
         <FrameColumnGap250 mediaMaxWidth={theme.size.mobile}>
           <StyledInterB16>{t('title-2')}</StyledInterB16>
@@ -65,7 +57,13 @@ export const PersonalInfoFormListEmail: React.FC = () => {
         </FrameColumnGap78Center>
       </FrameRowGap>
       <FrameRowGap>
-        <FrameColumnGap300>{InputSecondEmail}</FrameColumnGap300>
+        <FrameColumnGap300>
+          <Input
+            placeholder={t('inputs.email')}
+            readOnly
+            value={'kidvos@gmail.com'}
+          />
+        </FrameColumnGap300>
         <FrameColumnGap250 mediaMaxWidth={theme.size.mobile}>
           <FrameRowWrapGap>
             <ButtonPlaystationLong title={'Home'} checked={false} />
@@ -73,14 +71,17 @@ export const PersonalInfoFormListEmail: React.FC = () => {
           </FrameRowWrapGap>
         </FrameColumnGap250>
         <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>
-          <FrameRowWrapGap>
-          </FrameRowWrapGap>
+          <FrameRowWrapGap></FrameRowWrapGap>
         </FrameColumnGap180>
         <FrameColumnGap78Center>
           <IconValidate.Min.False />
         </FrameColumnGap78Center>
       </FrameRowGap>
-      <ButtonBorderLong title={t('buttons.add')} type="border" icon={IconCurved.Plus} />
+      <ButtonBorderLong
+        title={t('buttons.add')}
+        type="border"
+        icon={IconCurved.Plus}
+      />
     </React.Fragment>
   )
 }

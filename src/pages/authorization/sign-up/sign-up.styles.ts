@@ -22,7 +22,7 @@ export const SignUpInfoContainer = styled.div`
   align-items: flex-start;
   gap: 30px;
 `
-export const SignUpInfoFormContainer = styled.div`
+export const SignUpInfoFormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-end;

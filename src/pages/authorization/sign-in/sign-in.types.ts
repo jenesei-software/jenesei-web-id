@@ -1,7 +1,4 @@
-export interface SignInProps {}
-export interface UseSignInFormInputsRespond {
-  valueEmailOrLogin: string
-  InputEmailOrLogin: JSX.Element
-  valuePassword: string
-  InputPassword: JSX.Element
+export interface SignInHookForm {
+  emailOrLogin: string
+  password: string
 }

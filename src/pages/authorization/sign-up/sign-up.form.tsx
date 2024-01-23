@@ -1,4 +1,5 @@
 import {
+  SignUpHookForm,
   SignUpInfoFormContainer,
   SignUpInfoFormSwitchAgreementContainer,
   SignUpInfoFormSwitchContainer,
@@ -7,12 +8,14 @@ import {
 } from '.'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
-import { useDatePicker } from '@hooks/inputs/use-datepicker'
-import { useInputString } from '@hooks/inputs/use-input-string'
-import { useSwitch } from '@hooks/inputs/use-switch'
+import { Input } from '@components/input'
+import { Switch } from '@components/switch'
+import { getDateMinusYears } from '@functions/get-date-minus-years'
+import { DatePicker } from '@components/datepicker'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { StyledInterR16 } from '@styles/fonts/inter'
 import { FC, useEffect, useReducer } from 'react'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 export const SignUpForm: FC<SignUpProps> = () => {
@@ -23,46 +26,20 @@ export const SignUpForm: FC<SignUpProps> = () => {
   ])
   const goToLink = useGoToLink()
   const [isHide, toggle] = useReducer((checked) => !checked, false)
-  const { Switch, value } = useSwitch({ value: false })
+  const {
+    register,
+    handleSubmit,
+    control,
+    watch,
+    formState: { isValid },
+  } = useForm<SignUpHookForm>({
+    defaultValues: { switch: false },
+  })
 
-  const { value: valueEmail, InputString: InputEmail } = useInputString({
-    placeholder: t('sign-up:inputs.email'),
-    type: 'email',
-    noSpaces: true,
-  })
-  const { value: valueLogin, InputString: InputLogin } = useInputString({
-    placeholder: t('sign-up:inputs.login'),
-    noSpaces: true,
-  })
-  const { value: valueDateOfBirth, InputUseDatePicker: InputDateOfBirth } =
-    useDatePicker({
-      placeholder: t('sign-up:inputs.date-of-birth'),
-    })
-  const { value: valuePassword, InputString: InputPassword } = useInputString({
-    placeholder: t('sign-up:inputs.password'),
-    type: 'password',
-    noSpaces: true,
-  })
-  const { value: valueRepeatPassword, InputString: InputRepeatPassword } =
-    useInputString({
-      placeholder: t('sign-up:inputs.repeat-password'),
-      type: isHide ? 'password' : 'text',
-      noSpaces: true,
-      icon: {
-        value: isHide ? IconCurved.Hide : IconCurved.Show,
-        onCLick: () => {
-          toggle()
-        },
-      },
-    })
-  console.log(
-    value,
-    valueEmail,
-    valueLogin,
-    valuePassword,
-    valueRepeatPassword,
-    valueDateOfBirth
-  )
+  const onSubmit: SubmitHandler<SignUpHookForm> = (data) => {
+    console.log(data)
+  }
+
   useEffect(() => {
     if (!isHide) {
       const timeoutId = setTimeout(() => {
@@ -73,14 +50,83 @@ export const SignUpForm: FC<SignUpProps> = () => {
     }
   }, [isHide])
   return (
-    <SignUpInfoFormContainer>
-      {InputEmail}
-      {InputLogin}
-      {InputDateOfBirth}
-      {InputPassword}
-      {InputRepeatPassword}
+    <SignUpInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
+      <Input
+        placeholder={t('sign-up:inputs.email')}
+        type="email"
+        register={{
+          ...register('email', {
+            required: true,
+            minLength: 10,
+            maxLength: 40,
+          }),
+        }}
+      />
+      <Input
+        placeholder={t('sign-up:inputs.login')}
+        register={{
+          ...register('login', {
+            required: true,
+            minLength: 2,
+            maxLength: 30,
+          }),
+        }}
+      />
+      <Controller
+        control={control}
+        rules={{ required: true }}
+        name="dateOfBirth"
+        render={({ field: { value, onChange } }) => (
+          <DatePicker
+            value={value}
+            maxDate={getDateMinusYears(16)}
+            onChange={onChange}
+            placeholder={t('sign-up:inputs.date-of-birth')}
+          />
+        )}
+      />
+      <Input
+        placeholder={t('sign-up:inputs.password')}
+        type={isHide ? 'password' : 'text'}
+        register={{
+          ...register('password', {
+            required: true,
+            minLength: 8,
+            maxLength: 44,
+          }),
+        }}
+        icon={{
+          value: isHide ? IconCurved.Hide : IconCurved.Show,
+          onCLick: () => {
+            toggle()
+          },
+        }}
+      />
+      <Input
+        placeholder={t('sign-up:inputs.repeat-password')}
+        type="password"
+        register={{
+          ...register('repeatPassword', {
+            required: true,
+            minLength: 8,
+            maxLength: 44,
+            validate: (val: string) => {
+              if (watch('password') != val) {
+                return 'Your passwords do no match'
+              }
+            },
+          }),
+        }}
+      />
       <SignUpInfoFormSwitchContainer>
-        {Switch}
+        <Controller
+          control={control}
+          rules={{ required: true }}
+          name="switch"
+          render={({ field: { value, onChange } }) => (
+            <Switch value={value} onChange={onChange} />
+          )}
+        />
         <SignUpInfoFormSwitchAgreementContainer>
           <StyledInterR16>{t('sign-up:agree-1')}</StyledInterR16>
           <StyledStyledInterR16 onClick={() => goToLink('/terms-of-service')}>
@@ -92,7 +138,12 @@ export const SignUpForm: FC<SignUpProps> = () => {
           </StyledStyledInterR16>
         </SignUpInfoFormSwitchAgreementContainer>
       </SignUpInfoFormSwitchContainer>
-      <ButtonBig title={t('buttons.create-account')} type={'product'} />
+      <ButtonBig
+        onClick={handleSubmit(onSubmit)}
+        disabled={!isValid}
+        title={t('buttons.create-account')}
+        type={'product'}
+      />
     </SignUpInfoFormContainer>
   )
 }

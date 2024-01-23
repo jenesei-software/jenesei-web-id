@@ -15,14 +15,15 @@ export const StyledStyledInterR16 = styled(StyledInterR16)`
   margin: 0px 4px 0px 4px;
 `
 
-export const SignInInfoContainer = styled.div`
+export const SignInInfoContainer = styled.div `
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
 `
-export const SignInInfoFormContainer = styled.div`
+
+export const SignInInfoFormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-end;

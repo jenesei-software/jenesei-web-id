@@ -1,7 +1,7 @@
 import { IconCurved } from '@assets/icons/icon-curved'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { useInputString } from '@hooks/inputs/use-input-string'
+import { Input } from '@components/input'
 import { StyledInterB16 } from '@styles/fonts/inter'
 import {
   FrameColumnGap180,
@@ -15,12 +15,8 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const LoginAndSecurityFormListSubLogin: React.FC = () => {
-  const { t } = useTranslation('login-and-security', { keyPrefix: 'list-subLogin' })
-  const { InputString: InputFirstEmail } = useInputString({
-    placeholder: t('inputs.subLogin'),
-    noSpaces: true,
-    readOnly: true,
-    initialValue: 'stassiepushka',
+  const { t } = useTranslation('login-and-security', {
+    keyPrefix: 'list-subLogin',
   })
   return (
     <React.Fragment>
@@ -28,7 +24,11 @@ export const LoginAndSecurityFormListSubLogin: React.FC = () => {
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
-          {InputFirstEmail}
+          <Input
+            placeholder={t('inputs.subLogin')}
+            readOnly
+            value={'stassiepushka'}
+          />
         </FrameColumnGap300>
         <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>
           <StyledInterB16>{t('title-2')}</StyledInterB16>
