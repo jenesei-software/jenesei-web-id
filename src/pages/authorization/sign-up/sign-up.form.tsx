@@ -2,18 +2,18 @@ import {
   SignUpHookForm,
   SignUpInfoFormContainer,
   SignUpInfoFormSwitchAgreementContainer,
-  SignUpInfoFormSwitchContainer,
   SignUpProps,
-  StyledStyledInterR16,
+  SignUpInfoFormSwitchContainer,
 } from '.'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
+import { DatePicker } from '@components/datepicker'
 import { Input } from '@components/input'
 import { Switch } from '@components/switch'
 import { getDateMinusYears } from '@functions/get-date-minus-years'
-import { DatePicker } from '@components/datepicker'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { StyledInterR16 } from '@styles/fonts/inter'
+import { StyledInterR16OnClick } from '@styles/pages'
 import { FC, useEffect, useReducer } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -128,14 +128,14 @@ export const SignUpForm: FC<SignUpProps> = () => {
           )}
         />
         <SignUpInfoFormSwitchAgreementContainer>
-          <StyledInterR16>{t('sign-up:agree-1')}</StyledInterR16>
-          <StyledStyledInterR16 onClick={() => goToLink('/terms-of-service')}>
+          <StyledInterR16>{t('sign-up:agree-1')}</StyledInterR16>{" "}
+          <StyledInterR16OnClick onClick={() => goToLink('/terms-of-service')}>
             {t('terms-of-service:default')}
-          </StyledStyledInterR16>
-          <StyledInterR16>{t('sign-up:agree-2')}</StyledInterR16>
-          <StyledStyledInterR16 onClick={() => goToLink('/privacy-policy')}>
+          </StyledInterR16OnClick>{" "}
+          <StyledInterR16>{t('sign-up:agree-2')}</StyledInterR16>{" "}
+          <StyledInterR16OnClick onClick={() => goToLink('/privacy-policy')}>
             {t('privacy-policy:default')}
-          </StyledStyledInterR16>
+          </StyledInterR16OnClick>
         </SignUpInfoFormSwitchAgreementContainer>
       </SignUpInfoFormSwitchContainer>
       <ButtonBig

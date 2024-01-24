@@ -4,8 +4,8 @@ import {
   PasswordForgotTitlesContainer,
 } from '.'
 import { PasswordForgotForm } from './password-forgot.form'
-import { AuthorizationWrapper } from '@styles/pages'
 import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
+import { AuthorizationWrapper } from '@styles/pages'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 

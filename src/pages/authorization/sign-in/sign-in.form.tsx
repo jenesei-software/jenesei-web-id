@@ -1,12 +1,12 @@
 import {
   SignInHookForm,
   SignInInfoFormContainer,
-  StyledStyledInterR16,
 } from '.'
 import { ButtonBig } from '@components/button-big'
 import { Input } from '@components/input'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { useProfile } from '@providers/profile-provider'
+import { StyledInterR16OnClick } from '@styles/pages'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -48,11 +48,11 @@ export const SignInForm: FC = () => {
           }),
         }}
       />
-      <StyledStyledInterR16
+      <StyledInterR16OnClick
         onClick={() => goToLink('/authorization/password-forgot')}
       >
         {t('forgot-password')}
-      </StyledStyledInterR16>
+      </StyledInterR16OnClick>
       <ButtonBig
         disabled={!isValid}
         onClick={handleSubmit(onSubmit)}

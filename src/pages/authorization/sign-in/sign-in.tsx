@@ -3,7 +3,6 @@ import {
   SignInInfoContinueContainer,
   SignInTitlesContainer,
   SignInTitlesTwoContainer,
-  StyledStyledInterR16,
 } from '.'
 import { SignInForm } from './sign-in.form'
 import { LogoServices } from '@assets/icons/logo-services'
@@ -11,7 +10,7 @@ import { ButtonBig } from '@components/button-big'
 import { LineOR } from '@components/line-or'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
-import { AuthorizationWrapper } from '@styles/pages'
+import { AuthorizationWrapper, StyledInterR16OnClick } from '@styles/pages'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -24,12 +23,12 @@ export const SignIn: FC = () => {
       <SignInTitlesContainer>
         <StyledInterB32>{t('title-big')}</StyledInterB32>
         <SignInTitlesTwoContainer>
-          <StyledInterR16>{t('title-min')}</StyledInterR16>
-          <StyledStyledInterR16
+          <StyledInterR16>{t('title-min')}</StyledInterR16>{" "}
+          <StyledInterR16OnClick
             onClick={() => goToLink('/authorization/sign-up')}
           >
             {t('title-min-2')}
-          </StyledStyledInterR16>
+          </StyledInterR16OnClick>
         </SignInTitlesTwoContainer>
       </SignInTitlesContainer>
       <SignInInfoContainer>

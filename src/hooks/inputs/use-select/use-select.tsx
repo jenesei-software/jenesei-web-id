@@ -14,7 +14,7 @@ export const useSelect = <T extends Record<string, any>>(
     options: [],
     initialValue: [],
     type: 'volumetric',
-    onChange: () => { },
+    onChange: () => {},
   }
 ) => {
   const [values, setValue] = useState<T[] | null>(props.initialValue)

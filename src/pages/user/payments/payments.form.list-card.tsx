@@ -3,7 +3,12 @@ import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { useInputCards } from '@hooks/inputs/use-input-cards'
 import { StyledInterB16 } from '@styles/fonts/inter'
-import { FrameRowWrapGap, FrameRowGap, UserLine, FrameColumnGap } from '@styles/pages'
+import {
+  FrameRowWrapGap,
+  FrameRowGap,
+  UserLine,
+  FrameColumnGap,
+} from '@styles/pages'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -37,9 +42,7 @@ export const PaymentsFormListCard: React.FC = () => {
       <FrameRowGap>
         <FrameColumnGap>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <FrameRowWrapGap>
-            {Cards}
-          </FrameRowWrapGap>
+          <FrameRowWrapGap>{Cards}</FrameRowWrapGap>
         </FrameColumnGap>
       </FrameRowGap>
       <ButtonBorderLong

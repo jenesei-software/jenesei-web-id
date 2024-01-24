@@ -1,7 +1,7 @@
-import { StyledInputIconProps } from '.'
 import { FontInterR16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
-import styled, { css } from 'styled-components'
+import InputMask from 'react-input-mask'
+import styled from 'styled-components'
 
 export const InputWrapper = styled.div`
   width: 100%;
@@ -10,32 +10,7 @@ export const InputWrapper = styled.div`
   align-items: center;
 `
 
-const StyledInputIconOnCLickTrue = css`
-  cursor: pointer;
-`
-
-export const StyledInputIcon = styled.div<StyledInputIconProps>`
-  position: absolute;
-  right: 0px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  box-sizing: border-box;
-
-  ${(props) => props.$icon?.onCLick && StyledInputIconOnCLickTrue}
-
-  & svg {
-    width: 19px;
-    height: 19px;
-    & path {
-      fill: ${theme.colors.black['80']};
-    }
-  }
-`
-
-export const StyledInput = styled.input`
+export const StyledInputCode = styled(InputMask)`
   ${FontInterR16};
   display: flex;
   padding: 16px 20px;

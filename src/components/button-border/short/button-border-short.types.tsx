@@ -1,3 +1,3 @@
 import { ButtonBorderLongProps } from '../long'
 
-export interface ButtonBorderShortProps extends ButtonBorderLongProps { }
+export interface ButtonBorderShortProps extends ButtonBorderLongProps {}

@@ -97,7 +97,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = (props) => {
   )
 
   return (
-    <LanguageContext.Provider value={{ changeLanguage, state, lang: searchParams.get(SEARCH_PARAMS.lang.title) }}>
+    <LanguageContext.Provider
+      value={{
+        changeLanguage,
+        state,
+        lang: searchParams.get(SEARCH_PARAMS.lang.title),
+      }}
+    >
       {props.children}
     </LanguageContext.Provider>
   )

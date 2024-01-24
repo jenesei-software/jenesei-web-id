@@ -1,4 +1,5 @@
 import { i18n } from '@assets/i18n'
+import NiceModal from '@ebay/nice-modal-react'
 import { LayoutApp } from '@layouts/layout-app'
 import { AuthProvider } from '@providers/auth-provider'
 import { AxiosProvider } from '@providers/axios-provider'
@@ -23,7 +24,9 @@ function App() {
                 <AuthProvider>
                   <BrowserRouter>
                     <LanguageProvider>
-                      <LayoutApp />
+                      <NiceModal.Provider>
+                        <LayoutApp />
+                      </NiceModal.Provider>
                     </LanguageProvider>
                   </BrowserRouter>
                 </AuthProvider>

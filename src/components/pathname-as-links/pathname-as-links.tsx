@@ -41,8 +41,6 @@ const WordLink: React.FC<WordLinkProps> = memo(
     )
   },
   (prevProps, nextProps) => {
-    return (
-      prevProps.word === nextProps.word
-    )
+    return prevProps.word === nextProps.word
   }
 )

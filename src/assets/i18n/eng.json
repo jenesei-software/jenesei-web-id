@@ -19,13 +19,45 @@
     "back": "Back",
     "help": "Help"
   },
+  "language-and-localization": {
+    "language": {
+      "title-1": "Language"
+    }
+  },
+  "login-and-security": {
+    "list-subLogin": {
+      "buttons": {
+        "add": "Add another subLogin"
+      },
+      "inputs": {
+        "subLogin": "Enter your subLogin"
+      },
+      "title-1": "subLogin List",
+      "title-2": "Used",
+      "title-3": "Status"
+    },
+    "login": {
+      "inputs": {
+        "login": "Enter your login"
+      },
+      "title-1": "Login"
+    },
+    "password": {
+      "inputs": {
+        "login": "Enter your password"
+      },
+      "title-1": "Password"
+    }
+  },
+  "modal": {
+    "cancel": "Cancel",
+    "check": "Check",
+    "save": "Save"
+  },
   "or": {
     "default": "Or"
   },
   "pages": {
-    "user": {
-      "title": "Account"
-    },
     "language-and-localization": {
       "description": "Choose your preferred language and adjust your location settings.",
       "title": "Language & localization"
@@ -41,106 +73,9 @@
     "personal-info": {
       "description": "Update your profile, contact details and preferences to personalize your experience.",
       "title": "Personal info"
-    }
-  },
-  "payments": {
-    "list-card": {
-      "title-1": "Linked cards List",
-      "buttons": {
-        "add": "Add another card"
-      }
     },
-    "list-subscriptions": {
-      "title-1": "Subscriptions List",
-      "buttons": {
-        "add": "Add another subscriptions"
-      }
-    },
-    "transaction": {
-      "title-1": "View transaction history"
-    }
-  },
-  "language-and-localization": {
-    "language": {
-      "title-1": "Language"
-    }
-  },
-  "login-and-security": {
-    "login": {
-      "title-1": "Login",
-      "inputs": {
-        "login": "Enter your login"
-      }
-    },
-    "password": {
-      "title-1": "Password",
-      "inputs": {
-        "login": "Enter your password"
-      }
-    },
-    "list-subLogin": {
-      "title-1": "subLogin List",
-      "title-2": "Used",
-      "title-3": "Status",
-      "buttons": {
-        "add": "Add another subLogin"
-      },
-      "inputs": {
-        "subLogin": "Enter your subLogin"
-      }
-    }
-  },
-  "personal-info": {
-    "picture": {
-      "title-big": "Profile picture",
-      "title-min": "PNG, JPEG under 15MB",
-      "buttons": {
-        "upload": "Upload"
-      }
-    },
-    "name": {
-      "title-1": "First name",
-      "title-2": "Last name",
-      "inputs": {
-        "first-name": "Enter your first name",
-        "last-name": "Enter your last name"
-      }
-    },
-    "list-email": {
-      "title-1": "Email List",
-      "title-2": "Type",
-      "title-3": "Used",
-      "title-4": "Status",
-      "buttons": {
-        "add": "Add another email"
-      },
-      "inputs": {
-        "email": "Enter your email"
-      }
-    },
-    "list-address": {
-      "title-1": "Address List",
-      "title-2": "Type",
-      "title-3": "Used",
-      "title-4": "Status",
-      "buttons": {
-        "add": "Add another address"
-      },
-      "inputs": {
-        "address": "Enter your address"
-      }
-    },
-    "list-phone": {
-      "title-1": "Phone List",
-      "title-2": "Type",
-      "title-3": "Used",
-      "title-4": "Status",
-      "buttons": {
-        "add": "Add phone numbers"
-      },
-      "inputs": {
-        "phone": "Enter your number"
-      }
+    "user": {
+      "title": "Account"
     }
   },
   "password-forgot": {
@@ -171,6 +106,85 @@
       "login": "Login"
     },
     "title-big": "Password reset successfully"
+  },
+  "payments": {
+    "list-card": {
+      "buttons": {
+        "add": "Add another card"
+      },
+      "title-1": "Linked cards List"
+    },
+    "list-subscriptions": {
+      "buttons": {
+        "add": "Add another subscriptions"
+      },
+      "title-1": "Subscriptions List"
+    },
+    "transaction": {
+      "title-1": "View transaction history"
+    }
+  },
+  "personal-info": {
+    "list-address": {
+      "buttons": {
+        "add": "Add another address"
+      },
+      "inputs": {
+        "address": "Enter your address"
+      },
+      "title-1": "Address List",
+      "title-2": "Type",
+      "title-3": "Used",
+      "title-4": "Status"
+    },
+    "list-email": {
+      "buttons": {
+        "add": "Add another email"
+      },
+      "inputs": {
+        "email": "Enter your email"
+      },
+      "modal": {
+        "can't-use-this-email": "You can't use this email, write another one.",
+        "code-again": "Send the code again?",
+        "email": "Enter your new email address",
+        "enter-the-code": "Enter the code from the email",
+        "send-code": "Send code",
+        "tomorrow": "Try it tomorrow.",
+        "wrong-code": "You entered the wrong code"
+      },
+      "title-1": "Email List",
+      "title-2": "Type",
+      "title-3": "Used",
+      "title-4": "Status"
+    },
+    "list-phone": {
+      "buttons": {
+        "add": "Add phone numbers"
+      },
+      "inputs": {
+        "phone": "Enter your number"
+      },
+      "title-1": "Phone List",
+      "title-2": "Type",
+      "title-3": "Used",
+      "title-4": "Status"
+    },
+    "name": {
+      "inputs": {
+        "first-name": "Enter your first name",
+        "last-name": "Enter your last name"
+      },
+      "title-1": "First name",
+      "title-2": "Last name"
+    },
+    "picture": {
+      "buttons": {
+        "upload": "Upload"
+      },
+      "title-big": "Profile picture",
+      "title-min": "PNG, JPEG under 15MB"
+    }
   },
   "privacy-policy": {
     "default": "Privacy policy"

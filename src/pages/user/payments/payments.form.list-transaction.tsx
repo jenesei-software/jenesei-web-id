@@ -1,5 +1,4 @@
-import { StyledStyledInterR16 } from './payments.styles'
-import { UserLine } from '@styles/pages'
+import { StyledInterR16OnClick, UserLine } from '@styles/pages'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -9,7 +8,7 @@ export const PaymentsFormTransaction: React.FC = () => {
   return (
     <React.Fragment>
       <UserLine />
-      <StyledStyledInterR16>{t('title-1')}</StyledStyledInterR16>
+      <StyledInterR16OnClick>{t('title-1')}</StyledInterR16OnClick>
     </React.Fragment>
   )
 }

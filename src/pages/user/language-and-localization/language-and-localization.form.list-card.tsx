@@ -21,7 +21,9 @@ export const LanguageAndLocalizationLanguage: React.FC = () => {
     options: languageList,
     labelField: 'label',
     valueField: 'value',
-    initialValue: [languageList.find((e) => e.value === lang) || languageList[0]],
+    initialValue: [
+      languageList.find((e) => e.value === lang) || languageList[0],
+    ],
     type: 'volumetric',
   })
 

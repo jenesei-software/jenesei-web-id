@@ -1,3 +1,4 @@
+import { ListEmailAdd } from './modal/list-email-add'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { IconValidate } from '@assets/icons/icon-validate'
 import { LogoServices } from '@assets/icons/logo-services'
@@ -5,6 +6,7 @@ import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
 import { Input } from '@components/input'
+import NiceModal from '@ebay/nice-modal-react'
 import { StyledInterB16 } from '@styles/fonts/inter'
 import {
   FrameColumnGap180,
@@ -16,11 +18,19 @@ import {
   UserLine,
 } from '@styles/pages'
 import { theme } from '@styles/theme'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const PersonalInfoFormListEmail: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'list-email' })
+  const addEmailClickHandler = () => {
+    NiceModal.show(ListEmailAdd)
+  }
+  useEffect(() => {
+    return () => {
+      NiceModal.remove(ListEmailAdd)
+    }
+  }, [])
   return (
     <React.Fragment>
       <UserLine />
@@ -78,6 +88,7 @@ export const PersonalInfoFormListEmail: React.FC = () => {
         </FrameColumnGap78Center>
       </FrameRowGap>
       <ButtonBorderLong
+        onClick={addEmailClickHandler}
         title={t('buttons.add')}
         type="border"
         icon={IconCurved.Plus}

@@ -35,7 +35,7 @@ export const DatePickerWrapper = styled.div`
       display: none;
     }
   }
-  & .react-datepicker__day--disabled{
+  & .react-datepicker__day--disabled {
     opacity: 0.4;
   }
   & .react-datepicker__day-names,
