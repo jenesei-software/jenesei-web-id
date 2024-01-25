@@ -1,4 +1,3 @@
-import { ListEmailAddHookForm } from './list-email-add.types'
 import { IconValidate } from '@assets/icons/icon-validate'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { Input } from '@components/input'
@@ -13,8 +12,9 @@ import {
   StyledReactLoading,
 } from '@styles/pages'
 import { ReactElement } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { ListEmailAddHookForm } from './list-email-add.types'
 
 export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
   const { t: tPersonalInfo } = useTranslation('personal-info', {
@@ -25,8 +25,7 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
   const {
     register,
     handleSubmit,
-    // control,
-    // watch,
+    control,
     formState: { isValid },
   } = useForm<ListEmailAddHookForm>({
     defaultValues: { step: 'start' },
@@ -52,14 +51,13 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
             }),
           }}
         />
-        <InputCode
-          register={{
-            ...register('code', {
-              required: true,
-              minLength: 11,
-              maxLength: 11,
-            }),
-          }}
+        <Controller
+          control={control}
+          rules={{ required: true }}
+          name="code"
+          render={({ field: { value, onChange } }) => (
+            <InputCode length={6} value={value} onChange={onChange} />
+          )}
         />
         <ButtonBorderLong
           title={tModal('cancel')}

@@ -1,6 +1,6 @@
-import { InputHTMLAttributes } from 'react'
-import { UseFormRegisterReturn } from 'react-hook-form'
-
-export interface InputCodeProps extends InputHTMLAttributes<HTMLInputElement> {
-  register?: UseFormRegisterReturn
+export interface InputCodeProps {
+  value: number | null
+  length: number
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChange: (...event: any[]) => void
 }

@@ -20,15 +20,20 @@ import {
 import { theme } from '@styles/theme'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { EditType } from './modal/edit-type'
 
 export const PersonalInfoFormListEmail: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'list-email' })
   const addEmailClickHandler = () => {
     NiceModal.show(ListEmailAdd)
   }
+  const editTypeClickHandler = () => {
+    NiceModal.show(EditType)
+  }
   useEffect(() => {
     return () => {
       NiceModal.remove(ListEmailAdd)
+      NiceModal.remove(EditType)
     }
   }, [])
   return (
@@ -51,7 +56,7 @@ export const PersonalInfoFormListEmail: React.FC = () => {
               title={'General'}
               checked={true}
             />
-            <ButtonBorderShort type="border" icon={IconCurved.Plus} />
+            <ButtonBorderShort type="border" icon={IconCurved.Plus} onClick={editTypeClickHandler}/>
           </FrameRowWrapGap>
         </FrameColumnGap250>
         <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>
@@ -77,7 +82,7 @@ export const PersonalInfoFormListEmail: React.FC = () => {
         <FrameColumnGap250 mediaMaxWidth={theme.size.mobile}>
           <FrameRowWrapGap>
             <ButtonPlaystationLong title={'Home'} checked={false} />
-            <ButtonBorderShort type="border" icon={IconCurved.Plus} />
+            <ButtonBorderShort type="border" icon={IconCurved.Plus} onClick={editTypeClickHandler}/>
           </FrameRowWrapGap>
         </FrameColumnGap250>
         <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>

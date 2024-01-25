@@ -1,9 +1,5 @@
-import {
-  FontInterB14,
-  FontInterM12,
-  FontInterM14,
-  FontInterR16,
-} from '@styles/fonts/inter'
+import { StyledDefaultInput } from '@components/input'
+import { FontInterB14, FontInterM12, FontInterM14 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import DatePicker from 'react-datepicker'
 import styled from 'styled-components'
@@ -105,48 +101,7 @@ export const StyledDatePickerHeader = styled.div`
   min-width: 300px;
   gap: 8px;
 `
-
 export const StyledDatePicker = styled(DatePicker)`
-  ${FontInterR16};
+  ${StyledDefaultInput};
   display: flex;
-  padding: 16px 20px;
-  align-items: center;
-  gap: 10px;
-  align-self: stretch;
-  resize: none;
-  overflow: hidden;
-  outline: none;
-  height: 44px;
-  min-height: 44px;
-  max-height: 44px;
-  line-height: 12px;
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 6px;
-  border: none;
-  outline: 1px solid ${theme.colors.black['60']};
-  background: ${theme.colors.default.white};
-  color: ${theme.colors.black['80']};
-  box-shadow: ${theme.inputs.default.effects.boxShadow};
-
-  &::placeholder {
-    color: ${theme.colors.black['40']};
-    font-weight: 700;
-    opacity: 1;
-  }
-
-  &::-ms-input-placeholder {
-    font-weight: 700;
-    color: ${theme.colors.black['40']};
-  }
-  &:focus,
-  &:active,
-  &:focus-visible {
-    outline: 1px solid ${theme.colors.black['100']};
-  }
-  &*,
-  &*::before,
-  &*::after {
-    box-sizing: border-box;
-  }
 `

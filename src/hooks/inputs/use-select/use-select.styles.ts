@@ -1,4 +1,5 @@
 import { UseSelectProps } from '.'
+import { StyledDefaultInputPlaceholder } from '@components/input'
 import { FontInterR16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
@@ -153,12 +154,7 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
         fill: ${theme.colors.black['60']};
       }
     }
-    &::placeholder {
-      font-weight: 700;
-      opacity: 1;
-
-      color: ${theme.colors.black['40']};
-    }
+    ${StyledDefaultInputPlaceholder};
 
     &::-ms-input-placeholder {
       font-weight: 700;

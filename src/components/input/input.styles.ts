@@ -35,8 +35,16 @@ export const StyledInputIcon = styled.div<StyledInputIconProps>`
   }
 `
 
-export const StyledInput = styled.input`
+export const StyledDefaultInputPlaceholder = css`
+  &::placeholder {
+    color: ${theme.colors.black['40']};
+    font-weight: 700;
+    opacity: 1;
+  }
+`
+export const StyledDefaultInput = css`
   ${FontInterR16};
+  ${StyledDefaultInputPlaceholder};
   display: flex;
   padding: 16px 20px;
   align-items: center;
@@ -57,13 +65,6 @@ export const StyledInput = styled.input`
   background: ${theme.colors.default.white};
   color: ${theme.colors.black['80']};
   box-shadow: ${theme.inputs.default.effects.boxShadow};
-
-  &::placeholder {
-    color: ${theme.colors.black['40']};
-    font-weight: 700;
-    opacity: 1;
-  }
-
   &::-ms-input-placeholder {
     font-weight: 700;
     color: ${theme.colors.black['40']};
@@ -78,4 +79,8 @@ export const StyledInput = styled.input`
   &*::after {
     box-sizing: border-box;
   }
+`
+
+export const StyledInput = styled.input`
+  ${StyledDefaultInput};
 `
