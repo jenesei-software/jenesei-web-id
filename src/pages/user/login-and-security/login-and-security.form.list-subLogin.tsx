@@ -2,14 +2,14 @@ import { IconCurved } from '@assets/icons/icon-curved'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { Input } from '@components/input'
-import { StyledInterB16 } from '@styles/fonts/inter'
+import { StyledUserLine } from '@styles/components'
 import {
   FrameColumnGap180,
   FrameColumnGap300,
   FrameRowGap,
   FrameRowWrapGap,
-  UserLine,
-} from '@styles/pages'
+} from '@styles/components'
+import { StyledInterB16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
@@ -20,7 +20,7 @@ export const LoginAndSecurityFormListSubLogin: React.FC = () => {
   })
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
@@ -30,7 +30,7 @@ export const LoginAndSecurityFormListSubLogin: React.FC = () => {
             value={'stassiepushka'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>
+        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
           <StyledInterB16>{t('title-2')}</StyledInterB16>
           <FrameRowWrapGap>
             <LogoServices.JeneseiTask.Min />

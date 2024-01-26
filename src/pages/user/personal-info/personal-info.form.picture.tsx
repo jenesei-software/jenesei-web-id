@@ -1,14 +1,14 @@
 import { StyledAvatar } from './personal-info.styles'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { StyledInterB20, StyledInterM16 } from '@styles/fonts/inter'
+import { StyledUserLine } from '@styles/components'
 import {
-  UserLine,
   FrameSpaceBetween,
   FrameColumnGap,
   FrameColumn,
   FrameOnlyBottom,
-} from '@styles/pages'
+} from '@styles/components'
+import { StyledInterB20, StyledInterM16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
@@ -18,7 +18,7 @@ export const PersonalInfoFormPicture: React.FC = () => {
 
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <FrameSpaceBetween>
         <FrameColumnGap>
           <StyledAvatar />

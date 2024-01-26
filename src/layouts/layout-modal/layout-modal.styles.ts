@@ -14,11 +14,26 @@ export const LayoutModalWrapper = styled.div<{ visible: boolean }>`
   align-items: center;
   justify-content: center;
   background-color: ${theme.colors.black[40]};
-  display: ${(props) => (props.visible ? 'flex' : 'none')};
+  display: flex;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease;
 `
 
 export const LayoutModalContainer = styled.div`
+  min-width: 680px;
   padding: 26px;
   border-radius: 10px;
   background-color: ${theme.colors.default.white};
+  box-sizing: border-box;
+  overflow: auto;
+  @media (max-width: ${theme.size.mobile}) {
+    border-radius: 0px;
+    min-width: 100dvw;
+    max-width: 100dvw;
+    width: 100dvw;
+    max-height: 100dvh;
+  }
 `

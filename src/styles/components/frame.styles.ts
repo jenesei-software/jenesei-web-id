@@ -1,9 +1,41 @@
-import { StyledInterR16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
-import ReactLoading from 'react-loading'
 import styled from 'styled-components'
 
-export const UserWrapper = styled.div`
+export const FrameModalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+`
+
+export const FrameModalTitlesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  max-width: 600px;
+`
+
+export const FrameAuthorizationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 100px;
+
+  @media (max-width: ${theme.size.tablet}) {
+    align-self: stretch;
+    height: auto;
+    justify-content: space-between;
+  }
+`
+
+export const FrameUserWrapper = styled.div`
   border-top: 2px solid ${theme.colors.black[5]};
   display: flex;
   padding: 26px;
@@ -17,15 +49,6 @@ export const UserWrapper = styled.div`
     gap: 14px;
   }
 `
-export const UserLine = styled.div`
-  display: flex;
-  height: 2px;
-  justify-content: center;
-  align-items: center;
-  align-self: stretch;
-  width: 100%;
-  background: ${theme.colors.black[5]};
-`
 
 export const FrameOnlyBottom = styled.div`
   display: flex;
@@ -33,14 +56,14 @@ export const FrameOnlyBottom = styled.div`
   align-items: flex-end;
 `
 interface IFrameColumn {
-  mediaMaxWidth?: string
+  $mediaMaxWidth?: string
 }
 
 export const FrameColumn = styled.div<IFrameColumn>`
   display: flex;
   flex-direction: column;
 
-  @media (${(props) => `max-width: ${props.mediaMaxWidth}`}) {
+  @media (${(props) => `max-width: ${props.$mediaMaxWidth}`}) {
     display: none;
   }
 `
@@ -109,25 +132,3 @@ export const FrameRowWrapGap = styled.div`
   flex-wrap: wrap;
   gap: 10px;
 `
-export const StyledALotOfTitle = styled.div``
-
-export const StyledInterR16OnClick = styled(StyledInterR16)`
-  color: ${theme.colors.product['100']};
-  cursor: pointer;
-`
-
-export const ModalWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  align-self: stretch;
-`
-
-export const StyledReactLoading = styled(ReactLoading)``
-StyledReactLoading.defaultProps = {
-  color: theme.colors.black[80],
-  type: 'spin',
-  height: '42px',
-  width: '42px',
-}

@@ -2,13 +2,13 @@ import { IconCardNetwork } from '@assets/icons/icon-card-network'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { useInputCards } from '@hooks/inputs/use-input-cards'
-import { StyledInterB16 } from '@styles/fonts/inter'
+import { StyledUserLine } from '@styles/components'
 import {
   FrameRowWrapGap,
   FrameRowGap,
-  UserLine,
   FrameColumnGap,
-} from '@styles/pages'
+} from '@styles/components'
+import { StyledInterB16 } from '@styles/fonts/inter'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -38,7 +38,7 @@ export const PaymentsFormListCard: React.FC = () => {
   })
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <FrameRowGap>
         <FrameColumnGap>
           <StyledInterB16>{t('title-1')}</StyledInterB16>

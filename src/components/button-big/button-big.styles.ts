@@ -66,7 +66,7 @@ const ButtonBigWrapperDisabledTrue = css`
   }
 `
 export const ButtonBigWrapper = styled.button<
-  Pick<ButtonBigProps, 'type' | 'isIconColor' | 'disabled' | 'loading'>
+  Pick<ButtonBigProps, 'variant' | 'isIconColor' | 'disabled' | 'loading'>
 >`
   cursor: pointer;
   display: flex;
@@ -93,9 +93,9 @@ export const ButtonBigWrapper = styled.button<
         : ''};
 
   ${(props) =>
-    props.type === 'product'
+    props.variant === 'product'
       ? ButtonBigWrapperProduct
-      : props.type === 'border'
+      : props.variant === 'border'
         ? ButtonBigWrapperBorder
         : ButtonBigWrapperDefault};
 

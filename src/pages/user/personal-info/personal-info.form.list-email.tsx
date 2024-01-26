@@ -1,3 +1,4 @@
+import { EditType } from './modal/edit-type'
 import { ListEmailAdd } from './modal/list-email-add'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { IconValidate } from '@assets/icons/icon-validate'
@@ -7,7 +8,6 @@ import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
 import { Input } from '@components/input'
 import NiceModal from '@ebay/nice-modal-react'
-import { StyledInterB16 } from '@styles/fonts/inter'
 import {
   FrameColumnGap180,
   FrameColumnGap250,
@@ -15,12 +15,12 @@ import {
   FrameColumnGap78Center,
   FrameRowGap,
   FrameRowWrapGap,
-  UserLine,
-} from '@styles/pages'
+  StyledUserLine,
+} from '@styles/components'
+import { StyledInterB16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { EditType } from './modal/edit-type'
 
 export const PersonalInfoFormListEmail: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'list-email' })
@@ -38,7 +38,7 @@ export const PersonalInfoFormListEmail: React.FC = () => {
   }, [])
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
@@ -48,7 +48,7 @@ export const PersonalInfoFormListEmail: React.FC = () => {
             value={'cyrilstrone@gmail.com'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap250 mediaMaxWidth={theme.size.mobile}>
+        <FrameColumnGap250 $mediaMaxWidth={theme.size.mobile}>
           <StyledInterB16>{t('title-2')}</StyledInterB16>
           <FrameRowWrapGap>
             <ButtonPlaystationLong
@@ -56,10 +56,14 @@ export const PersonalInfoFormListEmail: React.FC = () => {
               title={'General'}
               checked={true}
             />
-            <ButtonBorderShort type="border" icon={IconCurved.Plus} onClick={editTypeClickHandler}/>
+            <ButtonBorderShort
+              type="border"
+              icon={IconCurved.Plus}
+              onClick={editTypeClickHandler}
+            />
           </FrameRowWrapGap>
         </FrameColumnGap250>
-        <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>
+        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
           <StyledInterB16>{t('title-3')}</StyledInterB16>
           <FrameRowWrapGap>
             <LogoServices.JeneseiTask.Min />
@@ -79,13 +83,17 @@ export const PersonalInfoFormListEmail: React.FC = () => {
             value={'kidvos@gmail.com'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap250 mediaMaxWidth={theme.size.mobile}>
+        <FrameColumnGap250 $mediaMaxWidth={theme.size.mobile}>
           <FrameRowWrapGap>
             <ButtonPlaystationLong title={'Home'} checked={false} />
-            <ButtonBorderShort type="border" icon={IconCurved.Plus} onClick={editTypeClickHandler}/>
+            <ButtonBorderShort
+              type="border"
+              icon={IconCurved.Plus}
+              onClick={editTypeClickHandler}
+            />
           </FrameRowWrapGap>
         </FrameColumnGap250>
-        <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>
+        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
           <FrameRowWrapGap></FrameRowWrapGap>
         </FrameColumnGap180>
         <FrameColumnGap78Center>

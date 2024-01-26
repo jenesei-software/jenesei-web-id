@@ -13,7 +13,7 @@ export const InputCode = (props: InputCodeProps) => {
     <InputWrapper>
       <StyledPatternFormat
         value={props.value}
-        onValueChange={({ floatValue }) => props.onChange(floatValue ?? null)}
+        onValueChange={({ value }) => props.onChange(value)}
         format={createPattern(props.length, '#')}
         placeholder={createPattern(props.length, '_')}
         mask="_"

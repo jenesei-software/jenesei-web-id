@@ -1,20 +1,20 @@
+import { ListEmailAddHookForm } from './list-email-add.types'
 import { IconValidate } from '@assets/icons/icon-validate'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { Input } from '@components/input'
 import { InputCode } from '@components/input-code'
 import NiceModal, { useModal } from '@ebay/nice-modal-react'
 import { LayoutModal } from '@layouts/layout-modal'
-import { StyledInterR16 } from '@styles/fonts/inter'
 import {
-  ModalWrapper,
+  FrameModalWrapper,
   StyledALotOfTitle,
-  StyledInterR16OnClick,
   StyledReactLoading,
-} from '@styles/pages'
+} from '@styles/components'
+import { StyledInterR16OnClick } from '@styles/components'
+import { StyledInterR16 } from '@styles/fonts/inter'
 import { ReactElement } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { ListEmailAddHookForm } from './list-email-add.types'
 
 export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
   const { t: tPersonalInfo } = useTranslation('personal-info', {
@@ -38,7 +38,7 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
   }
   return (
     <LayoutModal>
-      <ModalWrapper>
+      <FrameModalWrapper>
         {String(isValid)}
         <Input
           placeholder={tPersonalInfo('email')}
@@ -94,7 +94,7 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
           </StyledInterR16OnClick>
         </StyledALotOfTitle>
         <ButtonBorderLong title={tModal('check')} type="grey" />
-      </ModalWrapper>
+      </FrameModalWrapper>
     </LayoutModal>
   )
 })

@@ -71,12 +71,12 @@ export const PasswordResetForm: FC<SignUpProps> = () => {
         disabled={!isValid}
         onClick={handleSubmit(onSubmit)}
         title={t('buttons.reset-password')}
-        type={'product'}
+        variant={'product'}
       />
       <ButtonBig
         title={t('buttons.back-to-login')}
         onClick={() => goToLink('/authorization/sign-in')}
-        type={'border'}
+        variant={'border'}
       />
     </SignUpInfoFormContainer>
   )

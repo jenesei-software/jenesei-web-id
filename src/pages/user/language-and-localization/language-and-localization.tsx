@@ -1,14 +1,14 @@
 import { LanguageAndLocalizationProps } from '.'
 import { LanguageAndLocalizationLanguage } from './language-and-localization.form.list-card'
 import { UserTitle } from '@components/user-title'
-import { UserWrapper } from '@styles/pages'
+import { FrameUserWrapper } from '@styles/components'
 import { FC } from 'react'
 
 export const LanguageAndLocalization: FC<LanguageAndLocalizationProps> = () => {
   return (
-    <UserWrapper>
+    <FrameUserWrapper>
       <UserTitle />
       <LanguageAndLocalizationLanguage />
-    </UserWrapper>
+    </FrameUserWrapper>
   )
 }

@@ -10,8 +10,9 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBig } from '@components/button-big'
 import { LineOR } from '@components/line-or'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { FrameAuthorizationWrapper } from '@styles/components'
+import { StyledInterR16OnClick } from '@styles/components'
 import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
-import { AuthorizationWrapper, StyledInterR16OnClick } from '@styles/pages'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -20,11 +21,11 @@ export const SignUp: FC<SignUpProps> = () => {
   const goToLink = useGoToLink()
 
   return (
-    <AuthorizationWrapper>
+    <FrameAuthorizationWrapper>
       <SignUpTitlesContainer>
         <StyledInterB32>{t('title-big')}</StyledInterB32>
         <SignUpTitlesTwoContainer>
-          <StyledInterR16>{t('title-min')}</StyledInterR16>{" "}
+          <StyledInterR16>{t('title-min')}</StyledInterR16>{' '}
           <StyledInterR16OnClick
             onClick={() => goToLink('/authorization/sign-in')}
           >
@@ -39,15 +40,15 @@ export const SignUp: FC<SignUpProps> = () => {
           <ButtonBig
             title={t('buttons.continue-with-google')}
             icon={LogoServices.Google.Input}
-            type={'border'}
+            variant={'border'}
           />
           <ButtonBig
             title={t('buttons.continue-with-apple')}
             icon={LogoServices.Apple.Input}
-            type={'border'}
+            variant={'border'}
           />
         </SignUpInfoContinueContainer>
       </SignUpInfoContainer>
-    </AuthorizationWrapper>
+    </FrameAuthorizationWrapper>
   )
 }

@@ -1,6 +1,5 @@
 import { AuthContextProps, AuthProviderProps } from '.'
 import { useAxios } from '@providers/axios-provider'
-import { useLoading } from '@providers/loading-provider'
 import {
   IAuthTelegramProfile,
   ISignInProfile,
@@ -27,7 +26,6 @@ export const useAuth = () => {
  * Провайдер авторизации
  */
 export const AuthProvider: React.FC<AuthProviderProps> = (props) => {
-  const { toggleLoading } = useLoading()
   const { axiosInstance } = useAxios()
   const { setProfile, getProfile } = useProfile()
 
@@ -40,15 +38,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = (props) => {
    * Авторизация
    */
   const signInProfile = useCallback(async (params: ISignInProfile) => {
-    toggleLoading({ checked: true })
     return axiosInstance
       .post('/sign-in', { ...params })
       .then(() => {
-        toggleLoading({ checked: false })
         getProfile()
       })
       .catch((error) => {
-        toggleLoading({ checked: false })
         throw error
       })
   }, [])
@@ -57,17 +52,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = (props) => {
    * Регистрация
    */
   const signUpProfile = useCallback(async (params: ISignUpProfile) => {
-    toggleLoading({ checked: true })
     return axiosInstance
       .post('/sign-up', {
         ...params,
       })
       .then(() => {
-        toggleLoading({ checked: false })
         getProfile()
       })
       .catch((error) => {
-        toggleLoading({ checked: false })
         throw error
       })
   }, [])
@@ -76,17 +68,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = (props) => {
    * Выход
    */
   const logoutProfile = useCallback(async () => {
-    toggleLoading({ checked: true })
     return axiosInstance
       .get('/logout')
       .then(() => {
         document.cookie = 'name=<refresh_token>; expires=-1'
         document.cookie = 'name=<access_token>; expires=-1'
         setProfile(initialProfile)
-        toggleLoading({ checked: false })
       })
       .catch((error) => {
-        toggleLoading({ checked: false })
         throw error
       })
   }, [])

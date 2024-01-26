@@ -1,6 +1,6 @@
 export interface ListEmailAddHookForm {
   email: string
-  code: number | null
+  code: string
   step:
     | 'start'
     | 'checkEmail'

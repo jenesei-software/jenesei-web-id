@@ -1,6 +1,7 @@
 import { Input } from '@components/input'
+import { StyledUserLine } from '@styles/components'
+import { FrameColumnGap, FrameRowGapMediaColumn } from '@styles/components'
 import { StyledInterB16 } from '@styles/fonts/inter'
-import { FrameColumnGap, FrameRowGapMediaColumn, UserLine } from '@styles/pages'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -8,7 +9,7 @@ export const PersonalInfoFormName: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'name' })
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <FrameRowGapMediaColumn>
         <FrameColumnGap>
           <StyledInterB16>{t('title-1')}</StyledInterB16>

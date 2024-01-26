@@ -8,12 +8,12 @@ import {
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { useProfile } from '@providers/profile-provider'
+import { FrameAuthorizationWrapper } from '@styles/components'
 import {
   StyledInterB32,
   StyledInterR16,
   StyledInterSB14,
 } from '@styles/fonts/inter'
-import { AuthorizationWrapper } from '@styles/pages'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -22,7 +22,7 @@ export const Services: FC<ServicesProps> = () => {
   const { setProfile } = useProfile()
 
   return (
-    <AuthorizationWrapper>
+    <FrameAuthorizationWrapper>
       <ServicesTitleContainer>
         <StyledInterB32>
           {t('pages.title-big') + 'Stassie Strone'}
@@ -52,6 +52,6 @@ export const Services: FC<ServicesProps> = () => {
           onClick={() => setProfile({ id: '' })}
         />
       </ServicesButtonsContainer>
-    </AuthorizationWrapper>
+    </FrameAuthorizationWrapper>
   )
 }

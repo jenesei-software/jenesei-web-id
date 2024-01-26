@@ -1,6 +1,6 @@
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { UserLine } from '@styles/pages'
+import { StyledUserLine } from '@styles/components'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -8,7 +8,7 @@ export const PaymentsFormListSubscriptions: React.FC = () => {
   const { t } = useTranslation('payments', { keyPrefix: 'list-subscriptions' })
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <ButtonBorderLong
         title={t('buttons.add')}
         type="border"

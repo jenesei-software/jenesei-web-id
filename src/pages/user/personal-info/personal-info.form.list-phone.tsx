@@ -5,7 +5,6 @@ import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
 import { Input } from '@components/input'
-import { StyledInterB16 } from '@styles/fonts/inter'
 import {
   FrameColumnGap180,
   FrameColumnGap250,
@@ -13,8 +12,9 @@ import {
   FrameColumnGap78Center,
   FrameRowGap,
   FrameRowWrapGap,
-  UserLine,
-} from '@styles/pages'
+  StyledUserLine,
+} from '@styles/components'
+import { StyledInterB16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
@@ -23,7 +23,7 @@ export const PersonalInfoFormListPhone: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'list-phone' })
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
@@ -33,7 +33,7 @@ export const PersonalInfoFormListPhone: React.FC = () => {
             value={'+7 (950) 429 19 70'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap250 mediaMaxWidth={theme.size.mobile}>
+        <FrameColumnGap250 $mediaMaxWidth={theme.size.mobile}>
           <StyledInterB16>{t('title-2')}</StyledInterB16>
           <FrameRowWrapGap>
             <ButtonPlaystationLong
@@ -44,7 +44,7 @@ export const PersonalInfoFormListPhone: React.FC = () => {
             <ButtonBorderShort type="border" icon={IconCurved.Plus} />
           </FrameRowWrapGap>
         </FrameColumnGap250>
-        <FrameColumnGap180 mediaMaxWidth={theme.size.tablet}>
+        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
           <StyledInterB16>{t('title-3')}</StyledInterB16>
           <FrameRowWrapGap>
             <LogoServices.BusinessRoulette.Min />

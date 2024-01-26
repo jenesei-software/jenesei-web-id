@@ -12,8 +12,8 @@ import { Input } from '@components/input'
 import { Switch } from '@components/switch'
 import { getDateMinusYears } from '@functions/get-date-minus-years'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { StyledInterR16OnClick } from '@styles/components'
 import { StyledInterR16 } from '@styles/fonts/inter'
-import { StyledInterR16OnClick } from '@styles/pages'
 import { FC, useEffect, useReducer } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -128,11 +128,11 @@ export const SignUpForm: FC<SignUpProps> = () => {
           )}
         />
         <SignUpInfoFormSwitchAgreementContainer>
-          <StyledInterR16>{t('sign-up:agree-1')}</StyledInterR16>{" "}
+          <StyledInterR16>{t('sign-up:agree-1')}</StyledInterR16>{' '}
           <StyledInterR16OnClick onClick={() => goToLink('/terms-of-service')}>
             {t('terms-of-service:default')}
-          </StyledInterR16OnClick>{" "}
-          <StyledInterR16>{t('sign-up:agree-2')}</StyledInterR16>{" "}
+          </StyledInterR16OnClick>{' '}
+          <StyledInterR16>{t('sign-up:agree-2')}</StyledInterR16>{' '}
           <StyledInterR16OnClick onClick={() => goToLink('/privacy-policy')}>
             {t('privacy-policy:default')}
           </StyledInterR16OnClick>
@@ -142,7 +142,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
         onClick={handleSubmit(onSubmit)}
         disabled={!isValid}
         title={t('buttons.create-account')}
-        type={'product'}
+        variant={'product'}
       />
     </SignUpInfoFormContainer>
   )

@@ -1,8 +1,7 @@
 import { ButtonBigWrapper, ButtonBigProps } from '.'
 import { StyledInterSB16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
-import React from 'react'
-import { FC } from 'react'
+import React, { FC } from 'react'
 import ReactLoading from 'react-loading'
 import { Ripple } from 'react-ripple-click'
 
@@ -14,13 +13,14 @@ export const ButtonBig: FC<ButtonBigProps> = React.memo(
         disabled={props.disabled}
         onClick={props.onClick}
         isIconColor={props.isIconColor}
+        variant={props.variant}
         type={props.type}
       >
         <Ripple />
         {props.loading && (
           <ReactLoading
             color={
-              props.type == 'product'
+              props.variant == 'product'
                 ? theme.colors.default.white
                 : theme.colors.product[100]
             }

@@ -3,7 +3,8 @@ export interface ButtonBigProps {
   title: string
   icon?: () => JSX.Element
   isIconColor?: boolean
-  type: 'product' | 'border'
+  type?: 'button' | 'submit'
+  variant?: 'product' | 'border'
   disabled?: boolean
   loading?: boolean
 }

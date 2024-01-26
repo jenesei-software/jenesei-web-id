@@ -1,13 +1,13 @@
 import { languageList } from '@assets/i18n'
 import { useSelect } from '@hooks/inputs/use-select'
 import { useLanguage } from '@providers/language-provider'
-import { StyledInterB16 } from '@styles/fonts/inter'
+import { StyledUserLine } from '@styles/components'
 import {
   FrameRowGap,
-  UserLine,
   FrameColumnGap,
   FrameColumnGap180,
-} from '@styles/pages'
+} from '@styles/components'
+import { StyledInterB16 } from '@styles/fonts/inter'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -29,7 +29,7 @@ export const LanguageAndLocalizationLanguage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <UserLine />
+      <StyledUserLine />
       <FrameRowGap>
         <FrameColumnGap>
           <StyledInterB16>{t('title-1')}</StyledInterB16>

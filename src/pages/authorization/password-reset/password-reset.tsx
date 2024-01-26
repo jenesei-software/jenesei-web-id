@@ -4,8 +4,8 @@ import {
   PasswordResetTitlesContainer,
 } from '.'
 import { PasswordResetForm } from './password-reset.form'
+import { FrameAuthorizationWrapper } from '@styles/components'
 import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
-import { AuthorizationWrapper } from '@styles/pages'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -13,7 +13,7 @@ export const PasswordReset: FC<PasswordResetProps> = () => {
   const { t } = useTranslation('password-reset')
 
   return (
-    <AuthorizationWrapper>
+    <FrameAuthorizationWrapper>
       <PasswordResetTitlesContainer>
         <StyledInterB32>{t('title-big')}</StyledInterB32>
         <StyledInterR16>{t('title-min')}</StyledInterR16>
@@ -21,6 +21,6 @@ export const PasswordReset: FC<PasswordResetProps> = () => {
       <PasswordResetInfoContainer>
         <PasswordResetForm />
       </PasswordResetInfoContainer>
-    </AuthorizationWrapper>
+    </FrameAuthorizationWrapper>
   )
 }

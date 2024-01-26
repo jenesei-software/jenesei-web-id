@@ -5,7 +5,6 @@ import {
   initialProfile,
 } from '.'
 import { useAxios } from '@providers/axios-provider'
-import { useLoading } from '@providers/loading-provider'
 import { createContext, useCallback, useContext, useReducer } from 'react'
 
 const ProfileContext = createContext<ProfileContextProps | null>(null)
@@ -29,19 +28,15 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = (props) => {
     }),
     initialProfile
   )
-  const { toggleLoading } = useLoading()
   const { axiosInstance } = useAxios()
 
   const getProfile = useCallback(async (): Promise<void> => {
-    toggleLoading({ checked: true })
     return axiosInstance
       .get('/profile')
       .then(({ data }: { data: IProfile }) => {
-        toggleLoading({ checked: false })
         setProfile(data)
       })
       .catch((error) => {
-        toggleLoading({ checked: false })
         setProfile(initialProfile)
         throw error
       })

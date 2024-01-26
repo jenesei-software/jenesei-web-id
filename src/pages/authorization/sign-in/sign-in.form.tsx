@@ -1,12 +1,9 @@
-import {
-  SignInHookForm,
-  SignInInfoFormContainer,
-} from '.'
+import { SignInHookForm, SignInInfoFormContainer } from '.'
 import { ButtonBig } from '@components/button-big'
 import { Input } from '@components/input'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { useProfile } from '@providers/profile-provider'
-import { StyledInterR16OnClick } from '@styles/pages'
+import { StyledInterR16OnClick } from '@styles/components'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -57,7 +54,7 @@ export const SignInForm: FC = () => {
         disabled={!isValid}
         onClick={handleSubmit(onSubmit)}
         title={t('buttons.login')}
-        type={'product'}
+        variant={'product'}
       />
     </SignInInfoFormContainer>
   )
