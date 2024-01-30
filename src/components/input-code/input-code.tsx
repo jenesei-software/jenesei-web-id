@@ -1,4 +1,5 @@
-import { InputCodeProps, InputWrapper, StyledPatternFormat } from '.'
+import { UIInputWrapper } from '@styles/components'
+import { InputCodeProps, StyledUIInputCode } from '.'
 
 export const InputCode = (props: InputCodeProps) => {
   function createPattern(length: number, value: string) {
@@ -10,14 +11,14 @@ export const InputCode = (props: InputCodeProps) => {
     return patternArray.join('')
   }
   return (
-    <InputWrapper>
-      <StyledPatternFormat
+    <UIInputWrapper>
+      <StyledUIInputCode
         value={props.value}
         onValueChange={({ value }) => props.onChange(value)}
         format={createPattern(props.length, '#')}
         placeholder={createPattern(props.length, '_')}
         mask="_"
       />
-    </InputWrapper>
+    </UIInputWrapper>
   )
 }

@@ -1,7 +1,7 @@
 import { StyledAvatar } from './personal-info.styles'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { StyledUserLine } from '@styles/components'
+import { UIUserLine } from '@styles/components'
 import {
   FrameSpaceBetween,
   FrameColumnGap,
@@ -18,7 +18,7 @@ export const PersonalInfoFormPicture: React.FC = () => {
 
   return (
     <React.Fragment>
-      <StyledUserLine />
+      <UIUserLine />
       <FrameSpaceBetween>
         <FrameColumnGap>
           <StyledAvatar />

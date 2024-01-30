@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const FrameModalWrapper = styled.div`
@@ -28,7 +27,7 @@ export const FrameAuthorizationWrapper = styled.div`
   width: 100%;
   gap: 100px;
 
-  @media (max-width: ${theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
     align-self: stretch;
     height: auto;
     justify-content: space-between;
@@ -36,7 +35,7 @@ export const FrameAuthorizationWrapper = styled.div`
 `
 
 export const FrameUserWrapper = styled.div`
-  border-top: 2px solid ${theme.colors.black[5]};
+  border-top: 2px solid ${(props) => props.theme.colors.black[5]};
   display: flex;
   padding: 26px;
   flex-direction: column;
@@ -44,7 +43,7 @@ export const FrameUserWrapper = styled.div`
   gap: 26px;
   align-self: stretch;
 
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     padding: 14px;
     gap: 14px;
   }
@@ -105,13 +104,13 @@ export const FrameRowGap = styled(FrameColumn)`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     justify-content: space-between;
   }
 `
 
 export const FrameRowGapMediaColumn = styled(FrameRowGap)`
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     flex-direction: column;
   }
 `

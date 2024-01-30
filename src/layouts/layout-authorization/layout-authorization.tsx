@@ -13,7 +13,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 
-/**
+/*
  * The wrapper for unauthorized users
  */
 export const LayoutAuthorization: React.FC = () => {

@@ -8,11 +8,11 @@ import {
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
 import { DatePicker } from '@components/datepicker'
-import { Input } from '@components/input'
+import { InputDefault } from '@components/input-default'
 import { Switch } from '@components/switch'
 import { getDateMinusYears } from '@functions/get-date-minus-years'
 import { useGoToLink } from '@hooks/use-go-to-link'
-import { StyledInterR16OnClick } from '@styles/components'
+import { UIInterR16OnClick } from '@styles/components'
 import { StyledInterR16 } from '@styles/fonts/inter'
 import { FC, useEffect, useReducer } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
@@ -51,7 +51,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
   }, [isHide])
   return (
     <SignUpInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <Input
+      <InputDefault
         placeholder={t('sign-up:inputs.email')}
         type="email"
         register={{
@@ -62,7 +62,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
           }),
         }}
       />
-      <Input
+      <InputDefault
         placeholder={t('sign-up:inputs.login')}
         register={{
           ...register('login', {
@@ -85,7 +85,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
           />
         )}
       />
-      <Input
+      <InputDefault
         placeholder={t('sign-up:inputs.password')}
         type={isHide ? 'password' : 'text'}
         register={{
@@ -102,7 +102,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
           },
         }}
       />
-      <Input
+      <InputDefault
         placeholder={t('sign-up:inputs.repeat-password')}
         type="password"
         register={{
@@ -129,13 +129,13 @@ export const SignUpForm: FC<SignUpProps> = () => {
         />
         <SignUpInfoFormSwitchAgreementContainer>
           <StyledInterR16>{t('sign-up:agree-1')}</StyledInterR16>{' '}
-          <StyledInterR16OnClick onClick={() => goToLink('/terms-of-service')}>
+          <UIInterR16OnClick onClick={() => goToLink('/terms-of-service')}>
             {t('terms-of-service:default')}
-          </StyledInterR16OnClick>{' '}
+          </UIInterR16OnClick>{' '}
           <StyledInterR16>{t('sign-up:agree-2')}</StyledInterR16>{' '}
-          <StyledInterR16OnClick onClick={() => goToLink('/privacy-policy')}>
+          <UIInterR16OnClick onClick={() => goToLink('/privacy-policy')}>
             {t('privacy-policy:default')}
-          </StyledInterR16OnClick>
+          </UIInterR16OnClick>
         </SignUpInfoFormSwitchAgreementContainer>
       </SignUpInfoFormSwitchContainer>
       <ButtonBig

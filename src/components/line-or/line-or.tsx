@@ -1,4 +1,4 @@
-import { LineOrWrapper, StyledLine } from '.'
+import { LineOrWrapper, Line } from '.'
 import { StyledInterR16 } from '@styles/fonts/inter'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
@@ -8,9 +8,9 @@ export const LineOR: React.FC = () => {
 
   return (
     <LineOrWrapper>
-      <StyledLine />
+      <Line />
       <StyledInterR16>{t('default')}</StyledInterR16>
-      <StyledLine />
+      <Line />
     </LineOrWrapper>
   )
 }

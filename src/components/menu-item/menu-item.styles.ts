@@ -1,10 +1,9 @@
 import { MenuItemProps } from '.'
-import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
 
 const MenuItemWrapperCheckedTrue = css`
-  border-left: 4px solid ${theme.colors.black['80']};
-  background: ${theme.colors.black['5']};
+  border-left: 4px solid ${(props) => props.theme.colors.black['80']};
+  background: ${(props) => props.theme.colors.black['5']};
 `
 const MenuItemWrapperCheckedFalse = css`
   border-left: 4px solid transparent;
@@ -27,9 +26,9 @@ export const MenuItemWrapper = styled.button<Pick<MenuItemProps, 'checked'>>`
   overflow: hidden;
   isolation: isolate;
   border: none;
-  color: ${theme.colors.black['100']};
+  color: ${(props) => props.theme.colors.black['100']};
 
-  @media (max-width: ${theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.size.menu}) {
     display: flex;
     height: 84px;
     padding: 16px 26px;
@@ -81,10 +80,10 @@ export const MenuItemInfoContainer = styled.div`
     line-clamp: 2;
     box-orient: vertical;
   }
-  @media (max-width: ${theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.size.menu}) {
     display: none;
   }
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     display: flex;
   }
 `

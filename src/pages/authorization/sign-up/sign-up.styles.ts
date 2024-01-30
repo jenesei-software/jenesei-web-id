@@ -1,5 +1,4 @@
 import { StyledInterR16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const SignUpTitlesContainer = styled.div`
@@ -10,7 +9,7 @@ export const SignUpTitlesContainer = styled.div`
 `
 export const SignUpTitlesTwoContainer = styled.div``
 export const StyledStyledInterR16 = styled(StyledInterR16)`
-  color: ${theme.colors.product['100']};
+  color: ${(props) => props.theme.colors.product['100']};
   cursor: pointer;
   margin: 0px 4px 0px 4px;
 `

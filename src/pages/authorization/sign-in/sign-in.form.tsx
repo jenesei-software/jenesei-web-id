@@ -1,9 +1,9 @@
 import { SignInHookForm, SignInInfoFormContainer } from '.'
 import { ButtonBig } from '@components/button-big'
-import { Input } from '@components/input'
+import { InputDefault } from '@components/input-default'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { useProfile } from '@providers/profile-provider'
-import { StyledInterR16OnClick } from '@styles/components'
+import { UIInterR16OnClick } from '@styles/components'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -24,7 +24,7 @@ export const SignInForm: FC = () => {
   }
   return (
     <SignInInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <Input
+      <InputDefault
         placeholder={t('inputs.email-or-login')}
         register={{
           ...register('emailOrLogin', {
@@ -34,7 +34,7 @@ export const SignInForm: FC = () => {
           }),
         }}
       />
-      <Input
+      <InputDefault
         placeholder={t('inputs.password')}
         type="password"
         register={{
@@ -45,11 +45,11 @@ export const SignInForm: FC = () => {
           }),
         }}
       />
-      <StyledInterR16OnClick
+      <UIInterR16OnClick
         onClick={() => goToLink('/authorization/password-forgot')}
       >
         {t('forgot-password')}
-      </StyledInterR16OnClick>
+      </UIInterR16OnClick>
       <ButtonBig
         disabled={!isValid}
         onClick={handleSubmit(onSubmit)}

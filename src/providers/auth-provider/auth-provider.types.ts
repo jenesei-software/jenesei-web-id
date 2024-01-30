@@ -1,19 +1,11 @@
-import {
-  IAuthTelegramProfile,
-  ISignInProfile,
-  ISignUpProfile,
-} from '@providers/profile-provider'
+import { ITokenData } from '@api/auth'
 
 export interface AuthProviderProps {
   children: React.ReactNode
 }
 
 export interface AuthContextProps {
-  signInProfile: (params: ISignInProfile) => Promise<void>
-  signUpProfile: (params: ISignUpProfile) => Promise<void>
-  authTelegramProfile: (params: IAuthTelegramProfile) => Promise<void>
-  unAuthTelegramProfile: () => Promise<void>
-  refreshProfile: () => Promise<boolean>
-  logoutProfile: () => Promise<void>
-  googleProfile: string
+  isAuthorized: boolean
+  saveToLocalStorage: (data: ITokenData) => void
+  delToLocalStorage: () => void
 }

@@ -1,7 +1,7 @@
 import { IUserRoute, UserRouts } from '.'
 import { LayoutAuthorization } from '@layouts/layout-authorization'
 import { LayoutUser } from '@layouts/layout-user'
-import { Services } from '@pages/services'
+import { Services } from '@pages/user/services'
 import { FC } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 

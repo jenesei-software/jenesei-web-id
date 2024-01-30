@@ -1,7 +1,7 @@
 import { languageList } from '@assets/i18n'
 import { useSelect } from '@hooks/inputs/use-select'
 import { useLanguage } from '@providers/language-provider'
-import { StyledUserLine } from '@styles/components'
+import { UIUserLine } from '@styles/components'
 import {
   FrameRowGap,
   FrameColumnGap,
@@ -29,7 +29,7 @@ export const LanguageAndLocalizationLanguage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <StyledUserLine />
+      <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap>
           <StyledInterB16>{t('title-1')}</StyledInterB16>

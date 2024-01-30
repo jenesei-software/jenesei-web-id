@@ -2,13 +2,6 @@ import { CardProps } from '.'
 import { FontInterB16, FontInterM16 } from '@styles/fonts/inter'
 import styled from 'styled-components'
 
-export const UseInputWrapper = styled.div`
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-`
-
 export const UseInputCard = styled.button<CardProps>`
   display: flex;
   flex-direction: column;

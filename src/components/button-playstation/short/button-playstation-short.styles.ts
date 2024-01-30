@@ -1,36 +1,35 @@
 import { ButtonPlaystationShortProps } from '.'
-import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
 
 const ButtonPlaystationShortWrapperCheckedTrue = css`
-  background: ${theme.buttons.playstation.active.fill};
-  color: ${theme.colors.default.white};
+  background: ${(props) => props.theme.buttons.playstation.active.fill};
+  color: ${(props) => props.theme.colors.default.white};
   & svg {
     width: 20px;
     min-width: 20px;
     height: 20px;
     & path {
-      fill: ${theme.colors.default.white};
+      fill: ${(props) => props.theme.colors.default.white};
     }
   }
   & span {
-    color: ${theme.colors.default.white};
+    color: ${(props) => props.theme.colors.default.white};
   }
 `
 
 const ButtonPlaystationShortWrapperCheckedFalse = css`
-  background: ${theme.buttons.playstation.default.fill};
-  color: ${theme.colors.black['80']};
+  background: ${(props) => props.theme.buttons.playstation.default.fill};
+  color: ${(props) => props.theme.colors.black['80']};
   & svg {
     width: 20px;
     min-width: 20px;
     height: 20px;
     & path {
-      fill: ${theme.colors.black['80']};
+      fill: ${(props) => props.theme.colors.black['80']};
     }
   }
   & span {
-    color: ${theme.colors.black['80']};
+    color: ${(props) => props.theme.colors.black['80']};
   }
 `
 
@@ -50,7 +49,7 @@ export const ButtonPlaystationShortWrapper = styled.button<
   flex-shrink: 0;
   border-radius: 100px;
   cursor: pointer;
-  box-shadow: ${theme.buttons.playstation.effects.default};
+  box-shadow: ${(props) => props.theme.buttons.playstation.effects.default};
 
   ${(props) =>
     props.checked === true

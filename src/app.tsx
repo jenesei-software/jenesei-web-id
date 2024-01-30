@@ -20,9 +20,9 @@ function App() {
       <ReactQueryDevtools />
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={theme}>
-          <AxiosProvider>
-            <ProfileProvider>
-              <AuthProvider>
+          <AuthProvider>
+            <AxiosProvider>
+              <ProfileProvider>
                 <BrowserRouter>
                   <LanguageProvider>
                     <LayoutAnimatedTransition>
@@ -32,9 +32,9 @@ function App() {
                     </LayoutAnimatedTransition>
                   </LanguageProvider>
                 </BrowserRouter>
-              </AuthProvider>
-            </ProfileProvider>
-          </AxiosProvider>
+              </ProfileProvider>
+            </AxiosProvider>
+          </AuthProvider>
         </ThemeProvider>
       </I18nextProvider>
     </QueryClientProvider>

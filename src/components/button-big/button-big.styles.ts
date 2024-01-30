@@ -1,31 +1,30 @@
 import { ButtonBigProps } from '.'
-import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
 
 const ButtonBigWrapperProduct = css`
-  color: ${theme.colors.product['100']};
+  color: ${(props) => props.theme.colors.product['100']};
   border: 1px solid transparent;
-  background: ${theme.colors.product['100']};
+  background: ${(props) => props.theme.colors.product['100']};
   & span {
-    color: ${theme.colors.default.white};
+    color: ${(props) => props.theme.colors.default.white};
   }
 `
 
 const ButtonBigWrapperBorder = css`
-  color: ${theme.colors.default.white};
-  border: 1px solid ${theme.colors.black['80']};
-  background: ${theme.colors.default.white};
+  color: ${(props) => props.theme.colors.default.white};
+  border: 1px solid ${(props) => props.theme.colors.black['80']};
+  background: ${(props) => props.theme.colors.default.white};
   & span {
-    color: ${theme.colors.black['100']};
+    color: ${(props) => props.theme.colors.black['100']};
   }
 `
 
 const ButtonBigWrapperDefault = css`
-  color: ${theme.colors.default.white};
+  color: ${(props) => props.theme.colors.default.white};
   border: 1px solid transparent;
-  background: ${theme.colors.default.white};
+  background: ${(props) => props.theme.colors.default.white};
   & span {
-    color: ${theme.colors.black['100']};
+    color: ${(props) => props.theme.colors.black['100']};
   }
 `
 
@@ -35,7 +34,7 @@ const ButtonBigWrapperIsIconColorTrue = css`
     height: 19px;
     flex-shrink: 0;
     & path {
-      fill: ${theme.colors.black['60']};
+      fill: ${(props) => props.theme.colors.black['60']};
     }
   }
 `
@@ -53,15 +52,15 @@ const ButtonBigWrapperLoadingTrue = css`
   }
 `
 const ButtonBigWrapperDisabledTrue = css`
-  background: ${theme.colors.default.white};
-  color: ${theme.colors.gray.e5e5ea};
-  border: 1px solid ${theme.colors.gray.e5e5ea};
+  background: ${(props) => props.theme.colors.default.white};
+  color: ${(props) => props.theme.colors.gray.e5e5ea};
+  border: 1px solid ${(props) => props.theme.colors.gray.e5e5ea};
   & span {
-    color: ${theme.colors.gray.e5e5ea};
+    color: ${(props) => props.theme.colors.gray.e5e5ea};
   }
   & svg {
     & path {
-      fill: ${theme.colors.gray.e5e5ea};
+      fill: ${(props) => props.theme.colors.gray.e5e5ea};
     }
   }
 `

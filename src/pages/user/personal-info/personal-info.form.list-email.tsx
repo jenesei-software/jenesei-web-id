@@ -1,4 +1,5 @@
 import { EditType } from './modal/edit-type'
+import { EditTypeProps } from './modal/edit-type.types'
 import { ListEmailAdd } from './modal/list-email-add'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { IconValidate } from '@assets/icons/icon-validate'
@@ -6,7 +7,7 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { Input } from '@components/input'
+import { InputDefault } from '@components/input-default'
 import NiceModal from '@ebay/nice-modal-react'
 import {
   FrameColumnGap180,
@@ -15,7 +16,7 @@ import {
   FrameColumnGap78Center,
   FrameRowGap,
   FrameRowWrapGap,
-  StyledUserLine,
+  UIUserLine,
 } from '@styles/components'
 import { StyledInterB16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
@@ -27,8 +28,8 @@ export const PersonalInfoFormListEmail: React.FC = () => {
   const addEmailClickHandler = () => {
     NiceModal.show(ListEmailAdd)
   }
-  const editTypeClickHandler = () => {
-    NiceModal.show(EditType)
+  const editTypeClickHandler = (props: EditTypeProps) => {
+    NiceModal.show(EditType, props)
   }
   useEffect(() => {
     return () => {
@@ -38,11 +39,11 @@ export const PersonalInfoFormListEmail: React.FC = () => {
   }, [])
   return (
     <React.Fragment>
-      <StyledUserLine />
+      <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <Input
+          <InputDefault
             placeholder={t('inputs.email')}
             readOnly
             value={'cyrilstrone@gmail.com'}
@@ -59,7 +60,17 @@ export const PersonalInfoFormListEmail: React.FC = () => {
             <ButtonBorderShort
               type="border"
               icon={IconCurved.Plus}
-              onClick={editTypeClickHandler}
+              onClick={() =>
+                editTypeClickHandler({
+                  original: (
+                    <InputDefault
+                      placeholder={t('inputs.email')}
+                      readOnly
+                      value={'cyrilstrone@gmail.com'}
+                    />
+                  ),
+                })
+              }
             />
           </FrameRowWrapGap>
         </FrameColumnGap250>
@@ -77,7 +88,7 @@ export const PersonalInfoFormListEmail: React.FC = () => {
       </FrameRowGap>
       <FrameRowGap>
         <FrameColumnGap300>
-          <Input
+          <InputDefault
             placeholder={t('inputs.email')}
             readOnly
             value={'kidvos@gmail.com'}
@@ -89,7 +100,17 @@ export const PersonalInfoFormListEmail: React.FC = () => {
             <ButtonBorderShort
               type="border"
               icon={IconCurved.Plus}
-              onClick={editTypeClickHandler}
+              onClick={() =>
+                editTypeClickHandler({
+                  original: (
+                    <InputDefault
+                      placeholder={t('inputs.email')}
+                      readOnly
+                      value={'kidvos@gmail.com'}
+                    />
+                  ),
+                })
+              }
             />
           </FrameRowWrapGap>
         </FrameColumnGap250>

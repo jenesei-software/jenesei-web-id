@@ -1,38 +1,37 @@
 import { ButtonBorderLongProps } from '.'
-import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
 
 const ButtonBorderLongWrapperBlack = css`
   border: 1px solid transparent;
-  background: ${theme.colors.black['100']};
-  color: ${theme.colors.default.white};
+  background: ${(props) => props.theme.colors.black['100']};
+  color: ${(props) => props.theme.colors.default.white};
   & span {
-    color: ${theme.colors.default.white};
+    color: ${(props) => props.theme.colors.default.white};
   }
 `
 
 const ButtonBorderLongWrapperGrey = css`
   border: 1px solid transparent;
-  background: ${theme.colors.black['10']};
-  color: ${theme.colors.black['60']};
+  background: ${(props) => props.theme.colors.black['10']};
+  color: ${(props) => props.theme.colors.black['60']};
   & span {
-    color: ${theme.colors.black['60']};
+    color: ${(props) => props.theme.colors.black['60']};
   }
 `
 const ButtonBorderLongWrapperWhite = css`
   border: 1px solid white;
-  background: ${theme.colors.black['10']};
-  color: ${theme.colors.black['60']};
+  background: ${(props) => props.theme.colors.black['10']};
+  color: ${(props) => props.theme.colors.black['60']};
   & span {
-    color: ${theme.colors.black['60']};
+    color: ${(props) => props.theme.colors.black['60']};
   }
 `
 const ButtonBorderLongWrapperBorder = css`
-  border: 1px solid ${theme.colors.black['10']};
-  background: ${theme.colors.default.white};
-  color: ${theme.colors.black['60']};
+  border: 1px solid ${(props) => props.theme.colors.black['10']};
+  background: ${(props) => props.theme.colors.default.white};
+  color: ${(props) => props.theme.colors.black['60']};
   & span {
-    color: ${theme.colors.black['60']};
+    color: ${(props) => props.theme.colors.black['60']};
   }
 `
 export const ButtonBorderLongWrapper = styled.button<
@@ -57,7 +56,7 @@ export const ButtonBorderLongWrapper = styled.button<
     min-width: 20px;
     height: 20px;
     & path {
-      fill: ${theme.colors.black['60']};
+      fill: ${(props) => props.theme.colors.black['60']};
     }
   }
   ${(props) =>

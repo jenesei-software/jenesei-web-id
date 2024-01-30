@@ -2,7 +2,7 @@ import { IconCardNetwork } from '@assets/icons/icon-card-network'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { useInputCards } from '@hooks/inputs/use-input-cards'
-import { StyledUserLine } from '@styles/components'
+import { UIUserLine } from '@styles/components'
 import {
   FrameRowWrapGap,
   FrameRowGap,
@@ -38,7 +38,7 @@ export const PaymentsFormListCard: React.FC = () => {
   })
   return (
     <React.Fragment>
-      <StyledUserLine />
+      <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap>
           <StyledInterB16>{t('title-1')}</StyledInterB16>

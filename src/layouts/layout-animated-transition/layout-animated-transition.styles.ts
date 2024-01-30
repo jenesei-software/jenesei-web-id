@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled, { css, keyframes } from 'styled-components'
 
 const fillLine = keyframes`
@@ -20,7 +19,7 @@ const LayoutAnimatedTransitionWrapperIsTransitioningTrue = css<{
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: ${theme.colors.product[100]};
+    background-color: ${(props) => props.theme.colors.product[100]};
     animation: ${fillLine} ${(props) => props.$loadingTime}ms linear;
     z-index: 3;
   }

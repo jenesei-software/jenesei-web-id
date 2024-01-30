@@ -3,27 +3,27 @@ import { theme } from '@styles/theme'
 import ReactLoading from 'react-loading'
 import styled from 'styled-components'
 
-export const StyledReactLoading = styled(ReactLoading)``
-StyledReactLoading.defaultProps = {
+export const UIReactLoading = styled(ReactLoading)``
+UIReactLoading.defaultProps = {
   color: theme.colors.black[80],
   type: 'spin',
   height: '42px',
   width: '42px',
 }
 
-export const StyledALotOfTitle = styled.div``
+export const UIALotOfTitle = styled.div``
 
-export const StyledInterR16OnClick = styled(StyledInterR16)`
-  color: ${theme.colors.product['100']};
+export const UIInterR16OnClick = styled(StyledInterR16)`
+  color: ${(props) => props.theme.colors.product['100']};
   cursor: pointer;
 `
 
-export const StyledUserLine = styled.div`
+export const UIUserLine = styled.div`
   display: flex;
   height: 2px;
   justify-content: center;
   align-items: center;
   align-self: stretch;
   width: 100%;
-  background: ${theme.colors.black[5]};
+  background: ${(props) => props.theme.colors.black[5]};
 `

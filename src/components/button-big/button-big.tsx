@@ -1,6 +1,6 @@
+import { theme } from '@styles/theme'
 import { ButtonBigWrapper, ButtonBigProps } from '.'
 import { StyledInterSB16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
 import React, { FC } from 'react'
 import ReactLoading from 'react-loading'
 import { Ripple } from 'react-ripple-click'

@@ -1,15 +1,15 @@
+import { axiosInstance } from '@api/axios'
 import {
   IProfile,
   ProfileContextProps,
   ProfileProviderProps,
   initialProfile,
 } from '.'
-import { useAxios } from '@providers/axios-provider'
 import { createContext, useCallback, useContext, useReducer } from 'react'
 
 const ProfileContext = createContext<ProfileContextProps | null>(null)
 
-/**
+/*
  * Хук авторизации
  */
 export const useProfile = () => {
@@ -28,8 +28,7 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = (props) => {
     }),
     initialProfile
   )
-  const { axiosInstance } = useAxios()
-
+  
   const getProfile = useCallback(async (): Promise<void> => {
     return axiosInstance
       .get('/profile')

@@ -1,16 +1,16 @@
 import { ListEmailAddHookForm } from './list-email-add.types'
 import { IconValidate } from '@assets/icons/icon-validate'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { Input } from '@components/input'
+import { InputDefault } from '@components/input-default'
 import { InputCode } from '@components/input-code'
 import NiceModal, { useModal } from '@ebay/nice-modal-react'
 import { LayoutModal } from '@layouts/layout-modal'
 import {
   FrameModalWrapper,
-  StyledALotOfTitle,
-  StyledReactLoading,
+  UIALotOfTitle,
+  UIReactLoading,
 } from '@styles/components'
-import { StyledInterR16OnClick } from '@styles/components'
+import { UIInterR16OnClick } from '@styles/components'
 import { StyledInterR16 } from '@styles/fonts/inter'
 import { ReactElement } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
@@ -40,7 +40,7 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
     <LayoutModal>
       <FrameModalWrapper>
         {String(isValid)}
-        <Input
+        <InputDefault
           placeholder={tPersonalInfo('email')}
           type="email"
           register={{
@@ -76,23 +76,23 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
         />
         <IconValidate.Min.True />
         <IconValidate.Min.False />
-        <StyledReactLoading />
+        <UIReactLoading />
         <StyledInterR16>{tPersonalInfo('enter-the-code')}</StyledInterR16>
-        <StyledInterR16OnClick onClick={closeDrawer}>
+        <UIInterR16OnClick onClick={closeDrawer}>
           {tPersonalInfo("can't-use-this-email")}
-        </StyledInterR16OnClick>
-        <StyledALotOfTitle>
+        </UIInterR16OnClick>
+        <UIALotOfTitle>
           <StyledInterR16>{tPersonalInfo('wrong-code')}</StyledInterR16>{' '}
-          <StyledInterR16OnClick onClick={closeDrawer}>
+          <UIInterR16OnClick onClick={closeDrawer}>
             {tPersonalInfo('code-again')}
-          </StyledInterR16OnClick>
-        </StyledALotOfTitle>
-        <StyledALotOfTitle>
+          </UIInterR16OnClick>
+        </UIALotOfTitle>
+        <UIALotOfTitle>
           <StyledInterR16>{tPersonalInfo('wrong-code')}</StyledInterR16>{' '}
-          <StyledInterR16OnClick onClick={closeDrawer}>
+          <UIInterR16OnClick onClick={closeDrawer}>
             {tPersonalInfo('tomorrow')}
-          </StyledInterR16OnClick>
-        </StyledALotOfTitle>
+          </UIInterR16OnClick>
+        </UIALotOfTitle>
         <ButtonBorderLong title={tModal('check')} type="grey" />
       </FrameModalWrapper>
     </LayoutModal>

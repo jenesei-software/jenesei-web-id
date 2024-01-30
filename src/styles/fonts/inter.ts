@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
 
 export interface StyledInterProps {
@@ -9,7 +8,7 @@ const FontInter = css`
   font-family: Inter;
   font-style: normal;
   line-height: normal;
-  color: ${theme.colors.black['80']};
+  color: ${(props) => props.theme.colors.black['80']};
 `
 
 export const FontInterSB14 = css`
@@ -19,7 +18,8 @@ export const FontInterSB14 = css`
 `
 export const StyledInterSB14 = styled.span<StyledInterProps>`
   ${FontInterSB14};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 const FontInterSB16 = css`
@@ -29,7 +29,8 @@ const FontInterSB16 = css`
 `
 export const StyledInterSB16 = styled.span<StyledInterProps>`
   ${FontInterSB16};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 const FontInterSB18 = css`
@@ -39,7 +40,8 @@ const FontInterSB18 = css`
 `
 export const StyledInterSB18 = styled.span<StyledInterProps>`
   ${FontInterSB18};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 const FontInterSB20 = css`
@@ -49,7 +51,8 @@ const FontInterSB20 = css`
 `
 export const StyledInterSB20 = styled.span<StyledInterProps>`
   ${FontInterSB20};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 export const FontInterM12 = css`
@@ -59,7 +62,8 @@ export const FontInterM12 = css`
 `
 export const StyledInterM12 = styled.span<StyledInterProps>`
   ${FontInterM12};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 export const FontInterM14 = css`
@@ -69,7 +73,8 @@ export const FontInterM14 = css`
 `
 export const StyledInterM14 = styled.span<StyledInterProps>`
   ${FontInterM14};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 export const FontInterM16 = css`
@@ -79,12 +84,14 @@ export const FontInterM16 = css`
 `
 export const StyledInterM16 = styled.span<StyledInterProps>`
   ${FontInterM14};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 export const StyledInterM16Mobile = styled.span<StyledInterProps>`
   ${FontInterM14};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
-  @media (max-width: ${theme.size.mobile}) {
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     font-size: 12px;
   }
 `
@@ -102,7 +109,8 @@ export const FontInterB14 = css`
 `
 export const StyledInterB14 = styled.span<StyledInterProps>`
   ${FontInterB14};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 export const FontInterB16 = css`
@@ -112,7 +120,8 @@ export const FontInterB16 = css`
 `
 export const StyledInterB16 = styled.span<StyledInterProps>`
   ${FontInterB16};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 export const FontInterB20 = css`
@@ -122,7 +131,8 @@ export const FontInterB20 = css`
 `
 export const StyledInterB20 = styled.span<StyledInterProps>`
   ${FontInterB20};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 const FontInterB32 = css`
@@ -132,7 +142,8 @@ const FontInterB32 = css`
 `
 export const StyledInterB32 = styled.span<StyledInterProps>`
   ${FontInterB32};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 const FontInterB36 = css`
@@ -142,12 +153,14 @@ const FontInterB36 = css`
 `
 export const StyledInterB36 = styled.span<StyledInterProps>`
   ${FontInterB36};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 export const StyledInterB36Mobile = styled.span<StyledInterProps>`
   ${FontInterB36};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
-  @media (max-width: ${theme.size.mobile}) {
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     font-size: 20px;
   }
 `
@@ -159,7 +172,8 @@ const FontInterR14 = css`
 `
 export const StyledInterR14 = styled.span<StyledInterProps>`
   ${FontInterR14};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 export const FontInterR16 = css`
@@ -169,7 +183,8 @@ export const FontInterR16 = css`
 `
 export const StyledInterR16 = styled.span<StyledInterProps>`
   ${FontInterR16};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `
 
 const FontInterR24 = css`
@@ -179,5 +194,6 @@ const FontInterR24 = css`
 `
 export const StyledInterR24 = styled.span<StyledInterProps>`
   ${FontInterR24};
-  color: ${(props) => (props.color ? props.color : theme.colors.black['80'])};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.colors.black['80']};
 `

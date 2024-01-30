@@ -23,7 +23,7 @@ import { useSearchParams } from 'react-router-dom'
 
 const LanguageContext = createContext<LanguageContextProps | null>(null)
 
-/**
+/*
  * Инициализация данных для работы встроенного useReducer
  */
 const languageReducer = (
@@ -44,7 +44,7 @@ const languageReducer = (
   }
 }
 
-/**
+/*
  * Хук работы с языками
  */
 export const useLanguage = () => {
@@ -55,7 +55,7 @@ export const useLanguage = () => {
   return context
 }
 
-/**
+/*
  * Провайдер языка
  */
 export const LanguageProvider: React.FC<LanguageProviderProps> = (props) => {

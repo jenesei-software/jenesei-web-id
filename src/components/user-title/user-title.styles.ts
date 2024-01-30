@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const UserTitleWrapper = styled.div`
@@ -6,6 +5,6 @@ export const UserTitleWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
   }
 `

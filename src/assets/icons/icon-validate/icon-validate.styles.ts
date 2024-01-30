@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const IconValidateWrapperBigTrue = styled.div`
@@ -11,21 +10,21 @@ export const IconValidateWrapperBigTrue = styled.div`
   align-items: center;
   border-radius: 100px;
   box-sizing: border-box;
-  background: ${theme.colors.color.green['10']};
+  background: ${(props) => props.theme.colors.color.green['10']};
   & svg {
     width: 102px;
     height: 102px;
     & path {
-      fill: ${theme.colors.color.green['100']};
+      fill: ${(props) => props.theme.colors.color.green['100']};
     }
   }
 `
 
 export const IconValidateWrapperBigFalse = styled(IconValidateWrapperBigTrue)`
-  background: ${theme.colors.color.red['10']};
+  background: ${(props) => props.theme.colors.color.red['10']};
   & svg {
     & path {
-      fill: ${theme.colors.color.red['100']};
+      fill: ${(props) => props.theme.colors.color.red['100']};
     }
   }
 `

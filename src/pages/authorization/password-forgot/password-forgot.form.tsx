@@ -1,7 +1,7 @@
 import { PasswordForgotHookForm } from '.'
 import { SignUpInfoFormContainer, SignUpProps } from '../sign-up'
 import { ButtonBig } from '@components/button-big'
-import { Input } from '@components/input'
+import { InputDefault } from '@components/input-default'
 import { isValidEmail } from '@functions/is-valid-email'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { FC } from 'react'
@@ -24,7 +24,7 @@ export const PasswordForgotForm: FC<SignUpProps> = () => {
 
   return (
     <SignUpInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <Input
+      <InputDefault
         placeholder={t('inputs.email')}
         type="email"
         register={{

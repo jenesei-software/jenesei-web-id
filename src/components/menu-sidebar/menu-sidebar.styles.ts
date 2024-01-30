@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const MenuSideBarWrapper = styled.div`
@@ -12,10 +11,10 @@ export const MenuSideBarWrapper = styled.div`
   width: 520px;
   min-height: max(calc(100dvh - 60px), 488px);
 
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     display: none;
   }
-  @media (max-width: ${theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.size.menu}) {
     width: auto;
   }
 `
@@ -31,7 +30,7 @@ export const MenuSideBarTitle = styled.div`
   flex-shrink: 0;
   align-self: stretch;
 
-  @media (max-width: ${theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.size.menu}) {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -49,7 +48,7 @@ export const MenuSideLogoContainer = styled.div`
   position: absolute;
   bottom: 0;
   box-sizing: border-box;
-  background: ${theme.colors.black['100']};
+  background: ${(props) => props.theme.colors.black['100']};
 
   & > :first-child {
     display: flex;
@@ -58,7 +57,7 @@ export const MenuSideLogoContainer = styled.div`
     display: none;
   }
 
-  @media (max-width: ${theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.size.menu}) {
     display: flex;
     width: 100%;
     height: 84px;

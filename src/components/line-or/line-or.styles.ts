@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const LineOrWrapper = styled.div`
@@ -9,8 +8,8 @@ export const LineOrWrapper = styled.div`
   gap: 10px;
 `
 
-export const StyledLine = styled.div`
+export const Line = styled.div`
   width: 100%;
   height: 1px;
-  background: ${theme.colors.black['50']};
+  background: ${(props) => props.theme.colors.black['50']};
 `

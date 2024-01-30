@@ -10,7 +10,7 @@ import { ButtonBig } from '@components/button-big'
 import { LineOR } from '@components/line-or'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { FrameAuthorizationWrapper } from '@styles/components'
-import { StyledInterR16OnClick } from '@styles/components'
+import { UIInterR16OnClick } from '@styles/components'
 import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -25,11 +25,11 @@ export const SignIn: FC = () => {
         <StyledInterB32>{t('title-big')}</StyledInterB32>
         <SignInTitlesTwoContainer>
           <StyledInterR16>{t('title-min')}</StyledInterR16>{' '}
-          <StyledInterR16OnClick
+          <UIInterR16OnClick
             onClick={() => goToLink('/authorization/sign-up')}
           >
             {t('title-min-2')}
-          </StyledInterR16OnClick>
+          </UIInterR16OnClick>
         </SignInTitlesTwoContainer>
       </SignInTitlesContainer>
       <SignInInfoContainer>

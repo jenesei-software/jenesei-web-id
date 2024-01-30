@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const PathnameAsLinksWrapper = styled.div`
@@ -16,10 +15,10 @@ export const PathnameAsLinksWrapper = styled.div`
     width: 14px;
     height: 14px;
     & path {
-      color: ${theme.colors.black[60]};
+      color: ${(props) => props.theme.colors.black[60]};
     }
   }
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     height: 40px;
     min-height: 40px;
   }

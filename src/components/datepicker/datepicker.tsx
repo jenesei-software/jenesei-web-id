@@ -1,6 +1,6 @@
 import {
-  StyledDatePicker,
-  StyledDatePickerHeader,
+  StyledUIInputDatePicker,
+  DatePickerHeaderWrapper,
   DatePickerProps,
   DatePickerWrapper,
 } from '.'
@@ -59,7 +59,7 @@ export const DatePicker = (
 
   return (
     <DatePickerWrapper>
-      <StyledDatePicker
+      <StyledUIInputDatePicker
         maxDate={props.maxDate}
         customInput={<input readOnly />}
         onFocus={(e) => (e.target.readOnly = true)}
@@ -72,7 +72,7 @@ export const DatePicker = (
           prevMonthButtonDisabled,
           nextMonthButtonDisabled,
         }) => (
-          <StyledDatePickerHeader>
+          <DatePickerHeaderWrapper>
             <ButtonVolumetricShort
               checked={false}
               disabled={prevMonthButtonDisabled}
@@ -105,7 +105,7 @@ export const DatePicker = (
               onClick={increaseMonth}
               icon={IconCurved.ArrowRight2}
             />
-          </StyledDatePickerHeader>
+          </DatePickerHeaderWrapper>
         )}
         selected={value}
         placeholderText={props.placeholder}

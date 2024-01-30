@@ -1,8 +1,8 @@
 import { IconCurved } from '@assets/icons/icon-curved'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { Input } from '@components/input'
-import { StyledUserLine } from '@styles/components'
+import { InputDefault } from '@components/input-default'
+import { UIUserLine } from '@styles/components'
 import {
   FrameColumnGap180,
   FrameColumnGap300,
@@ -20,11 +20,11 @@ export const LoginAndSecurityFormListSubLogin: React.FC = () => {
   })
   return (
     <React.Fragment>
-      <StyledUserLine />
+      <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <Input
+          <InputDefault
             placeholder={t('inputs.subLogin')}
             readOnly
             value={'stassiepushka'}

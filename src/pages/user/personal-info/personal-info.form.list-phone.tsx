@@ -4,7 +4,7 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { Input } from '@components/input'
+import { InputDefault } from '@components/input-default'
 import {
   FrameColumnGap180,
   FrameColumnGap250,
@@ -12,7 +12,7 @@ import {
   FrameColumnGap78Center,
   FrameRowGap,
   FrameRowWrapGap,
-  StyledUserLine,
+  UIUserLine,
 } from '@styles/components'
 import { StyledInterB16 } from '@styles/fonts/inter'
 import { theme } from '@styles/theme'
@@ -23,11 +23,11 @@ export const PersonalInfoFormListPhone: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'list-phone' })
   return (
     <React.Fragment>
-      <StyledUserLine />
+      <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <Input
+          <InputDefault
             placeholder={t('inputs.phone')}
             readOnly
             value={'+7 (950) 429 19 70'}

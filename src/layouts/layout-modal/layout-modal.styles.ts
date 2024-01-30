@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme'
 import styled from 'styled-components'
 
 export const LayoutModalWrapper = styled.div<{ visible: boolean }>`
@@ -13,7 +12,7 @@ export const LayoutModalWrapper = styled.div<{ visible: boolean }>`
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  background-color: ${theme.colors.black[40]};
+  background-color: ${(props) => props.theme.colors.black[40]};
   display: flex;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
@@ -26,10 +25,10 @@ export const LayoutModalContainer = styled.div`
   min-width: 680px;
   padding: 26px;
   border-radius: 10px;
-  background-color: ${theme.colors.default.white};
+  background-color: ${(props) => props.theme.colors.default.white};
   box-sizing: border-box;
   overflow: auto;
-  @media (max-width: ${theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.size.mobile}) {
     border-radius: 0px;
     min-width: 100dvw;
     max-width: 100dvw;

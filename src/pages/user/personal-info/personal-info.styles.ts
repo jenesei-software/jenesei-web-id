@@ -1,9 +1,8 @@
-import { theme } from '@styles/theme'
 import Avatar from 'react-avatar'
 import styled from 'styled-components'
 
 export const StyledAvatar = styled(Avatar)`
-  @media (max-width: ${theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.size.tablet}) {
   }
 `
 StyledAvatar.defaultProps = {

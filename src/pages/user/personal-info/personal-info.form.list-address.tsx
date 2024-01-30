@@ -3,9 +3,9 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { Input } from '@components/input'
-import { StyledUserLine } from '@styles/components'
+import { InputDefault } from '@components/input-default'
 import {
+  UIUserLine,
   FrameColumnGap180,
   FrameColumnGap250,
   FrameColumnGap300,
@@ -21,11 +21,11 @@ export const PersonalInfoFormListAddress: React.FC = () => {
   const { t } = useTranslation('personal-info', { keyPrefix: 'list-address' })
   return (
     <React.Fragment>
-      <StyledUserLine />
+      <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
           <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <Input
+          <InputDefault
             placeholder={t('inputs.address')}
             readOnly
             value={'5230 Penfield Ave, Woodland Hills, CA 91364, США'}
@@ -47,7 +47,7 @@ export const PersonalInfoFormListAddress: React.FC = () => {
       </FrameRowGap>
       <FrameRowGap>
         <FrameColumnGap300>
-          <Input
+          <InputDefault
             placeholder={t('inputs.address')}
             readOnly
             value={'Vía Ote., San Diego, CA 92173, США'}

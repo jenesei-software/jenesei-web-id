@@ -2,7 +2,7 @@ import { PasswordResetHookForm } from '.'
 import { SignUpInfoFormContainer, SignUpProps } from '../sign-up'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
-import { Input } from '@components/input'
+import { InputDefault } from '@components/input-default'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { FC, useEffect, useReducer } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -34,7 +34,7 @@ export const PasswordResetForm: FC<SignUpProps> = () => {
   }, [isHide])
   return (
     <SignUpInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <Input
+      <InputDefault
         placeholder={t('inputs.your-new-password')}
         type={isHide ? 'password' : 'text'}
         register={{
@@ -51,7 +51,7 @@ export const PasswordResetForm: FC<SignUpProps> = () => {
           },
         }}
       />
-      <Input
+      <InputDefault
         placeholder={t('inputs.confirm-your-new-password')}
         type="password"
         register={{

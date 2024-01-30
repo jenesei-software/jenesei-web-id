@@ -1,44 +1,43 @@
 import { UseSelectProps } from '.'
-import { StyledDefaultInputPlaceholder } from '@components/input'
+import { UIInputPlaceholder } from '@styles/components'
 import { FontInterR16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
 import styled, { css } from 'styled-components'
 
 const UseSelectWrapperTypeVolumetric = css`
   transition: all 0.4s;
-  box-shadow: ${theme.buttons.volumetric.effects.wrapper};
-  background: ${theme.buttons.volumetric.wrapper};
+  box-shadow: ${(props) => props.theme.buttons.volumetric.effects.wrapper};
+  background: ${(props) => props.theme.buttons.volumetric.wrapper};
 
   & .react-dropdown-select {
-    border: ${theme.buttons.volumetric.default.stroke};
-    background: ${theme.buttons.volumetric.default.fill};
-    box-shadow: ${theme.buttons.volumetric.effects.default};
+    border: ${(props) => props.theme.buttons.volumetric.default.stroke};
+    background: ${(props) => props.theme.buttons.volumetric.default.fill};
+    box-shadow: ${(props) => props.theme.buttons.volumetric.effects.default};
 
     &:focus-within,
     &:focus,
     &:hover,
     &:active,
     &:focus-visible {
-      border: ${theme.buttons.volumetric.active.stroke};
-      background: ${theme.buttons.volumetric.active.fill};
-      box-shadow: ${theme.buttons.volumetric.effects.active};
+      border: ${(props) => props.theme.buttons.volumetric.active.stroke};
+      background: ${(props) => props.theme.buttons.volumetric.active.fill};
+      box-shadow: ${(props) => props.theme.buttons.volumetric.effects.active};
     }
   }
 `
 const UseSelectWrapperTypeDefault = css`
   & .react-dropdown-select {
-    border: 2px solid ${theme.colors.black['60']};
-    background: ${theme.colors.default.white};
-    box-shadow: ${theme.inputs.default.effects.boxShadow};
+    border: 2px solid ${(props) => props.theme.colors.black['60']};
+    background: ${(props) => props.theme.colors.default.white};
+    box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
 
     &:focus-within,
     &:focus,
     &:hover,
     &:active,
     &:focus-visible {
-      border: 1px solid ${theme.colors.black['100']};
-      background: ${theme.colors.default.white};
-      box-shadow: ${theme.buttons.volumetric.effects.active};
+      border: 1px solid ${(props) => props.theme.colors.black['100']};
+      background: ${(props) => props.theme.colors.default.white};
+      box-shadow: ${(props) => props.theme.buttons.volumetric.effects.active};
     }
   }
 `
@@ -77,21 +76,21 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
     box-sizing: border-box;
     white-space: nowrap;
     flex: 1;
-    color: ${theme.colors.gray['484848']};
+    color: ${(props) => props.theme.colors.gray['484848']};
 
     &:active,
     &:hover {
       border-radius: 6px;
 
-      background: ${theme.colors.product['20']} !important;
+      background: ${(props) => props.theme.colors.product['20']} !important;
     }
   }
   & .react-dropdown-select-dropdown {
     border-radius: 6px;
     padding: 4px;
 
-    border: 1px solid ${theme.colors.gray.c7c7cc};
-    background: ${theme.colors.default.white};
+    border: 1px solid ${(props) => props.theme.colors.gray.c7c7cc};
+    background: ${(props) => props.theme.colors.default.white};
     &::-webkit-scrollbar {
       width: 0 !important;
     }
@@ -100,10 +99,10 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
     font-weight: 700;
     border-radius: 6px;
 
-    color: ${theme.colors.black['100']} !important;
-    border-bottom: 1px solid ${theme.colors.product['100']} !important;
-    border: 1px solid ${theme.colors.product['100']};
-    background: ${theme.colors.product['20']} !important;
+    color: ${(props) => props.theme.colors.black['100']} !important;
+    border-bottom: 1px solid ${(props) => props.theme.colors.product['100']} !important;
+    border: 1px solid ${(props) => props.theme.colors.product['100']};
+    background: ${(props) => props.theme.colors.product['20']} !important;
   }
   & .react-dropdown-select-dropdown-handle {
     margin: 0;
@@ -112,21 +111,21 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
     justify-content: center;
     transform-origin: center;
 
-    color: ${theme.colors.black['80']};
+    color: ${(props) => props.theme.colors.black['80']};
     & path {
-      fill: ${theme.colors.black['60']} !important;
+      fill: ${(props) => props.theme.colors.black['60']} !important;
     }
     &:hover path,
     &:focus path {
-      fill: ${theme.colors.black['80']} !important;
-      stroke: ${theme.colors.black['80']} !important;
+      fill: ${(props) => props.theme.colors.black['80']} !important;
+      stroke: ${(props) => props.theme.colors.black['80']} !important;
     }
   }
   & .react-dropdown-select-input {
     display: none;
   }
   & .react-dropdown-select-no-data {
-    color: ${theme.colors.product['100']} !important;
+    color: ${(props) => props.theme.colors.product['100']} !important;
   }
   & .react-dropdown-select-content {
     align-items: center;
@@ -151,14 +150,14 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
       min-width: 20px;
       height: 20px;
       & path {
-        fill: ${theme.colors.black['60']};
+        fill: ${(props) => props.theme.colors.black['60']};
       }
     }
-    ${StyledDefaultInputPlaceholder};
+    ${UIInputPlaceholder};
 
     &::-ms-input-placeholder {
       font-weight: 700;
-      color: ${theme.colors.black['40']};
+      color: ${(props) => props.theme.colors.black['40']};
     }
     &*,
     &*::before,

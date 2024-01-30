@@ -1,18 +1,13 @@
 import { AuthContextProps, AuthProviderProps } from '.'
-import { useAxios } from '@providers/axios-provider'
-import {
-  IAuthTelegramProfile,
-  ISignInProfile,
-  ISignUpProfile,
-  initialProfile,
-  useProfile,
-} from '@providers/profile-provider'
-import { createContext, useCallback, useContext } from 'react'
+import { ITokenData } from '@api/auth'
+import { queryClient, queryKeys } from '@core/query'
+import { AXIOS_LOCAL_STORAGE_AUTH } from '@providers/axios-provider'
+import { createContext, useContext, useEffect, useState } from 'react'
 
 const AuthContext = createContext<AuthContextProps | null>(null)
 
-/**
- * Хук авторизации
+/*
+ * Authorization hook
  */
 export const useAuth = () => {
   const context = useContext(AuthContext)
@@ -22,123 +17,54 @@ export const useAuth = () => {
   return context
 }
 
-/**
- * Провайдер авторизации
+/*
+ * Authorization Provider
  */
 export const AuthProvider: React.FC<AuthProviderProps> = (props) => {
-  const { axiosInstance } = useAxios()
-  const { setProfile, getProfile } = useProfile()
+  const [tokenData, setTokenData] = useState<ITokenData | null>(null)
+  const isAuthorized = !!tokenData?.token
 
-  /**
-   * Авторизация через Google
-   */
-  const googleProfile = axiosInstance.defaults.baseURL + '/auth/google'
+  useEffect(() => {
+    try {
+      const tokenData = localStorage.getItem(AXIOS_LOCAL_STORAGE_AUTH)
+      const tokenDataObj: ITokenData = tokenData && JSON.parse(tokenData)
 
-  /**
-   * Авторизация
-   */
-  const signInProfile = useCallback(async (params: ISignInProfile) => {
-    return axiosInstance
-      .post('/sign-in', { ...params })
-      .then(() => {
-        getProfile()
-      })
-      .catch((error) => {
-        throw error
-      })
+      if (tokenDataObj) {
+        setTokenData(tokenDataObj)
+      }
+    } catch {
+      console.error('Error parsing JSON')
+    }
   }, [])
 
-  /**
-   * Регистрация
-   */
-  const signUpProfile = useCallback(async (params: ISignUpProfile) => {
-    return axiosInstance
-      .post('/sign-up', {
-        ...params,
-      })
-      .then(() => {
-        getProfile()
-      })
-      .catch((error) => {
-        throw error
-      })
-  }, [])
+  const saveToLocalStorage = (data: ITokenData) => {
+    setTokenData(data)
+    try {
+      const serializedData = JSON.stringify(data)
+      localStorage.setItem(AXIOS_LOCAL_STORAGE_AUTH, serializedData)
+      console.log(
+        `Object saved to localStorage with key: ${AXIOS_LOCAL_STORAGE_AUTH}`
+      )
+    } catch (error) {
+      console.error('Error saving object to localStorage:', error)
+    }
+    Promise.all([
+      queryClient.invalidateQueries({
+        queryKey: [queryKeys.profile.profileData],
+      }),
+    ])
+  }
 
-  /**
-   * Выход
-   */
-  const logoutProfile = useCallback(async () => {
-    return axiosInstance
-      .get('/logout')
-      .then(() => {
-        document.cookie = 'name=<refresh_token>; expires=-1'
-        document.cookie = 'name=<access_token>; expires=-1'
-        setProfile(initialProfile)
-      })
-      .catch((error) => {
-        throw error
-      })
-  }, [])
-
-  /**
-   * Привязать Telegram
-   */
-  const authTelegramProfile = useCallback(
-    async (params: IAuthTelegramProfile) => {
-      return axiosInstance
-        .get(`/auth/telegram`, {
-          params: {
-            chatId: params.chatId,
-          },
-        })
-        .then(() => {
-          setProfile({ telegram_verified: true })
-        })
-        .catch((error) => {
-          throw error
-        })
-    },
-    []
-  )
-
-  /**
-   * Отвязать Telegram
-   */
-  const unAuthTelegramProfile = useCallback(async () => {
-    return axiosInstance
-      .put(`/auth/telegram`)
-      .then(() => {
-        setProfile({ telegram_verified: false })
-      })
-      .catch((error) => {
-        throw error
-      })
-  }, [])
-
-  /**
-   * Обновить токен доступа
-   */
-  const refreshProfile = useCallback(async () => {
-    return await axiosInstance
-      .get('/refresh')
-      .then(() => {
-        return true
-      })
-      .catch(() => {
-        return false
-      })
-  }, [])
-
+  const delToLocalStorage = () => {
+    setTokenData(null)
+    localStorage.removeItem(AXIOS_LOCAL_STORAGE_AUTH)
+  }
   return (
     <AuthContext.Provider
       value={{
-        authTelegramProfile,
-        unAuthTelegramProfile,
-        signInProfile,
-        signUpProfile,
-        logoutProfile,
-        googleProfile,
-        refreshProfile,
+        saveToLocalStorage,
+        delToLocalStorage,
+        isAuthorized,
       }}
     >
       {props.children}
