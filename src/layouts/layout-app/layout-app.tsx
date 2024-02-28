@@ -9,6 +9,7 @@ import React from 'react'
  */
 export const LayoutApp: React.FC = () => {
   const isAuth = Cookies.get(AXIOS_COOKIE_ACCESS)
+
   console.log('isAuth', isAuth)
   return (
     <LayoutAppWrapper>
