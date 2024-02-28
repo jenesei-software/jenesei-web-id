@@ -7,7 +7,6 @@ import {
 } from '.'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { useProfile } from '@providers/profile-provider'
 import { FrameAuthorizationWrapper } from '@styles/components'
 import {
   StyledInterB32,
@@ -19,7 +18,6 @@ import { useTranslation } from 'react-i18next'
 
 export const Services: FC<ServicesProps> = () => {
   const { t } = useTranslation('services')
-  const { setProfile } = useProfile()
 
   return (
     <FrameAuthorizationWrapper>
@@ -49,7 +47,7 @@ export const Services: FC<ServicesProps> = () => {
         <ButtonBorderLong
           type="border"
           title={t('pages.logout')}
-          onClick={() => setProfile({ id: '' })}
+          // onClick={() => setProfile({ id: '' })}
         />
       </ServicesButtonsContainer>
     </FrameAuthorizationWrapper>

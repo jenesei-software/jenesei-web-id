@@ -19,6 +19,7 @@
     "fusion-react": "^4.8.7",
     "i18n": "^0.15.1",
     "import-sort": "^6.0.0",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-avatar": "^5.0.3",
     "react-datepicker": "^4.25.0",
@@ -33,13 +34,14 @@
     "react-router-dom": "^6.21.1",
     "react-switch": "^7.0.0",
     "react-textarea-autosize": "^8.5.3",
-    "styled-components": "^6.1.6",
+    "styled-components": "^6.1.8",
     "vite-bundle-visualizer": "^1.0.0"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.17.7",
     "@tanstack/react-query-devtools": "^5.17.21",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.43",
     "@types/react-datepicker": "^4.19.5",
@@ -57,7 +59,6 @@
     "stylelint-config-standard": "^36.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^6.0.4",
-    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }

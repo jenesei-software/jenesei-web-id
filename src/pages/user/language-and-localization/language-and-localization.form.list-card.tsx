@@ -1,6 +1,6 @@
 import { languageList } from '@assets/i18n'
 import { useSelect } from '@hooks/inputs/use-select'
-import { useLanguage } from '@providers/language-provider'
+import { useLanguage } from '@providers/provider-language'
 import { UIUserLine } from '@styles/components'
 import {
   FrameRowGap,

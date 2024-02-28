@@ -26,9 +26,7 @@ export const SignUp: FC<SignUpProps> = () => {
         <StyledInterB32>{t('title-big')}</StyledInterB32>
         <SignUpTitlesTwoContainer>
           <StyledInterR16>{t('title-min')}</StyledInterR16>{' '}
-          <UIInterR16OnClick
-            onClick={() => goToLink('/authorization/sign-in')}
-          >
+          <UIInterR16OnClick onClick={() => goToLink('/authorization/sign-in')}>
             {t('title-min-2')}
           </UIInterR16OnClick>
         </SignUpTitlesTwoContainer>
@@ -40,12 +38,12 @@ export const SignUp: FC<SignUpProps> = () => {
           <ButtonBig
             title={t('buttons.continue-with-google')}
             icon={LogoServices.Google.Input}
-            variant={'border'}
+            $variant={'border'}
           />
           <ButtonBig
             title={t('buttons.continue-with-apple')}
             icon={LogoServices.Apple.Input}
-            variant={'border'}
+            $variant={'border'}
           />
         </SignUpInfoContinueContainer>
       </SignUpInfoContainer>

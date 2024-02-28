@@ -5,6 +5,7 @@ import {
   SignUpProps,
   SignUpInfoFormSwitchContainer,
 } from '.'
+import { usePostAuthSignUp } from '@api/auth'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
 import { DatePicker } from '@components/datepicker'
@@ -26,6 +27,10 @@ export const SignUpForm: FC<SignUpProps> = () => {
   ])
   const goToLink = useGoToLink()
   const [isHide, toggle] = useReducer((checked) => !checked, false)
+  const { mutate: mutatePostAuthSignUp, isPending: isPendingPostAuthSignUp } =
+    usePostAuthSignUp({
+      onSuccess: () => {},
+    })
   const {
     register,
     handleSubmit,
@@ -37,7 +42,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
   })
 
   const onSubmit: SubmitHandler<SignUpHookForm> = (data) => {
-    console.log(data)
+    mutatePostAuthSignUp({ body: data })
   }
 
   useEffect(() => {
@@ -63,9 +68,9 @@ export const SignUpForm: FC<SignUpProps> = () => {
         }}
       />
       <InputDefault
-        placeholder={t('sign-up:inputs.login')}
+        placeholder={t('sign-up:inputs.username')}
         register={{
-          ...register('login', {
+          ...register('username', {
             required: true,
             minLength: 2,
             maxLength: 30,
@@ -142,7 +147,8 @@ export const SignUpForm: FC<SignUpProps> = () => {
         onClick={handleSubmit(onSubmit)}
         disabled={!isValid}
         title={t('buttons.create-account')}
-        variant={'product'}
+        $variant={'product'}
+        $loading={isPendingPostAuthSignUp}
       />
     </SignUpInfoFormContainer>
   )

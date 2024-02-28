@@ -27,7 +27,7 @@ export const PasswordResetSuccessfully: FC<
         <ButtonBig
           title={t('buttons.login')}
           onClick={() => goToLink('/authorization/sign-in')}
-          variant={'product'}
+          $variant={'product'}
         />
       </PasswordResetSuccessfullyTitlesContainer>
     </FrameAuthorizationWrapper>
