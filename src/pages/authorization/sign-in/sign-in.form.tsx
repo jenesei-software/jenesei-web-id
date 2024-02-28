@@ -1,8 +1,8 @@
-import { SignInHookForm, SignInInfoFormContainer } from '.'
+import { SignInInfoFormContainer } from '.'
+import { SignInDto, usePostAuthSignIn } from '@api/auth'
 import { ButtonBig } from '@components/button-big'
 import { InputDefault } from '@components/input-default'
 import { useGoToLink } from '@hooks/use-go-to-link'
-import { useProfile } from '@providers/profile-provider'
 import { UIInterR16OnClick } from '@styles/components'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -10,24 +10,27 @@ import { useTranslation } from 'react-i18next'
 
 export const SignInForm: FC = () => {
   const goToLink = useGoToLink()
+
+  const { mutate: mutatePostAuthSignIn, isPending: isPendingPostAuthSignIn } =
+    usePostAuthSignIn({
+      onSuccess: () => {},
+    })
   const { t } = useTranslation('sign-in')
-  const { setProfile } = useProfile()
   const {
     register,
     handleSubmit,
     formState: { isValid },
-  } = useForm<SignInHookForm>()
+  } = useForm<SignInDto>()
 
-  const onSubmit: SubmitHandler<SignInHookForm> = (data) => {
-    setProfile({ id: '1' })
-    console.log(data)
+  const onSubmit: SubmitHandler<SignInDto> = (data) => {
+    mutatePostAuthSignIn({ body: data })
   }
   return (
     <SignInInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
       <InputDefault
-        placeholder={t('inputs.email-or-login')}
+        placeholder={t('inputs.username')}
         register={{
-          ...register('emailOrLogin', {
+          ...register('username', {
             required: true,
             minLength: 2,
             maxLength: 50,
@@ -51,10 +54,11 @@ export const SignInForm: FC = () => {
         {t('forgot-password')}
       </UIInterR16OnClick>
       <ButtonBig
+        $loading={isPendingPostAuthSignIn}
         disabled={!isValid}
         onClick={handleSubmit(onSubmit)}
         title={t('buttons.login')}
-        variant={'product'}
+        $variant={'product'}
       />
     </SignInInfoFormContainer>
   )

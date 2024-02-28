@@ -1,6 +1,6 @@
-import { theme } from '@styles/theme'
 import { ButtonBigWrapper, ButtonBigProps } from '.'
 import { StyledInterSB16 } from '@styles/fonts/inter'
+import { theme } from '@styles/theme'
 import React, { FC } from 'react'
 import ReactLoading from 'react-loading'
 import { Ripple } from 'react-ripple-click'
@@ -9,18 +9,18 @@ export const ButtonBig: FC<ButtonBigProps> = React.memo(
   (props) => {
     return (
       <ButtonBigWrapper
-        loading={props.loading}
+        $loading={props.$loading}
         disabled={props.disabled}
         onClick={props.onClick}
         isIconColor={props.isIconColor}
-        variant={props.variant}
+        $variant={props.$variant}
         type={props.type}
       >
         <Ripple />
-        {props.loading && (
+        {props.$loading && (
           <ReactLoading
             color={
-              props.variant == 'product'
+              props.$variant == 'product'
                 ? theme.colors.default.white
                 : theme.colors.product[100]
             }
@@ -29,7 +29,7 @@ export const ButtonBig: FC<ButtonBigProps> = React.memo(
             width={'30px'}
           />
         )}
-        {!props.loading && props.icon && props.icon()}
+        {!props.$loading && props.icon && props.icon()}
         <StyledInterSB16>{props.title}</StyledInterSB16>
       </ButtonBigWrapper>
     )
@@ -38,7 +38,7 @@ export const ButtonBig: FC<ButtonBigProps> = React.memo(
     return (
       prevProps.title === nextProps.title &&
       prevProps.disabled === nextProps.disabled &&
-      prevProps.loading === nextProps.loading
+      prevProps.$loading === nextProps.$loading
     )
   }
 )

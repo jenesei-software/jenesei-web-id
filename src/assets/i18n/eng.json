@@ -1,6 +1,6 @@
 {
   "authorization": {
-    "loading": "Загрузка...",
+    "loading": "Loading...",
     "main": {
       "title-big": "Universal account",
       "title-min": "Safety is our advantage"
@@ -216,8 +216,8 @@
     },
     "forgot-password": "Forgot Password",
     "inputs": {
-      "email-or-login": "Email or Login",
-      "password": "Password"
+      "password": "Password",
+      "username": "Email or Login"
     },
     "title-big": "Welcome Back",
     "title-min": "Don’t have an account?",
@@ -234,9 +234,9 @@
     "inputs": {
       "date-of-birth": "Date of Birth",
       "email": "Email",
-      "login": "Login",
       "password": "Password",
-      "repeat-password": "Repeat password"
+      "repeat-password": "Repeat password",
+      "username": "Login"
     },
     "title-big": "Create account",
     "title-min": "Already have an account?",

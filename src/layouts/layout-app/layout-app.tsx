@@ -1,17 +1,22 @@
 import { LayoutAppWrapper } from '.'
 import { AppRoutesUser, AppRoutesAuthorization } from '@core/router'
-import { useProfile } from '@providers/profile-provider'
+import { AXIOS_COOKIE_ACCESS } from '@providers/provider-axios'
+import Cookies from 'js-cookie'
 import React from 'react'
 
 /*
  * The wrapper of the entire application
  */
 export const LayoutApp: React.FC = () => {
-  const { id } = useProfile()
-
+  const isAuth = Cookies.get(AXIOS_COOKIE_ACCESS)
+  console.log('isAuth', isAuth)
   return (
     <LayoutAppWrapper>
-      {id !== '' ? <AppRoutesUser /> : <AppRoutesAuthorization />}
+      {isAuth !== undefined && isAuth !== '' ? (
+        <AppRoutesUser />
+      ) : (
+        <AppRoutesAuthorization />
+      )}
     </LayoutAppWrapper>
   )
 }

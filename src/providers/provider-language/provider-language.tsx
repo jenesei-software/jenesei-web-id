@@ -23,9 +23,6 @@ import { useSearchParams } from 'react-router-dom'
 
 const LanguageContext = createContext<LanguageContextProps | null>(null)
 
-/*
- * Инициализация данных для работы встроенного useReducer
- */
 const languageReducer = (
   state: LanguageProviderState,
   action: LanguageAction
@@ -44,21 +41,15 @@ const languageReducer = (
   }
 }
 
-/*
- * Хук работы с языками
- */
 export const useLanguage = () => {
   const context = useContext(LanguageContext)
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider')
+    throw new Error('useLanguage must be used within an ProviderLanguage')
   }
   return context
 }
 
-/*
- * Провайдер языка
- */
-export const LanguageProvider: React.FC<LanguageProviderProps> = (props) => {
+export const ProviderLanguage: React.FC<LanguageProviderProps> = (props) => {
   const { i18n } = useTranslation()
   const [searchParams, setSearchParams] = useSearchParams()
   const [state, dispatch] = useReducer(languageReducer, {

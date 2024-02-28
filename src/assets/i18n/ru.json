@@ -216,8 +216,8 @@
     },
     "forgot-password": "Забыли пароль",
     "inputs": {
-      "email-or-login": "Email или Логин",
-      "password": "Пароль"
+      "password": "Пароль",
+      "username": "Email или Логин"
     },
     "title-big": "Добро пожаловать",
     "title-min": "У вас нет учетной записи?",
@@ -234,9 +234,9 @@
     "inputs": {
       "date-of-birth": "Дата рождения",
       "email": "Электронная почта",
-      "login": "Логин",
       "password": "Пароль",
-      "repeat-password": "Повторите пароль"
+      "repeat-password": "Повторите пароль",
+      "username": "Логин"
     },
     "title-big": "Создать аккаунт",
     "title-min": "У вас уже есть аккаунт? ",

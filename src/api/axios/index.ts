@@ -1,2 +1,2 @@
 export * from './axios'
-export * from './api.types'
+export * from './axios.types'

@@ -10,10 +10,7 @@ export const queryClient = new QueryClient({
 })
 
 export const queryKeys = {
-  auth: {
-    tokenData: 'tokenData',
-  },
   profile: {
-    profileData: 'profileData',
+    profile: 'profile',
   },
 }

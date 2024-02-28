@@ -22,11 +22,11 @@ export const EmailCheck: FC<EmailCheckProps> = () => {
       </EmailCheckTitlesContainer>
       <EmailCheckInfoContainer>
         <StyledInterR16>{t('title-min-2')}</StyledInterR16>
-        <ButtonBig title={t('buttons.resend-email')} variant={'product'} />
+        <ButtonBig title={t('buttons.resend-email')} $variant={'product'} />
         <ButtonBig
           title={t('buttons.back-to-login')}
           onClick={() => goToLink('/authorization/sign-in')}
-          variant={'border'}
+          $variant={'border'}
         />
       </EmailCheckInfoContainer>
     </FrameAuthorizationWrapper>

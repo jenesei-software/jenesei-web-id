@@ -74,8 +74,7 @@ export const theme = {
       },
       effects: {
         wrapper: '0px 0px 4px 0px rgba(0, 0, 0, 0.05) inset',
-        active:
-          '0px 0px 0.800000011920929px 0.6000000238418579px rgba(0, 0, 0, 0.25)',
+        active: '0px 0px 0.8px 0.6px rgba(0, 0, 0, 0.25)',
         default: '0px 0px 2px 1px rgba(0, 0, 0, 0.1)',
       },
     },
@@ -92,11 +91,5 @@ export const theme = {
       wrapper: '0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset',
       menu: '0px -3px 4px 0px rgba(0, 0, 0, 0.25) inset',
     },
-  },
-  gradients: {
-    'calendar-linear-right':
-      'linear-gradient(90deg, 0% rgba(65, 149, 210, 0.1), 50% rgba(65, 149, 210, 0.1), 50.01000165939331% rgba(255, 255, 255, 1))',
-    'gradient-authorization':
-      'radial-gradient(50% 50% at 50% 50%, 0% rgba(0, 122, 255, 1), 49.374961853027344% rgba(49, 46, 203, 1), 100% rgba(231, 23, 172, 1))',
   },
 }

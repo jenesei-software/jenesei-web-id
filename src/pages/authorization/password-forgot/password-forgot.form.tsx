@@ -40,13 +40,13 @@ export const PasswordForgotForm: FC<SignUpProps> = () => {
         onClick={handleSubmit(onSubmit)}
         disabled={!isValid}
         title={t('buttons.send')}
-        variant={'product'}
+        $variant={'product'}
       />
       <ButtonBig
         type="button"
         title={t('buttons.back-to-login')}
         onClick={() => goToLink('/authorization/sign-in')}
-        variant={'border'}
+        $variant={'border'}
       />
     </SignUpInfoFormContainer>
   )
