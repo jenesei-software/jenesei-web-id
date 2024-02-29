@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const defaultOptions = {
   baseURL: config.apiHost,
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },

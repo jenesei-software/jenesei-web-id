@@ -1,18 +1,17 @@
 import { LayoutAppWrapper } from '.'
 import { AppRoutesUser, AppRoutesAuthorization } from '@core/router'
-import { AXIOS_COOKIE_ACCESS } from '@providers/provider-axios'
-import Cookies from 'js-cookie'
+import { LOCAL_STORAGE_IS_AUTH, useAxios } from '@providers/provider-axios'
 import React from 'react'
 
 /*
  * The wrapper of the entire application
  */
 export const LayoutApp: React.FC = () => {
-  const isAuth = Cookies.get(AXIOS_COOKIE_ACCESS)
-  console.log('isAuth', isAuth)
+  const { getFromLocalStorage, isAuth } = useAxios()
+  console.log(getFromLocalStorage<boolean>(LOCAL_STORAGE_IS_AUTH))
   return (
     <LayoutAppWrapper>
-      {isAuth !== undefined && isAuth !== '' ? (
+      {getFromLocalStorage<boolean>(LOCAL_STORAGE_IS_AUTH) || isAuth ? (
         <AppRoutesUser />
       ) : (
         <AppRoutesAuthorization />

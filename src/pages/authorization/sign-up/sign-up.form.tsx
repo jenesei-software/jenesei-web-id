@@ -13,6 +13,7 @@ import { InputDefault } from '@components/input-default'
 import { Switch } from '@components/switch'
 import { getDateMinusYears } from '@functions/get-date-minus-years'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { useAxios, LOCAL_STORAGE_IS_AUTH } from '@providers/provider-axios'
 import { UIInterR16OnClick } from '@styles/components'
 import { StyledInterR16 } from '@styles/fonts/inter'
 import { FC, useEffect, useReducer } from 'react'
@@ -26,10 +27,14 @@ export const SignUpForm: FC<SignUpProps> = () => {
     'privacy-policy',
   ])
   const goToLink = useGoToLink()
+  const { writeToLocalStorage } = useAxios()
+
   const [isHide, toggle] = useReducer((checked) => !checked, false)
   const { mutate: mutatePostAuthSignUp, isPending: isPendingPostAuthSignUp } =
     usePostAuthSignUp({
-      onSuccess: () => {},
+      onSuccess: () => {
+        writeToLocalStorage<boolean>(LOCAL_STORAGE_IS_AUTH, true)
+      },
     })
   const {
     register,
