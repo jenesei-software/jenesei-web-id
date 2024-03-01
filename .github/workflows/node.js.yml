@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
-        uses: action/chackout@v3
+        uses: action/chackout@v2
       - name: Install deps
         run: npm ci
       - name: Bulid
