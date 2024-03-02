@@ -1,32 +1,29 @@
-import {
-  LOADING_TIME,
-  LayoutAnimatedTransitionProps,
-  LayoutAnimatedTransitionWrapper,
-} from '.'
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { LayoutAnimatedTransitionProps } from '.'
+import { theme } from '@styles/theme'
+import { useIsFetching } from '@tanstack/react-query'
+import React, { useEffect, useRef } from 'react'
+import LoadingBar, { LoadingBarRef } from 'react-top-loading-bar'
 
 export const LayoutAnimatedTransition: React.FC<
   LayoutAnimatedTransitionProps
 > = (props) => {
-  const [isTransitioning, setIsTransitioning] = useState(false)
-  const location = useLocation()
+  const isFetching = useIsFetching()
+  const ref = useRef<LoadingBarRef>(null)
 
   useEffect(() => {
-    setIsTransitioning(true)
-
-    const timeoutId = setTimeout(() => {
-      setIsTransitioning(false)
-    }, LOADING_TIME + 200)
-
-    return () => clearTimeout(timeoutId)
-  }, [location.pathname])
+    if (ref.current)
+      if (isFetching === 0) {
+        ref.current.complete()
+      } else if (isFetching === 1) {
+        ref.current.continuousStart()
+      } else {
+        ref.current.complete()
+      }
+  }, [isFetching])
   return (
-    <LayoutAnimatedTransitionWrapper
-      $loadingTime={LOADING_TIME}
-      $isTransitioning={isTransitioning}
-    >
+    <>
+      <LoadingBar color={theme.colors.product[100]} ref={ref} />
       {props.children}
-    </LayoutAnimatedTransitionWrapper>
+    </>
   )
 }

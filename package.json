@@ -35,11 +35,12 @@
     "react-router-dom": "^6.21.1",
     "react-switch": "^7.0.0",
     "react-textarea-autosize": "^8.5.3",
+    "react-top-loading-bar": "^2.3.1",
     "styled-components": "^6.1.8",
     "vite-bundle-visualizer": "^1.0.0"
   },
   "devDependencies": {
-    "@tanstack/eslint-plugin-query": "^5.17.7",
+    "@tanstack/eslint-plugin-query": "^5.20.1",
     "@tanstack/react-query-devtools": "^5.17.21",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/js-cookie": "^3.0.6",

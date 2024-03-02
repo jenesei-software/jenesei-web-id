@@ -8,6 +8,7 @@ import { queryOptions } from '@tanstack/react-query'
  */
 export const getProfileUsername = (props: getProfileUsernameRequest) =>
   queryOptions({
-    queryKey: [queryKeys.profile.profile],
+    queryKey: [queryKeys.profile.profile, props],
     queryFn: () => profileApi.getProfileUsername(props).then((res) => res.data),
+    retry: false,
   })

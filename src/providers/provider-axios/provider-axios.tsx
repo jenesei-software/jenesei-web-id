@@ -1,9 +1,10 @@
 import {
   AXIOS_COOKIE_ACCESS,
   AXIOS_COOKIE_REFRESH,
-  LOCAL_STORAGE_IS_AUTH,
   ProviderAxiosProps,
   ProviderContextProps,
+  ENUMLocalStorage,
+  ENUMLocalStorageValue,
 } from '.'
 import { authApi } from '@api/auth'
 import { axiosInstance } from '@api/axios'
@@ -25,9 +26,12 @@ export const ProviderAxios: React.FC<ProviderAxiosProps> = (props) => {
     (response) => response,
     async (error) => {
       const originalRequest = error.config
-      if (error.response?.status === 401 && !originalRequest._retry) {
+      if (
+        (error.response?.status === 401 || error.response?.status === 400) &&
+        !originalRequest._retry
+      ) {
         try {
-          if (getFromLocalStorage<boolean>(LOCAL_STORAGE_IS_AUTH)) {
+          if (getFromLocalStorage(ENUMLocalStorage.isAuth)) {
             await authApi.postAuthRefresh()
             originalRequest._retry = true
             return axiosInstance(originalRequest)
@@ -42,17 +46,24 @@ export const ProviderAxios: React.FC<ProviderAxiosProps> = (props) => {
       return Promise.reject(error)
     }
   )
-  function getFromLocalStorage<T>(key: string): T | null {
+  function getFromLocalStorage<T extends ENUMLocalStorage>(
+    key: T
+  ): ENUMLocalStorageValue[T] | null {
     try {
-      const serializedValue = localStorage.getItem(key)
-      return serializedValue ? JSON.parse(serializedValue) : null
+      const serializedValue = localStorage.getItem(key as string)
+      const result = serializedValue && JSON.parse(serializedValue)
+      if (result) {
+        return result as ENUMLocalStorageValue[T]
+      } else {
+        return null
+      }
     } catch (error) {
       console.error('Error reading from localStorage:', error)
       return null
     }
   }
 
-  function removeFromLocalStorage(key: string): void {
+  function removeFromLocalStorage(key: ENUMLocalStorage): void {
     try {
       localStorage.removeItem(key)
     } catch (error) {
@@ -60,26 +71,34 @@ export const ProviderAxios: React.FC<ProviderAxiosProps> = (props) => {
     }
   }
 
-  function writeToLocalStorage<T>(key: string, value: T): void {
+  function writeToLocalStorage<T extends ENUMLocalStorage>(
+    key: T,
+    value: ENUMLocalStorageValue[T]
+  ): void {
     try {
       const serializedValue = JSON.stringify(value)
+
       localStorage.setItem(key, serializedValue)
-      if (key === LOCAL_STORAGE_IS_AUTH && value === true) {
+
+      if (key === ENUMLocalStorage.isAuth && value === true) {
         setIsAuth(true)
       }
     } catch (error) {
       console.error('Error writing to localStorage:', error)
     }
   }
+
   const handleLogout = () => {
-    removeFromLocalStorage(LOCAL_STORAGE_IS_AUTH)
+    removeFromLocalStorage(ENUMLocalStorage.isAuth)
+    removeFromLocalStorage(ENUMLocalStorage.username)
     document.cookie = `name=<${AXIOS_COOKIE_ACCESS}>; expires=-1`
     document.cookie = `name=<${AXIOS_COOKIE_REFRESH}>; expires=-1`
+    setIsAuth(false)
   }
 
   return (
     <AxiosContext.Provider
-      value={{ isAuth, getFromLocalStorage, writeToLocalStorage }}
+      value={{ isAuth, handleLogout, getFromLocalStorage, writeToLocalStorage }}
     >
       {props.children}
     </AxiosContext.Provider>

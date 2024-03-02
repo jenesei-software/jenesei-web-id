@@ -7,6 +7,7 @@ import {
 } from '.'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
+import { useAxios } from '@providers/provider-axios'
 import { FrameAuthorizationWrapper } from '@styles/components'
 import {
   StyledInterB32,
@@ -16,14 +17,15 @@ import {
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export const Services: FC<ServicesProps> = () => {
+export const Services: FC<ServicesProps> = (props) => {
   const { t } = useTranslation('services')
+  const { handleLogout } = useAxios()
 
   return (
     <FrameAuthorizationWrapper>
       <ServicesTitleContainer>
         <StyledInterB32>
-          {t('pages.title-big') + 'Stassie Strone'}
+          {t('pages.title-big') + props.dataProfile?.username}
         </StyledInterB32>
         <StyledInterR16>{t('pages.title-min')}</StyledInterR16>
       </ServicesTitleContainer>
@@ -47,7 +49,7 @@ export const Services: FC<ServicesProps> = () => {
         <ButtonBorderLong
           type="border"
           title={t('pages.logout')}
-          // onClick={() => setProfile({ id: '' })}
+          onClick={handleLogout}
         />
       </ServicesButtonsContainer>
     </FrameAuthorizationWrapper>

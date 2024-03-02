@@ -12,8 +12,9 @@ import { DatePicker } from '@components/datepicker'
 import { InputDefault } from '@components/input-default'
 import { Switch } from '@components/switch'
 import { getDateMinusYears } from '@functions/get-date-minus-years'
+import { isValidEmail } from '@functions/is-valid-email'
 import { useGoToLink } from '@hooks/use-go-to-link'
-import { useAxios, LOCAL_STORAGE_IS_AUTH } from '@providers/provider-axios'
+import { useAxios, ENUMLocalStorage } from '@providers/provider-axios'
 import { UIInterR16OnClick } from '@styles/components'
 import { StyledInterR16 } from '@styles/fonts/inter'
 import { FC, useEffect, useReducer } from 'react'
@@ -33,7 +34,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
   const { mutate: mutatePostAuthSignUp, isPending: isPendingPostAuthSignUp } =
     usePostAuthSignUp({
       onSuccess: () => {
-        writeToLocalStorage<boolean>(LOCAL_STORAGE_IS_AUTH, true)
+        writeToLocalStorage(ENUMLocalStorage.isAuth, true)
       },
     })
   const {
@@ -66,6 +67,7 @@ export const SignUpForm: FC<SignUpProps> = () => {
         type="email"
         register={{
           ...register('email', {
+            validate: isValidEmail,
             required: true,
             minLength: 10,
             maxLength: 40,
