@@ -1,16 +1,20 @@
 import { LayoutAppWrapper } from '.'
 import { AppRoutesUser, AppRoutesAuthorization } from '@core/router'
-import { useAxios } from '@providers/provider-axios'
+import { ENUMLocalStorage, useAxios } from '@providers/provider-axios'
 import React from 'react'
 
 /*
  * The wrapper of the entire application
  */
 export const LayoutApp: React.FC = () => {
-  const { isAuth } = useAxios()
+  const { getFromLocalStorage, isAuth } = useAxios()
   return (
     <LayoutAppWrapper>
-      {isAuth ? <AppRoutesUser /> : <AppRoutesAuthorization />}
+      {getFromLocalStorage(ENUMLocalStorage.isAuth) || isAuth ? (
+        <AppRoutesUser />
+      ) : (
+        <AppRoutesAuthorization />
+      )}
     </LayoutAppWrapper>
   )
 }
