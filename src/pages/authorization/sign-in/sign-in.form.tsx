@@ -31,7 +31,6 @@ export const SignInForm: FC = () => {
   }
   return (
     <SignInInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      test
       <InputDefault
         placeholder={t('inputs.username')}
         register={{
