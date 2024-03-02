@@ -13,7 +13,7 @@ export interface ProviderContextProps {
     value: ENUMLocalStorageValue[T]
   ): void
   handleLogout: () => void
-  isAuth: boolean
+  isAuth: boolean | null
 }
 
 export enum ENUMLocalStorage {

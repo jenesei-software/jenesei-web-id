@@ -21,7 +21,9 @@ export const useAxios = () => {
 }
 
 export const ProviderAxios: React.FC<ProviderAxiosProps> = (props) => {
-  const [isAuth, setIsAuth] = useState<boolean>(false)
+  const [isAuth, setIsAuth] = useState<boolean | null>(
+    getFromLocalStorage(ENUMLocalStorage.isAuth)
+  )
   axiosInstance.interceptors.response.use(
     (response) => response,
     async (error) => {
