@@ -11,10 +11,10 @@ export const MenuSideBarWrapper = styled.div`
   width: 520px;
   min-height: max(calc(100dvh - 60px), 488px);
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     display: none;
   }
-  @media (max-width: ${(props) => props.theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.screens.menu.width}) {
     width: auto;
   }
 `
@@ -30,7 +30,7 @@ export const MenuSideBarTitle = styled.div`
   flex-shrink: 0;
   align-self: stretch;
 
-  @media (max-width: ${(props) => props.theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.screens.menu.width}) {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -57,7 +57,7 @@ export const MenuSideLogoContainer = styled.div`
     display: none;
   }
 
-  @media (max-width: ${(props) => props.theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.screens.menu.width}) {
     display: flex;
     width: 100%;
     height: 84px;

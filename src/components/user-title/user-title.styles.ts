@@ -5,6 +5,6 @@ export const UserTitleWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
   }
 `

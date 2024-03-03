@@ -1,6 +1,5 @@
 import { ButtonBigWrapper, ButtonBigProps } from '.'
-import { StyledInterSB16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { SpanInterSB16, JeneseiTheme } from 'jenesei-react-ui'
 import React, { FC } from 'react'
 import ReactLoading from 'react-loading'
 import { Ripple } from 'react-ripple-click'
@@ -21,8 +20,8 @@ export const ButtonBig: FC<ButtonBigProps> = React.memo(
           <ReactLoading
             color={
               props.$variant == 'product'
-                ? theme.colors.default.white
-                : theme.colors.product[100]
+                ? JeneseiTheme.colors.white[100]
+                : JeneseiTheme.colors.product[100]
             }
             type={'cylon'}
             height={'30px'}
@@ -30,7 +29,7 @@ export const ButtonBig: FC<ButtonBigProps> = React.memo(
           />
         )}
         {!props.$loading && props.icon && props.icon()}
-        <StyledInterSB16>{props.title}</StyledInterSB16>
+        <SpanInterSB16>{props.title}</SpanInterSB16>
       </ButtonBigWrapper>
     )
   },

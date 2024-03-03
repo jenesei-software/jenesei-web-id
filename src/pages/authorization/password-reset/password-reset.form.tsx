@@ -2,8 +2,8 @@ import { PasswordResetHookForm } from '.'
 import { SignUpInfoFormContainer, SignUpProps } from '../sign-up'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
-import { InputDefault } from '@components/input-default'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { InputString } from 'jenesei-react-ui'
 import { FC, useEffect, useReducer } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -34,7 +34,8 @@ export const PasswordResetForm: FC<SignUpProps> = () => {
   }, [isHide])
   return (
     <SignUpInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('inputs.your-new-password')}
         type={isHide ? 'password' : 'text'}
         register={{
@@ -44,14 +45,17 @@ export const PasswordResetForm: FC<SignUpProps> = () => {
             maxLength: 44,
           }),
         }}
-        icon={{
-          value: isHide ? IconCurved.Hide : IconCurved.Show,
-          onCLick: () => {
+        postfixContent={{
+          width: '40px',
+          height: '40px',
+          content: isHide ? <IconCurved.Hide /> : <IconCurved.Show />,
+          onClick: () => {
             toggle()
           },
         }}
       />
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('inputs.confirm-your-new-password')}
         type="password"
         register={{

@@ -1,7 +1,6 @@
 import { PathnameAsLinksWrapper, WordLinkProps } from '.'
 import { IconCurved } from '@assets/icons/icon-curved'
-import { StyledInterM14 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { JeneseiTheme, SpanInterM14 } from 'jenesei-react-ui'
 import React, { memo } from 'react'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -32,11 +31,15 @@ const WordLink: React.FC<WordLinkProps> = memo(
     return (
       <>
         {index > 0 && <IconCurved.ArrowRight2 />}
-        <StyledInterM14
-          color={index > 0 ? theme.colors.black[80] : theme.colors.black[60]}
+        <SpanInterM14
+          color={
+            index > 0
+              ? JeneseiTheme.colors.black[80]
+              : JeneseiTheme.colors.black[60]
+          }
         >
           {t(word + '.title')}
-        </StyledInterM14>
+        </SpanInterM14>
       </>
     )
   },

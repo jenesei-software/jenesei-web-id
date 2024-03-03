@@ -6,23 +6,23 @@ const ButtonBigWrapperProduct = css`
   border: 1px solid transparent;
   background: ${(props) => props.theme.colors.product['100']};
   & span {
-    color: ${(props) => props.theme.colors.default.white};
+    color: ${(props) => props.theme.colors.white[100]};
   }
 `
 
 const ButtonBigWrapperBorder = css`
-  color: ${(props) => props.theme.colors.default.white};
+  color: ${(props) => props.theme.colors.white[100]};
   border: 1px solid ${(props) => props.theme.colors.black['80']};
-  background: ${(props) => props.theme.colors.default.white};
+  background: ${(props) => props.theme.colors.white[100]};
   & span {
     color: ${(props) => props.theme.colors.black['100']};
   }
 `
 
 const ButtonBigWrapperDefault = css`
-  color: ${(props) => props.theme.colors.default.white};
+  color: ${(props) => props.theme.colors.white[100]};
   border: 1px solid transparent;
-  background: ${(props) => props.theme.colors.default.white};
+  background: ${(props) => props.theme.colors.white[100]};
   & span {
     color: ${(props) => props.theme.colors.black['100']};
   }
@@ -52,7 +52,7 @@ const ButtonBigWrapperLoadingTrue = css`
   }
 `
 const ButtonBigWrapperDisabledTrue = css`
-  background: ${(props) => props.theme.colors.default.white};
+  background: ${(props) => props.theme.colors.white[100]};
   color: ${(props) => props.theme.colors.gray.e5e5ea};
   border: 1px solid ${(props) => props.theme.colors.gray.e5e5ea};
   & span {

@@ -8,7 +8,7 @@ import {
 } from '.'
 import { AuthorizationBackground } from '@assets/authorization-background'
 import { LogoWithTitle } from '@assets/icons/logo-with-title'
-import { StyledInterB36, StyledInterR24 } from '@styles/fonts/inter'
+import { SpanInterB36, SpanInterR24 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
@@ -29,8 +29,8 @@ export const LayoutAuthorization: React.FC = () => {
           <AuthorizationBackground />
         </AuthorizationBackgroundContainer>
         <LayoutAuthorizationTextContainer>
-          <StyledInterB36>{t('main.title-big')}</StyledInterB36>
-          <StyledInterR24>{t('main.title-min')}</StyledInterR24>
+          <SpanInterB36>{t('main.title-big')}</SpanInterB36>
+          <SpanInterR24>{t('main.title-min')}</SpanInterR24>
         </LayoutAuthorizationTextContainer>
       </LayoutAuthorizationMainContainer>
       <LayoutAuthorizationOutletContainer>

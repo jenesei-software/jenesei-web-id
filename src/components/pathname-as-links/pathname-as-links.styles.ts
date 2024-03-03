@@ -18,7 +18,7 @@ export const PathnameAsLinksWrapper = styled.div`
       color: ${(props) => props.theme.colors.black[60]};
     }
   }
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     height: 40px;
     min-height: 40px;
   }

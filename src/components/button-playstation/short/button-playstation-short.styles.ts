@@ -2,23 +2,23 @@ import { ButtonPlaystationShortProps } from '.'
 import styled, { css } from 'styled-components'
 
 const ButtonPlaystationShortWrapperCheckedTrue = css`
-  background: ${(props) => props.theme.buttons.playstation.active.fill};
-  color: ${(props) => props.theme.colors.default.white};
+  background: ${(props) => props.theme.colors.black[80]};
+  color: ${(props) => props.theme.colors.white[100]};
   & svg {
     width: 20px;
     min-width: 20px;
     height: 20px;
     & path {
-      fill: ${(props) => props.theme.colors.default.white};
+      fill: ${(props) => props.theme.colors.white[100]};
     }
   }
   & span {
-    color: ${(props) => props.theme.colors.default.white};
+    color: ${(props) => props.theme.colors.white[100]};
   }
 `
 
 const ButtonPlaystationShortWrapperCheckedFalse = css`
-  background: ${(props) => props.theme.buttons.playstation.default.fill};
+  background: ${(props) => props.theme.colors.white[100]};
   color: ${(props) => props.theme.colors.black['80']};
   & svg {
     width: 20px;
@@ -49,7 +49,7 @@ export const ButtonPlaystationShortWrapper = styled.button<
   flex-shrink: 0;
   border-radius: 100px;
   cursor: pointer;
-  box-shadow: ${(props) => props.theme.buttons.playstation.effects.default};
+  box-shadow: ${(props) => props.theme.effects.playstation.default};
 
   ${(props) =>
     props.checked === true

@@ -8,7 +8,7 @@ export const LayoutAuthorizationWrapper = styled.div`
   height: 100dvh;
   overflow: hidden;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     flex-direction: column;
   }
 `
@@ -26,14 +26,14 @@ export const LayoutAuthorizationMainContainer = styled.div`
   background: ${(props) => props.theme.colors.black['100']};
   color: ${(props) => props.theme.colors.black['100']};
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     width: 100%;
     height: 170px;
     padding: 10px 100px;
     justify-content: center;
   }
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     padding: 10px 50px;
     align-items: center;
   }
@@ -50,14 +50,14 @@ export const LayoutAuthorizationOutletContainer = styled.div`
   align-items: flex-start;
   overflow: auto;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     justify-content: flex-start;
     width: 100%;
     min-height: calc(100% - 170px);
     padding: 50px;
   }
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     padding: 20px;
   }
 `
@@ -66,7 +66,7 @@ export const LogoWithTitleContainer = styled.div`
   flex: 0 0 auto;
   position: relative;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     height: 170px;
     display: flex;
     align-items: center;
@@ -78,7 +78,7 @@ export const AuthorizationBackgroundContainer = styled.div`
   height: 100%;
   top: 0;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     display: none;
   }
 `
@@ -92,10 +92,10 @@ export const LayoutAuthorizationTextContainer = styled.div`
   position: relative;
 
   & span {
-    color: ${(props) => props.theme.colors.default.white};
+    color: ${(props) => props.theme.colors.white[100]};
   }
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     display: none;
   }
 `

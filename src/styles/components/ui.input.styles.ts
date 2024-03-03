@@ -1,20 +1,17 @@
-import { FontInterR16 } from '@styles/fonts/inter'
+import { FontInterR16 } from 'jenesei-react-ui'
 import { InputHTMLAttributes } from 'react'
 import { UseFormRegisterReturn } from 'react-hook-form'
 import styled, { css } from 'styled-components'
 
-export const UIInputWrapper = styled.div`
+export const JeneseiIDInputWrapper = styled.div`
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
 `
 
-const UIInputIconOnCLickTrue = css`
-  cursor: pointer;
-`
-
-export interface UIInputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface JeneseiIDInputProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   register?: UseFormRegisterReturn
   value?: string
   readOnly?: boolean
@@ -24,11 +21,14 @@ export interface UIInputProps extends InputHTMLAttributes<HTMLInputElement> {
   }
 }
 
-export interface UIInputIconProps {
-  $icon?: UIInputProps['icon']
+export interface JeneseiIDInputIconProps {
+  $icon?: JeneseiIDInputProps['icon']
 }
 
-export const UIInputIcon = styled.div<UIInputIconProps>`
+const JeneseiIDInputIconOnCLickTrue = css`
+  cursor: pointer;
+`
+export const JeneseiIDInputIcon = styled.div<JeneseiIDInputIconProps>`
   position: absolute;
   right: 0px;
   flex-shrink: 0;
@@ -38,7 +38,7 @@ export const UIInputIcon = styled.div<UIInputIconProps>`
   padding: 10px;
   box-sizing: border-box;
 
-  ${(props) => props.$icon?.onCLick && UIInputIconOnCLickTrue}
+  ${(props) => props.$icon?.onCLick && JeneseiIDInputIconOnCLickTrue}
 
   & svg {
     width: 19px;
@@ -49,7 +49,7 @@ export const UIInputIcon = styled.div<UIInputIconProps>`
   }
 `
 
-export const UIInputPlaceholder = css`
+export const JeneseiIDInputPlaceholder = css`
   &::placeholder {
     color: ${(props) => props.theme.colors.black['40']};
     font-weight: 700;
@@ -60,9 +60,9 @@ export const UIInputPlaceholder = css`
     color: ${(props) => props.theme.colors.black['40']};
   }
 `
-export const UIInput = css`
+export const JeneseiIDInput = css`
   ${FontInterR16};
-  ${UIInputPlaceholder};
+  ${JeneseiIDInputPlaceholder};
   display: flex;
   padding: 16px 20px;
   align-items: center;
@@ -80,9 +80,9 @@ export const UIInput = css`
   border-radius: 6px;
   border: none;
   outline: 1px solid ${(props) => props.theme.colors.black['60']};
-  background: ${(props) => props.theme.colors.default.white};
+  background: ${(props) => props.theme.colors.white[100]};
   color: ${(props) => props.theme.colors.black['80']};
-  box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+  box-shadow: ${(props) => props.theme.effects.input.default};
   &:focus,
   &:active,
   &:focus-visible {

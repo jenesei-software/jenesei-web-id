@@ -1,9 +1,8 @@
 import { getProfileUsername } from '@api/profile'
-import { InputDefault } from '@components/input-default'
 import { UIUserLine } from '@styles/components'
 import { FrameColumnGap, FrameRowGapMediaColumn } from '@styles/components'
-import { StyledInterB16 } from '@styles/fonts/inter'
 import { useQuery } from '@tanstack/react-query'
+import { InputString, SpanInterB16 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -21,16 +20,21 @@ export const PersonalInfoFormName: React.FC = () => {
       <UIUserLine />
       <FrameRowGapMediaColumn>
         <FrameColumnGap>
-          <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <InputDefault
+          <SpanInterB16>{t('title-1')}</SpanInterB16>
+          <InputString
+            theme="cloud"
             value={dataProfileUsername?.username}
             placeholder={t('inputs.first-name')}
             readOnly
           />
         </FrameColumnGap>
         <FrameColumnGap>
-          <StyledInterB16>{t('title-2')}</StyledInterB16>
-          <InputDefault placeholder={t('inputs.last-name')} readOnly />
+          <SpanInterB16>{t('title-2')}</SpanInterB16>
+          <InputString
+            theme="cloud"
+            placeholder={t('inputs.last-name')}
+            readOnly
+          />
         </FrameColumnGap>
       </FrameRowGapMediaColumn>
     </React.Fragment>

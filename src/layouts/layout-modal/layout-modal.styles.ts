@@ -25,10 +25,10 @@ export const LayoutModalContainer = styled.div`
   min-width: 680px;
   padding: 26px;
   border-radius: 10px;
-  background-color: ${(props) => props.theme.colors.default.white};
+  background-color: ${(props) => props.theme.colors.white[100]};
   box-sizing: border-box;
   overflow: auto;
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     border-radius: 0px;
     min-width: 100dvw;
     max-width: 100dvw;

@@ -1,4 +1,4 @@
-import { StyledInterR16 } from '@styles/fonts/inter'
+import { SpanInterR16 } from 'jenesei-react-ui'
 import styled from 'styled-components'
 
 export const SignUpTitlesContainer = styled.div`
@@ -8,7 +8,7 @@ export const SignUpTitlesContainer = styled.div`
   gap: 10px;
 `
 export const SignUpTitlesTwoContainer = styled.div``
-export const StyledStyledInterR16 = styled(StyledInterR16)`
+export const StyledSpanInterR16 = styled(SpanInterR16)`
   color: ${(props) => props.theme.colors.product['100']};
   cursor: pointer;
   margin: 0px 4px 0px 4px;

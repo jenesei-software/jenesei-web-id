@@ -1,6 +1,6 @@
 import { LayoutAnimatedTransitionProps } from '.'
-import { theme } from '@styles/theme'
 import { useIsFetching } from '@tanstack/react-query'
+import { JeneseiTheme } from 'jenesei-react-ui'
 import React, { useEffect, useRef } from 'react'
 import LoadingBar, { LoadingBarRef } from 'react-top-loading-bar'
 
@@ -22,7 +22,7 @@ export const LayoutAnimatedTransition: React.FC<
   }, [isFetching])
   return (
     <>
-      <LoadingBar color={theme.colors.product[100]} ref={ref} />
+      <LoadingBar color={JeneseiTheme.colors.product[100]} ref={ref} />
       {props.children}
     </>
   )

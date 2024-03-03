@@ -12,7 +12,7 @@ import { LineOR } from '@components/line-or'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { FrameAuthorizationWrapper } from '@styles/components'
 import { UIInterR16OnClick } from '@styles/components'
-import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
+import { SpanInterB32, SpanInterR16 } from 'jenesei-react-ui'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -23,9 +23,9 @@ export const SignUp: FC<SignUpProps> = () => {
   return (
     <FrameAuthorizationWrapper>
       <SignUpTitlesContainer>
-        <StyledInterB32>{t('title-big')}</StyledInterB32>
+        <SpanInterB32>{t('title-big')}</SpanInterB32>
         <SignUpTitlesTwoContainer>
-          <StyledInterR16>{t('title-min')}</StyledInterR16>{' '}
+          <SpanInterR16>{t('title-min')}</SpanInterR16>{' '}
           <UIInterR16OnClick onClick={() => goToLink('/authorization/sign-in')}>
             {t('title-min-2')}
           </UIInterR16OnClick>

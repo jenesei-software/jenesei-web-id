@@ -1,7 +1,6 @@
 import { IconCurved } from '@assets/icons/icon-curved'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { InputDefault } from '@components/input-default'
 import { UIUserLine } from '@styles/components'
 import {
   FrameColumnGap180,
@@ -9,8 +8,7 @@ import {
   FrameRowGap,
   FrameRowWrapGap,
 } from '@styles/components'
-import { StyledInterB16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { InputString, JeneseiTheme, SpanInterB16 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -23,15 +21,16 @@ export const LoginAndSecurityFormListSubLogin: React.FC = () => {
       <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
-          <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <InputDefault
+          <SpanInterB16>{t('title-1')}</SpanInterB16>
+          <InputString
+            theme="cloud"
             placeholder={t('inputs.subLogin')}
             readOnly
             value={'stassiepushka'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
-          <StyledInterB16>{t('title-2')}</StyledInterB16>
+        <FrameColumnGap180 $mediaMaxWidth={JeneseiTheme.screens.tablet.width}>
+          <SpanInterB16>{t('title-2')}</SpanInterB16>
           <FrameRowWrapGap>
             <LogoServices.JeneseiTask.Min />
             <LogoServices.BusinessRoulette.Min />

@@ -1,5 +1,5 @@
 import { LineOrWrapper, Line } from '.'
-import { StyledInterR16 } from '@styles/fonts/inter'
+import { SpanInterR16 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -9,7 +9,7 @@ export const LineOR: React.FC = () => {
   return (
     <LineOrWrapper>
       <Line />
-      <StyledInterR16>{t('default')}</StyledInterR16>
+      <SpanInterR16>{t('default')}</SpanInterR16>
       <Line />
     </LineOrWrapper>
   )

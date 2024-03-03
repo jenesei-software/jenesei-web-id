@@ -10,21 +10,21 @@ export const IconValidateWrapperBigTrue = styled.div`
   align-items: center;
   border-radius: 100px;
   box-sizing: border-box;
-  background: ${(props) => props.theme.colors.color.green['10']};
+  background: ${(props) => props.theme.colors.success[10]};
   & svg {
     width: 102px;
     height: 102px;
     & path {
-      fill: ${(props) => props.theme.colors.color.green['100']};
+      fill: ${(props) => props.theme.colors.success['100']};
     }
   }
 `
 
 export const IconValidateWrapperBigFalse = styled(IconValidateWrapperBigTrue)`
-  background: ${(props) => props.theme.colors.color.red['10']};
+  background: ${(props) => props.theme.colors.danger['10']};
   & svg {
     & path {
-      fill: ${(props) => props.theme.colors.color.red['100']};
+      fill: ${(props) => props.theme.colors.danger['100']};
     }
   }
 `

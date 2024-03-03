@@ -14,20 +14,20 @@ export const ButtonVolumetricShortWrapper = styled.div`
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.4s;
-  box-shadow: ${(props) => props.theme.buttons.volumetric.effects.wrapper};
-  background: ${(props) => props.theme.buttons.volumetric.wrapper};
+  box-shadow: ${(props) => props.theme.effects.volumetric.wrapper};
+  background: ${(props) => props.theme.backgrounds.volumetric.wrapper};
 `
 
 const ButtonVolumetricShortContainerCheckedTrue = css`
-  border: ${(props) => props.theme.buttons.volumetric.active.stroke};
-  background: ${(props) => props.theme.buttons.volumetric.active.fill};
-  box-shadow: ${(props) => props.theme.buttons.volumetric.effects.active};
+  border: 2px solid ${(props) => props.theme.colors.gray.fafafa};
+  background: ${(props) => props.theme.backgrounds.volumetric.active};
+  box-shadow: ${(props) => props.theme.effects.volumetric.active};
 `
 
 const ButtonVolumetricShortContainerCheckedFalse = css`
-  border: ${(props) => props.theme.buttons.volumetric.default.stroke};
-  background: ${(props) => props.theme.buttons.volumetric.default.fill};
-  box-shadow: ${(props) => props.theme.buttons.volumetric.effects.default};
+  border: 2px solid ${(props) => props.theme.colors.white[100]};
+  background: ${(props) => props.theme.backgrounds.volumetric.default};
+  box-shadow: ${(props) => props.theme.effects.volumetric.default};
 `
 
 export const ButtonVolumetricShortContainer = styled.div<
@@ -45,21 +45,21 @@ export const ButtonVolumetricShortContainer = styled.div<
     background 0.2s;
   border: ${(props) =>
     props.checked
-      ? props.theme.buttons.volumetric.active.stroke
-      : props.theme.buttons.volumetric.default.stroke};
+      ? `2px solid ${props.theme.colors.gray.fafafa}`
+      : `2px solid ${props.theme.colors.white[100]}`};
   background: ${(props) =>
     props.checked
-      ? props.theme.buttons.volumetric.active.fill
-      : props.theme.buttons.volumetric.default.fill};
+      ? props.theme.backgrounds.volumetric.active
+      : props.theme.backgrounds.volumetric.default};
   box-shadow: ${(props) =>
     props.checked
-      ? props.theme.buttons.volumetric.effects.active
-      : props.theme.buttons.volumetric.effects.default};
+      ? props.theme.effects.volumetric.active
+      : props.theme.effects.volumetric.default};
 
   &:active {
-    box-shadow: ${(props) => props.theme.buttons.volumetric.effects.active};
-    border: ${(props) => props.theme.buttons.volumetric.active.stroke};
-    background: ${(props) => props.theme.buttons.volumetric.active.fill};
+    box-shadow: ${(props) => props.theme.effects.volumetric.active};
+    border: 2px solid ${(props) => props.theme.colors.gray.fafafa};
+    background: ${(props) => props.theme.backgrounds.volumetric.active};
   }
   & svg {
     width: 20px;

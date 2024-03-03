@@ -7,8 +7,7 @@ import {
 import { Logo } from '@assets/icons/logo'
 import { LogoWithTitle } from '@assets/icons/logo-with-title'
 import { MenuList } from '@components/menu-list'
-import { StyledInterSB18 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { JeneseiTheme, SpanInterSB18 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -19,9 +18,9 @@ export const MenuSideBar: React.FC = () => {
     <MenuSideBarWrapper>
       <MenuSideBarWrapperContainer>
         <MenuSideBarTitle>
-          <StyledInterSB18 color={theme.colors.black[100]}>
+          <SpanInterSB18 color={JeneseiTheme.colors.black[100]}>
             {t('user.title')}
-          </StyledInterSB18>
+          </SpanInterSB18>
         </MenuSideBarTitle>
         <MenuList />
         <MenuSideLogoContainer>

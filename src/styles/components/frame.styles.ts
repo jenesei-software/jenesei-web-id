@@ -27,7 +27,7 @@ export const FrameAuthorizationWrapper = styled.div`
   width: 100%;
   gap: 100px;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     align-self: stretch;
     height: auto;
     justify-content: space-between;
@@ -43,7 +43,7 @@ export const FrameUserWrapper = styled.div`
   gap: 26px;
   align-self: stretch;
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     padding: 14px;
     gap: 14px;
   }
@@ -104,13 +104,13 @@ export const FrameRowGap = styled(FrameColumn)`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     justify-content: space-between;
   }
 `
 
 export const FrameRowGapMediaColumn = styled(FrameRowGap)`
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     flex-direction: column;
   }
 `

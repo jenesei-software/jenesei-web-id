@@ -1,34 +1,34 @@
 import { UseSelectProps } from '.'
-import { UIInputPlaceholder } from '@styles/components'
-import { FontInterR16 } from '@styles/fonts/inter'
+import { JeneseiIDInputPlaceholder } from '@styles/components'
+import { FontInterR16 } from 'jenesei-react-ui'
 import styled, { css } from 'styled-components'
 
 const UseSelectWrapperTypeVolumetric = css`
   transition: all 0.4s;
-  box-shadow: ${(props) => props.theme.buttons.volumetric.effects.wrapper};
-  background: ${(props) => props.theme.buttons.volumetric.wrapper};
+  box-shadow: ${(props) => props.theme.effects.volumetric.wrapper};
+  background: ${(props) => props.theme.backgrounds.volumetric.wrapper};
 
   & .react-dropdown-select {
-    border: ${(props) => props.theme.buttons.volumetric.default.stroke};
-    background: ${(props) => props.theme.buttons.volumetric.default.fill};
-    box-shadow: ${(props) => props.theme.buttons.volumetric.effects.default};
+    border: 2px solid ${(props) => props.theme.colors.white[100]};
+    background: ${(props) => props.theme.backgrounds.volumetric.default};
+    box-shadow: ${(props) => props.theme.effects.volumetric.default};
 
     &:focus-within,
     &:focus,
     &:hover,
     &:active,
     &:focus-visible {
-      border: ${(props) => props.theme.buttons.volumetric.active.stroke};
-      background: ${(props) => props.theme.buttons.volumetric.active.fill};
-      box-shadow: ${(props) => props.theme.buttons.volumetric.effects.active};
+      border: 2px solid ${(props) => props.theme.colors.gray.fafafa};
+      background: ${(props) => props.theme.backgrounds.volumetric.active};
+      box-shadow: ${(props) => props.theme.effects.volumetric.active};
     }
   }
 `
 const UseSelectWrapperTypeDefault = css`
   & .react-dropdown-select {
     border: 2px solid ${(props) => props.theme.colors.black['60']};
-    background: ${(props) => props.theme.colors.default.white};
-    box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+    background: ${(props) => props.theme.colors.white[100]};
+    box-shadow: ${(props) => props.theme.effects.input.default};
 
     &:focus-within,
     &:focus,
@@ -36,8 +36,8 @@ const UseSelectWrapperTypeDefault = css`
     &:active,
     &:focus-visible {
       border: 1px solid ${(props) => props.theme.colors.black['100']};
-      background: ${(props) => props.theme.colors.default.white};
-      box-shadow: ${(props) => props.theme.buttons.volumetric.effects.active};
+      background: ${(props) => props.theme.colors.white[100]};
+      box-shadow: ${(props) => props.theme.effects.volumetric.active};
     }
   }
 `
@@ -90,7 +90,7 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
     padding: 4px;
 
     border: 1px solid ${(props) => props.theme.colors.gray.c7c7cc};
-    background: ${(props) => props.theme.colors.default.white};
+    background: ${(props) => props.theme.colors.white[100]};
     &::-webkit-scrollbar {
       width: 0 !important;
     }
@@ -153,7 +153,7 @@ export const UseSelectWrapper = styled.div<Pick<UseSelectProps<any>, 'type'>>`
         fill: ${(props) => props.theme.colors.black['60']};
       }
     }
-    ${UIInputPlaceholder};
+    ${JeneseiIDInputPlaceholder};
 
     &::-ms-input-placeholder {
       font-weight: 700;

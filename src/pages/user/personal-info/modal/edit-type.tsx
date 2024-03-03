@@ -8,7 +8,7 @@ import {
   FrameSpaceBetween,
   UIUserLine,
 } from '@styles/components'
-import { StyledInterB36, StyledInterM16 } from '@styles/fonts/inter'
+import { SpanInterB36, SpanInterM16 } from 'jenesei-react-ui'
 import { ReactElement } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -30,8 +30,8 @@ export const EditType = NiceModal.create(
       <LayoutModal>
         <FrameModalWrapper>
           <FrameModalTitlesContainer>
-            <StyledInterB36>Test</StyledInterB36>
-            <StyledInterM16>Test</StyledInterM16>
+            <SpanInterB36>Test</SpanInterB36>
+            <SpanInterM16>Test</SpanInterM16>
           </FrameModalTitlesContainer>
           {props.original}
           <UIUserLine />

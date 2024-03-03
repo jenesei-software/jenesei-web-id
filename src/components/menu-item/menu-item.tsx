@@ -6,8 +6,7 @@ import {
 } from '.'
 import { ButtonPlaystationShort } from '@components/button-playstation/short'
 import { useVibration } from '@hooks/use-vibration'
-import { StyledInterM12, StyledInterSB14 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { JeneseiTheme, SpanInterM12, SpanInterSB14 } from 'jenesei-react-ui'
 import React from 'react'
 import { FC, useMemo } from 'react'
 import { Ripple } from 'react-ripple-click'
@@ -18,12 +17,12 @@ export const MenuItem: FC<MenuItemProps> = React.memo(
     const memoizedMenuItemInfo = useMemo(
       () => (
         <MenuItemInfoContainer>
-          <StyledInterSB14 color={theme.colors.black[80]}>
+          <SpanInterSB14 color={JeneseiTheme.colors.black[80]}>
             {props.title}
-          </StyledInterSB14>
-          <StyledInterM12 color={theme.colors.black[50]}>
+          </SpanInterSB14>
+          <SpanInterM12 color={JeneseiTheme.colors.black[50]}>
             {props.description}
-          </StyledInterM12>
+          </SpanInterM12>
         </MenuItemInfoContainer>
       ),
       [props.title, props.description]

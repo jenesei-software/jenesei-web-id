@@ -28,7 +28,7 @@ export const MenuItemWrapper = styled.button<Pick<MenuItemProps, 'checked'>>`
   border: none;
   color: ${(props) => props.theme.colors.black['100']};
 
-  @media (max-width: ${(props) => props.theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.screens.menu.width}) {
     display: flex;
     height: 84px;
     padding: 16px 26px;
@@ -80,10 +80,10 @@ export const MenuItemInfoContainer = styled.div`
     line-clamp: 2;
     box-orient: vertical;
   }
-  @media (max-width: ${(props) => props.theme.size.menu}) {
+  @media (max-width: ${(props) => props.theme.screens.menu.width}) {
     display: none;
   }
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     display: flex;
   }
 `

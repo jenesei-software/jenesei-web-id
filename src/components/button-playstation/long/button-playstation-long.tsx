@@ -1,6 +1,5 @@
 import { ButtonPlaystationLongProps, ButtonPlaystationLongWrapper } from '.'
-import { StyledInterSB14 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { JeneseiTheme, SpanInterSB14 } from 'jenesei-react-ui'
 import React from 'react'
 import { FC } from 'react'
 import { Ripple } from 'react-ripple-click'
@@ -12,9 +11,9 @@ export const ButtonPlaystationLong: FC<ButtonPlaystationLongProps> = React.memo(
         <Ripple />
         {props.icon && props.icon()}
         {props.title && (
-          <StyledInterSB14 color={theme.colors.black[60]}>
+          <SpanInterSB14 color={JeneseiTheme.colors.black[60]}>
             {props.title}
-          </StyledInterSB14>
+          </SpanInterSB14>
         )}
       </ButtonPlaystationLongWrapper>
     )

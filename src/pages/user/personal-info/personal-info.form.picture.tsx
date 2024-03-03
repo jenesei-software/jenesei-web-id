@@ -8,8 +8,7 @@ import {
   FrameColumn,
   FrameOnlyBottom,
 } from '@styles/components'
-import { StyledInterB20, StyledInterM16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { JeneseiTheme, SpanInterB20, SpanInterM16 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -23,12 +22,12 @@ export const PersonalInfoFormPicture: React.FC = () => {
         <FrameColumnGap>
           <StyledAvatar />
           <FrameColumn>
-            <StyledInterB20 color={theme.colors.black[80]}>
+            <SpanInterB20 color={JeneseiTheme.colors.black[80]}>
               {t('title-big')}
-            </StyledInterB20>
-            <StyledInterM16 color={theme.colors.black[50]}>
+            </SpanInterB20>
+            <SpanInterM16 color={JeneseiTheme.colors.black[50]}>
               {t('title-min')}
-            </StyledInterM16>
+            </SpanInterM16>
           </FrameColumn>
         </FrameColumnGap>
         <FrameOnlyBottom>

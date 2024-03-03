@@ -8,7 +8,7 @@ import {
   FrameRowGap,
   FrameColumnGap,
 } from '@styles/components'
-import { StyledInterB16 } from '@styles/fonts/inter'
+import { SpanInterB16 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -41,7 +41,7 @@ export const PaymentsFormListCard: React.FC = () => {
       <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap>
-          <StyledInterB16>{t('title-1')}</StyledInterB16>
+          <SpanInterB16>{t('title-1')}</SpanInterB16>
           <FrameRowWrapGap>{Cards}</FrameRowWrapGap>
         </FrameColumnGap>
       </FrameRowGap>

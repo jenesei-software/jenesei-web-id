@@ -6,7 +6,7 @@ import {
 import { ButtonBig } from '@components/button-big'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { FrameAuthorizationWrapper } from '@styles/components'
-import { StyledInterB32, StyledInterR16 } from '@styles/fonts/inter'
+import { SpanInterB32, SpanInterR16 } from 'jenesei-react-ui'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -17,11 +17,11 @@ export const EmailCheck: FC<EmailCheckProps> = () => {
   return (
     <FrameAuthorizationWrapper>
       <EmailCheckTitlesContainer>
-        <StyledInterB32>{t('title-big')}</StyledInterB32>
-        <StyledInterR16>{t('title-min')}</StyledInterR16>
+        <SpanInterB32>{t('title-big')}</SpanInterB32>
+        <SpanInterR16>{t('title-min')}</SpanInterR16>
       </EmailCheckTitlesContainer>
       <EmailCheckInfoContainer>
-        <StyledInterR16>{t('title-min-2')}</StyledInterR16>
+        <SpanInterR16>{t('title-min-2')}</SpanInterR16>
         <ButtonBig title={t('buttons.resend-email')} $variant={'product'} />
         <ButtonBig
           title={t('buttons.back-to-login')}

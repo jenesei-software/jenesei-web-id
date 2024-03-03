@@ -1,7 +1,6 @@
-import { InputDefault } from '@components/input-default'
 import { UIUserLine } from '@styles/components'
 import { FrameColumnGap300, FrameRowGap } from '@styles/components'
-import { StyledInterB16 } from '@styles/fonts/inter'
+import { InputString, SpanInterB16 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -12,8 +11,9 @@ export const LoginAndSecurityFormLogin: React.FC = () => {
       <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
-          <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <InputDefault
+          <SpanInterB16>{t('title-1')}</SpanInterB16>
+          <InputString
+            theme="cloud"
             placeholder={t('inputs.login')}
             readOnly
             value={'stassiestrone'}

@@ -1,5 +1,5 @@
 import { ButtonBorderLongProps, ButtonBorderLongWrapper } from '.'
-import { StyledInterSB16 } from '@styles/fonts/inter'
+import { SpanInterSB16 } from 'jenesei-react-ui'
 import React from 'react'
 import { FC } from 'react'
 import { Ripple } from 'react-ripple-click'
@@ -10,7 +10,7 @@ export const ButtonBorderLong: FC<ButtonBorderLongProps> = React.memo(
       <ButtonBorderLongWrapper onClick={props.onClick} type={props.type}>
         <Ripple />
         {props.icon && props.icon()}
-        {props.title && <StyledInterSB16>{props.title}</StyledInterSB16>}
+        {props.title && <SpanInterSB16>{props.title}</SpanInterSB16>}
       </ButtonBorderLongWrapper>
     )
   },

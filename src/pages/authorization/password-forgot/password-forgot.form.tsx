@@ -1,9 +1,9 @@
 import { PasswordForgotHookForm } from '.'
 import { SignUpInfoFormContainer, SignUpProps } from '../sign-up'
 import { ButtonBig } from '@components/button-big'
-import { InputDefault } from '@components/input-default'
 import { isValidEmail } from '@functions/is-valid-email'
 import { useGoToLink } from '@hooks/use-go-to-link'
+import { InputString } from 'jenesei-react-ui'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -24,7 +24,8 @@ export const PasswordForgotForm: FC<SignUpProps> = () => {
 
   return (
     <SignUpInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('inputs.email')}
         type="email"
         register={{

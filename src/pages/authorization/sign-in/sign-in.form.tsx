@@ -1,10 +1,10 @@
 import { SignInInfoFormContainer } from '.'
 import { SignInDto, usePostAuthSignIn } from '@api/auth'
 import { ButtonBig } from '@components/button-big'
-import { InputDefault } from '@components/input-default'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { ENUMLocalStorage, useAxios } from '@providers/provider-axios'
 import { UIInterR16OnClick } from '@styles/components'
+import { InputString } from 'jenesei-react-ui'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -31,7 +31,8 @@ export const SignInForm: FC = () => {
   }
   return (
     <SignInInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('inputs.username')}
         register={{
           ...register('username', {
@@ -41,7 +42,8 @@ export const SignInForm: FC = () => {
           }),
         }}
       />
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('inputs.password')}
         type="password"
         register={{

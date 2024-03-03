@@ -1,5 +1,5 @@
 import {
-  StyledUIInputDatePicker,
+  StyledDatePicker,
   DatePickerHeaderWrapper,
   DatePickerProps,
   DatePickerWrapper,
@@ -59,7 +59,7 @@ export const DatePicker = (
 
   return (
     <DatePickerWrapper>
-      <StyledUIInputDatePicker
+      <StyledDatePicker
         maxDate={props.maxDate}
         customInput={<input readOnly />}
         onFocus={(e) => (e.target.readOnly = true)}

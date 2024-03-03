@@ -1,5 +1,9 @@
-import { UIInput } from '@styles/components'
-import { FontInterB14, FontInterM12, FontInterM14 } from '@styles/fonts/inter'
+import {
+  FontInterB14,
+  FontInterM12,
+  FontInterM14,
+  ThemeCloudInputString,
+} from 'jenesei-react-ui'
 import DatePicker from 'react-datepicker'
 import styled from 'styled-components'
 
@@ -16,16 +20,16 @@ export const DatePickerWrapper = styled.div`
     .react-datepicker__triangle {
     &::after {
       left: -30px;
-      border-bottom-color: ${(props) => props.theme.colors.default.white};
-      border-top-color: ${(props) => props.theme.colors.default.white};
-      box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+      border-bottom-color: ${(props) => props.theme.colors.white[100]};
+      border-top-color: ${(props) => props.theme.colors.white[100]};
+      box-shadow: ${(props) => props.theme.effects.input.default};
       bottom: 0px;
       display: none;
     }
     &::before {
       left: -30px;
       border-bottom-color: ${(props) => props.theme.colors.gray['d3d3d3']};
-      box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+      box-shadow: ${(props) => props.theme.effects.input.default};
       bottom: 0px;
       display: none;
     }
@@ -41,9 +45,9 @@ export const DatePickerWrapper = styled.div`
   & .react-datepicker {
     ${FontInterM14};
     border-radius: 24px;
-    background: ${(props) => props.theme.colors.default.white};
+    background: ${(props) => props.theme.colors.white[100]};
     border: 1px solid ${(props) => props.theme.colors.gray['d3d3d3']};
-    box-shadow: ${(props) => props.theme.inputs.default.effects.boxShadow};
+    box-shadow: ${(props) => props.theme.effects.input.default};
     color: ${(props) => props.theme.colors.gray['737373']};
   }
   & .react-datepicker__header {
@@ -69,7 +73,7 @@ export const DatePickerWrapper = styled.div`
   & .react-datepicker__day--selected {
     ${FontInterB14};
     border-radius: 100px;
-    color: ${(props) => props.theme.colors.default.white};
+    color: ${(props) => props.theme.colors.white[100]};
     background: ${(props) => props.theme.colors.product['100']};
     &:hover {
       color: ${(props) => props.theme.colors.black['80']};
@@ -100,7 +104,7 @@ export const DatePickerHeaderWrapper = styled.div`
   min-width: 300px;
   gap: 8px;
 `
-export const StyledUIInputDatePicker = styled(DatePicker)`
-  ${UIInput};
+export const StyledDatePicker = styled(DatePicker)`
+  ${ThemeCloudInputString};
   display: flex;
 `

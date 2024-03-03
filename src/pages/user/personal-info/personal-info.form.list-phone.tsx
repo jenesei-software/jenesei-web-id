@@ -4,7 +4,6 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { InputDefault } from '@components/input-default'
 import {
   FrameColumnGap180,
   FrameColumnGap250,
@@ -14,8 +13,7 @@ import {
   FrameRowWrapGap,
   UIUserLine,
 } from '@styles/components'
-import { StyledInterB16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { InputString, JeneseiTheme, SpanInterB16 } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -26,15 +24,16 @@ export const PersonalInfoFormListPhone: React.FC = () => {
       <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
-          <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <InputDefault
+          <SpanInterB16>{t('title-1')}</SpanInterB16>
+          <InputString
+            theme="cloud"
             placeholder={t('inputs.phone')}
             readOnly
             value={'+7 (950) 429 19 70'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap250 $mediaMaxWidth={theme.size.mobile}>
-          <StyledInterB16>{t('title-2')}</StyledInterB16>
+        <FrameColumnGap250 $mediaMaxWidth={JeneseiTheme.screens.mobile.width}>
+          <SpanInterB16>{t('title-2')}</SpanInterB16>
           <FrameRowWrapGap>
             <ButtonPlaystationLong
               icon={IconCurved.Lock}
@@ -44,14 +43,14 @@ export const PersonalInfoFormListPhone: React.FC = () => {
             <ButtonBorderShort type="border" icon={IconCurved.Plus} />
           </FrameRowWrapGap>
         </FrameColumnGap250>
-        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
-          <StyledInterB16>{t('title-3')}</StyledInterB16>
+        <FrameColumnGap180 $mediaMaxWidth={JeneseiTheme.screens.tablet.width}>
+          <SpanInterB16>{t('title-3')}</SpanInterB16>
           <FrameRowWrapGap>
             <LogoServices.BusinessRoulette.Min />
           </FrameRowWrapGap>
         </FrameColumnGap180>
         <FrameColumnGap78Center>
-          <StyledInterB16>{t('title-4')}</StyledInterB16>
+          <SpanInterB16>{t('title-4')}</SpanInterB16>
           <IconValidate.Min.True />
         </FrameColumnGap78Center>
       </FrameRowGap>

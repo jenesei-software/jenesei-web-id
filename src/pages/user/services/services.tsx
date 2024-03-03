@@ -9,11 +9,7 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { useAxios } from '@providers/provider-axios'
 import { FrameAuthorizationWrapper } from '@styles/components'
-import {
-  StyledInterB32,
-  StyledInterR16,
-  StyledInterSB14,
-} from '@styles/fonts/inter'
+import { SpanInterB32, SpanInterR16, SpanInterSB14 } from 'jenesei-react-ui'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -24,10 +20,10 @@ export const Services: FC<ServicesProps> = (props) => {
   return (
     <FrameAuthorizationWrapper>
       <ServicesTitleContainer>
-        <StyledInterB32>
+        <SpanInterB32>
           {t('pages.title-big') + props.dataProfile?.username}
-        </StyledInterB32>
-        <StyledInterR16>{t('pages.title-min')}</StyledInterR16>
+        </SpanInterB32>
+        <SpanInterR16>{t('pages.title-min')}</SpanInterR16>
       </ServicesTitleContainer>
       <ServicesListContainer>
         <ServicesListContainer>
@@ -37,11 +33,11 @@ export const Services: FC<ServicesProps> = (props) => {
             to={'https://task.jenesei.ru'}
           >
             <LogoServices.JeneseiTask.Default />
-            <StyledInterSB14>{t('JeneseiTask.name')}</StyledInterSB14>
+            <SpanInterSB14>{t('JeneseiTask.name')}</SpanInterSB14>
           </ServicesListItemContainer>
           <ServicesListItemContainer to={`/user/personal-info`}>
             <LogoServices.JeneseiID.Default />
-            <StyledInterSB14>{t('JeneseiID.name')}</StyledInterSB14>
+            <SpanInterSB14>{t('JeneseiID.name')}</SpanInterSB14>
           </ServicesListItemContainer>
         </ServicesListContainer>
       </ServicesListContainer>

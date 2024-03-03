@@ -9,14 +9,13 @@ import { usePostAuthSignUp } from '@api/auth'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBig } from '@components/button-big'
 import { DatePicker } from '@components/datepicker'
-import { InputDefault } from '@components/input-default'
 import { Switch } from '@components/switch'
 import { getDateMinusYears } from '@functions/get-date-minus-years'
 import { isValidEmail } from '@functions/is-valid-email'
 import { useGoToLink } from '@hooks/use-go-to-link'
 import { useAxios, ENUMLocalStorage } from '@providers/provider-axios'
 import { UIInterR16OnClick } from '@styles/components'
-import { StyledInterR16 } from '@styles/fonts/inter'
+import { InputString, SpanInterR16 } from 'jenesei-react-ui'
 import { FC, useEffect, useReducer } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -62,7 +61,8 @@ export const SignUpForm: FC<SignUpProps> = () => {
   }, [isHide])
   return (
     <SignUpInfoFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('sign-up:inputs.email')}
         type="email"
         register={{
@@ -74,7 +74,8 @@ export const SignUpForm: FC<SignUpProps> = () => {
           }),
         }}
       />
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('sign-up:inputs.username')}
         register={{
           ...register('username', {
@@ -97,7 +98,8 @@ export const SignUpForm: FC<SignUpProps> = () => {
           />
         )}
       />
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('sign-up:inputs.password')}
         type={isHide ? 'password' : 'text'}
         register={{
@@ -114,7 +116,8 @@ export const SignUpForm: FC<SignUpProps> = () => {
           },
         }}
       />
-      <InputDefault
+      <InputString
+        theme="cloud"
         placeholder={t('sign-up:inputs.repeat-password')}
         type="password"
         register={{
@@ -140,11 +143,11 @@ export const SignUpForm: FC<SignUpProps> = () => {
           )}
         />
         <SignUpInfoFormSwitchAgreementContainer>
-          <StyledInterR16>{t('sign-up:agree-1')}</StyledInterR16>{' '}
+          <SpanInterR16>{t('sign-up:agree-1')}</SpanInterR16>{' '}
           <UIInterR16OnClick onClick={() => goToLink('/terms-of-service')}>
             {t('terms-of-service:default')}
           </UIInterR16OnClick>{' '}
-          <StyledInterR16>{t('sign-up:agree-2')}</StyledInterR16>{' '}
+          <SpanInterR16>{t('sign-up:agree-2')}</SpanInterR16>{' '}
           <UIInterR16OnClick onClick={() => goToLink('/privacy-policy')}>
             {t('privacy-policy:default')}
           </UIInterR16OnClick>

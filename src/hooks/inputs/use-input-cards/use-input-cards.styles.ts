@@ -1,5 +1,5 @@
 import { CardProps } from '.'
-import { FontInterB16, FontInterM16 } from '@styles/fonts/inter'
+import { FontInterB16, FontInterM16 } from 'jenesei-react-ui'
 import styled from 'styled-components'
 
 export const UseInputCard = styled.button<CardProps>`

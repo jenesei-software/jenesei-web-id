@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components'
 const ButtonBorderLongWrapperBlack = css`
   border: 1px solid transparent;
   background: ${(props) => props.theme.colors.black['100']};
-  color: ${(props) => props.theme.colors.default.white};
+  color: ${(props) => props.theme.colors.white[100]};
   & span {
-    color: ${(props) => props.theme.colors.default.white};
+    color: ${(props) => props.theme.colors.white[100]};
   }
 `
 
@@ -28,7 +28,7 @@ const ButtonBorderLongWrapperWhite = css`
 `
 const ButtonBorderLongWrapperBorder = css`
   border: 1px solid ${(props) => props.theme.colors.black['10']};
-  background: ${(props) => props.theme.colors.default.white};
+  background: ${(props) => props.theme.colors.white[100]};
   color: ${(props) => props.theme.colors.black['60']};
   & span {
     color: ${(props) => props.theme.colors.black['60']};

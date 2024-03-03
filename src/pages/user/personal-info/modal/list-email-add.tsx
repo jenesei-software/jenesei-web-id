@@ -1,8 +1,6 @@
 import { ListEmailAddHookForm } from './list-email-add.types'
 import { IconValidate } from '@assets/icons/icon-validate'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { InputDefault } from '@components/input-default'
-import { InputCode } from '@components/input-code'
 import NiceModal, { useModal } from '@ebay/nice-modal-react'
 import { LayoutModal } from '@layouts/layout-modal'
 import {
@@ -11,7 +9,7 @@ import {
   UIReactLoading,
 } from '@styles/components'
 import { UIInterR16OnClick } from '@styles/components'
-import { StyledInterR16 } from '@styles/fonts/inter'
+import { InputCode, InputString, SpanInterR16 } from 'jenesei-react-ui'
 import { ReactElement } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -40,7 +38,8 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
     <LayoutModal>
       <FrameModalWrapper>
         {String(isValid)}
-        <InputDefault
+        <InputString
+          theme="cloud"
           placeholder={tPersonalInfo('email')}
           type="email"
           register={{
@@ -77,18 +76,18 @@ export const ListEmailAdd = NiceModal.create((): ReactElement | null => {
         <IconValidate.Min.True />
         <IconValidate.Min.False />
         <UIReactLoading />
-        <StyledInterR16>{tPersonalInfo('enter-the-code')}</StyledInterR16>
+        <SpanInterR16>{tPersonalInfo('enter-the-code')}</SpanInterR16>
         <UIInterR16OnClick onClick={closeDrawer}>
           {tPersonalInfo("can't-use-this-email")}
         </UIInterR16OnClick>
         <UIALotOfTitle>
-          <StyledInterR16>{tPersonalInfo('wrong-code')}</StyledInterR16>{' '}
+          <SpanInterR16>{tPersonalInfo('wrong-code')}</SpanInterR16>{' '}
           <UIInterR16OnClick onClick={closeDrawer}>
             {tPersonalInfo('code-again')}
           </UIInterR16OnClick>
         </UIALotOfTitle>
         <UIALotOfTitle>
-          <StyledInterR16>{tPersonalInfo('wrong-code')}</StyledInterR16>{' '}
+          <SpanInterR16>{tPersonalInfo('wrong-code')}</SpanInterR16>{' '}
           <UIInterR16OnClick onClick={closeDrawer}>
             {tPersonalInfo('tomorrow')}
           </UIInterR16OnClick>

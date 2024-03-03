@@ -7,7 +7,6 @@ import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { ButtonBorderShort } from '@components/button-border/short'
 import { ButtonPlaystationLong } from '@components/button-playstation/long'
-import { InputDefault } from '@components/input-default'
 import NiceModal from '@ebay/nice-modal-react'
 import {
   FrameColumnGap180,
@@ -18,8 +17,7 @@ import {
   FrameRowWrapGap,
   UIUserLine,
 } from '@styles/components'
-import { StyledInterB16 } from '@styles/fonts/inter'
-import { theme } from '@styles/theme'
+import { InputString, JeneseiTheme, SpanInterB16 } from 'jenesei-react-ui'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -42,15 +40,16 @@ export const PersonalInfoFormListEmail: React.FC = () => {
       <UIUserLine />
       <FrameRowGap>
         <FrameColumnGap300>
-          <StyledInterB16>{t('title-1')}</StyledInterB16>
-          <InputDefault
+          <SpanInterB16>{t('title-1')}</SpanInterB16>
+          <InputString
+            theme="cloud"
             placeholder={t('inputs.email')}
             readOnly
             value={'cyrilstrone@gmail.com'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap250 $mediaMaxWidth={theme.size.mobile}>
-          <StyledInterB16>{t('title-2')}</StyledInterB16>
+        <FrameColumnGap250 $mediaMaxWidth={JeneseiTheme.screens.mobile.width}>
+          <SpanInterB16>{t('title-2')}</SpanInterB16>
           <FrameRowWrapGap>
             <ButtonPlaystationLong
               icon={IconCurved.Lock}
@@ -63,7 +62,8 @@ export const PersonalInfoFormListEmail: React.FC = () => {
               onClick={() =>
                 editTypeClickHandler({
                   original: (
-                    <InputDefault
+                    <InputString
+                      theme="cloud"
                       placeholder={t('inputs.email')}
                       readOnly
                       value={'cyrilstrone@gmail.com'}
@@ -74,27 +74,28 @@ export const PersonalInfoFormListEmail: React.FC = () => {
             />
           </FrameRowWrapGap>
         </FrameColumnGap250>
-        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
-          <StyledInterB16>{t('title-3')}</StyledInterB16>
+        <FrameColumnGap180 $mediaMaxWidth={JeneseiTheme.screens.tablet.width}>
+          <SpanInterB16>{t('title-3')}</SpanInterB16>
           <FrameRowWrapGap>
             <LogoServices.JeneseiTask.Min />
             <LogoServices.BusinessRoulette.Min />
           </FrameRowWrapGap>
         </FrameColumnGap180>
         <FrameColumnGap78Center>
-          <StyledInterB16>{t('title-4')}</StyledInterB16>
+          <SpanInterB16>{t('title-4')}</SpanInterB16>
           <IconValidate.Min.True />
         </FrameColumnGap78Center>
       </FrameRowGap>
       <FrameRowGap>
         <FrameColumnGap300>
-          <InputDefault
+          <InputString
+            theme="cloud"
             placeholder={t('inputs.email')}
             readOnly
             value={'kidvos@gmail.com'}
           />
         </FrameColumnGap300>
-        <FrameColumnGap250 $mediaMaxWidth={theme.size.mobile}>
+        <FrameColumnGap250 $mediaMaxWidth={JeneseiTheme.screens.mobile.width}>
           <FrameRowWrapGap>
             <ButtonPlaystationLong title={'Home'} checked={false} />
             <ButtonBorderShort
@@ -103,7 +104,8 @@ export const PersonalInfoFormListEmail: React.FC = () => {
               onClick={() =>
                 editTypeClickHandler({
                   original: (
-                    <InputDefault
+                    <InputString
+                      theme="cloud"
                       placeholder={t('inputs.email')}
                       readOnly
                       value={'kidvos@gmail.com'}
@@ -114,7 +116,7 @@ export const PersonalInfoFormListEmail: React.FC = () => {
             />
           </FrameRowWrapGap>
         </FrameColumnGap250>
-        <FrameColumnGap180 $mediaMaxWidth={theme.size.tablet}>
+        <FrameColumnGap180 $mediaMaxWidth={JeneseiTheme.screens.tablet.width}>
           <FrameRowWrapGap></FrameRowWrapGap>
         </FrameColumnGap180>
         <FrameColumnGap78Center>

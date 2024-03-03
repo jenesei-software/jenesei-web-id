@@ -2,7 +2,7 @@ import Avatar from 'react-avatar'
 import styled from 'styled-components'
 
 export const StyledAvatar = styled(Avatar)`
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
   }
 `
 StyledAvatar.defaultProps = {

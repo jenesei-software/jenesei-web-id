@@ -9,7 +9,7 @@ export const ServicesTitleContainer = styled.div`
   gap: 10px;
   align-self: stretch;
 
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
   }
 `
 export const ServicesListContainer = styled.div`
@@ -20,7 +20,7 @@ export const ServicesListContainer = styled.div`
   align-self: stretch;
   flex-wrap: wrap;
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
   }
 `
 export const ServicesListItemContainer = styled(Link)`
@@ -34,14 +34,14 @@ export const ServicesListItemContainer = styled(Link)`
   cursor: pointer;
   border-radius: 6px;
 
-  background: ${(props) => props.theme.colors.default.white};
-  box-shadow: ${(props) => props.theme.buttons.volumetric.effects.default};
+  background: ${(props) => props.theme.colors.white[100]};
+  box-shadow: ${(props) => props.theme.effects.volumetric.default};
 
   & span {
     width: min-content;
   }
 
-  @media (max-width: ${(props) => props.theme.size.mobile}) {
+  @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     height: 142px;
     & .icon {
       width: 84px;
@@ -50,6 +50,6 @@ export const ServicesListItemContainer = styled(Link)`
   }
 `
 export const ServicesButtonsContainer = styled.div`
-  @media (max-width: ${(props) => props.theme.size.tablet}) {
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
   }
 `

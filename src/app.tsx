@@ -5,9 +5,9 @@ import { LayoutAnimatedTransition } from '@layouts/layout-animated-transition'
 import { LayoutApp } from '@layouts/layout-app'
 import { ProviderAxios } from '@providers/provider-axios'
 import { ProviderLanguage } from '@providers/provider-language'
-import { theme } from '@styles/theme'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { JeneseiTheme } from 'jenesei-react-ui'
 import { CookiesProvider } from 'react-cookie'
 import { I18nextProvider } from 'react-i18next'
 import { BrowserRouter } from 'react-router-dom'
@@ -19,7 +19,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools />
         <I18nextProvider i18n={i18n}>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={JeneseiTheme}>
             <ProviderAxios>
               <BrowserRouter>
                 <ProviderLanguage>
