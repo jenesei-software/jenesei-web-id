@@ -4,11 +4,11 @@ import {
   DatePickerProps,
   DatePickerWrapper,
 } from '.'
-import { useSelect } from '../../hooks/inputs/use-select'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonVolumetricShort } from '@components/button-volumetric/short'
 import { getLast100Years } from '@functions/get-last-100-years'
 import { useLanguage } from '@providers/provider-language'
+import { useSelect } from 'jenesei-react-ui'
 import { useState } from 'react'
 
 export const DatePicker = (

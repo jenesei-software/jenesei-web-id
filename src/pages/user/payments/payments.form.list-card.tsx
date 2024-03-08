@@ -1,20 +1,19 @@
 import { IconCardNetwork } from '@assets/icons/icon-card-network'
 import { IconCurved } from '@assets/icons/icon-curved'
 import { ButtonBorderLong } from '@components/button-border/long'
-import { useInputCards } from '@hooks/inputs/use-input-cards'
 import { UIUserLine } from '@styles/components'
 import {
   FrameRowWrapGap,
   FrameRowGap,
   FrameColumnGap,
 } from '@styles/components'
-import { SpanInterB16 } from 'jenesei-react-ui'
+import { SpanInterB16, useCards } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const PaymentsFormListCard: React.FC = () => {
   const { t } = useTranslation('payments', { keyPrefix: 'list-card' })
-  const { Cards } = useInputCards({
+  const { Cards } = useCards({
     value: [
       {
         cardIssuer: 'Тинькофф',

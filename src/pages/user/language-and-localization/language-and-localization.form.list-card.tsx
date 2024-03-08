@@ -1,5 +1,4 @@
 import { languageList } from '@assets/i18n'
-import { useSelect } from '@hooks/inputs/use-select'
 import { useLanguage } from '@providers/provider-language'
 import { UIUserLine } from '@styles/components'
 import {
@@ -7,7 +6,7 @@ import {
   FrameColumnGap,
   FrameColumnGap180,
 } from '@styles/components'
-import { SpanInterB16 } from 'jenesei-react-ui'
+import { SpanInterB16, useSelect } from 'jenesei-react-ui'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 

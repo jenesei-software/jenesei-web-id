@@ -5,7 +5,6 @@ import {
   MenuItemWrapper,
 } from '.'
 import { ButtonPlaystationShort } from '@components/button-playstation/short'
-import { useVibration } from '@hooks/use-vibration'
 import { JeneseiTheme, SpanInterM12, SpanInterSB14 } from 'jenesei-react-ui'
 import React from 'react'
 import { FC, useMemo } from 'react'
@@ -13,7 +12,6 @@ import { Ripple } from 'react-ripple-click'
 
 export const MenuItem: FC<MenuItemProps> = React.memo(
   (props) => {
-    const vibrate = useVibration()
     const memoizedMenuItemInfo = useMemo(
       () => (
         <MenuItemInfoContainer>
@@ -32,7 +30,6 @@ export const MenuItem: FC<MenuItemProps> = React.memo(
       <MenuItemWrapper
         checked={props.checked}
         onClick={() => {
-          vibrate(1)
           props.onClick()
         }}
       >
