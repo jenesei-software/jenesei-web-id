@@ -196,11 +196,11 @@
     "JeneseiID": {
       "name": "Jenesei ID"
     },
-    "JeneseiMessenger": {
-      "name": "Jenesei Messenger"
-    },
     "JeneseiTask": {
       "name": "Jenesei Task"
+    },
+    "JeneseiWeather": {
+      "name": "Jenesei Weather"
     },
     "pages": {
       "logout": "Log out",

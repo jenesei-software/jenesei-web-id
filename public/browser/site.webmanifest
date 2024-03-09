@@ -1,24 +1,24 @@
 {
-  "id": "jenesei-id",
-  "name": "Jen. ID",
-  "short_name": "Jen. ID",
+  "background_color": "#f2f2f6",
+  "description": "The best authentication service.",
+  "display": "standalone",
   "icons": [
     {
-      "src": "/browser/android-chrome-192x192.png",
       "sizes": "192x192",
+      "src": "/browser/android-chrome-192x192.png",
       "type": "image/png"
     },
     {
-      "src": "/browser/android-chrome-512x512.png",
       "sizes": "512x512",
+      "src": "/browser/android-chrome-512x512.png",
       "type": "image/png"
     }
   ],
-  "theme_color": "#4195d2",
-  "background_color": "#f2f2f6",
-  "start_url": "/",
-  "display": "standalone",
-  "description": "Jen. ID is Nice",
+  "id": "jenesei-id",
   "lang": "eng",
-  "orientation": "portrait"
+  "name": "Jenesei ID",
+  "orientation": "portrait",
+  "short_name": "Jen. ID",
+  "start_url": "/",
+  "theme_color": "#4195d2"
 }

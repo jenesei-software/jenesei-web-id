@@ -23,7 +23,13 @@ export const ServicesListContainer = styled.div`
   @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
   }
 `
-export const ServicesListItemContainer = styled(Link)`
+
+export const ServicesListItemButton = styled.button`
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   text-decoration: none;
   display: flex;
   height: 186px;
@@ -33,13 +39,9 @@ export const ServicesListItemContainer = styled(Link)`
   align-items: flex-start;
   cursor: pointer;
   border-radius: 6px;
-
+  color: ${(props) => props.theme.colors.product[100]};
   background: ${(props) => props.theme.colors.white[100]};
   box-shadow: ${(props) => props.theme.effects.volumetric.default};
-
-  & span {
-    width: min-content;
-  }
 
   @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     height: 142px;
@@ -48,6 +50,10 @@ export const ServicesListItemContainer = styled(Link)`
       height: 84px;
     }
   }
+`
+
+export const ServicesListItemContainer = styled(Link)`
+  text-decoration: none;
 `
 export const ServicesButtonsContainer = styled.div`
   @media (max-width: ${(props) => props.theme.screens.tablet.width}) {

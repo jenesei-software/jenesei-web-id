@@ -5,6 +5,7 @@ import { LayoutAnimatedTransition } from '@layouts/layout-animated-transition'
 import { LayoutApp } from '@layouts/layout-app'
 import { ProviderAxios } from '@providers/provider-axios'
 import { ProviderLanguage } from '@providers/provider-language'
+import { ProviderToast } from '@providers/provider-toast'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { JeneseiTheme } from 'jenesei-react-ui'
@@ -23,11 +24,13 @@ function App() {
             <ProviderAxios>
               <BrowserRouter>
                 <ProviderLanguage>
-                  <LayoutAnimatedTransition>
-                    <NiceModal.Provider>
-                      <LayoutApp />
-                    </NiceModal.Provider>
-                  </LayoutAnimatedTransition>
+                  <ProviderToast>
+                    <LayoutAnimatedTransition>
+                      <NiceModal.Provider>
+                        <LayoutApp />
+                      </NiceModal.Provider>
+                    </LayoutAnimatedTransition>
+                  </ProviderToast>
                 </ProviderLanguage>
               </BrowserRouter>
             </ProviderAxios>

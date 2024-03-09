@@ -1,4 +1,6 @@
 import { DefaultError, UseMutationOptions } from '@tanstack/react-query'
+import '@tanstack/react-query'
+import { AxiosError } from 'axios'
 
 export type CustomHookMutationOptions<
   TData = unknown,
@@ -25,4 +27,10 @@ export interface ErrorResponse {
   message: string
   error: string
   statusCode: number
+}
+
+declare module '@tanstack/react-query' {
+  interface Register {
+    defaultError: AxiosError<ErrorResponse>
+  }
 }
