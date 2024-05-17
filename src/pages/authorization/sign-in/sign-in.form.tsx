@@ -21,6 +21,7 @@ export const SignInForm: FC = () => {
         writeToLocalStorage(ENUMLocalStorage.isAuth, true)
       },
       onError: (error) => {
+        writeToLocalStorage(ENUMLocalStorage.isAuth, true)
         toast.error(`${error.response?.data.message}`)
       },
     })

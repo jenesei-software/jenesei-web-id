@@ -1,13 +1,11 @@
 import {
   AuthorizationBackgroundContainer,
-  LogoWithTitleContainer,
   LayoutAuthorizationMainContainer,
   LayoutAuthorizationOutletContainer,
   LayoutAuthorizationTextContainer,
   LayoutAuthorizationWrapper,
-  LayoutAuthorizationStyledImg,
+  LogoWithTitleContainer,
 } from '.'
-import MadeInJenesei from '../../../public/made-in-jenesei.png'
 import { AuthorizationBackground } from '@assets/authorization-background'
 import { LogoWithTitle } from '@assets/icons/logo-with-title'
 import { SpanInterB36, SpanInterR24 } from 'jenesei-react-ui'
@@ -34,7 +32,6 @@ export const LayoutAuthorization: React.FC = () => {
           <SpanInterB36>{t('main.title-big')}</SpanInterB36>
           <SpanInterR24>{t('main.title-min')}</SpanInterR24>
         </LayoutAuthorizationTextContainer>
-        <LayoutAuthorizationStyledImg src={MadeInJenesei} />
       </LayoutAuthorizationMainContainer>
       <LayoutAuthorizationOutletContainer>
         <Outlet />

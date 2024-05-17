@@ -99,7 +99,3 @@ export const LayoutAuthorizationTextContainer = styled.div`
     display: none;
   }
 `
-
-export const LayoutAuthorizationStyledImg = styled.img`
-  width: 100%;
-`
