@@ -7,7 +7,7 @@ import {
   ServicesStyledImg,
   ServicesTitleContainer,
 } from '.'
-import LogoJeneseiUIReact from '../../../../public/logo/logo-jenesei-ui-react-min.png'
+import LogoJeneseiUIReact from '../../../../public/logo/logo-min-jenesei-ui-react.png'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { useAxios } from '@providers/provider-axios'
