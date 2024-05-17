@@ -59,3 +59,12 @@ export const ServicesButtonsContainer = styled.div`
   @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
   }
 `
+
+export const ServicesStyledImg = styled.img`
+  width: 122px;
+  height: 122px;
+  @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
+    width: 84px;
+    height: 84px;
+  }
+`

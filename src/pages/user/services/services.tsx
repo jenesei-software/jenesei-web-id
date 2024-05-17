@@ -4,8 +4,10 @@ import {
   ServicesListItemButton,
   ServicesListItemContainer,
   ServicesProps,
+  ServicesStyledImg,
   ServicesTitleContainer,
 } from '.'
+import LogoJeneseiUIReact from '../../../../public/logo/logo-min-jenesei-ui-react.png'
 import { LogoServices } from '@assets/icons/logo-services'
 import { ButtonBorderLong } from '@components/button-border/long'
 import { useAxios } from '@providers/provider-axios'
@@ -34,6 +36,17 @@ export const Services: FC<ServicesProps> = (props) => {
               <Ripple />
               <LogoServices.JeneseiID.Default />
               <SpanInterSB14>{t('JeneseiID.name')}</SpanInterSB14>
+            </ServicesListItemButton>
+          </ServicesListItemContainer>
+          <ServicesListItemContainer
+            target="_blank"
+            rel="noopener noreferrer"
+            to={'https://ui-react.jenesei.ru/'}
+          >
+            <ServicesListItemButton>
+              <Ripple />
+              <ServicesStyledImg src={LogoJeneseiUIReact} />
+              <SpanInterSB14>{t('JeneseiUIReact.name')}</SpanInterSB14>
             </ServicesListItemButton>
           </ServicesListItemContainer>
           <ServicesListItemContainer
