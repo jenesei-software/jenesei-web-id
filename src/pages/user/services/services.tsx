@@ -1,3 +1,16 @@
+import { SpanInterB32, SpanInterR16, SpanInterSB14 } from 'jenesei-react-ui'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Ripple } from 'react-ripple-click'
+
+import { LogoServices } from '@assets/icons/logo-services'
+
+import { ButtonBorderLong } from '@components/button-border/long'
+
+import { useAxios } from '@providers/provider-axios'
+
+import { FrameAuthorizationWrapper } from '@styles/components'
+
 import {
   ServicesButtonsContainer,
   ServicesListContainer,
@@ -7,15 +20,7 @@ import {
   ServicesStyledImg,
   ServicesTitleContainer,
 } from '.'
-import LogoJeneseiUIReact from '../../../../public/logo/logo-min-jenesei-ui-react.png'
-import { LogoServices } from '@assets/icons/logo-services'
-import { ButtonBorderLong } from '@components/button-border/long'
-import { useAxios } from '@providers/provider-axios'
-import { FrameAuthorizationWrapper } from '@styles/components'
-import { SpanInterB32, SpanInterR16, SpanInterSB14 } from 'jenesei-react-ui'
-import { FC } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Ripple } from 'react-ripple-click'
+import LogoJeneseiUIReact from '/logo/logo-min-jenesei-ui-react.png'
 
 export const Services: FC<ServicesProps> = (props) => {
   const { t } = useTranslation('services')
