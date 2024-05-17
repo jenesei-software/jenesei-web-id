@@ -36,6 +36,7 @@ export const LayoutAuthorizationMainContainer = styled.div`
   @media (max-width: ${(props) => props.theme.screens.mobile.width}) {
     padding: 10px 50px;
     align-items: center;
+    gap: 20px;
   }
 `
 
@@ -67,7 +68,6 @@ export const LogoWithTitleContainer = styled.div`
   position: relative;
 
   @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
-    height: 170px;
     display: flex;
     align-items: center;
   }
@@ -98,4 +98,8 @@ export const LayoutAuthorizationTextContainer = styled.div`
   @media (max-width: ${(props) => props.theme.screens.tablet.width}) {
     display: none;
   }
+`
+
+export const LayoutAuthorizationStyledImg = styled.img`
+  width: 100%;
 `
