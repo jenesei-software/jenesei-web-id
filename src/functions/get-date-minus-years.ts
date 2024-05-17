@@ -8,7 +8,7 @@ export function getDateMinusYears(years: number): Date | null {
   const resultDate = new Date(
     currentDate.getFullYear() - years,
     currentDate.getMonth(),
-    currentDate.getDate()
+    currentDate.getDate(),
   )
 
   return resultDate
