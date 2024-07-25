@@ -1,5 +1,5 @@
 import {
-  GlobalStyles,
+  JeneseiGlobalStyles,
   JeneseiTheme,
   ProviderApp,
   TitleH1,
@@ -69,8 +69,7 @@ function App() {
       <ReactQueryDevtools />
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={JeneseiTheme}>
-          <GlobalStyles />
-
+          <JeneseiGlobalStyles />
           <ProviderApp
             defaultBgColor="black"
             isScrollOutlet={false}
