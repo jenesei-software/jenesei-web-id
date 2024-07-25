@@ -13,11 +13,6 @@
 3. would like to publish the project as a website? Then make a distribution build by generating static files:  
    `npm run build`
 
-4. Bundle Visualizer:
-   `npx vite-bundle-visualizer`
-   `npx vite-bundle-visualizer -t sunburst`
-   `npx vite-bundle-visualizer -t network`
-
 ### Files
 
 | Path            | Description                                                                          |
