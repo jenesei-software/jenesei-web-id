@@ -1,10 +1,9 @@
 import {
   JeneseiGlobalStyles,
   JeneseiTheme,
-  ProviderApp,
   ProviderCookie,
-  TitleH1,
-  TitleH6,
+  ProviderLocalStorage,
+  ProviderPermission,
 } from '@jenesei-software/jenesei-ui-react'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
@@ -17,54 +16,14 @@ import { i18n } from '@assets/i18n'
 import { queryClient } from '@core/query'
 import { router } from '@core/router'
 
-const defaultHeader = (
-  <div
-    style={{
-      backgroundColor: 'lightblue',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH1>Header</TitleH1>
-  </div>
-)
-const defaultFooter = (
-  <div
-    style={{
-      backgroundColor: 'lightcoral',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH1>Footer</TitleH1>
-  </div>
-)
-const defaultLeftSection = (
-  <div
-    style={{
-      backgroundColor: 'lightgreen',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH6>Left Section</TitleH6>
-  </div>
-)
-const defaultRightSection = (
-  <div
-    style={{
-      backgroundColor: 'lightyellow',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH6>Right Section</TitleH6>
-  </div>
-)
+import {
+  getValidateCookieValue,
+  validateCookieKeys,
+} from '@functions/validate-cookie-value'
+import {
+  getValidateLocalStorageValue,
+  validateLocalStorageKeys,
+} from '@functions/validate-local-storage-value'
 
 function App() {
   return (
@@ -73,36 +32,23 @@ function App() {
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={JeneseiTheme}>
           <JeneseiGlobalStyles />
-          <ProviderApp
-            defaultBgColor="white"
-            isScrollOutlet={false}
-            header={{
-              component: defaultHeader,
-              height: '80px',
-              heightTablet: '60px',
-              heightMobile: '40px',
-            }}
-            leftSection={{
-              component: defaultLeftSection,
-              width: '80px',
-              widthTablet: '60px',
-            }}
-            rightSection={{
-              component: defaultRightSection,
-              width: '80px',
-              widthTablet: '60px',
-            }}
-            footer={{
-              component: defaultFooter,
-              height: '80px',
-              heightTablet: '60px',
-              heightMobile: '40px',
+          <ProviderCookie
+            validate={{
+              validateKeys: validateCookieKeys,
+              getValidateCookieValue,
             }}
           >
-            <ProviderCookie validKeys={['token', 'zhopa']}>
-              <RouterProvider router={router} />
-            </ProviderCookie>
-          </ProviderApp>
+            <ProviderLocalStorage
+              validate={{
+                validateKeys: validateLocalStorageKeys,
+                getValidateLocalStorageValue,
+              }}
+            >
+              <ProviderPermission>
+                <RouterProvider router={router} />
+              </ProviderPermission>
+            </ProviderLocalStorage>
+          </ProviderCookie>
         </ThemeProvider>
       </I18nextProvider>
     </QueryClientProvider>

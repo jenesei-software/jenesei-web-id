@@ -1,4 +1,10 @@
 module.exports = {
+  globals: {
+    self: 'readonly',
+    clients: 'readonly',
+    Notification: 'readonly',
+    fetch: 'readonly',
+  },
   root: true,
   env: { browser: true, es2020: true },
   extends: [
