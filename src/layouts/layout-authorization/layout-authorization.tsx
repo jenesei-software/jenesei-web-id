@@ -65,7 +65,7 @@ function LayoutAuthorization() {
       </button>
 
       <div>geolocationPermission: {geolocationPermission}</div>
-      <div>notificationPermission: {notificationPermission}</div>
+      <div>notificationPermission: {String(notificationPermission)}</div>
       <div>serviceWorkerRegistered: {String(serviceWorkerRegistered)}</div>
       <div>pushNotificationSupported: {String(pushNotificationSupported)}</div>
       <div>pushSubscription: {String(pushSubscription)}</div>
