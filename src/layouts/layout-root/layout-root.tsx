@@ -1,4 +1,5 @@
 import {
+  Button,
   ProviderApp,
   TitleH1,
   TitleH6,
@@ -22,8 +23,8 @@ export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
 function LayoutRoot() {
   return (
     <ProviderApp
-      defaultBgColor="white"
-      isScrollOutlet={false}
+      defaultBgColor={"white"}
+      isScrollOutlet={true}
       header={{
         component: defaultHeader,
         height: '80px',
@@ -48,6 +49,7 @@ function LayoutRoot() {
       }}
     >
       <Outlet />
+      <Button genre={''} size={undefined}/>
     </ProviderApp>
   )
 }
