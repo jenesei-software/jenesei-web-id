@@ -4,6 +4,7 @@ import {
   ProviderCookie,
   ProviderLocalStorage,
   ProviderPermission,
+  usePreventOverscroll,
 } from '@jenesei-software/jenesei-ui-react'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
@@ -26,6 +27,7 @@ import {
 } from '@functions/validate-local-storage-value'
 
 function App() {
+  usePreventOverscroll();
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools />
