@@ -1,7 +1,7 @@
 import {
   useCookie,
   useLocalStorage,
-  usePermission
+  usePermission,
 } from '@jenesei-software/jenesei-ui-react'
 import { createRoute } from '@tanstack/react-router'
 
@@ -36,7 +36,7 @@ function LayoutAuthorization() {
   } = usePermission()
   // const { location } = useGeolocation()
   return (
-    <>
+    <div style={{ padding: '10px',backgroundColor:'azure' }}>
       <button onClick={() => removeCookieValue('token')}>rem</button>
       <button onClick={() => setCookie('token', 2)}>set</button>
       <button onClick={() => checkCookie()}>check</button>
@@ -73,6 +73,6 @@ function LayoutAuthorization() {
         location: {String(location?.coords.latitude)},{' '}
         {String(location?.coords.longitude)}
       </div> */}
-    </>
+    </div>
   )
 }
