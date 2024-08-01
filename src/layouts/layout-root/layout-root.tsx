@@ -1,8 +1,7 @@
 import {
-  Button,
   ProviderApp,
   TitleH1,
-  TitleH6,
+  TitleH6
 } from '@jenesei-software/jenesei-ui-react'
 import { QueryClient } from '@tanstack/react-query'
 import {
@@ -49,7 +48,6 @@ function LayoutRoot() {
       }}
     >
       <Outlet />
-      <Button genre={''} size={undefined}/>
     </ProviderApp>
   )
 }
