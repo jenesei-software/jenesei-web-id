@@ -36,7 +36,9 @@ function LayoutAuthorization() {
   } = usePermission()
   // const { location } = useGeolocation()
   return (
-    <div style={{ padding: '10px',backgroundColor:'azure' }}>
+    <div
+      style={{ padding: '10px', height: '1000px', backgroundColor: 'azure' }}
+    >
       <button onClick={() => removeCookieValue('token')}>rem</button>
       <button onClick={() => setCookie('token', 2)}>set</button>
       <button onClick={() => checkCookie()}>check</button>
