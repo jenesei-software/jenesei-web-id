@@ -1,4 +1,7 @@
 import {
+  Button,
+  Stack,
+  TitleH6,
   useCookie,
   useLocalStorage,
   usePermission,
@@ -34,47 +37,107 @@ function LayoutAuthorization() {
     registerServiceWorker,
     unregisterServiceWorker,
   } = usePermission()
-  // const { location } = useGeolocation()
   return (
-    <div
-      style={{ padding: '10px', height: '1000px', backgroundColor: 'azure' }}
-    >
-      <button onClick={() => removeCookieValue('token')}>rem</button>
-      <button onClick={() => setCookie('token', 2)}>set</button>
-      <button onClick={() => checkCookie()}>check</button>
-      <div>{cookieValues?.token}</div>
+    <Stack $gap="12px" $flexDirection="column" $p="12px">
+      <Stack $gap="6px" $flexWrap='wrap'>
+        <Button
+          genre={'redTransparent'}
+          onClick={() => removeCookieValue('token')}
+          size={'small'}
+        >
+          Remove Coolie [token]
+        </Button>
+        <Button
+          genre={'productBorder'}
+          onClick={() => setCookie('token', 2)}
+          size={'small'}
+        >
+          Set Coolie [token]
+        </Button>
+        <Button
+          genre={'grayBorder'}
+          onClick={() => checkCookie()}
+          size={'small'}
+        >
+          Check Coolie [token]
+        </Button>
+      </Stack>
 
-      <button onClick={() => removeLocalStorageValue('token')}>rem</button>
-      <button onClick={() => setLocalStorage('token', 2)}>set</button>
-      <button onClick={() => checkLocalStorage()}>check</button>
+      <TitleH6>Cookie [token]: {cookieValues?.token}</TitleH6>
 
-      <div>{localStorageValues?.token}</div>
+      <Stack $gap="6px" $flexWrap='wrap'>
+        <Button
+          genre={'redTransparent'}
+          onClick={() => removeLocalStorageValue('token')}
+          size={'small'}
+        >
+          Remove LocalStorage [token]
+        </Button>
+        <Button
+          genre={'productBorder'}
+          onClick={() => setLocalStorage('token', 2)}
+          size={'small'}
+        >
+          Set LocalStorage [token]
+        </Button>
+        <Button
+          genre={'grayBorder'}
+          onClick={() => checkLocalStorage()}
+          size={'small'}
+        >
+          Check LocalStorage [token]
+        </Button>
+      </Stack>
 
-      <button onClick={() => requestGeolocationPermission()}>
-        requestGeolocationPermission
-      </button>
-      <button onClick={() => requestNotificationPermission()}>
-        requestNotificationPermission
-      </button>
-      <button onClick={() => registerServiceWorker()}>
-        registerServiceWorker
-      </button>
-      <button onClick={() => unregisterServiceWorker()}>
-        unregisterServiceWorker
-      </button>
-      <button onClick={() => setupPushNotifications('vapidKey')}>
-        setupPushNotifications
-      </button>
+      <TitleH6>Local Storage [token]: {localStorageValues?.token}</TitleH6>
 
-      <div>geolocationPermission: {geolocationPermission}</div>
-      <div>notificationPermission: {String(notificationPermission)}</div>
-      <div>serviceWorkerRegistered: {String(serviceWorkerRegistered)}</div>
-      <div>pushNotificationSupported: {String(pushNotificationSupported)}</div>
-      <div>pushSubscription: {String(pushSubscription)}</div>
-      {/* <div>
-        location: {String(location?.coords.latitude)},{' '}
-        {String(location?.coords.longitude)}
-      </div> */}
-    </div>
+      <Button
+        genre={'productBorder'}
+        onClick={() => requestGeolocationPermission()}
+        size={'small'}
+      >
+        Request Geolocation Permission
+      </Button>
+      <Button
+        genre={'productBorder'}
+        onClick={() => requestNotificationPermission()}
+        size={'small'}
+      >
+        Request Notification Permission
+      </Button>
+      <Button
+        genre={'productBorder'}
+        onClick={() => registerServiceWorker()}
+        size={'small'}
+      >
+        Register ServiceWorker
+      </Button>
+      <Button
+        genre={'productBorder'}
+        onClick={() => unregisterServiceWorker()}
+        size={'small'}
+      >
+        UnRegister ServiceWorker
+      </Button>
+      <Button
+        genre={'productBorder'}
+        onClick={() => setupPushNotifications('vapidKey')}
+        size={'small'}
+      >
+        Setup Push Notifications
+      </Button>
+
+      <TitleH6>geolocationPermission: {geolocationPermission}</TitleH6>
+      <TitleH6>
+        notificationPermission: {String(notificationPermission)}
+      </TitleH6>
+      <TitleH6>
+        serviceWorkerRegistered: {String(serviceWorkerRegistered)}
+      </TitleH6>
+      <TitleH6>
+        pushNotificationSupported: {String(pushNotificationSupported)}
+      </TitleH6>
+      <TitleH6>pushSubscription: {String(pushSubscription)}</TitleH6>
+    </Stack>
   )
 }

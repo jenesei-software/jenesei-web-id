@@ -25,6 +25,13 @@ import {
   validateLocalStorageKeys,
 } from '@functions/validate-local-storage-value'
 
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
+import '@fontsource/inter/700.css'
+
+import 'react-ripple-click/dist/index.css'
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>

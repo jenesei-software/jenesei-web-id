@@ -22,7 +22,7 @@ export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
 function LayoutRoot() {
   return (
     <ProviderApp
-      defaultBgColor={"white"}
+      defaultBgColor={'black05'}
       isScrollOutlet={true}
       header={{
         component: defaultHeader,
