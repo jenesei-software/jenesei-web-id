@@ -2,6 +2,7 @@ import {
   Button,
   Stack,
   TitleH6,
+  useAppContext,
   useCookie,
   useLocalStorage,
   usePermission,
@@ -19,6 +20,7 @@ export const LayoutAuthorizationRoute = createRoute({
 function LayoutAuthorization() {
   const { removeCookieValue, setCookie, cookieValues, checkCookie } =
     useCookie()
+  const { changeBgColor, setDefaultBgColor } = useAppContext()
   const {
     checkLocalStorage,
     setLocalStorage,
@@ -39,33 +41,56 @@ function LayoutAuthorization() {
   } = usePermission()
   return (
     <Stack $gap="12px" $flexDirection="column" $p="12px">
-      <Stack $gap="6px" $flexWrap='wrap'>
+      <Stack $gap="6px" $flexWrap="wrap">
+        <Button
+          genre={'grayBorder'}
+          onClick={() => changeBgColor('blueActive')}
+          size={'small'}
+        >
+          Change Color - blueActive
+        </Button>
+        <Button
+          genre={'grayBorder'}
+          onClick={() => changeBgColor('black80')}
+          size={'small'}
+        >
+          Change Color - black80
+        </Button>
+        <Button
+          genre={'grayBorder'}
+          onClick={() => setDefaultBgColor()}
+          size={'small'}
+        >
+          Set Default Color
+        </Button>
+      </Stack>
+      <Stack $gap="6px" $flexWrap="wrap">
         <Button
           genre={'redTransparent'}
           onClick={() => removeCookieValue('token')}
           size={'small'}
         >
-          Remove Coolie [token]
+          Remove Cookie [token]
         </Button>
         <Button
           genre={'productBorder'}
           onClick={() => setCookie('token', 2)}
           size={'small'}
         >
-          Set Coolie [token]
+          Set Cookie [token]
         </Button>
         <Button
           genre={'grayBorder'}
           onClick={() => checkCookie()}
           size={'small'}
         >
-          Check Coolie [token]
+          Check Cookie [token]
         </Button>
       </Stack>
 
       <TitleH6>Cookie [token]: {cookieValues?.token}</TitleH6>
 
-      <Stack $gap="6px" $flexWrap='wrap'>
+      <Stack $gap="6px" $flexWrap="wrap">
         <Button
           genre={'redTransparent'}
           onClick={() => removeLocalStorageValue('token')}
