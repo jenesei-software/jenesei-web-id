@@ -51,10 +51,10 @@ function LayoutAuthorization() {
         </Button>
         <Button
           genre={'grayBorder'}
-          onClick={() => changeBgColor('black80')}
+          onClick={() => changeBgColor('grayMonica')}
           size={'small'}
         >
-          Change Color - black80
+          Change Color - grayMonica
         </Button>
         <Button
           genre={'grayBorder'}
