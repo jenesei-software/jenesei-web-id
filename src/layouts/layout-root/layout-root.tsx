@@ -22,7 +22,7 @@ export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
 function LayoutRoot() {
   return (
     <ProviderApp
-      defaultBgColor={'black05'}
+      defaultBgColor={'whiteStandard'}
       isScrollOutlet={true}
       defaultDescription='The best authentication service.'
       defaultTitle='Jenesei ID'
