@@ -24,6 +24,8 @@ function LayoutRoot() {
     <ProviderApp
       defaultBgColor={'black05'}
       isScrollOutlet={true}
+      defaultDescription='The best authentication service.'
+      defaultTitle='Jenesei ID'
       header={{
         component: defaultHeader,
         height: '80px',
