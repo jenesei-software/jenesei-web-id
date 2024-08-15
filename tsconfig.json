@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "module": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -34,6 +34,6 @@
       "@functions/*": ["src/functions/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "generate-manifest.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

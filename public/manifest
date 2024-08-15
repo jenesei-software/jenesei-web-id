@@ -1,0 +1,48 @@
+{
+  "display": "standalone",
+  "orientation": "any",
+  "name": "Jenesei ID",
+  "short_name": "Jen. ID",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "description": "The best authentication service.",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icons/icon-64x64.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
