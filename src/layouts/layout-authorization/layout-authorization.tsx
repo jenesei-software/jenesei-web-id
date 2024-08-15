@@ -20,7 +20,12 @@ export const LayoutAuthorizationRoute = createRoute({
 function LayoutAuthorization() {
   const { removeCookieValue, setCookie, cookieValues, checkCookie } =
     useCookie()
-  const { changeBgColor, setDefaultBgColor } = useAppContext()
+  const {
+    changeBgColor,
+    setDefaultBgColor,
+    changeStatusBarColor,
+    setDefaultStatusBarColor,
+  } = useAppContext()
   const {
     checkLocalStorage,
     setLocalStorage,
@@ -44,24 +49,47 @@ function LayoutAuthorization() {
       <Stack $gap="6px" $flexWrap="wrap">
         <Button
           genre={'grayBorder'}
-          onClick={() => changeBgColor('blueActive')}
+          onClick={() => changeStatusBarColor('greenGoogle')}
           size={'small'}
         >
-          Change Color - blueActive
+          Change Status Bar Color - greenGoogle
+        </Button>
+        <Button
+          genre={'grayBorder'}
+          onClick={() => changeStatusBarColor('grayMonica')}
+          size={'small'}
+        >
+          Change Status Bar Color - grayMonica
+        </Button>
+        <Button
+          genre={'grayBorder'}
+          onClick={() => setDefaultStatusBarColor()}
+          size={'small'}
+        >
+          Set Default Status Bar Color
+        </Button>
+      </Stack>
+      <Stack $gap="6px" $flexWrap="wrap">
+        <Button
+          genre={'grayBorder'}
+          onClick={() => changeBgColor('greenGoogle')}
+          size={'small'}
+        >
+          Change Bg Color - greenGoogle
         </Button>
         <Button
           genre={'grayBorder'}
           onClick={() => changeBgColor('grayMonica')}
           size={'small'}
         >
-          Change Color - grayMonica
+          Change Bg Color - grayMonica
         </Button>
         <Button
           genre={'grayBorder'}
           onClick={() => setDefaultBgColor()}
           size={'small'}
         >
-          Set Default Color
+          Set Default Bg Color
         </Button>
       </Stack>
       <Stack $gap="6px" $flexWrap="wrap">

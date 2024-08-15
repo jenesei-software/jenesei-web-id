@@ -1,0 +1,10 @@
+{
+  "display": "standalone",
+  "orientation": "any",
+  "name": "{{VITE_DEFAULT_NAME}}",
+  "short_name": "{{VITE_DEFAULT_SHORTNAME}}",
+  "theme_color": "{{VITE_DEFAULT_THEME_COLOR}}",
+  "background_color": "{{VITE_DEFAULT_BACKGROUND_COLOR}}",
+  "description": "{{VITE_DEFAULT_DESCRIPTION}}",
+  "start_url": "/"
+}

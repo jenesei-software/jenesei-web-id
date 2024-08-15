@@ -1,7 +1,7 @@
 import {
   ProviderApp,
   TitleH1,
-  TitleH6
+  TitleH6,
 } from '@jenesei-software/jenesei-ui-react'
 import { QueryClient } from '@tanstack/react-query'
 import {
@@ -9,6 +9,8 @@ import {
   Outlet,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
+
+import { useEnvironment } from '@hooks/use-environment'
 
 export interface IContext {
   queryClient: QueryClient
@@ -20,12 +22,14 @@ export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
 })
 
 function LayoutRoot() {
+  const { title, description } = useEnvironment()
   return (
     <ProviderApp
-      defaultBgColor={'whiteStandard'}
+      defaultTitle={title}
+      defaultBgColor="whiteStandard"
+      defaultStatusBarColor="whiteStandard"
+      defaultDescription={description}
       isScrollOutlet={true}
-      defaultDescription='The best authentication service.'
-      defaultTitle='Jenesei ID'
       header={{
         component: defaultHeader,
         height: '80px',
@@ -57,7 +61,7 @@ function LayoutRoot() {
 const defaultHeader = (
   <div
     style={{
-      backgroundColor: 'lightblue',
+      backgroundColor: 'transparent',
       padding: '10px',
       height: '100%',
       width: '100%',
