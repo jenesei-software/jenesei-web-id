@@ -8,6 +8,7 @@ import {
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { RouterProvider } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { ThemeProvider } from 'styled-components'
 
@@ -29,10 +30,39 @@ import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
 import '@fontsource/inter/600.css'
 import '@fontsource/inter/700.css'
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'
 
 import 'react-ripple-click/dist/index.css'
 
 function App() {
+  useEffect(() => {
+    const loader = document.querySelector('.preview-wrapper') as HTMLElement
+
+    const handleDomReady = () => {
+      console.log('DOM is ready')
+      if (loader) {
+        loader.style.transform = 'translateY(20px)'
+        loader.style.opacity = '0'
+        setTimeout(() => {
+          console.log('Removing loader')
+          loader.remove()
+        }, 500)
+      }
+    }
+
+    if (document.readyState === 'complete') {
+      handleDomReady()
+    } else {
+      window.addEventListener('load', handleDomReady)
+    }
+
+    return () => {
+      window.removeEventListener('load', handleDomReady)
+    }
+  }, [])
+
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools />

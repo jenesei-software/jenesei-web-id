@@ -45,152 +45,162 @@ function LayoutAuthorization() {
     unregisterServiceWorker,
   } = usePermission()
   return (
-    <Stack $gap="12px" $flexDirection="column" $p="12px">
-      <Stack $gap="6px" $flexWrap="wrap">
+    <Stack gap="12px" flexDirection="column" p="12px">
+      <>
+        <Stack gap="6px" flexWrap="wrap">
+          <>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => changeStatusBarColor('greenGoogle')}
+              size={'small'}
+            >
+              Change Status Bar Color - greenGoogle
+            </Button>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => changeStatusBarColor('grayMonica')}
+              size={'small'}
+            >
+              Change Status Bar Color - grayMonica
+            </Button>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => setDefaultStatusBarColor()}
+              size={'small'}
+            >
+              Set Default Status Bar Color
+            </Button>
+          </>
+        </Stack>
+        <Stack gap="6px" flexWrap="wrap">
+          <>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => changeBgColor('greenGoogle')}
+              size={'small'}
+            >
+              Change Bg Color - greenGoogle
+            </Button>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => changeBgColor('grayMonica')}
+              size={'small'}
+            >
+              Change Bg Color - grayMonica
+            </Button>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => setDefaultBgColor()}
+              size={'small'}
+            >
+              Set Default Bg Color
+            </Button>
+          </>
+        </Stack>
+        <Stack gap="6px" flexWrap="wrap">
+          <>
+            <Button
+              genre={'redTransparent'}
+              onClick={() => removeCookieValue('token')}
+              size={'small'}
+            >
+              Remove Cookie [token]
+            </Button>
+            <Button
+              genre={'productBorder'}
+              onClick={() => setCookie('token', 2)}
+              size={'small'}
+            >
+              Set Cookie [token]
+            </Button>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => checkCookie()}
+              size={'small'}
+            >
+              Check Cookie [token]
+            </Button>
+          </>
+        </Stack>
+
+        <TitleH6>Cookie [token]: {cookieValues?.token}</TitleH6>
+
+        <Stack gap="6px" flexWrap="wrap">
+          <>
+            <Button
+              genre={'redTransparent'}
+              onClick={() => removeLocalStorageValue('token')}
+              size={'small'}
+            >
+              Remove LocalStorage [token]
+            </Button>
+            <Button
+              genre={'productBorder'}
+              onClick={() => setLocalStorage('token', 2)}
+              size={'small'}
+            >
+              Set LocalStorage [token]
+            </Button>
+            <Button
+              genre={'grayBorder'}
+              onClick={() => checkLocalStorage()}
+              size={'small'}
+            >
+              Check LocalStorage [token]
+            </Button>
+          </>
+        </Stack>
+
+        <TitleH6>Local Storage [token]: {localStorageValues?.token}</TitleH6>
+
         <Button
-          genre={'grayBorder'}
-          onClick={() => changeStatusBarColor('greenGoogle')}
+          genre={'productBorder'}
+          onClick={() => requestGeolocationPermission()}
           size={'small'}
         >
-          Change Status Bar Color - greenGoogle
-        </Button>
-        <Button
-          genre={'grayBorder'}
-          onClick={() => changeStatusBarColor('grayMonica')}
-          size={'small'}
-        >
-          Change Status Bar Color - grayMonica
-        </Button>
-        <Button
-          genre={'grayBorder'}
-          onClick={() => setDefaultStatusBarColor()}
-          size={'small'}
-        >
-          Set Default Status Bar Color
-        </Button>
-      </Stack>
-      <Stack $gap="6px" $flexWrap="wrap">
-        <Button
-          genre={'grayBorder'}
-          onClick={() => changeBgColor('greenGoogle')}
-          size={'small'}
-        >
-          Change Bg Color - greenGoogle
-        </Button>
-        <Button
-          genre={'grayBorder'}
-          onClick={() => changeBgColor('grayMonica')}
-          size={'small'}
-        >
-          Change Bg Color - grayMonica
-        </Button>
-        <Button
-          genre={'grayBorder'}
-          onClick={() => setDefaultBgColor()}
-          size={'small'}
-        >
-          Set Default Bg Color
-        </Button>
-      </Stack>
-      <Stack $gap="6px" $flexWrap="wrap">
-        <Button
-          genre={'redTransparent'}
-          onClick={() => removeCookieValue('token')}
-          size={'small'}
-        >
-          Remove Cookie [token]
+          Request Geolocation Permission
         </Button>
         <Button
           genre={'productBorder'}
-          onClick={() => setCookie('token', 2)}
+          onClick={() => requestNotificationPermission()}
           size={'small'}
         >
-          Set Cookie [token]
-        </Button>
-        <Button
-          genre={'grayBorder'}
-          onClick={() => checkCookie()}
-          size={'small'}
-        >
-          Check Cookie [token]
-        </Button>
-      </Stack>
-
-      <TitleH6>Cookie [token]: {cookieValues?.token}</TitleH6>
-
-      <Stack $gap="6px" $flexWrap="wrap">
-        <Button
-          genre={'redTransparent'}
-          onClick={() => removeLocalStorageValue('token')}
-          size={'small'}
-        >
-          Remove LocalStorage [token]
+          Request Notification Permission
         </Button>
         <Button
           genre={'productBorder'}
-          onClick={() => setLocalStorage('token', 2)}
+          onClick={() => registerServiceWorker()}
           size={'small'}
         >
-          Set LocalStorage [token]
+          Register ServiceWorker
         </Button>
         <Button
-          genre={'grayBorder'}
-          onClick={() => checkLocalStorage()}
+          genre={'productBorder'}
+          onClick={() => unregisterServiceWorker()}
           size={'small'}
         >
-          Check LocalStorage [token]
+          UnRegister ServiceWorker
         </Button>
-      </Stack>
+        <Button
+          genre={'productBorder'}
+          onClick={() => setupPushNotifications('vapidKey')}
+          size={'small'}
+        >
+          Setup Push Notifications
+        </Button>
 
-      <TitleH6>Local Storage [token]: {localStorageValues?.token}</TitleH6>
-
-      <Button
-        genre={'productBorder'}
-        onClick={() => requestGeolocationPermission()}
-        size={'small'}
-      >
-        Request Geolocation Permission
-      </Button>
-      <Button
-        genre={'productBorder'}
-        onClick={() => requestNotificationPermission()}
-        size={'small'}
-      >
-        Request Notification Permission
-      </Button>
-      <Button
-        genre={'productBorder'}
-        onClick={() => registerServiceWorker()}
-        size={'small'}
-      >
-        Register ServiceWorker
-      </Button>
-      <Button
-        genre={'productBorder'}
-        onClick={() => unregisterServiceWorker()}
-        size={'small'}
-      >
-        UnRegister ServiceWorker
-      </Button>
-      <Button
-        genre={'productBorder'}
-        onClick={() => setupPushNotifications('vapidKey')}
-        size={'small'}
-      >
-        Setup Push Notifications
-      </Button>
-
-      <TitleH6>geolocationPermission: {geolocationPermission}</TitleH6>
-      <TitleH6>
-        notificationPermission: {String(notificationPermission)}
-      </TitleH6>
-      <TitleH6>
-        serviceWorkerRegistered: {String(serviceWorkerRegistered)}
-      </TitleH6>
-      <TitleH6>
-        pushNotificationSupported: {String(pushNotificationSupported)}
-      </TitleH6>
-      <TitleH6>pushSubscription: {String(pushSubscription)}</TitleH6>
+        <TitleH6>geolocationPermission: {geolocationPermission}</TitleH6>
+        <TitleH6>
+          notificationPermission: {String(notificationPermission)}
+        </TitleH6>
+        <TitleH6>
+          serviceWorkerRegistered: {String(serviceWorkerRegistered)}
+        </TitleH6>
+        <TitleH6>
+          pushNotificationSupported: {String(pushNotificationSupported)}
+        </TitleH6>
+        <TitleH6>pushSubscription: {String(pushSubscription)}</TitleH6>
+      </>
     </Stack>
   )
 }
