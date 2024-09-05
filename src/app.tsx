@@ -4,11 +4,12 @@ import {
   ProviderCookie,
   ProviderLocalStorage,
   ProviderPermission,
+  useRemovePreviewLoader,
 } from '@jenesei-software/jenesei-ui-react'
+import { ProviderAxiosWebId } from '@jenesei-software/jenesei-web-id-api'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { RouterProvider } from '@tanstack/react-router'
-import { useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { ThemeProvider } from 'styled-components'
 
@@ -36,32 +37,10 @@ import '@fontsource/roboto/700.css'
 
 import 'react-ripple-click/dist/index.css'
 
+const baseURL = import.meta.env.VITE_BASE_URL || ''
+
 function App() {
-  useEffect(() => {
-    const loader = document.querySelector('.preview-wrapper') as HTMLElement
-
-    const handleDomReady = () => {
-      console.log('DOM is ready')
-      if (loader) {
-        loader.style.transform = 'translateY(20px)'
-        loader.style.opacity = '0'
-        setTimeout(() => {
-          console.log('Removing loader')
-          loader.remove()
-        }, 500)
-      }
-    }
-
-    if (document.readyState === 'complete') {
-      handleDomReady()
-    } else {
-      window.addEventListener('load', handleDomReady)
-    }
-
-    return () => {
-      window.removeEventListener('load', handleDomReady)
-    }
-  }, [])
+  useRemovePreviewLoader()
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -69,23 +48,25 @@ function App() {
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={JeneseiTheme}>
           <JeneseiGlobalStyles />
-          <ProviderCookie
-            validate={{
-              validateKeys: validateCookieKeys,
-              getValidateCookieValue,
-            }}
-          >
-            <ProviderLocalStorage
+          <ProviderAxiosWebId baseURL={baseURL} cookieAccessTokenName={'token'}>
+            <ProviderCookie
               validate={{
-                validateKeys: validateLocalStorageKeys,
-                getValidateLocalStorageValue,
+                validateKeys: validateCookieKeys,
+                getValidateCookieValue,
               }}
             >
-              <ProviderPermission>
-                <RouterProvider router={router} />
-              </ProviderPermission>
-            </ProviderLocalStorage>
-          </ProviderCookie>
+              <ProviderLocalStorage
+                validate={{
+                  validateKeys: validateLocalStorageKeys,
+                  getValidateLocalStorageValue,
+                }}
+              >
+                <ProviderPermission>
+                  <RouterProvider router={router} />
+                </ProviderPermission>
+              </ProviderLocalStorage>
+            </ProviderCookie>
+          </ProviderAxiosWebId>
         </ThemeProvider>
       </I18nextProvider>
     </QueryClientProvider>
