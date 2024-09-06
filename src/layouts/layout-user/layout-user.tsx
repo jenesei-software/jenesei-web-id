@@ -1,5 +1,15 @@
-import { Stack } from '@jenesei-software/jenesei-ui-react'
+import { Navigate, Outlet } from '@tanstack/react-router'
+
+import { LayoutUserWrapper } from '.'
 
 export function LayoutUser() {
-  return <Stack gap="12px" flexDirection="column" p="12px"></Stack>
+  return (
+    <LayoutUserWrapper>
+      <Outlet />
+    </LayoutUserWrapper>
+  )
+}
+
+export function LayoutUserNotFound() {
+  return <Navigate to="/user/profile" />
 }

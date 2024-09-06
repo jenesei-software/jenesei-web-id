@@ -6,9 +6,18 @@ import {
   createRouter,
 } from '@tanstack/react-router'
 
-import { LayoutAuthorization } from '@layouts/layout-authorization'
-import { LayoutRoot, LayoutRootNotFound } from '@layouts/layout-root'
-import { LayoutUser } from '@layouts/layout-user'
+import {
+  LayoutAuthorization,
+  LayoutAuthorizationNotFound,
+} from '@layouts/layout-authorization'
+import { LayoutRoot } from '@layouts/layout-root'
+import { LayoutUser, LayoutUserNotFound } from '@layouts/layout-user'
+
+import { AuthSignIn } from '@pages/auth-sign-in'
+import { AuthSignUp } from '@pages/auth-sign-up'
+import { UserProfile } from '@pages/user-profile'
+
+import { validateLayoutRootRouteSearch } from '.'
 
 export interface IContext {
   queryClient: QueryClient
@@ -17,23 +26,47 @@ export interface IContext {
 
 export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
   component: LayoutRoot,
-  notFoundComponent: LayoutRootNotFound,
+  validateSearch: validateLayoutRootRouteSearch,
 })
 
 export const LayoutUserRoute = createRoute({
   getParentRoute: () => LayoutRootRoute,
   component: LayoutUser,
+  notFoundComponent: LayoutUserNotFound,
   path: '/user',
+})
+
+export const UserProfileRoute = createRoute({
+  getParentRoute: () => LayoutUserRoute,
+  component: UserProfile,
+  path: '/profile',
 })
 
 export const LayoutAuthorizationRoute = createRoute({
   getParentRoute: () => LayoutRootRoute,
   component: LayoutAuthorization,
+  notFoundComponent: LayoutAuthorizationNotFound,
   path: '/auth',
 })
+
+export const AuthSignInRoute = createRoute({
+  getParentRoute: () => LayoutAuthorizationRoute,
+  component: AuthSignIn,
+  path: '/sign-in',
+})
+export const AuthSignUpRoute = createRoute({
+  getParentRoute: () => LayoutAuthorizationRoute,
+  component: AuthSignUp,
+  path: '/sign-up',
+})
 const routeTree = LayoutRootRoute.addChildren({
-  LayoutAuthorizationRoute,
-  LayoutUserRoute,
+  LayoutAuthorizationRoute: LayoutAuthorizationRoute.addChildren({
+    AuthSignUpRoute,
+    AuthSignInRoute,
+  }),
+  LayoutUserRoute: LayoutUserRoute.addChildren({
+    UserProfileRoute,
+  }),
 })
 
 export const router = createRouter({

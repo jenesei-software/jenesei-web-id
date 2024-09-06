@@ -35,6 +35,7 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
 import 'react-ripple-click/dist/index.css'
+import 'react-toggle/style.css'
 
 const baseURL = import.meta.env.VITE_BASE_URL || ''
 
@@ -46,7 +47,11 @@ function App() {
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={JeneseiTheme}>
           <JeneseiGlobalStyles />
-          <ProviderAxiosWebId baseURL={baseURL} cookieAccessTokenName={'token'}>
+          <ProviderAxiosWebId
+            baseURL={baseURL}
+            availabilityCookieName={'auth_status'}
+            availabilityCookieDomain=".jenesei.ru"
+          >
             <ProviderCookie
               validate={{
                 validateKeys: validateCookieKeys,
