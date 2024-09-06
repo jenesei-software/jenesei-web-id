@@ -2,7 +2,6 @@ import {
   JeneseiGlobalStyles,
   JeneseiTheme,
   ProviderCookie,
-  ProviderLocalStorage,
   ProviderPermission,
   useRemovePreviewLoader,
 } from '@jenesei-software/jenesei-ui-react'
@@ -19,10 +18,6 @@ import {
   getValidateCookieValue,
   validateCookieKeys,
 } from '@functions/validate-cookie-value'
-import {
-  getValidateLocalStorageValue,
-  validateLocalStorageKeys,
-} from '@functions/validate-local-storage-value'
 
 import { LayoutRouter } from '@layouts/layout-router'
 
