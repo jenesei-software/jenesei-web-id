@@ -8,15 +8,12 @@ import {
 } from '@jenesei-software/jenesei-ui-react'
 import { ProviderAxiosWebId } from '@jenesei-software/jenesei-web-id-api'
 import { QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { RouterProvider } from '@tanstack/react-router'
 import { I18nextProvider } from 'react-i18next'
 import { ThemeProvider } from 'styled-components'
 
 import { i18n } from '@assets/i18n'
 
 import { queryClient } from '@core/query'
-import { router } from '@core/router'
 
 import {
   getValidateCookieValue,
@@ -26,6 +23,8 @@ import {
   getValidateLocalStorageValue,
   validateLocalStorageKeys,
 } from '@functions/validate-local-storage-value'
+
+import { LayoutRouter } from '@layouts/layout-router'
 
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
@@ -44,7 +43,6 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools />
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={JeneseiTheme}>
           <JeneseiGlobalStyles />
@@ -62,7 +60,7 @@ function App() {
                 }}
               >
                 <ProviderPermission>
-                  <RouterProvider router={router} />
+                  <LayoutRouter />
                 </ProviderPermission>
               </ProviderLocalStorage>
             </ProviderCookie>

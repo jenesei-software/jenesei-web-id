@@ -2,11 +2,11 @@ import '@jenesei-software/jenesei-ui-react'
 
 declare module '@jenesei-software/jenesei-ui-react' {
   export interface ValidCookieObject {
-    token: number
-    test: string
+    access_token: string
+    refresh_token: string
   }
   export interface ValidLocalStorageObject {
-    token: number
-    test: string
+    access_token: string
+    refresh_token: string
   }
 }

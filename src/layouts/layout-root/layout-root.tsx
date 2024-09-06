@@ -1,108 +1,33 @@
-import {
-  ProviderApp,
-  TitleH1,
-  TitleH6,
-} from '@jenesei-software/jenesei-ui-react'
-import { QueryClient } from '@tanstack/react-query'
-import {
-  Navigate,
-  Outlet,
-  createRootRouteWithContext,
-} from '@tanstack/react-router'
+import { ProviderApp } from '@jenesei-software/jenesei-ui-react'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { Navigate, Outlet } from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 
 import { useEnvironment } from '@hooks/use-environment'
 
-export interface IContext {
-  queryClient: QueryClient
-}
-
-export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
-  component: LayoutRoot,
-  notFoundComponent: () => <Navigate to="/auth" />,
-})
-
-function LayoutRoot() {
-  const { title, description } = useEnvironment()
+export function LayoutRoot() {
+  const { title, description, mode } = useEnvironment()
   return (
-    <ProviderApp
-      defaultTitle={title}
-      defaultBgColor="whiteStandard"
-      defaultStatusBarColor="whiteStandard"
-      defaultDescription={description}
-      isScrollOutlet={true}
-      header={{
-        component: defaultHeader,
-        height: '80px',
-        heightTablet: '60px',
-        heightMobile: '40px',
-      }}
-      leftAside={{
-        component: defaultLeftAside,
-        width: '80px',
-        widthTablet: '60px',
-      }}
-      rightAside={{
-        component: defaultRightAside,
-        width: '80px',
-        widthTablet: '60px',
-      }}
-      footer={{
-        component: defaultFooter,
-        height: '80px',
-        heightTablet: '60px',
-        heightMobile: '40px',
-      }}
-    >
-      <Outlet />
-    </ProviderApp>
+    <>
+      <ProviderApp
+        defaultTitle={title}
+        defaultBgColor="whiteStandard"
+        defaultStatusBarColor="whiteStandard"
+        defaultDescription={description}
+        isScrollOutlet={true}
+      >
+        <Outlet />
+      </ProviderApp>
+      {mode === 'development' && (
+        <>
+          <ReactQueryDevtools buttonPosition="bottom-left" />
+          <TanStackRouterDevtools position="bottom-right" />
+        </>
+      )}
+    </>
   )
 }
 
-const defaultHeader = (
-  <div
-    style={{
-      backgroundColor: 'transparent',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH1>Header</TitleH1>
-  </div>
-)
-const defaultFooter = (
-  <div
-    style={{
-      backgroundColor: 'lightcoral',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH1>Footer</TitleH1>
-  </div>
-)
-const defaultLeftAside = (
-  <div
-    style={{
-      backgroundColor: 'lightgreen',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH6>Left Aside</TitleH6>
-  </div>
-)
-const defaultRightAside = (
-  <div
-    style={{
-      backgroundColor: 'lightyellow',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH6>Right Aside</TitleH6>
-  </div>
-)
+export function LayoutRootNotFound() {
+  return <Navigate to="/auth" />
+}

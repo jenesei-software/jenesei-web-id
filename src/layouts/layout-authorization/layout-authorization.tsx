@@ -7,17 +7,8 @@ import {
   useLocalStorage,
   usePermission,
 } from '@jenesei-software/jenesei-ui-react'
-import { createRoute } from '@tanstack/react-router'
 
-import { LayoutRootRoute } from '@layouts/layout-root'
-
-export const LayoutAuthorizationRoute = createRoute({
-  getParentRoute: () => LayoutRootRoute,
-  component: LayoutAuthorization,
-  path: '/auth',
-})
-
-function LayoutAuthorization() {
+export function LayoutAuthorization() {
   const { removeCookieValue, setCookie, cookieValues, checkCookie } =
     useCookie()
   const {
@@ -101,14 +92,16 @@ function LayoutAuthorization() {
           <>
             <Button
               genre={'redTransparent'}
-              onClick={() => removeCookieValue('token')}
+              onClick={() => removeCookieValue('access_token')}
               size={'small'}
             >
               Remove Cookie [token]
             </Button>
             <Button
               genre={'productBorder'}
-              onClick={() => setCookie('token', 2)}
+              onClick={() =>
+                setCookie('access_token', encodeURIComponent('test'))
+              }
               size={'small'}
             >
               Set Cookie [token]
@@ -123,20 +116,20 @@ function LayoutAuthorization() {
           </>
         </Stack>
 
-        <TitleH6>Cookie [token]: {cookieValues?.token}</TitleH6>
+        <TitleH6>Cookie [token]: {cookieValues?.access_token}</TitleH6>
 
         <Stack gap="6px" flexWrap="wrap">
           <>
             <Button
               genre={'redTransparent'}
-              onClick={() => removeLocalStorageValue('token')}
+              onClick={() => removeLocalStorageValue('access_token')}
               size={'small'}
             >
               Remove LocalStorage [token]
             </Button>
             <Button
               genre={'productBorder'}
-              onClick={() => setLocalStorage('token', 2)}
+              onClick={() => setLocalStorage('access_token', 'qwqwdqwd')}
               size={'small'}
             >
               Set LocalStorage [token]
@@ -151,7 +144,9 @@ function LayoutAuthorization() {
           </>
         </Stack>
 
-        <TitleH6>Local Storage [token]: {localStorageValues?.token}</TitleH6>
+        <TitleH6>
+          Local Storage [token]: {localStorageValues?.access_token}
+        </TitleH6>
 
         <Button
           genre={'productBorder'}

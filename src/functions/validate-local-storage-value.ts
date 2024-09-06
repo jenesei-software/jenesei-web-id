@@ -1,8 +1,8 @@
 import { ValidLocalStorageObject } from '@jenesei-software/jenesei-ui-react'
 
 export const validateLocalStorageKeys: (keyof ValidLocalStorageObject)[] = [
-  'token',
-  'test',
+  'access_token',
+  'refresh_token',
 ]
 export function getValidateLocalStorageValue<
   K extends keyof ValidLocalStorageObject,
@@ -11,9 +11,8 @@ export function getValidateLocalStorageValue<
   value: ValidLocalStorageObject[K],
 ): value is ValidLocalStorageObject[K] {
   switch (key) {
-    case 'token':
-      return typeof value === 'number'
-    case 'test':
+    case 'access_token':
+    case 'refresh_token':
       return typeof value === 'string'
     default:
       return true

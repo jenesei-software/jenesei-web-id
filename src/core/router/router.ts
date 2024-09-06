@@ -1,18 +1,46 @@
-import { createRouter } from '@tanstack/react-router'
+import { ValidCookieObject } from '@jenesei-software/jenesei-ui-react'
+import { QueryClient } from '@tanstack/react-query'
+import {
+  createRootRouteWithContext,
+  createRoute,
+  createRouter,
+} from '@tanstack/react-router'
 
-import { queryClient } from '@core/query'
+import { LayoutAuthorization } from '@layouts/layout-authorization'
+import { LayoutRoot, LayoutRootNotFound } from '@layouts/layout-root'
+import { LayoutUser } from '@layouts/layout-user'
 
-import { LayoutAuthorizationRoute } from '@layouts/layout-authorization'
-import { LayoutRootRoute } from '@layouts/layout-root'
+export interface IContext {
+  queryClient: QueryClient
+  cookieValues: ValidCookieObject
+}
 
+export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
+  component: LayoutRoot,
+  notFoundComponent: LayoutRootNotFound,
+})
+
+export const LayoutUserRoute = createRoute({
+  getParentRoute: () => LayoutRootRoute,
+  component: LayoutUser,
+  path: '/user',
+})
+
+export const LayoutAuthorizationRoute = createRoute({
+  getParentRoute: () => LayoutRootRoute,
+  component: LayoutAuthorization,
+  path: '/auth',
+})
 const routeTree = LayoutRootRoute.addChildren({
   LayoutAuthorizationRoute,
+  LayoutUserRoute,
 })
 
 export const router = createRouter({
   routeTree: routeTree,
   context: {
-    queryClient,
+    queryClient: undefined!,
+    cookieValues: undefined!,
   },
   defaultPreload: 'intent',
   defaultPreloadStaleTime: 0,
