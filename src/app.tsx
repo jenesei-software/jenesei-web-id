@@ -58,16 +58,9 @@ function App() {
                 getValidateCookieValue,
               }}
             >
-              <ProviderLocalStorage
-                validate={{
-                  validateKeys: validateLocalStorageKeys,
-                  getValidateLocalStorageValue,
-                }}
-              >
-                <ProviderPermission>
-                  <LayoutRouter />
-                </ProviderPermission>
-              </ProviderLocalStorage>
+              <ProviderPermission>
+                <LayoutRouter />
+              </ProviderPermission>
             </ProviderCookie>
           </ProviderAxiosWebId>
         </ThemeProvider>
