@@ -1,108 +1,69 @@
-import {
-  ProviderApp,
-  TitleH1,
-  TitleH6,
-} from '@jenesei-software/jenesei-ui-react'
-import { QueryClient } from '@tanstack/react-query'
-import {
-  Navigate,
-  Outlet,
-  createRootRouteWithContext,
-} from '@tanstack/react-router'
+import { ProviderApp, useCookie } from '@jenesei-software/jenesei-ui-react'
+import { getSSOProfile } from '@jenesei-software/jenesei-web-id-api'
+import { useQuery } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { Outlet, useMatchRoute, useNavigate } from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { useLayoutEffect } from 'react'
 
 import { useEnvironment } from '@hooks/use-environment'
 
-export interface IContext {
-  queryClient: QueryClient
-}
+export function LayoutRoot() {
+  const matchRoute = useMatchRoute()
+  const navigate = useNavigate()
+  const { setCookie, removeCookieValue } = useCookie()
+  const { title, description, mode } = useEnvironment()
+  const { isError, isLoading, isSuccess } = useQuery({
+    ...getSSOProfile(),
+    retry: false,
+  })
 
-export const LayoutRootRoute = createRootRouteWithContext<IContext>()({
-  component: LayoutRoot,
-  notFoundComponent: () => <Navigate to="/auth" />,
-})
+  const matchAuth = !!matchRoute({
+    to: '/auth',
+    fuzzy: true,
+  })
 
-function LayoutRoot() {
-  const { title, description } = useEnvironment()
+  const matchUser = !!matchRoute({
+    to: '/user',
+    fuzzy: true,
+  })
+
+  useLayoutEffect(() => {
+    if (isSuccess) {
+      setCookie('auth_status', true, { domain: '.jenesei.ru' })
+    }
+    if (isSuccess && !matchUser) {
+      navigate({ to: '/user/profile' })
+    }
+  }, [isSuccess])
+
+  useLayoutEffect(() => {
+    if (isError) {
+      removeCookieValue('auth_status', { domain: '.jenesei.ru' })
+    }
+    if (isError && !matchAuth) {
+      navigate({ to: '/auth/sign-in' })
+    }
+  }, [isError])
+
   return (
-    <ProviderApp
-      defaultTitle={title}
-      defaultBgColor="whiteStandard"
-      defaultStatusBarColor="whiteStandard"
-      defaultDescription={description}
-      isScrollOutlet={true}
-      header={{
-        component: defaultHeader,
-        height: '80px',
-        heightTablet: '60px',
-        heightMobile: '40px',
-      }}
-      leftAside={{
-        component: defaultLeftAside,
-        width: '80px',
-        widthTablet: '60px',
-      }}
-      rightAside={{
-        component: defaultRightAside,
-        width: '80px',
-        widthTablet: '60px',
-      }}
-      footer={{
-        component: defaultFooter,
-        height: '80px',
-        heightTablet: '60px',
-        heightMobile: '40px',
-      }}
-    >
-      <Outlet />
-    </ProviderApp>
+    <>
+      <ProviderApp
+        defaultTitle={title}
+        defaultBgColor="whiteStandard"
+        defaultStatusBarColor="whiteStandard"
+        defaultDescription={description}
+        isScrollOutlet={true}
+        defaultPreview={{ isShow: isLoading }}
+      >
+        <Outlet />
+      </ProviderApp>
+      {mode === 'development' && (
+        <>
+          <ReactQueryDevtools buttonPosition="bottom-left" />
+          <TanStackRouterDevtools position="bottom-right" />
+        </>
+      )}
+    </>
   )
 }
-
-const defaultHeader = (
-  <div
-    style={{
-      backgroundColor: 'transparent',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH1>Header</TitleH1>
-  </div>
-)
-const defaultFooter = (
-  <div
-    style={{
-      backgroundColor: 'lightcoral',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH1>Footer</TitleH1>
-  </div>
-)
-const defaultLeftAside = (
-  <div
-    style={{
-      backgroundColor: 'lightgreen',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH6>Left Aside</TitleH6>
-  </div>
-)
-const defaultRightAside = (
-  <div
-    style={{
-      backgroundColor: 'lightyellow',
-      padding: '10px',
-      height: '100%',
-      width: '100%',
-    }}
-  >
-    <TitleH6>Right Aside</TitleH6>
-  </div>
-)

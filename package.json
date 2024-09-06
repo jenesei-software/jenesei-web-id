@@ -6,8 +6,8 @@
   "scripts": {
     "generate-icons": "node generate-icons.mjs",
     "generate-manifest": "node generate-manifest.mjs",
-    "start": "npm run generate-manifest && npm run generate-icons && vite --host",
-    "build": "npm run generate-manifest && npm run generate-icons && tsc && vite build",
+    "start": "npm run generate-manifest && npm run generate-icons && vite --mode development",
+    "build": "npm run generate-manifest && npm run generate-icons && tsc && vite build --mode production",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write 'src/*/*.{ts,tsx}'",
@@ -17,14 +17,17 @@
     "@emotion/styled": "^11.13.0",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/roboto": "^5.0.14",
-    "@jenesei-software/jenesei-ui-react": "^0.4.39",
+    "@jenesei-software/jenesei-ui-react": "^0.4.52",
+    "@jenesei-software/jenesei-web-id-api": "^0.0.23",
     "@tanstack/react-query": "^5.17.10",
     "@tanstack/react-router": "^1.45.11",
     "@tanstack/react-virtual": "^3.8.3",
+    "@tanstack/router-devtools": "^1.56.1",
     "@types/react-helmet": "^6.1.11",
     "gsap": "^3.12.5",
     "i18n": "^0.15.1",
     "js-cookie": "^3.0.5",
+    "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-currency-input-field": "^3.8.0",
     "react-dom": "^18.3.1",
@@ -50,6 +53,7 @@
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@vitejs/plugin-react": "^4.2.1",
     "dotenv": "^16.4.5",
     "eslint": "^8.55.0",
@@ -61,6 +65,7 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4",
-    "vite": "^5.1.4"
+    "vite": "^5.4.3",
+    "vite-plugin-mkcert": "^1.17.6"
   }
 }

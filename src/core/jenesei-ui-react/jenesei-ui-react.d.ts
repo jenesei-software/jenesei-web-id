@@ -1,12 +1,13 @@
 import '@jenesei-software/jenesei-ui-react'
+import { IJeneseiTheme } from '@jenesei-software/jenesei-ui-react'
+import 'styled-components'
 
 declare module '@jenesei-software/jenesei-ui-react' {
   export interface ValidCookieObject {
-    token: number
-    test: string
+    auth_status: boolean
   }
-  export interface ValidLocalStorageObject {
-    token: number
-    test: string
-  }
+}
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends IJeneseiTheme {}
 }
