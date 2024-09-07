@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const manifestDirPath = path.resolve(__dirname, 'public')
-const manifestPath = path.resolve(manifestDirPath, 'manifest')
+const manifestPath = path.resolve(manifestDirPath, 'manifest.json')
 
 const sizes = [192, 256, 384, 512]
 
