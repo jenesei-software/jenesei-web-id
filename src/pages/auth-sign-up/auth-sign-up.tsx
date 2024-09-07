@@ -1,19 +1,14 @@
 import { FormSignUp } from '@jenesei-software/jenesei-ui-react'
-import {
-  queryKeys,
-  useAxiosWebId,
-  usePostSSOSignUp,
-} from '@jenesei-software/jenesei-web-id-api'
+import { queryKeys, usePostSSOSignUp } from '@jenesei-software/jenesei-web-id-api'
 import { useNavigate } from '@tanstack/react-router'
 import moment from 'moment'
 
 import { queryClient } from '@core/query'
 
 export function AuthSignUp() {
-  const { axiosInstance } = useAxiosWebId()
   const navigate = useNavigate()
 
-  const { mutate: mutatePostSSOSignUp } = usePostSSOSignUp({
+  const { mutate: mutatePostSSOSignUp, isPending } = usePostSSOSignUp({
     onSuccess: () => {
       Promise.all([
         queryClient.invalidateQueries({
@@ -31,8 +26,7 @@ export function AuthSignUp() {
       <FormSignUp
         width="500px"
         variant="sign"
-        axiosInstance={axiosInstance}
-        onBack={() => navigate({ to: '/auth/sign-in' })}
+        onSignIn={() => navigate({ to: '/auth/sign-in' })}
         onSubmit={(props) => {
           mutatePostSSOSignUp({
             body: {
@@ -43,6 +37,7 @@ export function AuthSignUp() {
             },
           })
         }}
+        isLoading={isPending}
       />
     </>
   )

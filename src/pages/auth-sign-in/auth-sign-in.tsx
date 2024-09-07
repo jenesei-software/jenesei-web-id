@@ -6,7 +6,7 @@ import { queryClient } from '@core/query'
 
 export function AuthSignIn() {
   const navigate = useNavigate()
-  const { mutate: mutatePostSSOSignIn } = usePostSSOSignIn({
+  const { mutate: mutatePostSSOSignIn, isPending } = usePostSSOSignIn({
     onSuccess: () => {
       Promise.all([
         queryClient.invalidateQueries({
@@ -31,6 +31,8 @@ export function AuthSignIn() {
             },
           })
         }}
+        isLoading={isPending}
+        onForgot={() => console.log('Ну forgot и forgot')}
         onSignUp={() => navigate({ to: '/auth/sign-up' })}
       />
     </>
