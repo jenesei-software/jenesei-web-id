@@ -7,6 +7,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   server: {
     host: 'local.dev.jenesei.ru',
+    port: 443,
   },
   build: {
     outDir: 'build',

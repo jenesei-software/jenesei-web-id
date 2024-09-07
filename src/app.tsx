@@ -45,7 +45,6 @@ function App() {
           <ProviderAxiosWebId
             baseURL={baseURL}
             availabilityCookieName={'auth_status'}
-            availabilityCookieDomain=".jenesei.ru"
           >
             <ProviderCookie
               validate={{
