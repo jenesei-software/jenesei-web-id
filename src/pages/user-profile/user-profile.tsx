@@ -1,4 +1,4 @@
-import { Button, Stack, Typography, useAppContext, useCookie } from '@jenesei-software/jenesei-ui-react'
+import { Button, Stack, Typography, useAppContext } from '@jenesei-software/jenesei-ui-react'
 import { queryKeys, useGetSSOLogout, useGetSSOProfile } from '@jenesei-software/jenesei-web-id-api'
 import { useEffect } from 'react'
 
@@ -6,7 +6,6 @@ import { queryClient } from '@core/query'
 
 export function UserProfile() {
   const { changePreview } = useAppContext()
-  const { removeCookieValue } = useCookie()
   const { data, isLoading } = useGetSSOProfile({ retry: false })
   const { mutate: mutateGetSSOLogout } = useGetSSOLogout({
     onSuccess: () => {
