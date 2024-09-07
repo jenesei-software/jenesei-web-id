@@ -26,7 +26,7 @@ export function LayoutRoot() {
 
   useLayoutEffect(() => {
     if (isSuccess) {
-      setCookie('auth_status', true)
+      setCookie('auth_status', true, { expires: 365 })
     }
     if (isSuccess && !matchUser) {
       navigate({ to: '/user/profile' })
