@@ -1,6 +1,5 @@
 import { ProviderApp, useCookie } from '@jenesei-software/jenesei-ui-react'
-import { getSSOProfile } from '@jenesei-software/jenesei-web-id-api'
-import { useQuery } from '@tanstack/react-query'
+import { useGetSSOProfile } from '@jenesei-software/jenesei-web-id-api'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Outlet, useMatchRoute, useNavigate } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
@@ -13,10 +12,7 @@ export function LayoutRoot() {
   const navigate = useNavigate()
   const { setCookie, removeCookieValue } = useCookie()
   const { title, description, mode } = useEnvironment()
-  const { isError, isLoading, isSuccess } = useQuery({
-    ...getSSOProfile(),
-    retry: false,
-  })
+  const { isError, isLoading, isSuccess } = useGetSSOProfile({ retry: false })
 
   const matchAuth = !!matchRoute({
     to: '/auth',
@@ -30,7 +26,7 @@ export function LayoutRoot() {
 
   useLayoutEffect(() => {
     if (isSuccess) {
-      setCookie('auth_status', true, { domain: '.jenesei.ru' })
+      setCookie('auth_status', true)
     }
     if (isSuccess && !matchUser) {
       navigate({ to: '/user/profile' })
@@ -39,7 +35,7 @@ export function LayoutRoot() {
 
   useLayoutEffect(() => {
     if (isError) {
-      removeCookieValue('auth_status', { domain: '.jenesei.ru' })
+      removeCookieValue('auth_status')
     }
     if (isError && !matchAuth) {
       navigate({ to: '/auth/sign-in' })

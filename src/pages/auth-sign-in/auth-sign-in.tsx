@@ -26,8 +26,8 @@ export function AuthSignIn() {
       <FormSignIn
         width="500px"
         variant="sign"
-        onSubmit={(props) => {
-          mutatePostSSOSignIn({
+        onSubmit={async (props) => {
+          await mutatePostSSOSignIn({
             body: {
               nickname: props.nickname,
               password: props.password,
