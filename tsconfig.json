@@ -38,6 +38,6 @@
       "@functions/*": ["src/functions/*"]
     }
   },
-  "include": ["src", "generate-manifest.js", "generate-icons.js"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
