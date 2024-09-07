@@ -9,9 +9,6 @@ export function UserProfile() {
   const { removeCookieValue } = useCookie()
   const { data, isLoading } = useGetSSOProfile({ retry: false })
   const { mutate: mutateGetSSOLogout } = useGetSSOLogout({
-    onMutate: () => {
-      removeCookieValue('auth_status')
-    },
     onSuccess: () => {
       Promise.all([
         queryClient.invalidateQueries({
