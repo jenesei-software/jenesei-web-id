@@ -31,6 +31,7 @@ export function LayoutRoot() {
     if (isSuccess && !matchUser) {
       navigate({ to: '/user/profile' })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess])
 
   useLayoutEffect(() => {
@@ -40,6 +41,7 @@ export function LayoutRoot() {
     if (isError && !matchAuth) {
       navigate({ to: '/auth/sign-in' })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isError])
 
   return (

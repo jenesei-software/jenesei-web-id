@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { queryClient } from '@core/query'
 
 export function UserProfile() {
-  const { changePreview } = useAppContext()
+  const { changeTitle, historyTitle } = useAppContext()
   const { data, isLoading } = useGetSSOProfile({ retry: false })
   const { mutate: mutateGetSSOLogout } = useGetSSOLogout({
     onSuccess: () => {
@@ -21,9 +21,10 @@ export function UserProfile() {
   })
 
   useEffect(() => {
-    console.log(data)
-    changePreview({ isShow: isLoading })
-  }, [changePreview, data, isLoading])
+    if (data?.nickname) changeTitle(data?.nickname)
+    return () => historyTitle(0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, isLoading])
   return (
     <Stack gap="10px" alignItems="center" flexDirection="column">
       <Typography variant="h5">{data?.nickname.toString()}</Typography>
