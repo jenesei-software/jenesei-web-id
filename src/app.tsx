@@ -14,20 +14,22 @@ import { i18n } from '@assets/i18n'
 
 import { queryClient } from '@core/query'
 
-import {
-  getValidateCookieValue,
-  validateCookieKeys,
-} from '@functions/validate-cookie-value'
+import { getValidateCookieValue, validateCookieKeys } from '@functions/validate-cookie-value'
 
 import { LayoutRouter } from '@layouts/layout-router'
 
+import '@fontsource/inter/100.css'
+import '@fontsource/inter/300.css'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
-import '@fontsource/inter/600.css'
 import '@fontsource/inter/700.css'
+import '@fontsource/inter/900.css'
+import '@fontsource/roboto/100.css'
+import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
+import '@fontsource/roboto/900.css'
 
 import 'react-ripple-click/dist/index.css'
 import 'react-toggle/style.css'
@@ -42,10 +44,7 @@ function App() {
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={JeneseiTheme}>
           <JeneseiGlobalStyles />
-          <ProviderAxiosWebId
-            baseURL={baseURL}
-            availabilityCookieName={'auth_status'}
-          >
+          <ProviderAxiosWebId baseURL={baseURL} availabilityCookieName={'auth_status'}>
             <ProviderCookie
               validate={{
                 validateKeys: validateCookieKeys,
