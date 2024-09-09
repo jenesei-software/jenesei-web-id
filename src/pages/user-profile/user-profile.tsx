@@ -1,9 +1,9 @@
 import {
   Button,
+  ModuleProfile,
   ModuleResource,
   ModuleSession,
   Stack,
-  Typography,
   useAppContext,
 } from '@jenesei-software/jenesei-ui-react'
 import {
@@ -17,11 +17,12 @@ import { useEffect } from 'react'
 import { queryClient } from '@core/query'
 
 export function UserProfile() {
-  const { changeTitle, historyTitle } = useAppContext()
+  const { changeTitle, historyTitle, changePreview } = useAppContext()
   const { data: dataProfile } = useGetSSOProfile({ retry: false })
 
   const { mutate: mutateGetSSOLogout } = useGetSSOLogout({
     onSuccess: () => {
+      changePreview({ isShow: true })
       Promise.all([
         queryClient.invalidateQueries({
           queryKey: [queryKeys.sso.profile],
@@ -35,6 +36,7 @@ export function UserProfile() {
 
   const { mutate: mutateDeleteSessionTerminate } = useDeleteSessionTerminate({
     onSuccess: () => {
+      changePreview({ isShow: true })
       Promise.all([
         queryClient.invalidateQueries({
           queryKey: [queryKeys.sso.profile],
@@ -56,10 +58,12 @@ export function UserProfile() {
   }, [dataProfile])
   return (
     <Stack maxW="600px" w="100%" gap="50px" alignItems="stretch" flexDirection="column">
-      <Typography variant="h5">{dataProfile?.nickname.toString()}</Typography>
+      <ModuleProfile />
       <ModuleResource />
       <ModuleSession
-        onDeleteSession={(sessionId) => mutateDeleteSessionTerminate({ path: { sessionId: sessionId } })}
+        onDeleteSession={(sessionId, isCurrent) =>
+          isCurrent ? mutateGetSSOLogout({}) : mutateDeleteSessionTerminate({ path: { sessionId: sessionId } })
+        }
       />
       <Button onClick={mutateGetSSOLogout} genre={'gray'} size={'small'}>
         Logout
