@@ -36,7 +36,6 @@ export function UserProfile() {
 
   const { mutate: mutateDeleteSessionTerminate } = useDeleteSessionTerminate({
     onSuccess: () => {
-      changePreview({ isShow: true })
       Promise.all([
         queryClient.invalidateQueries({
           queryKey: [queryKeys.sso.profile],
