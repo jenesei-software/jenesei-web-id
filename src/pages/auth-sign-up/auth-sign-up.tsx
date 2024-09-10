@@ -27,7 +27,6 @@ export function AuthSignUp() {
     <>
       <FormSignUp
         width="500px"
-        variant="sign"
         onSignIn={() => navigate({ to: '/auth/sign-in' })}
         onSubmit={(props) => {
           mutatePostSSOSignUp({
@@ -40,6 +39,10 @@ export function AuthSignUp() {
           })
         }}
         isLoading={isPending}
+        isError={false}
+        onRestore={() => {}}
+        onTermOfService={() => {}}
+        onPrivacyPolicy={() => {}}
       />
     </>
   )
