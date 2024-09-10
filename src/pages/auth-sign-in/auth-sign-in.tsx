@@ -33,7 +33,7 @@ export function AuthSignIn() {
           })
         }}
         isLoading={isPending}
-        onForgot={() => console.log('Ну forgot и forgot')}
+        onForgot={() => navigate({ to: '/auth/forgot-password' })}
         onSignUp={() => navigate({ to: '/auth/sign-up' })}
         isError={false}
         onRestore={() => {}}
