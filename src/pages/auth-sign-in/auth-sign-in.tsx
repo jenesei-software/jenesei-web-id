@@ -24,7 +24,6 @@ export function AuthSignIn() {
     <>
       <FormSignIn
         width="500px"
-        variant="sign"
         onSubmit={async (props) => {
           await mutatePostSSOSignIn({
             body: {
@@ -36,6 +35,8 @@ export function AuthSignIn() {
         isLoading={isPending}
         onForgot={() => console.log('Ну forgot и forgot')}
         onSignUp={() => navigate({ to: '/auth/sign-up' })}
+        isError={false}
+        onRestore={() => {}}
       />
     </>
   )
