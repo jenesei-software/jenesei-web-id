@@ -21,8 +21,10 @@ export function UserProfile() {
   const { data: dataProfile } = useGetSSOProfile({ retry: false })
 
   const { mutate: mutateGetSSOLogout } = useGetSSOLogout({
-    onSuccess: () => {
+    onMutate: () => {
       changePreview({ isShow: true })
+    },
+    onSuccess: () => {
       Promise.all([
         queryClient.invalidateQueries({
           queryKey: [queryKeys.sso.profile],
@@ -30,6 +32,7 @@ export function UserProfile() {
       ])
     },
     onError: () => {
+      changePreview({ isShow: false })
       console.log('error')
     },
   })
