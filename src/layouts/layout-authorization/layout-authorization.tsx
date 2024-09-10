@@ -1,18 +1,29 @@
-import { useAppContext } from '@jenesei-software/jenesei-ui-react'
-import { Navigate, Outlet } from '@tanstack/react-router'
+import { AuthLayout, useAppContext } from '@jenesei-software/jenesei-ui-react'
+import { Navigate, Outlet, useMatchRoute, useNavigate } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
-import { LayoutAuthorizationWrapper } from '.'
-
 export function LayoutAuthorization() {
+  const matchRoute = useMatchRoute()
+  const navigate = useNavigate()
   const { changePreview } = useAppContext()
+
+  const matchAuth = !!matchRoute({
+    to: '/auth',
+  })
+
+  useEffect(() => {
+    if (matchAuth) {
+      navigate({ to: '/auth/sign-in' })
+    }
+  }, [matchAuth, navigate])
+
   useEffect(() => {
     changePreview({ isShow: false })
   }, [changePreview])
   return (
-    <LayoutAuthorizationWrapper>
+    <AuthLayout backUrl="/pictures/auth-back.gif">
       <Outlet />
-    </LayoutAuthorizationWrapper>
+    </AuthLayout>
   )
 }
 
