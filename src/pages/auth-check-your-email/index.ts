@@ -1,1 +1,1 @@
-export * from './auth-forgot-password'
+export * from './auth-check-your-email'

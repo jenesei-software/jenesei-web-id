@@ -1,25 +1,32 @@
-import { FormSignUp, useAppContext } from '@jenesei-software/jenesei-ui-react'
-import { queryKeys, usePostSSOSignUp } from '@jenesei-software/jenesei-web-id-api'
+import { FormSignUp } from '@jenesei-software/jenesei-ui-react'
+import { CreateUserDto, usePostSSOAuthPreSignUp } from '@jenesei-software/jenesei-web-id-api'
 import { useNavigate } from '@tanstack/react-router'
 import moment from 'moment'
 
-import { queryClient } from '@core/query'
+import { store } from '@core/store'
 
 export function AuthSignUp() {
   const navigate = useNavigate()
-  const { changePreview } = useAppContext()
 
-  const { mutate: mutatePostSSOSignUp, isPending } = usePostSSOSignUp({
+  const updateState = (createUser: CreateUserDto | null) => {
+    store.setState((state) => {
+      return {
+        ...state,
+        createUser: createUser,
+      }
+    })
+  }
+
+  const {
+    mutate: mutatePostSSOAuthPreSignUp,
+    isPending,
+    isError,
+  } = usePostSSOAuthPreSignUp({
     onSuccess: () => {
-      changePreview({ isShow: true })
-      Promise.all([
-        queryClient.invalidateQueries({
-          queryKey: [queryKeys.sso.profile],
-        }),
-      ])
+      navigate({ to: '/auth/check-your-email' })
     },
     onError: () => {
-      console.log('error')
+      updateState(null)
     },
   })
 
@@ -29,18 +36,19 @@ export function AuthSignUp() {
         width="500px"
         onSignIn={() => navigate({ to: '/auth/sign-in' })}
         onSubmit={(props) => {
-          mutatePostSSOSignUp({
-            body: {
-              nickname: props.nickname,
-              email: props.email,
-              dateOfBirth: moment(props.dateOfBirthday).format('DD.MM.YYYY'),
-              password: props.currentPassword,
-            },
+          mutatePostSSOAuthPreSignUp({
+            path: { email: props.email },
+          })
+          updateState({
+            nickname: props.nickname,
+            email: props.email,
+            dateOfBirth: moment(props.dateOfBirthday).format('DD.MM.YYYY'),
+            password: props.currentPassword,
           })
         }}
         isLoading={isPending}
-        isError={false}
-        onRestore={() => {}}
+        isError={isError}
+        onRestore={() => navigate({ to: '/auth/sign-in' })}
         onTermOfService={() => {}}
         onPrivacyPolicy={() => {}}
       />

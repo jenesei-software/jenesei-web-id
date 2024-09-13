@@ -25,7 +25,7 @@ export function LayoutUser() {
   }
   return (
     <LayoutUserWrapper>
-      <ProviderWSWebId socketURL={socketURL} onLogout={onLogout}>
+      <ProviderWSWebId socketURL={socketURL} onLogout={onLogout} queryClient={queryClient}>
         <Outlet />
       </ProviderWSWebId>
     </LayoutUserWrapper>

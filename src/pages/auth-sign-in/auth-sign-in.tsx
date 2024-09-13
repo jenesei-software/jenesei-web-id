@@ -1,5 +1,5 @@
 import { FormSignIn, useAppContext } from '@jenesei-software/jenesei-ui-react'
-import { queryKeys, usePostSSOSignIn } from '@jenesei-software/jenesei-web-id-api'
+import { queryKeys, usePostSSOAuthSignIn } from '@jenesei-software/jenesei-web-id-api'
 import { useNavigate } from '@tanstack/react-router'
 
 import { queryClient } from '@core/query'
@@ -7,7 +7,7 @@ import { queryClient } from '@core/query'
 export function AuthSignIn() {
   const navigate = useNavigate()
   const { changePreview } = useAppContext()
-  const { mutate: mutatePostSSOSignIn, isPending } = usePostSSOSignIn({
+  const { mutate: mutatePostSSOSignIn, isPending } = usePostSSOAuthSignIn({
     onSuccess: () => {
       changePreview({ isShow: true })
       Promise.all([

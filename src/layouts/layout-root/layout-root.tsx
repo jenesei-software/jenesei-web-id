@@ -1,5 +1,5 @@
 import { ProviderApp, useCookie } from '@jenesei-software/jenesei-ui-react'
-import { useGetSSOProfile } from '@jenesei-software/jenesei-web-id-api'
+import { useGetSSOAuthProfile } from '@jenesei-software/jenesei-web-id-api'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Outlet, useMatchRoute, useNavigate } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
@@ -12,7 +12,7 @@ export function LayoutRoot() {
   const navigate = useNavigate()
   const { setCookie, removeCookieValue } = useCookie()
   const { title, description, mode } = useEnvironment()
-  const { isError, isLoading, isSuccess } = useGetSSOProfile({ retry: false })
+  const { isError, isLoading, isSuccess } = useGetSSOAuthProfile({ retry: false })
 
   const matchAuth = !!matchRoute({
     to: '/auth',

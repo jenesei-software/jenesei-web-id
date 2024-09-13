@@ -9,8 +9,8 @@ import {
 import {
   queryKeys,
   useDeleteSessionTerminate,
-  useGetSSOLogout,
-  useGetSSOProfile,
+  useGetSSOAuthLogout,
+  useGetSSOAuthProfile,
 } from '@jenesei-software/jenesei-web-id-api'
 import { useEffect } from 'react'
 
@@ -18,9 +18,9 @@ import { queryClient } from '@core/query'
 
 export function UserProfile() {
   const { changeTitle, historyTitle, changePreview } = useAppContext()
-  const { data: dataProfile } = useGetSSOProfile({ retry: false })
+  const { data: dataProfile } = useGetSSOAuthProfile({ retry: false })
 
-  const { mutate: mutateGetSSOLogout } = useGetSSOLogout({
+  const { mutate: mutateGetSSOLogout } = useGetSSOAuthLogout({
     onMutate: () => {
       changePreview({ isShow: true })
     },
