@@ -62,6 +62,8 @@ export function AuthCheckYourEmail() {
     <>
       <FormCheckYourEmail
         width="500px"
+        isDisabledCodeAgain={false}
+        isLoadingCodeAgain={false}
         date={moment()}
         minutes={10}
         onComplete={() => {}}
