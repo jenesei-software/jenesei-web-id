@@ -12,7 +12,7 @@ export function AuthSignUp() {
     store.setState((state) => {
       return {
         ...state,
-        createUser: createUser,
+        createUser: createUser ? { ...createUser, dateOfSignUp: moment() } : null,
       }
     })
   }
