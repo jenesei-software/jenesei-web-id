@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename)
 
 const sizes = [192, 256, 384, 512]
 
-const inputFile = path.join(__dirname, 'public/logos/logo-jenesei-software.png')
+const inputFile = path.join(__dirname, 'public/logos/logo-jenesei-id.png')
 const outputDir = path.join(__dirname, 'public/icons')
 const faviconPath = path.join(outputDir, 'icon-64x64.ico')
 const whiteBackgroundIconPath = path.join(outputDir, 'icon-180x180.png')

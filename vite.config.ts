@@ -44,6 +44,21 @@ export default defineConfig(({ mode }) => {
           enabled: true,
           type: 'module',
         },
+        workbox: {
+          runtimeCaching: [
+            {
+              urlPattern: ({ url }) => url.origin === self.location.origin,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'images-cache',
+                expiration: {
+                  maxEntries: 50,
+                  maxAgeSeconds: 7 * 24 * 60 * 60, // 7 days
+                },
+              },
+            },
+          ],
+        },
         manifest: {
           display: 'standalone',
           orientation: 'portrait',
