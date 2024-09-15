@@ -8,11 +8,11 @@ export const useEnvironment = (): {
   themeColor: string
   mode: 'development' | 'production'
 } => {
-  const title = import.meta.env.VITE_DEFAULT_TITLE as string
-  const description = import.meta.env.VITE_DEFAULT_DESCRIPTION as string
-  const name = import.meta.env.VITE_DEFAULT_SHORTNAME as string
-  const shortName = import.meta.env.VITE_DEFAULT_NAME as string
-  const themeColor = import.meta.env.VITE_DEFAULT_THEME_COLOR as string
+  const title = import.meta.env.VITE_DEFAULT_TITLE
+  const description = import.meta.env.VITE_DEFAULT_DESCRIPTION
+  const name = import.meta.env.VITE_DEFAULT_SHORTNAME
+  const shortName = import.meta.env.VITE_DEFAULT_NAME
+  const themeColor = import.meta.env.VITE_DEFAULT_THEME_COLOR
   const mode = import.meta.env.VITE_NODE_ENV as 'development' | 'production'
 
   const data = useMemo(
