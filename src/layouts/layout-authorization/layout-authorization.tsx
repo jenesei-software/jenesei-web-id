@@ -8,7 +8,7 @@ export function LayoutAuthorization() {
   const { changePreview } = useAppContext()
 
   const matchAuth = !!matchRoute({
-    to: '/auth',
+    to: '/auth'
   })
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export function LayoutAuthorization() {
     changePreview({ isShow: false })
   }, [changePreview])
   return (
-    <AuthLayout backUrl="/pictures/auth-back.gif">
+    <AuthLayout backUrl="/pictures/auth-back.gif" backUrlWebp="/pictures/auth-back.webp">
       <Outlet />
     </AuthLayout>
   )
