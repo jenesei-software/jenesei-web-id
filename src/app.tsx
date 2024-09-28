@@ -3,7 +3,7 @@ import {
   JeneseiTheme,
   ProviderCookie,
   ProviderPermission,
-  useRemovePreviewLoader,
+  useRemovePreviewLoader
 } from '@jenesei-software/jenesei-ui-react'
 import { ProviderAxiosWebId } from '@jenesei-software/jenesei-web-id-api'
 import { QueryClientProvider } from '@tanstack/react-query'
@@ -35,6 +35,8 @@ import 'react-ripple-click/dist/index.css'
 import 'react-toggle/style.css'
 
 const baseURL = import.meta.env.VITE_BASE_URL || ''
+const coreURL = import.meta.env.VITE_CORE_URL || ''
+const availabilityCookieName = import.meta.env.VITE_AVAILABILITY_COOKIE_NAME || ''
 
 function App() {
   useRemovePreviewLoader()
@@ -44,14 +46,14 @@ function App() {
       <I18nextProvider i18n={i18n}>
         <ThemeProvider theme={JeneseiTheme}>
           <JeneseiGlobalStyles />
-          <ProviderAxiosWebId baseURL={baseURL} availabilityCookieName={'auth_status'}>
+          <ProviderAxiosWebId coreURL={coreURL} baseURL={baseURL} availabilityCookieName={availabilityCookieName}>
             <ProviderCookie
               validate={{
                 validateKeys: validateCookieKeys,
-                getValidateCookieValue,
+                getValidateCookieValue
               }}
             >
-              <ProviderPermission>
+              <ProviderPermission serviceWorkerPath="/service-worker.js">
                 <LayoutRouter />
               </ProviderPermission>
             </ProviderCookie>
