@@ -1,41 +1,32 @@
-import {
-  AuthorizationBackgroundContainer,
-  LogoWithTitleContainer,
-  LayoutAuthorizationMainContainer,
-  LayoutAuthorizationOutletContainer,
-  LayoutAuthorizationTextContainer,
-  LayoutAuthorizationWrapper,
-} from '.'
-import { AuthorizationBackground } from '@assets/authorization-background'
-import { LogoWithTitle } from '@assets/icons/logo-with-title'
-import { StyledInterB36, StyledInterR24 } from '@styles/fonts/inter'
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import { Outlet } from 'react-router-dom'
+import { AuthLayout, useAppContext } from '@jenesei-software/jenesei-ui-react'
+import { Navigate, Outlet, useMatchRoute, useNavigate } from '@tanstack/react-router'
+import { useEffect } from 'react'
 
-/*
- * The wrapper for unauthorized users
- */
-export const LayoutAuthorization: React.FC = () => {
-  const { t } = useTranslation('authorization')
+export function LayoutAuthorization() {
+  const matchRoute = useMatchRoute()
+  const navigate = useNavigate()
+  const { changePreview } = useAppContext()
 
+  const matchAuth = !!matchRoute({
+    to: '/auth'
+  })
+
+  useEffect(() => {
+    if (matchAuth) {
+      navigate({ to: '/auth/sign-in' })
+    }
+  }, [matchAuth, navigate])
+
+  useEffect(() => {
+    changePreview({ isShow: false })
+  }, [changePreview])
   return (
-    <LayoutAuthorizationWrapper>
-      <LayoutAuthorizationMainContainer>
-        <LogoWithTitleContainer>
-          <LogoWithTitle />
-        </LogoWithTitleContainer>
-        <AuthorizationBackgroundContainer>
-          <AuthorizationBackground />
-        </AuthorizationBackgroundContainer>
-        <LayoutAuthorizationTextContainer>
-          <StyledInterB36>{t('main.title-big')}</StyledInterB36>
-          <StyledInterR24>{t('main.title-min')}</StyledInterR24>
-        </LayoutAuthorizationTextContainer>
-      </LayoutAuthorizationMainContainer>
-      <LayoutAuthorizationOutletContainer>
-        <Outlet />
-      </LayoutAuthorizationOutletContainer>
-    </LayoutAuthorizationWrapper>
+    <AuthLayout backUrl="/pictures/auth-back.gif" backUrlWebp="/pictures/auth-back.webp">
+      <Outlet />
+    </AuthLayout>
   )
+}
+
+export function LayoutAuthorizationNotFound() {
+  return <Navigate to="/auth/sign-in" />
 }

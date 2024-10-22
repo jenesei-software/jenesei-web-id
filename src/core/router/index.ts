@@ -1,3 +1,2 @@
-export * from './router-user'
-export * from './router-authorization'
-export * from './user-routes'
+export * from './router.search'
+export * from './router'
