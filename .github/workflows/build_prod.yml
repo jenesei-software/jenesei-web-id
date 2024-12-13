@@ -29,14 +29,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-      - name: Configure npm for GitHub Packages
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-          echo "@jenesei-software:registry=https://npm.pkg.github.com/" >> ~/.npmrc
-
       - name: Install dependencies
-        env:
-          NPM_CONFIG_USERCONFIG: ~/.npmrc
         run: |
           npm ci
 
