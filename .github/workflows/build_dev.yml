@@ -18,8 +18,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-          always-auth: true
 
       - name: Cache node modules
         uses: actions/cache@v3
@@ -36,7 +34,7 @@ jobs:
 
       - name: Install node modules
         env:
-            NPM_CONFIG_USERCONFIG: ~/.npmrc
+          NPM_CONFIG_USERCONFIG: ~/.npmrc
         run: npm ci
 
       - name: Build
