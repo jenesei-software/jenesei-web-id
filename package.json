@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "generate-icons": "node generate-icons.mjs",
-    "start": "vite --mode development && npm run generate-icons",
-    "build": "tsc && vite build --mode production && npm run generate-icons",
+    "start": "vite --mode dev && npm run generate-icons",
+    "build:test": "tsc && vite build --mode test && npm run generate-icons",
+    "build:prod": "tsc && vite build --mode prod && npm run generate-icons",
+    "build:dev": "tsc && vite build --mode dev && npm run generate-icons",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write 'src/*/*.{ts,tsx}'",
