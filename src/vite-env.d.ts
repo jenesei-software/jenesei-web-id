@@ -9,6 +9,7 @@ interface ImportMetaEnv {
   readonly VITE_SOCKET_URL: string
   readonly VITE_AVAILABILITY_COOKIE_NAME: string
   readonly VITE_CORE_URL: string
+  readonly VITE_NODE_ENV: 'dev' | 'prod' | 'test'
 }
 
 interface ImportMeta {

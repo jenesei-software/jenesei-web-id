@@ -56,7 +56,7 @@ export function LayoutRoot() {
       >
         <Outlet />
       </ProviderApp>
-      {mode === 'development' && (
+      {(mode === 'dev' || mode == 'test') && (
         <>
           <ReactQueryDevtools buttonPosition="bottom-left" />
           <TanStackRouterDevtools position="bottom-right" />

@@ -27,6 +27,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Clean git working directory
+        run: |
+          git reset --hard || echo "No changes to reset"
+          git clean -fd || echo "No files to clean"
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
       - name: Configure npm for GitHub Packages
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
@@ -38,7 +48,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run build:dev
 
       - name: Cache build
         uses: actions/cache@v3
